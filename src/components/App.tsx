@@ -53,8 +53,6 @@ export default function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(memoryQueue.cards);
-
     const wasCorrect = normalize(guess) === normalize(card.answer);
     const earnedFount =
       wasCorrect &&
