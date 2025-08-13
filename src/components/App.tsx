@@ -4,7 +4,7 @@ import { shuffle } from "lodash";
 import { normalize } from "../utils/utils";
 import { US_STATE_CAPITALS } from "../data/USStateCapitals";
 
-const FOUNT_STREAK = 3;
+const FOUNT_STREAK = 6;
 const REFRESH_TIME = 99; // 99 milliseconds
 
 const getCardLabel = (card: Card) => {
