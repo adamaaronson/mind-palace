@@ -5,7 +5,7 @@ import { normalize } from "../utils/utils";
 import { US_STATE_CAPITALS } from "../data/USStateCapitals";
 
 const FOUNT_STREAK = 6;
-const REFRESH_TIME = 49;
+const REFRESH_TIME = 42;
 
 const getCardLabel = (card: Card) => {
   if (isNew(card)) {
