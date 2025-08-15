@@ -97,6 +97,7 @@ export const US_STATE_CAPITALS: Fact[] = toFactArray(
     {
       question: "Minnesota",
       answer: "Saint Paul",
+      alternateAnswers: ["St. Paul"],
     },
     {
       question: "Mississippi",

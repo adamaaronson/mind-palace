@@ -5,7 +5,7 @@ export function randrange(start: number, end: number) {
 export function normalize(text: string) {
   return text
     .toLowerCase() // convert to lowercase
-    .replace(/\s/g, "") // remove spaces
+    .replace(/[\p{P}\s]/gu, "") // remove punctuation and spaces
     .normalize("NFD") // normalize unicode characters
     .replace(/\p{Diacritic}/gu, ""); // remove diacritics
 }

@@ -3,6 +3,7 @@ import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import { normalize } from "../utils/utils";
 import { US_STATE_CAPITALS } from "../data/USStateCapitals";
+import { isCorrect } from "../types/knowledge";
 
 const FOUNT_STREAK = 6;
 const REFRESH_TIME = 42;
@@ -53,7 +54,7 @@ export default function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const wasCorrect = normalize(guess) === normalize(card.answer);
+    const wasCorrect = isCorrect(card, guess);
     const earnedFount =
       wasCorrect &&
       !card.known &&
