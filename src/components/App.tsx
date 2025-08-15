@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
-import { normalize } from "../utils/utils";
 import { US_STATE_CAPITALS } from "../data/USStateCapitals";
 import { isCorrect } from "../types/knowledge";
 
