@@ -1,6 +1,6 @@
-import { toFactArray, type Fact } from "../types/knowledge";
+import { toFactArray } from "../types/knowledge";
 
-export const US_STATE_CAPITALS: Fact[] = toFactArray(
+const deck = toFactArray(
   {
     questionLabel: "state",
     answerLabel: "capital",
@@ -209,3 +209,5 @@ export const US_STATE_CAPITALS: Fact[] = toFactArray(
     },
   ]
 );
+
+export default deck;

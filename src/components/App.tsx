@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
-import { US_STATE_CAPITALS } from "../data/USStateCapitals";
+import deck from "../decks/TestCapitals";
 import { isCorrect } from "../types/knowledge";
 
 const FOUNT_STREAK = 6;
@@ -20,8 +20,8 @@ const getCardLabel = (card: Card) => {
 
 export default function App() {
   const [memoryQueue] = useState<MemoryQueue>(() => ({
-    cards: shuffle(US_STATE_CAPITALS),
-    alreadyStudiedIndex: US_STATE_CAPITALS.length,
+    cards: shuffle(deck),
+    alreadyStudiedIndex: deck.length,
     randomness: 5,
   }));
   const [card, setCard] = useState(memoryQueue.cards[0]);
@@ -135,7 +135,7 @@ export default function App() {
             <div className="text-sm">
               <span className="text-amber-950 font-bold">+1</span>{" "}
               <span className="opacity-60">
-                {earnedFount ? "fount! You know it!" : "nugget!"}
+                {earnedFount ? "fount of knowledge! You know it!" : "nugget!"}
               </span>
             </div>
           </div>

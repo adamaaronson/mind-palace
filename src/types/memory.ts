@@ -48,15 +48,13 @@ export function reshuffle(queue: MemoryQueue, isCorrect: boolean) {
 
   if (isCorrect) {
     if (firstCard.interval && firstCard.interval < randomnessCutoff) {
-      // update first card's interval first, to check if it's gonna be too big
+      // update first card's interval, if it's not already too big
       firstCard.interval = Math.round(firstCard.interval * PHI);
     }
 
     if (firstCard.interval && firstCard.interval < randomnessCutoff) {
-      // question has been answered wrong before:
-      // insert based on the fact's previous interval times phi
-      reinsertFirstCard(queue, firstCard.interval);
-
+      // question has been answered wrong before
+      // and will be inserted before the cutoff
       if (firstCard.interval >= queue.alreadyStudiedIndex + 1) {
         decrementAlreadyStudiedIndex(queue);
       }
@@ -69,18 +67,16 @@ export function reshuffle(queue: MemoryQueue, isCorrect: boolean) {
         randomnessCutoff,
         queue.alreadyStudiedIndex
       );
-      const interval = randrange(adjustedStart, queue.cards.length + 1);
+      firstCard.interval = randrange(adjustedStart, queue.cards.length + 1);
 
-      if (interval >= queue.alreadyStudiedIndex) {
+      if (firstCard.interval >= queue.alreadyStudiedIndex) {
         decrementAlreadyStudiedIndex(queue);
       }
-
-      firstCard.interval = interval;
-
-      reinsertFirstCard(queue, interval);
     }
   } else {
+    // question was answered wrong, reset interval
     firstCard.interval = 1;
-    reinsertFirstCard(queue, 1);
   }
+
+  reinsertFirstCard(queue, firstCard.interval);
 }
