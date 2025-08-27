@@ -1,6 +1,4 @@
-import { toFactArray } from "../types/knowledge";
-
-const deck = toFactArray(
+const deck = [
   {
     questionLabel: "state",
     answerLabel: "capital",
@@ -207,7 +205,7 @@ const deck = toFactArray(
       question: "Wyoming",
       answer: "Cheyenne",
     },
-  ]
-);
+  ],
+];
 
 export default deck;

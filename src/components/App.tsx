@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
-import deck from "../decks/TestCapitals";
+import deck from "../decks/json/world_capitals.json";
 import { isCorrect } from "../types/knowledge";
 
 const FOUNT_STREAK = 6;
@@ -125,7 +125,13 @@ export default function App() {
             <span className={wasCorrect ? "text-green-600" : "text-red-600"}>
               {wasCorrect ? "✅" : "❌"} The {previousCard.category.answerLabel}{" "}
               of <span className="font-bold">{previousCard.question}</span> is{" "}
-              <span className="font-bold">{previousCard.answer}</span>!
+              {}
+              <span className="font-bold">
+                {previousCard.answers
+                  .map((answer) => answer.canonicalForm)
+                  .join(" / ")}
+              </span>
+              !
             </span>
             {lostFount && (
               <div className="text-amber-950 font-bold text-sm">

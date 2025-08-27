@@ -1,0 +1,3072 @@
+[
+    {
+        "id": 1,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kabul",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kabul"
+            }
+        ],
+        "question": "Afghanistan"
+    },
+    {
+        "id": 2,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tirana",
+                "alternateForms": [
+                    "Tirane"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Tirana"
+            }
+        ],
+        "question": "Albania"
+    },
+    {
+        "id": 3,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Algiers",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Algiers"
+            }
+        ],
+        "question": "Algeria"
+    },
+    {
+        "id": 4,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Andorra la Vella",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Andorra_la_Vella"
+            }
+        ],
+        "question": "Andorra"
+    },
+    {
+        "id": 5,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Luanda",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Luanda"
+            }
+        ],
+        "question": "Angola"
+    },
+    {
+        "id": 6,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "St. John's",
+                "alternateForms": [
+                    "Saint John's"
+                ],
+                "link": "https://en.wikipedia.org/wiki/St._John%27s,_Antigua_and_Barbuda"
+            }
+        ],
+        "question": "Antigua and Barbuda"
+    },
+    {
+        "id": 7,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Buenos Aires",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Buenos_Aires"
+            }
+        ],
+        "question": "Argentina"
+    },
+    {
+        "id": 8,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Yerevan",
+                "alternateForms": [
+                    "Erevan"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Yerevan"
+            }
+        ],
+        "question": "Armenia"
+    },
+    {
+        "id": 9,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Canberra",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Canberra"
+            }
+        ],
+        "question": "Australia"
+    },
+    {
+        "id": 10,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Vienna",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Vienna"
+            }
+        ],
+        "question": "Austria"
+    },
+    {
+        "id": 11,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Baku",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Baku"
+            }
+        ],
+        "question": "Azerbaijan"
+    },
+    {
+        "id": 12,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Nassau",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Nassau,_The_Bahamas"
+            }
+        ],
+        "question": "Bahamas"
+    },
+    {
+        "id": 13,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Manama",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Manama"
+            }
+        ],
+        "question": "Bahrain"
+    },
+    {
+        "id": 14,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Dhaka",
+                "alternateForms": [
+                    "Dacca"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Dhaka"
+            }
+        ],
+        "question": "Bangladesh"
+    },
+    {
+        "id": 15,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bridgetown",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bridgetown"
+            }
+        ],
+        "question": "Barbados"
+    },
+    {
+        "id": 16,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Minsk",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Minsk"
+            }
+        ],
+        "question": "Belarus"
+    },
+    {
+        "id": 17,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Brussels",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Brussels"
+            }
+        ],
+        "question": "Belgium"
+    },
+    {
+        "id": 18,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Belmopan",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Belmopan"
+            }
+        ],
+        "question": "Belize"
+    },
+    {
+        "id": 19,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Porto-Novo",
+                "alternateForms": [
+                    "Hogbonu",
+                    "Ajashe",
+                    "Ajase"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Porto-Novo"
+            }
+        ],
+        "question": "Benin"
+    },
+    {
+        "id": 20,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Thimphu",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Thimphu"
+            }
+        ],
+        "question": "Bhutan"
+    },
+    {
+        "id": 21,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "La Paz",
+                "alternateForms": [
+                    "Nuestra Se\u00f1ora de La Paz"
+                ],
+                "link": "https://en.wikipedia.org/wiki/La_Paz"
+            },
+            {
+                "canonicalForm": "Sucre",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Sucre"
+            }
+        ],
+        "question": "Bolivia"
+    },
+    {
+        "id": 22,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Sarajevo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Sarajevo"
+            }
+        ],
+        "question": "Bosnia and Herzegovina"
+    },
+    {
+        "id": 23,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Gaborone",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Gaborone"
+            }
+        ],
+        "question": "Botswana"
+    },
+    {
+        "id": 24,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bras\u00edlia",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bras\u00edlia"
+            }
+        ],
+        "question": "Brazil"
+    },
+    {
+        "id": 25,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bandar Seri Begawan",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bandar_Seri_Begawan"
+            }
+        ],
+        "question": "Brunei"
+    },
+    {
+        "id": 26,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Sofia",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Sofia"
+            }
+        ],
+        "question": "Bulgaria"
+    },
+    {
+        "id": 27,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ouagadougou",
+                "alternateForms": [
+                    "Wagadugu"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Ouagadougou"
+            }
+        ],
+        "question": "Burkina Faso"
+    },
+    {
+        "id": 28,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Gitega",
+                "alternateForms": [
+                    "Kitega"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Gitega"
+            }
+        ],
+        "question": "Burundi"
+    },
+    {
+        "id": 29,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Praia",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Praia"
+            }
+        ],
+        "question": "Cabo Verde"
+    },
+    {
+        "id": 30,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Phnom Penh",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Phnom_Penh"
+            }
+        ],
+        "question": "Cambodia"
+    },
+    {
+        "id": 31,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Yaound\u00e9",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Yaound\u00e9"
+            }
+        ],
+        "question": "Cameroon"
+    },
+    {
+        "id": 32,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ottawa",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Ottawa"
+            }
+        ],
+        "question": "Canada"
+    },
+    {
+        "id": 33,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bangui",
+                "alternateForms": [
+                    "Bangi"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Bangui"
+            }
+        ],
+        "question": "Central African Republic"
+    },
+    {
+        "id": 34,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "N'Djamena",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/N%27Djamena"
+            }
+        ],
+        "question": "Chad"
+    },
+    {
+        "id": 35,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Santiago",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Santiago"
+            }
+        ],
+        "question": "Chile"
+    },
+    {
+        "id": 36,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Beijing",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Beijing"
+            }
+        ],
+        "question": "China"
+    },
+    {
+        "id": 37,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bogot\u00e1",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bogot\u00e1"
+            }
+        ],
+        "question": "Colombia"
+    },
+    {
+        "id": 38,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Moroni",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Moroni,_Comoros"
+            }
+        ],
+        "question": "Comoros"
+    },
+    {
+        "id": 39,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "San Jos\u00e9",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/San_Jos\u00e9,_Costa_Rica"
+            }
+        ],
+        "question": "Costa Rica"
+    },
+    {
+        "id": 40,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Yamoussoukro",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Yamoussoukro"
+            }
+        ],
+        "question": "C\u00f4te d'Ivoire"
+    },
+    {
+        "id": 41,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Zagreb",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Zagreb"
+            }
+        ],
+        "question": "Croatia"
+    },
+    {
+        "id": 42,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Havana",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Havana"
+            }
+        ],
+        "question": "Cuba"
+    },
+    {
+        "id": 43,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Nicosia",
+                "alternateForms": [
+                    "Lefkosia"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Nicosia"
+            }
+        ],
+        "question": "Cyprus"
+    },
+    {
+        "id": 44,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Prague",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Prague"
+            }
+        ],
+        "question": "Czechia"
+    },
+    {
+        "id": 45,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kinshasa",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kinshasa"
+            }
+        ],
+        "question": "Democratic Republic of the Congo"
+    },
+    {
+        "id": 46,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Copenhagen",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Copenhagen"
+            }
+        ],
+        "question": "Denmark"
+    },
+    {
+        "id": 47,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Djibouti",
+                "alternateForms": [
+                    "Djibouti City"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Djibouti_City"
+            }
+        ],
+        "question": "Djibouti"
+    },
+    {
+        "id": 48,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Roseau",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Roseau"
+            }
+        ],
+        "question": "Dominica"
+    },
+    {
+        "id": 49,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Santo Domingo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Santo_Domingo"
+            }
+        ],
+        "question": "Dominican Republic"
+    },
+    {
+        "id": 50,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Quito",
+                "alternateForms": [
+                    "San Francisco de Quito"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Quito"
+            }
+        ],
+        "question": "Ecuador"
+    },
+    {
+        "id": 51,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Cairo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Cairo"
+            }
+        ],
+        "question": "Egypt"
+    },
+    {
+        "id": 52,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "San Salvador",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/San_Salvador"
+            }
+        ],
+        "question": "El Salvador"
+    },
+    {
+        "id": 53,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Malabo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Malabo"
+            }
+        ],
+        "question": "Equatorial Guinea"
+    },
+    {
+        "id": 54,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Asmara",
+                "alternateForms": [
+                    "Asmera"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Asmara"
+            }
+        ],
+        "question": "Eritrea"
+    },
+    {
+        "id": 55,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tallinn",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tallinn"
+            }
+        ],
+        "question": "Estonia"
+    },
+    {
+        "id": 56,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Mbabane",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Mbabane"
+            },
+            {
+                "canonicalForm": "Lobamba",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Lobamba"
+            }
+        ],
+        "question": "Eswatini"
+    },
+    {
+        "id": 57,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Addis Ababa",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Addis_Ababa"
+            }
+        ],
+        "question": "Ethiopia"
+    },
+    {
+        "id": 58,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Suva",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Suva"
+            }
+        ],
+        "question": "Fiji"
+    },
+    {
+        "id": 59,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Helsinki",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Helsinki"
+            }
+        ],
+        "question": "Finland"
+    },
+    {
+        "id": 60,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Paris",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Paris"
+            }
+        ],
+        "question": "France"
+    },
+    {
+        "id": 61,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Libreville",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Libreville"
+            }
+        ],
+        "question": "Gabon"
+    },
+    {
+        "id": 62,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tbilisi",
+                "alternateForms": [
+                    "Tiflis"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Tbilisi"
+            }
+        ],
+        "question": "Georgia"
+    },
+    {
+        "id": 63,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Berlin",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Berlin"
+            }
+        ],
+        "question": "Germany"
+    },
+    {
+        "id": 64,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Accra",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Accra"
+            }
+        ],
+        "question": "Ghana"
+    },
+    {
+        "id": 65,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Athens",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Athens"
+            }
+        ],
+        "question": "Greece"
+    },
+    {
+        "id": 66,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "St. George's",
+                "alternateForms": [
+                    "Saint George's"
+                ],
+                "link": "https://en.wikipedia.org/wiki/St._George%27s,_Grenada"
+            }
+        ],
+        "question": "Grenada"
+    },
+    {
+        "id": 67,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Guatemala City",
+                "alternateForms": [
+                    "Guatemala"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Guatemala_City"
+            }
+        ],
+        "question": "Guatemala"
+    },
+    {
+        "id": 68,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Conakry",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Conakry"
+            }
+        ],
+        "question": "Guinea"
+    },
+    {
+        "id": 69,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bissau",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bissau"
+            }
+        ],
+        "question": "Guinea-Bissau"
+    },
+    {
+        "id": 70,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Georgetown",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Georgetown,_Guyana"
+            }
+        ],
+        "question": "Guyana"
+    },
+    {
+        "id": 71,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Port-au-Prince",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Port-au-Prince"
+            }
+        ],
+        "question": "Haiti"
+    },
+    {
+        "id": 72,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tegucigalpa",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tegucigalpa"
+            }
+        ],
+        "question": "Honduras"
+    },
+    {
+        "id": 73,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Budapest",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Budapest"
+            }
+        ],
+        "question": "Hungary"
+    },
+    {
+        "id": 74,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Reykjav\u00edk",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Reykjav\u00edk"
+            }
+        ],
+        "question": "Iceland"
+    },
+    {
+        "id": 75,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "New Delhi",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/New_Delhi"
+            }
+        ],
+        "question": "India"
+    },
+    {
+        "id": 76,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Jakarta",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Jakarta"
+            }
+        ],
+        "question": "Indonesia"
+    },
+    {
+        "id": 77,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tehran",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tehran"
+            }
+        ],
+        "question": "Iran"
+    },
+    {
+        "id": 78,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Baghdad",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Baghdad"
+            }
+        ],
+        "question": "Iraq"
+    },
+    {
+        "id": 79,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Dublin",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Dublin"
+            }
+        ],
+        "question": "Ireland"
+    },
+    {
+        "id": 80,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Jerusalem",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Jerusalem"
+            }
+        ],
+        "question": "Israel"
+    },
+    {
+        "id": 81,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Rome",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Rome"
+            }
+        ],
+        "question": "Italy"
+    },
+    {
+        "id": 82,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kingston",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kingston,_Jamaica"
+            }
+        ],
+        "question": "Jamaica"
+    },
+    {
+        "id": 83,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tokyo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tokyo"
+            }
+        ],
+        "question": "Japan"
+    },
+    {
+        "id": 84,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Amman",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Amman"
+            }
+        ],
+        "question": "Jordan"
+    },
+    {
+        "id": 85,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Astana",
+                "alternateForms": [
+                    "Nur-Sultan"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Astana"
+            }
+        ],
+        "question": "Kazakhstan"
+    },
+    {
+        "id": 86,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Nairobi",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Nairobi"
+            }
+        ],
+        "question": "Kenya"
+    },
+    {
+        "id": 87,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tarawa",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tarawa"
+            }
+        ],
+        "question": "Kiribati"
+    },
+    {
+        "id": 88,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Pristina",
+                "alternateForms": [
+                    "Prishtina"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Pristina"
+            }
+        ],
+        "question": "Kosovo"
+    },
+    {
+        "id": 89,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kuwait City",
+                "alternateForms": [
+                    "Kuwait"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Kuwait_City"
+            }
+        ],
+        "question": "Kuwait"
+    },
+    {
+        "id": 90,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bishkek",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bishkek"
+            }
+        ],
+        "question": "Kyrgyzstan"
+    },
+    {
+        "id": 91,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Vientiane",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Vientiane"
+            }
+        ],
+        "question": "Laos"
+    },
+    {
+        "id": 92,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Riga",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Riga"
+            }
+        ],
+        "question": "Latvia"
+    },
+    {
+        "id": 93,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Beirut",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Beirut"
+            }
+        ],
+        "question": "Lebanon"
+    },
+    {
+        "id": 94,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Maseru",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Maseru"
+            }
+        ],
+        "question": "Lesotho"
+    },
+    {
+        "id": 95,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Monrovia",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Monrovia"
+            }
+        ],
+        "question": "Liberia"
+    },
+    {
+        "id": 96,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tripoli",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tripoli,_Libya"
+            }
+        ],
+        "question": "Libya"
+    },
+    {
+        "id": 97,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Vaduz",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Vaduz"
+            }
+        ],
+        "question": "Liechtenstein"
+    },
+    {
+        "id": 98,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Vilnius",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Vilnius"
+            }
+        ],
+        "question": "Lithuania"
+    },
+    {
+        "id": 99,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Luxembourg",
+                "alternateForms": [
+                    "Luxembourg City"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Luxembourg_City"
+            }
+        ],
+        "question": "Luxembourg"
+    },
+    {
+        "id": 100,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Antananarivo",
+                "alternateForms": [
+                    "Tana"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Antananarivo"
+            }
+        ],
+        "question": "Madagascar"
+    },
+    {
+        "id": 101,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Lilongwe",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Lilongwe"
+            }
+        ],
+        "question": "Malawi"
+    },
+    {
+        "id": 102,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kuala Lumpur",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+            }
+        ],
+        "question": "Malaysia"
+    },
+    {
+        "id": 103,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Mal\u00e9",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Mal\u00e9"
+            }
+        ],
+        "question": "Maldives"
+    },
+    {
+        "id": 104,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bamako",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bamako"
+            }
+        ],
+        "question": "Mali"
+    },
+    {
+        "id": 105,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Valletta",
+                "alternateForms": [
+                    "Citt\u00e0 Umilissima"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Valletta"
+            }
+        ],
+        "question": "Malta"
+    },
+    {
+        "id": 106,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Majuro",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Majuro"
+            }
+        ],
+        "question": "Marshall Islands"
+    },
+    {
+        "id": 107,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Nouakchott",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Nouakchott"
+            }
+        ],
+        "question": "Mauritania"
+    },
+    {
+        "id": 108,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Port Louis",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Port_Louis"
+            }
+        ],
+        "question": "Mauritius"
+    },
+    {
+        "id": 109,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Mexico City",
+                "alternateForms": [
+                    "Mexico",
+                    "Ciudad de Mexico"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Mexico_City"
+            }
+        ],
+        "question": "Mexico"
+    },
+    {
+        "id": 110,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Palikir",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Palikir"
+            }
+        ],
+        "question": "Micronesia"
+    },
+    {
+        "id": 111,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Chi\u0219in\u0103u",
+                "alternateForms": [
+                    "Kishinev"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Chi\u0219in\u0103u"
+            }
+        ],
+        "question": "Moldova"
+    },
+    {
+        "id": 112,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Monaco",
+                "alternateForms": [
+                    "Monaco City"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Monaco_City"
+            }
+        ],
+        "question": "Monaco"
+    },
+    {
+        "id": 113,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ulaanbaatar",
+                "alternateForms": [
+                    "Ulan Bator"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Ulaanbaatar"
+            }
+        ],
+        "question": "Mongolia"
+    },
+    {
+        "id": 114,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Podgorica",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Podgorica"
+            }
+        ],
+        "question": "Montenegro"
+    },
+    {
+        "id": 115,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Rabat",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Rabat"
+            }
+        ],
+        "question": "Morocco"
+    },
+    {
+        "id": 116,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Maputo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Maputo"
+            }
+        ],
+        "question": "Mozambique"
+    },
+    {
+        "id": 117,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Naypyidaw",
+                "alternateForms": [
+                    "Nay Pyi Taw"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Naypyidaw"
+            }
+        ],
+        "question": "Myanmar"
+    },
+    {
+        "id": 118,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Windhoek",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Windhoek"
+            }
+        ],
+        "question": "Namibia"
+    },
+    {
+        "id": 119,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Yaren",
+                "alternateForms": [
+                    "Yaren District",
+                    "None",
+                    "Nowhere",
+                    "Nothing"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Yaren_District"
+            }
+        ],
+        "question": "Nauru"
+    },
+    {
+        "id": 120,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kathmandu",
+                "alternateForms": [
+                    "Katmandu"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Kathmandu"
+            }
+        ],
+        "question": "Nepal"
+    },
+    {
+        "id": 121,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Amsterdam",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Amsterdam"
+            }
+        ],
+        "question": "Netherlands"
+    },
+    {
+        "id": 122,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Wellington",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Wellington"
+            }
+        ],
+        "question": "New Zealand"
+    },
+    {
+        "id": 123,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Managua",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Managua"
+            }
+        ],
+        "question": "Nicaragua"
+    },
+    {
+        "id": 124,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Niamey",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Niamey"
+            }
+        ],
+        "question": "Niger"
+    },
+    {
+        "id": 125,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Abuja",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Abuja"
+            }
+        ],
+        "question": "Nigeria"
+    },
+    {
+        "id": 126,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Pyongyang",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Pyongyang"
+            }
+        ],
+        "question": "North Korea"
+    },
+    {
+        "id": 127,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Skopje",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Skopje"
+            }
+        ],
+        "question": "North Macedonia"
+    },
+    {
+        "id": 128,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Oslo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Oslo"
+            }
+        ],
+        "question": "Norway"
+    },
+    {
+        "id": 129,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Muscat",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Muscat"
+            }
+        ],
+        "question": "Oman"
+    },
+    {
+        "id": 130,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Islamabad",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Islamabad"
+            }
+        ],
+        "question": "Pakistan"
+    },
+    {
+        "id": 131,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ngerulmud",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Ngerulmud"
+            }
+        ],
+        "question": "Palau"
+    },
+    {
+        "id": 132,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ramallah",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Ramallah"
+            }
+        ],
+        "question": "Palestine"
+    },
+    {
+        "id": 133,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Panama City",
+                "alternateForms": [
+                    "Panama"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Panama_City"
+            }
+        ],
+        "question": "Panama"
+    },
+    {
+        "id": 134,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Port Moresby",
+                "alternateForms": [
+                    "Moresby"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Port_Moresby"
+            }
+        ],
+        "question": "Papua New Guinea"
+    },
+    {
+        "id": 135,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Asunci\u00f3n",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Asunci\u00f3n"
+            }
+        ],
+        "question": "Paraguay"
+    },
+    {
+        "id": 136,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Lima",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Lima"
+            }
+        ],
+        "question": "Peru"
+    },
+    {
+        "id": 137,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Manila",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Manila"
+            }
+        ],
+        "question": "Philippines"
+    },
+    {
+        "id": 138,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Warsaw",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Warsaw"
+            }
+        ],
+        "question": "Poland"
+    },
+    {
+        "id": 139,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Lisbon",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Lisbon"
+            }
+        ],
+        "question": "Portugal"
+    },
+    {
+        "id": 140,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Doha",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Doha"
+            }
+        ],
+        "question": "Qatar"
+    },
+    {
+        "id": 141,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Brazzaville",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Brazzaville"
+            }
+        ],
+        "question": "Republic of the Congo"
+    },
+    {
+        "id": 142,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bucharest",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bucharest"
+            }
+        ],
+        "question": "Romania"
+    },
+    {
+        "id": 143,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Moscow",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Moscow"
+            }
+        ],
+        "question": "Russia"
+    },
+    {
+        "id": 144,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kigali",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kigali"
+            }
+        ],
+        "question": "Rwanda"
+    },
+    {
+        "id": 145,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Basseterre",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Basseterre"
+            }
+        ],
+        "question": "Saint Kitts and Nevis"
+    },
+    {
+        "id": 146,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Castries",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Castries"
+            }
+        ],
+        "question": "Saint Lucia"
+    },
+    {
+        "id": 147,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kingstown",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kingstown"
+            }
+        ],
+        "question": "Saint Vincent and the Grenadines"
+    },
+    {
+        "id": 148,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Apia",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Apia"
+            }
+        ],
+        "question": "Samoa"
+    },
+    {
+        "id": 149,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "San Marino",
+                "alternateForms": [
+                    "San Marino City",
+                    "City of San Marino"
+                ],
+                "link": "https://en.wikipedia.org/wiki/City_of_San_Marino"
+            }
+        ],
+        "question": "San Marino"
+    },
+    {
+        "id": 150,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "S\u00e3o Tom\u00e9",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/S\u00e3o_Tom\u00e9"
+            }
+        ],
+        "question": "S\u00e3o Tom\u00e9 and Pr\u00edncipe"
+    },
+    {
+        "id": 151,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Riyadh",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Riyadh"
+            }
+        ],
+        "question": "Saudi Arabia"
+    },
+    {
+        "id": 152,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Dakar",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Dakar"
+            }
+        ],
+        "question": "Senegal"
+    },
+    {
+        "id": 153,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Belgrade",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Belgrade"
+            }
+        ],
+        "question": "Serbia"
+    },
+    {
+        "id": 154,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Victoria",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Victoria,_Seychelles"
+            }
+        ],
+        "question": "Seychelles"
+    },
+    {
+        "id": 155,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Freetown",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Freetown"
+            }
+        ],
+        "question": "Sierra Leone"
+    },
+    {
+        "id": 156,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Singapore",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Singapore"
+            }
+        ],
+        "question": "Singapore"
+    },
+    {
+        "id": 157,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bratislava",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bratislava"
+            }
+        ],
+        "question": "Slovakia"
+    },
+    {
+        "id": 158,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ljubljana",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Ljubljana"
+            }
+        ],
+        "question": "Slovenia"
+    },
+    {
+        "id": 159,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Honiara",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Honiara"
+            }
+        ],
+        "question": "Solomon Islands"
+    },
+    {
+        "id": 160,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Mogadishu",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Mogadishu"
+            }
+        ],
+        "question": "Somalia"
+    },
+    {
+        "id": 161,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bloemfontein",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bloemfontein"
+            },
+            {
+                "canonicalForm": "Cape Town",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Cape_Town"
+            },
+            {
+                "canonicalForm": "Pretoria",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Pretoria"
+            }
+        ],
+        "question": "South Africa"
+    },
+    {
+        "id": 162,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Seoul",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Seoul"
+            }
+        ],
+        "question": "South Korea"
+    },
+    {
+        "id": 163,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Juba",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Juba"
+            }
+        ],
+        "question": "South Sudan"
+    },
+    {
+        "id": 164,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Madrid",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Madrid"
+            }
+        ],
+        "question": "Spain"
+    },
+    {
+        "id": 165,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Sri Jayawardenepura Kotte",
+                "alternateForms": [
+                    "Kotte",
+                    "Jayapura"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Sri_Jayawardenepura_Kotte"
+            }
+        ],
+        "question": "Sri Lanka"
+    },
+    {
+        "id": 166,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Khartoum",
+                "alternateForms": [
+                    "Khartum"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Khartoum"
+            }
+        ],
+        "question": "Sudan"
+    },
+    {
+        "id": 167,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Paramaribo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Paramaribo"
+            }
+        ],
+        "question": "Suriname"
+    },
+    {
+        "id": 168,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Stockholm",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Stockholm"
+            }
+        ],
+        "question": "Sweden"
+    },
+    {
+        "id": 169,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bern",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Bern"
+            }
+        ],
+        "question": "Switzerland"
+    },
+    {
+        "id": 170,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Damascus",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Damascus"
+            }
+        ],
+        "question": "Syria"
+    },
+    {
+        "id": 171,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Taipei",
+                "alternateForms": [
+                    "Taipei City"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Taipei"
+            }
+        ],
+        "question": "Taiwan"
+    },
+    {
+        "id": 172,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Dushanbe",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Dushanbe"
+            }
+        ],
+        "question": "Tajikistan"
+    },
+    {
+        "id": 173,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Dodoma",
+                "alternateForms": [
+                    "Dodoma City"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Dodoma"
+            }
+        ],
+        "question": "Tanzania"
+    },
+    {
+        "id": 174,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Bangkok",
+                "alternateForms": [
+                    "Krung Thep Maha Nakhon",
+                    "Krung Thep"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Bangkok"
+            }
+        ],
+        "question": "Thailand"
+    },
+    {
+        "id": 175,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Banjul",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Banjul"
+            }
+        ],
+        "question": "The Gambia"
+    },
+    {
+        "id": 176,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Dili",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Dili"
+            }
+        ],
+        "question": "Timor-Leste"
+    },
+    {
+        "id": 177,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Lom\u00e9",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Lom\u00e9"
+            }
+        ],
+        "question": "Togo"
+    },
+    {
+        "id": 178,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Nuku\u02bbalofa",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Nuku\u02bbalofa"
+            }
+        ],
+        "question": "Tonga"
+    },
+    {
+        "id": 179,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Port of Spain",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Port_of_Spain"
+            }
+        ],
+        "question": "Trinidad and Tobago"
+    },
+    {
+        "id": 180,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tunis",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Tunis"
+            }
+        ],
+        "question": "Tunisia"
+    },
+    {
+        "id": 181,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ankara",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Ankara"
+            }
+        ],
+        "question": "T\u00fcrkiye"
+    },
+    {
+        "id": 182,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Ashgabat",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Ashgabat"
+            }
+        ],
+        "question": "Turkmenistan"
+    },
+    {
+        "id": 183,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Funafuti",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Funafuti"
+            }
+        ],
+        "question": "Tuvalu"
+    },
+    {
+        "id": 184,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kampala",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Kampala"
+            }
+        ],
+        "question": "Uganda"
+    },
+    {
+        "id": 185,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Kyiv",
+                "alternateForms": [
+                    "Kiev"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Kyiv"
+            }
+        ],
+        "question": "Ukraine"
+    },
+    {
+        "id": 186,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Abu Dhabi",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+            }
+        ],
+        "question": "United Arab Emirates"
+    },
+    {
+        "id": 187,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "London",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/London"
+            }
+        ],
+        "question": "United Kingdom"
+    },
+    {
+        "id": 188,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Washington, D.C.",
+                "alternateForms": [
+                    "Washington",
+                    "District of Columbia",
+                    "D.C."
+                ],
+                "link": "https://en.wikipedia.org/wiki/Washington,_D.C."
+            }
+        ],
+        "question": "United States"
+    },
+    {
+        "id": 189,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Montevideo",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Montevideo"
+            }
+        ],
+        "question": "Uruguay"
+    },
+    {
+        "id": 190,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Tashkent",
+                "alternateForms": [
+                    "Toshkent"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Tashkent"
+            }
+        ],
+        "question": "Uzbekistan"
+    },
+    {
+        "id": 191,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Port Vila",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Port_Vila"
+            }
+        ],
+        "question": "Vanuatu"
+    },
+    {
+        "id": 192,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Vatican City",
+                "alternateForms": [
+                    "Vatican"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Vatican_City"
+            }
+        ],
+        "question": "Vatican City"
+    },
+    {
+        "id": 193,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Caracas",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Caracas"
+            }
+        ],
+        "question": "Venezuela"
+    },
+    {
+        "id": 194,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Hanoi",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Hanoi"
+            }
+        ],
+        "question": "Vietnam"
+    },
+    {
+        "id": 195,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Sana'a",
+                "alternateForms": [
+                    "Sana"
+                ],
+                "link": "https://en.wikipedia.org/wiki/Sanaa"
+            }
+        ],
+        "question": "Yemen"
+    },
+    {
+        "id": 196,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Lusaka",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Lusaka"
+            }
+        ],
+        "question": "Zambia"
+    },
+    {
+        "id": 197,
+        "category": {
+            "questionLabel": "country",
+            "answerLabel": "capital"
+        },
+        "answers": [
+            {
+                "canonicalForm": "Harare",
+                "alternateForms": [],
+                "link": "https://en.wikipedia.org/wiki/Harare"
+            }
+        ],
+        "question": "Zimbabwe"
+    }
+]
