@@ -84,7 +84,7 @@ export default function App() {
   };
 
   return (
-    <div className="m-4 text-amber-950 font-serif max-w-[600px] mx-auto">
+    <div className="m-4 text-amber-950 font-theme max-w-[600px] mx-auto">
       <div className="p-4 mb-4 rounded-2xl bg-amber-100 mx-4 text-center">
         <h1 className="text-3xl font-bold">🏠 Mind Palace</h1>
       </div>
