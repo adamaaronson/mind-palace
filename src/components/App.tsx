@@ -144,8 +144,8 @@ export default function App() {
             </h1>
           </div>
           <div className="grow m-4 text-text-dark font-theme max-w-[1200px] w-full">
-            <div className="grid grid-cols-2 h-full">
-              <div className="flex flex-col h-full relative">
+            <div className="flex justify-stretch h-full flex-col md:flex-row">
+              <div className="flex-1 flex flex-col h-full relative">
                 <div className="px-8 py-4 bg-light mx-4 border-2 border-border">
                   <h3 className="text-2xl font-bold mb-2">
                     <img
@@ -179,7 +179,7 @@ export default function App() {
                       <input
                         value={guess}
                         onChange={(event) => setGuess(event.target.value)}
-                        className="bg-white p-1 mr-2 border-border border-2 px-2"
+                        className="bg-white p-1 mr-2 border-border border-2 px-2 min-w-0"
                         placeholder={`Type the ${deck.answerLabel}`}
                       />
                       <button
@@ -229,7 +229,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="grow"></div>
-                <div className="mb-4 text-center">
+                <div className="mb-4 text-center mt-8 md:mt-0">
                   <div className="font-bold text-4xl">
                     {displayNuggets}{" "}
                     <span className="text-text-light font-normal">
@@ -265,7 +265,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="flex-1 mt-8 md:mt-0">
                 <div className="p-4 pl-8 mb-4 bg-light mx-4 border-2 border-border">
                   <h3 className="text-2xl font-bold mb-2">Shop</h3>
                 </div>
