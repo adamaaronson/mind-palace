@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import deck from "../decks/json/world_capitals.json";
 import { isCorrect } from "../types/knowledge";
+import type { NuggetParticleProps } from "./NuggetParticle";
+import NuggetParticle from "./NuggetParticle";
 
 const FOUNT_STREAK = 6;
 const REFRESH_TIME = 42;
@@ -26,6 +28,7 @@ export default function App() {
   }));
   const [card, setCard] = useState(memoryQueue.cards[0]);
   const [guess, setGuess] = useState("");
+  const fountRef = useRef<HTMLImageElement | null>(null);
 
   const [wasCorrect, setWasCorrect] = useState(false);
   const [earnedFount, setEarnedFount] = useState(false);
@@ -34,6 +37,10 @@ export default function App() {
   const [nuggets, setNuggets] = useState(0);
   const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [timestamp, setTimestamp] = useState(0);
+  const [nuggetParticleTimestamp, setNuggetParticleTimestamp] = useState(0);
+  const [nuggetParticles, setNuggetParticles] = useState<NuggetParticleProps[]>(
+    []
+  );
 
   const displayNuggets = Math.round(nuggets);
 
@@ -51,6 +58,37 @@ export default function App() {
 
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
   }, [timestamp, nuggetsPerSecond]);
+
+  useEffect(() => {
+    // update nugget particles
+    if (displayNuggets === 0) {
+      return;
+    }
+    const now = Date.now();
+    if (now - nuggetParticleTimestamp < REFRESH_TIME) {
+      // don't make nugget particles too quickly
+      return;
+    }
+    const DEFAULT_FOUNT_WIDTH = 423;
+
+    const fountSize = fountRef?.current?.clientWidth ?? DEFAULT_FOUNT_WIDTH;
+    const xDistance = (0.5 - Math.random()) * fountSize;
+    const yDistance = (-Math.random() * fountSize) / 2;
+    const width = (Math.random() * 30 + 10) * (fountSize / DEFAULT_FOUNT_WIDTH);
+
+    const nuggetParticleProps = {
+      timestamp: now,
+      xDistance: xDistance,
+      yDistance: yDistance,
+      width: width,
+    };
+
+    setNuggetParticles((nuggetParticles) => [
+      ...nuggetParticles.filter(({ timestamp }) => now - timestamp < 2000),
+      nuggetParticleProps,
+    ]);
+    setNuggetParticleTimestamp(now);
+  }, [displayNuggets]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -86,7 +124,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full overflow-hidden">
       <div className="bg-light h-4 border-b-2 border-border flex-none"></div>
       <div className="flex flex-row w-full grow-1">
         <div className="flex-none flex">
@@ -107,7 +145,7 @@ export default function App() {
           </div>
           <div className="grow m-4 text-text-dark font-theme max-w-[1200px] w-full">
             <div className="grid grid-cols-2 h-full">
-              <div className="flex flex-col h-full">
+              <div className="flex flex-col h-full relative">
                 <div className="px-8 py-4 bg-light mx-4 border-2 border-border">
                   <h3 className="text-2xl font-bold mb-2">
                     <img
@@ -146,7 +184,7 @@ export default function App() {
                       />
                       <button
                         type="submit"
-                        className="cursor-pointer bg-background border-border border-2 rounded-md p-1 px-4 hover:bg-border font-bold"
+                        className="cursor-pointer bg-gold-light border-gold border-2 rounded-md p-1 px-4 hover:bg-gold font-bold transition-colors"
                       >
                         Enter
                       </button>
@@ -182,7 +220,7 @@ export default function App() {
                           <span className="text-amber-950 font-bold">+1</span>{" "}
                           <span className="text-text-light">
                             {earnedFount
-                              ? "fount of knowledge! You know it!"
+                              ? "nugget per second! You know it!"
                               : "nugget!"}
                           </span>
                         </div>
@@ -208,9 +246,16 @@ export default function App() {
                   </div>
                 </div>
                 <div className="justify-self-end">
+                  {nuggetParticles.map((nuggetParticleProps) => (
+                    <NuggetParticle
+                      {...nuggetParticleProps}
+                      key={nuggetParticleProps.timestamp}
+                    ></NuggetParticle>
+                  ))}
                   <div>
                     <img
-                      className="w-3/4 m-auto"
+                      className="relative w-3/4 m-auto"
+                      ref={fountRef}
                       src="fount-of-knowledge.svg"
                     ></img>
                   </div>
@@ -221,8 +266,8 @@ export default function App() {
                 </div>
               </div>
               <div>
-                <div className="p-4 pl-8 mb-4 bg-light mx-4 border-2 border-border text-center">
-                  shop
+                <div className="p-4 pl-8 mb-4 bg-light mx-4 border-2 border-border">
+                  <h3 className="text-2xl font-bold mb-2">Shop</h3>
                 </div>
               </div>
             </div>
