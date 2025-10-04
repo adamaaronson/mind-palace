@@ -2,4 +2,13 @@
 
 @theme {
   --font-theme: "Source Serif 4";
+  --font-classical: "Spectral SC";
+
+  --color-background: #efd795;
+  --color-light: #f9e4ab;
+  --color-light-light: #fff0c7;
+  --color-text-dark: #4a2607;
+  --color-text-light: #9c7e4e;
+  --color-border: #d7be89;
+  --color-white: #fffde9;
 }

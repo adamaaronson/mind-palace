@@ -20,8 +20,8 @@ const getCardLabel = (card: Card) => {
 
 export default function App() {
   const [memoryQueue] = useState<MemoryQueue>(() => ({
-    cards: shuffle(deck),
-    alreadyStudiedIndex: deck.length,
+    cards: shuffle(deck.cards),
+    alreadyStudiedIndex: deck.cards.length,
     randomness: 5,
   }));
   const [card, setCard] = useState(memoryQueue.cards[0]);
@@ -34,6 +34,8 @@ export default function App() {
   const [nuggets, setNuggets] = useState(0);
   const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [timestamp, setTimestamp] = useState(0);
+
+  const displayNuggets = Math.round(nuggets);
 
   useEffect(() => {
     if (nuggets === 0 && nuggetsPerSecond === 0) {
@@ -84,69 +86,160 @@ export default function App() {
   };
 
   return (
-    <div className="m-4 text-amber-950 font-theme max-w-[600px] mx-auto">
-      <div className="p-4 mb-4 rounded-2xl bg-amber-100 mx-4 text-center">
-        <h1 className="text-3xl font-bold">🏠 Mind Palace</h1>
-      </div>
-      <div className="p-4 mb-4 rounded-2xl bg-amber-100 mx-4 text-center">
-        <div className="opacity-60">Nuggets</div>
-        <div className="font-bold text-4xl mb-2">{Math.floor(nuggets)}</div>
-        <div className="opacity-60">Fount of knowledge</div>
-        <div className="font-bold text-sm">{nuggetsPerSecond} per second</div>
-      </div>
-      <div className="p-4 mb-4 rounded-2xl bg-amber-100 mx-4 text-center">
-        <div>
-          Name the{" "}
-          <span className="font-bold">{card.category.answerLabel}</span> of:
+    <div className="flex flex-col h-full">
+      <div className="bg-light h-4 border-b-2 border-border flex-none"></div>
+      <div className="flex flex-row w-full grow-1">
+        <div className="flex-none flex">
+          <div className="border-r-2 border-border w-[8px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
         </div>
-        <div className="font-bold text-2xl mb-2">
-          {card.question}{" "}
-          <span className="font-normal text-base opacity-60">
-            ({getCardLabel(card)})
-          </span>
-        </div>
+        <div className="flex-auto h-full flex flex-col items-center">
+          <div className="p-4 px-8 mb-4 border-b-2 border-border w-full">
+            <h1 className="text-5xl font-bold text-text-dark font-classical text-center tracking-widest">
+              Mind Palace
+            </h1>
+          </div>
+          <div className="grow m-4 text-text-dark font-theme max-w-[1200px] w-full">
+            <div className="grid grid-cols-2 h-full">
+              <div className="flex flex-col h-full">
+                <div className="px-8 py-4 bg-light mx-4 border-2 border-border">
+                  <h3 className="text-2xl font-bold mb-2">
+                    <img
+                      className="inline-block w-[0.8em] align-baseline mr-1"
+                      src="hamburger.svg"
+                    ></img>{" "}
+                    {deck.title}
+                  </h3>
+                  <div className="relative p-4 rounded-2xl bg-light-light text-center border-2 border-border">
+                    <div className="absolute -ml-4 text-sm left-full translate-x-[-100%] font-normal bg-white rounded-sm border-2 border-border px-2">
+                      {getCardLabel(card)}
+                    </div>
+                    <div className="text-text-light">
+                      Name the{" "}
+                      <span className="font-bold text-text-dark">
+                        {deck.answerLabel}
+                      </span>{" "}
+                      of:
+                    </div>
+                    <div className="font-bold text-2xl leading-tight">
+                      {card.question}
+                    </div>
+                    <div className="font-bold mb-4">
+                      ({card.questionSubtitle ?? deck.questionLabel})
+                    </div>
 
-        <form onSubmit={(event) => handleSubmit(event)}>
-          <input
-            value={guess}
-            onChange={(event) => setGuess(event.target.value)}
-            className="bg-white p-1 mr-2"
-            placeholder={`Type the ${card.category.answerLabel}`}
-          />
-          <button
-            type="submit"
-            className="cursor-pointer bg-amber-300 p-1 px-2 mr-2"
-          >
-            Enter
-          </button>
-        </form>
-        {previousCard && (
-          <div className="mt-3">
-            <span className={wasCorrect ? "text-green-600" : "text-red-600"}>
-              {wasCorrect ? "✅" : "❌"} The {previousCard.category.answerLabel}{" "}
-              of <span className="font-bold">{previousCard.question}</span> is{" "}
-              {}
-              <span className="font-bold">
-                {previousCard.answers
-                  .map((answer) => answer.canonicalForm)
-                  .join(" / ")}
-              </span>
-              !
-            </span>
-            {lostFount && (
-              <div className="text-amber-950 font-bold text-sm">
-                –1 <span className="font-normal opacity-60">fount</span>
+                    <form
+                      className="relative w-fit mx-auto"
+                      onSubmit={(event) => handleSubmit(event)}
+                    >
+                      <input
+                        value={guess}
+                        onChange={(event) => setGuess(event.target.value)}
+                        className="bg-white p-1 mr-2 border-border border-2 px-2"
+                        placeholder={`Type the ${deck.answerLabel}`}
+                      />
+                      <button
+                        type="submit"
+                        className="cursor-pointer bg-background border-border border-2 rounded-md p-1 px-4 hover:bg-border font-bold"
+                      >
+                        Enter
+                      </button>
+                    </form>
+                    {previousCard && (
+                      <div className="mt-3">
+                        <span
+                          className={
+                            wasCorrect ? "text-green-600" : "text-red-600"
+                          }
+                        >
+                          {wasCorrect ? "✅" : "❌"} The {deck.answerLabel} of{" "}
+                          <span className="font-bold">
+                            {previousCard.question}
+                          </span>{" "}
+                          is {}
+                          <span className="font-bold">
+                            {previousCard.answers
+                              .map((answer) => answer.canonicalForm)
+                              .join(" / ")}
+                          </span>
+                          !
+                        </span>
+                        {lostFount && (
+                          <div className="text-amber-950 font-bold text-sm">
+                            –1{" "}
+                            <span className="font-normal text-text-light">
+                              fount
+                            </span>
+                          </div>
+                        )}
+                        <div className="text-sm">
+                          <span className="text-amber-950 font-bold">+1</span>{" "}
+                          <span className="text-text-light">
+                            {earnedFount
+                              ? "fount of knowledge! You know it!"
+                              : "nugget!"}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="grow"></div>
+                <div className="mb-4 text-center">
+                  <div className="font-bold text-4xl">
+                    {displayNuggets}{" "}
+                    <span className="text-text-light font-normal">
+                      {" "}
+                      nugget{displayNuggets === 1 ? "" : "s"}
+                    </span>
+                  </div>
+                  <div className="font-bold">
+                    {nuggetsPerSecond}{" "}
+                    <span className="text-text-light font-normal">
+                      {" "}
+                      per second
+                    </span>
+                  </div>
+                </div>
+                <div className="justify-self-end">
+                  <div>
+                    <img
+                      className="w-3/4 m-auto"
+                      src="fount-of-knowledge.svg"
+                    ></img>
+                  </div>
+                  <div className="font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-2 border-border m-auto">
+                    <span className="text-text-light">•</span> Fount of
+                    Knowledge <span className="text-text-light">•</span>
+                  </div>
+                </div>
               </div>
-            )}
-            <div className="text-sm">
-              <span className="text-amber-950 font-bold">+1</span>{" "}
-              <span className="opacity-60">
-                {earnedFount ? "fount of knowledge! You know it!" : "nugget!"}
-              </span>
+              <div>
+                <div className="p-4 pl-8 mb-4 bg-light mx-4 border-2 border-border text-center">
+                  shop
+                </div>
+              </div>
             </div>
           </div>
-        )}
+        </div>
+        <div className="flex-none flex">
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
+          <div className="border-l-2 border-border w-[8px] h-full"></div>
+        </div>
       </div>
+      <div className="bg-light h-4 border-t-2 border-border flex-none"></div>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import { normalize } from "../utils/utils";
 
-export interface Category {
+export interface Deck {
+  title: string;
   questionLabel: string;
   answerLabel: string;
+  cards: Fact[];
 }
 
 export interface Fact {
@@ -15,7 +17,6 @@ export interface Fact {
     alternateForms?: string[];
     link?: string;
   }[];
-  category: Category;
   isName?: boolean;
   familyName?: string;
   alternateAnswers?: string[];
