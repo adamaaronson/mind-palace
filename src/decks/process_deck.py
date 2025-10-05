@@ -1,26 +1,25 @@
 import csv
 import json
 import sys
+from collections import defaultdict
 
 
 def read_csv(csv_file: str) -> list[dict]:
     with open(csv_file, 'r') as f:
         reader = csv.reader(f)
-        category = {}
         column_names = []
-        deck = []
+        deck = defaultdict(list)
         fact_id = 1
 
         for row in reader:
             if reader.line_num == 1:
                 question_label, answer_label, *column_names = row
-                category = {
-                    'questionLabel': question_label,
-                    'answerLabel': answer_label,
-                }
+                deck['title'] = sys.argv[3]
+                deck['questionLabel'] = question_label
+                deck['answerLabel'] = answer_label
                 column_names = ['question', 'answers'] + column_names
             else:
-                fact = {'id': fact_id, 'category': category, 'answers': []}
+                fact = {'id': fact_id, 'answers': []}
 
                 for column_name, value in zip(column_names, row):
                     match column_name:
@@ -43,7 +42,7 @@ def read_csv(csv_file: str) -> list[dict]:
                         case _:
                             fact[column_name] = value
 
-                deck.append(fact)
+                deck['cards'].append(fact)
                 fact_id += 1
 
     return deck

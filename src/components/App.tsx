@@ -274,9 +274,10 @@ export default function App() {
                             src={wasCorrect ? "check.svg" : "x.svg"}
                           ></img>{" "}
                           The {deck.answerLabel} of{" "}
-                          <span className="font-bold text-text-dark">
-                            {previousCard.question}
-                          </span>{" "}
+                          <LinkOrText
+                            link={previousCard.questionLink}
+                            text={previousCard.question}
+                          />{" "}
                           is{" "}
                           {previousCard.answers.map((answer, index) => (
                             <React.Fragment key={index}>
