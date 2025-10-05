@@ -6,7 +6,7 @@ import { isCorrect } from "../types/knowledge";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
 import LinkOrText from "./LinkOrText";
-import { type Upgrade, UPGRADES } from "../types/upgrade";
+import { UPGRADES } from "../types/upgrade";
 import { formatNumber } from "../utils/utils";
 
 const FOUNT_STREAK = 6;
