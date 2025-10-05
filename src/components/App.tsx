@@ -125,7 +125,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-full overflow-hidden">
+    <div className="flex flex-col h-full">
       <div className="bg-light h-4 border-b-2 border-border flex-none"></div>
       <div className="flex flex-row w-full grow-1">
         <div className="flex-none md:flex hidden">
@@ -138,7 +138,7 @@ export default function App() {
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
         </div>
-        <div className="flex-auto h-full flex flex-col items-center">
+        <div className="flex-auto h-full flex flex-col items-center overflow-hidden">
           <div className="p-4 px-8 mb-4 border-b-2 border-border w-full">
             <h1 className="text-5xl font-bold text-text-dark font-classical text-center tracking-widest">
               Mind Palace
