@@ -23,7 +23,7 @@ const getCardLabel = (card: Card) => {
 
 export default function App() {
   const [memoryQueue] = useState<MemoryQueue>(() => ({
-    cards: shuffle(deck.cards.filter((card) => card.question === "Bolivia")),
+    cards: shuffle(deck.cards),
     alreadyStudiedIndex: deck.cards.length,
     randomness: 5,
   }));
