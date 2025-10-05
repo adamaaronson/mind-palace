@@ -75,7 +75,7 @@ export default function App() {
 
   useEffect(() => {
     // update nugget particles
-    if (previousNuggetCount === 0 || displayNuggets < previousNuggetCount) {
+    if (displayNuggets < previousNuggetCount) {
       setPreviousNuggetCount(displayNuggets);
       return;
     }
@@ -153,10 +153,11 @@ export default function App() {
 
   const purchaseUpgrade = (upgradeName: string) => {
     const upgrade = UPGRADES[upgradeName];
-    if (upgrade.price < displayNuggets) {
+    const previousUpgradePrice = upgrade.price;
+    if (displayNuggets < upgrade.price) {
       return;
     }
-    setNuggets((nuggets) => nuggets - upgrade.price);
+    setNuggets((nuggets) => nuggets - previousUpgradePrice);
 
     upgrade.price = Math.floor(upgrade.price * 1.5);
     upgrade.level += 1;
@@ -253,7 +254,7 @@ export default function App() {
                       <input
                         value={guess}
                         onChange={(event) => setGuess(event.target.value)}
-                        className="bg-white p-1 mr-2 border-border border-2 px-2"
+                        className="bg-white p-1 border-border border-2 px-2"
                         placeholder={`Type the ${deck.answerLabel}`}
                       />
                       <button
