@@ -296,7 +296,7 @@ export default function App() {
                           <div className="text-amber-950 font-bold">
                             –1{" "}
                             <span className="font-normal text-text-light">
-                              fount
+                              nugget per second
                             </span>
                           </div>
                         )}
