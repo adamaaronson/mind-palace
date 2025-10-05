@@ -167,7 +167,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full font-theme">
       <div className="bg-light h-4 border-b-2 border-border flex-none"></div>
       <div className="flex flex-row w-full grow-1">
         <div className="flex-none md:flex hidden">
@@ -180,13 +180,13 @@ export default function App() {
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
         </div>
-        <div className="flex-auto h-full flex flex-col items-center overflow-hidden">
+        <div className="flex-auto h-full flex flex-col items-center overflow-hidden relative">
           <div className="p-4 px-8 mb-4 border-b-2 border-border w-full">
             <h1 className="text-5xl font-bold text-text-dark font-classical text-center tracking-widest">
               Mind Palace
             </h1>
           </div>
-          <div className="grow m-4 text-text-dark font-theme max-w-[1200px] w-full">
+          <div className="grow m-4 text-text-dark max-w-[1200px] w-full">
             <div className="flex justify-stretch h-full flex-col md:flex-row">
               <div className="flex-1 flex flex-col h-full relative">
                 <div className="px-8 py-4 bg-light mx-4 border-2 border-border">
@@ -397,6 +397,24 @@ export default function App() {
               </div>
             </div>
           </div>
+          <footer className="absolute text-text-light -translate-full left-full top-full w-full text-right text-sm p-2">
+            <p>
+              by{" "}
+              <LinkOrText
+                link="https://aaronson.org"
+                text="Adam Aaronson"
+                isWikipedia={false}
+              />
+            </p>
+            <p>
+              for{" "}
+              <LinkOrText
+                link="https://wikigamejam.org"
+                text="WikiGameJam 2025"
+                isWikipedia={false}
+              />
+            </p>
+          </footer>
         </div>
         <div className="flex-none md:flex hidden">
           <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
