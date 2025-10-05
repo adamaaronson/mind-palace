@@ -1,3 +1,5 @@
+import numeral from "numeral";
+
 export function randrange(start: number, end: number) {
   return start + Math.floor(Math.random() * (end - start));
 }
@@ -8,4 +10,8 @@ export function normalize(text: string) {
     .replace(/[\p{P}\s]/gu, "") // remove punctuation and spaces
     .normalize("NFD") // normalize unicode characters
     .replace(/\p{Diacritic}/gu, ""); // remove diacritics
+}
+
+export function formatNumber(num: number) {
+  return numeral(num).format("0,0");
 }
