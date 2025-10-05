@@ -128,7 +128,7 @@ export default function App() {
     <div className="flex flex-col h-full overflow-hidden">
       <div className="bg-light h-4 border-b-2 border-border flex-none"></div>
       <div className="flex flex-row w-full grow-1">
-        <div className="flex-none flex">
+        <div className="flex-none md:flex hidden">
           <div className="border-r-2 border-border w-[8px] h-full"></div>
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
@@ -174,18 +174,19 @@ export default function App() {
                     </div>
 
                     <form
-                      className="relative w-fit mx-auto"
+                      className="relative w-fit mx-auto flex flex-col items-center gap-2 md:flex-row"
                       onSubmit={(event) => handleSubmit(event)}
                     >
                       <input
                         value={guess}
                         onChange={(event) => setGuess(event.target.value)}
-                        className="bg-white p-1 mr-2 border-border border-2 px-2 min-w-0"
+                        className="bg-white p-1 mr-2 border-border border-2 px-2"
                         placeholder={`Type the ${deck.answerLabel}`}
                       />
                       <button
                         type="submit"
-                        className="cursor-pointer bg-gold-light border-gold border-2 rounded-md p-1 px-4 hover:bg-gold font-bold transition-colors"
+                        className="cursor-pointer bg-gold-light border-gold border-2 rounded-md
+                        p-1 px-4 hover:bg-gold font-bold transition-colors"
                       >
                         Enter
                       </button>
@@ -279,7 +280,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="flex-none flex">
+        <div className="flex-none md:flex hidden">
           <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
           <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
           <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
