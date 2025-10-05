@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import deck from "../decks/json/world_capitals.json";
 import { isCorrect } from "../types/knowledge";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
+import LinkOrText from "./LinkOrText";
 
 const FOUNT_STREAK = 6;
 const REFRESH_TIME = 42;
@@ -22,7 +23,7 @@ const getCardLabel = (card: Card) => {
 
 export default function App() {
   const [memoryQueue] = useState<MemoryQueue>(() => ({
-    cards: shuffle(deck.cards),
+    cards: shuffle(deck.cards.filter((card) => card.question === "Bolivia")),
     alreadyStudiedIndex: deck.cards.length,
     randomness: 5,
   }));
@@ -190,26 +191,31 @@ export default function App() {
                       </button>
                     </form>
                     {previousCard && (
-                      <div className="mt-3">
-                        <span
-                          className={
-                            wasCorrect ? "text-green-600" : "text-red-600"
-                          }
-                        >
-                          {wasCorrect ? "✅" : "❌"} The {deck.answerLabel} of{" "}
-                          <span className="font-bold">
+                      <div className="mt-3 text-text-light text-xl">
+                        <span>
+                          <img
+                            className="inline-block align-baseline mb-[-0.1em] mr-1 w-[1em]"
+                            src={wasCorrect ? "check.svg" : "x.svg"}
+                          ></img>{" "}
+                          The {deck.answerLabel} of{" "}
+                          <span className="font-bold text-text-dark">
                             {previousCard.question}
                           </span>{" "}
-                          is {}
-                          <span className="font-bold">
-                            {previousCard.answers
-                              .map((answer) => answer.canonicalForm)
-                              .join(" / ")}
-                          </span>
-                          !
+                          is{" "}
+                          {previousCard.answers.map((answer, index) => (
+                            <React.Fragment key={index}>
+                              <LinkOrText
+                                link={answer.link}
+                                text={answer.canonicalForm}
+                              />
+                              {index < previousCard.answers.length - 1 && (
+                                <span> / </span>
+                              )}
+                            </React.Fragment>
+                          ))}
                         </span>
                         {lostFount && (
-                          <div className="text-amber-950 font-bold text-sm">
+                          <div className="text-amber-950 font-bold">
                             –1{" "}
                             <span className="font-normal text-text-light">
                               fount
