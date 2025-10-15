@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import deck from "../decks/json/world_capitals.json";
 import { isCorrect } from "../types/knowledge";
-import type { NuggetParticleProps } from "./NuggetParticle";
-import NuggetParticle from "./NuggetParticle";
 import LinkOrText from "./LinkOrText";
 import { UPGRADES } from "../types/upgrade";
 import { formatNumber } from "../utils/utils";
