@@ -168,7 +168,7 @@ export default function App() {
 
   return (
     <div className="relative flex flex-col h-full font-theme">
-      <div className="absolute h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
+      <div className="fixed h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
       <div className="bg-light h-4 border-b-2 border-border flex-none hidden md:block"></div>
       <div className="flex flex-row w-full grow-1">
         <div className="flex-none md:flex hidden">
