@@ -7,11 +7,10 @@ import { REFRESH_TIME } from "../utils/constants";
 interface FountOfKnowledgeProps {
   displayNuggets: number;
   nuggetsPerSecond: number;
-  nuggetsEarned: number;
 }
 
 export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
-  const { displayNuggets, nuggetsPerSecond, nuggetsEarned } = props;
+  const { displayNuggets, nuggetsPerSecond } = props;
 
   const [nuggetParticleTimestamp, setNuggetParticleTimestamp] = useState(0);
   const [previousNuggetCount, setPreviousNuggetCount] = useState(0);

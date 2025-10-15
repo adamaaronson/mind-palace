@@ -269,7 +269,6 @@ export default function App() {
                 <FountOfKnowledge
                   displayNuggets={displayNuggets}
                   nuggetsPerSecond={nuggetsPerSecond}
-                  nuggetsEarned={nuggetsEarned}
                 />
               </div>
               <div className="flex-1 mt-8 md:mt-0">
