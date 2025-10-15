@@ -8,9 +8,10 @@ import NuggetParticle from "./NuggetParticle";
 import LinkOrText from "./LinkOrText";
 import { UPGRADES } from "../types/upgrade";
 import { formatNumber } from "../utils/utils";
-
-const FOUNT_STREAK = 6;
-const REFRESH_TIME = 42;
+import Footer from "./Footer";
+import Header from "./Header";
+import FountOfKnowledge from "./FountOfKnowledge";
+import { FOUNT_STREAK, REFRESH_TIME } from "../utils/constants";
 
 const getCardLabel = (card: Card) => {
   if (isNew(card)) {
@@ -31,7 +32,6 @@ export default function App() {
   }));
   const [card, setCard] = useState(memoryQueue.cards[0]);
   const [guess, setGuess] = useState("");
-  const fountRef = useRef<HTMLImageElement | null>(null);
 
   const [wasCorrect, setWasCorrect] = useState(false);
   const [earnedFount, setEarnedFount] = useState(false);
@@ -40,11 +40,6 @@ export default function App() {
   const [nuggets, setNuggets] = useState(0);
   const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [timestamp, setTimestamp] = useState(0);
-  const [nuggetParticleTimestamp, setNuggetParticleTimestamp] = useState(0);
-  const [previousNuggetCount, setPreviousNuggetCount] = useState(0);
-  const [nuggetParticles, setNuggetParticles] = useState<NuggetParticleProps[]>(
-    []
-  );
 
   const displayNuggets = Math.round(nuggets);
   const nuggetsPerCorrectAnswer = UPGRADES.CORRECT_ANSWERS.level;
@@ -72,46 +67,6 @@ export default function App() {
 
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
   }, [timestamp, nuggetsPerSecond]);
-
-  useEffect(() => {
-    // update nugget particles
-    if (displayNuggets < previousNuggetCount) {
-      setPreviousNuggetCount(displayNuggets);
-      return;
-    }
-    if (displayNuggets === 0) {
-      return;
-    }
-    const now = Date.now();
-    if (now - nuggetParticleTimestamp < REFRESH_TIME) {
-      // don't make nugget particles too quickly
-      return;
-    }
-    const DEFAULT_FOUNT_WIDTH = 423;
-    const fountSize = fountRef?.current?.clientWidth ?? DEFAULT_FOUNT_WIDTH;
-
-    for (let i = 0; i < nuggetsEarned; i++) {
-      const nuggetTimestamp = now + i / nuggetsEarned;
-      const xDistance = (0.5 - Math.random()) * fountSize;
-      const yDistance = (-Math.random() * fountSize) / 2;
-      const width =
-        (Math.random() * 30 + 10) * (fountSize / DEFAULT_FOUNT_WIDTH);
-
-      const nuggetParticleProps = {
-        timestamp: nuggetTimestamp,
-        xDistance: xDistance,
-        yDistance: yDistance,
-        width: width,
-      };
-
-      setNuggetParticles((nuggetParticles) => [
-        ...nuggetParticles.filter(({ timestamp }) => now - timestamp < 2000),
-        nuggetParticleProps,
-      ]);
-      setNuggetParticleTimestamp(nuggetTimestamp);
-      setPreviousNuggetCount(displayNuggets);
-    }
-  }, [displayNuggets]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -182,12 +137,8 @@ export default function App() {
           <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
         </div>
         <div className="flex-auto h-full flex flex-col items-center overflow-hidden relative">
-          <div className="p-4 px-8 mb-4 border-b-2 border-border w-full">
-            <h1 className="text-5xl font-bold text-text-dark font-classical text-center tracking-widest">
-              Mind Palace
-            </h1>
-          </div>
-          <div className="grow m-4 text-text-dark max-w-[1200px] w-full">
+          <Header />
+          <div className="grow m-4 mt-0 text-text-dark max-w-[1200px] w-full">
             <div className="flex justify-stretch h-full flex-col md:flex-row">
               <div className="flex-1 flex flex-col h-full relative">
                 <div className="px-8 py-4 bg-light mx-4 border-2 border-border">
@@ -315,42 +266,11 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <div className="grow"></div>
-                <div className="mb-4 text-center mt-8 md:mt-0 text-shadow-background text-shadow-[0px_0px_10px_#efd795]">
-                  <div className="font-bold text-4xl">
-                    {formatNumber(displayNuggets)}{" "}
-                    <span className="text-text-light font-normal">
-                      {" "}
-                      nugget{displayNuggets === 1 ? "" : "s"}
-                    </span>
-                  </div>
-                  <div className="font-bold">
-                    {formatNumber(nuggetsPerSecond)}{" "}
-                    <span className="text-text-light font-normal">
-                      {" "}
-                      per second
-                    </span>
-                  </div>
-                </div>
-                <div className="justify-self-end">
-                  {nuggetParticles.map((nuggetParticleProps) => (
-                    <NuggetParticle
-                      {...nuggetParticleProps}
-                      key={nuggetParticleProps.timestamp}
-                    ></NuggetParticle>
-                  ))}
-                  <div>
-                    <img
-                      className="relative w-3/4 m-auto"
-                      ref={fountRef}
-                      src="fount-of-knowledge.svg"
-                    ></img>
-                  </div>
-                  <div className="font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-2 border-border m-auto">
-                    <span className="text-text-light">•</span> Fount of
-                    Knowledge <span className="text-text-light">•</span>
-                  </div>
-                </div>
+                <FountOfKnowledge
+                  displayNuggets={displayNuggets}
+                  nuggetsPerSecond={nuggetsPerSecond}
+                  nuggetsEarned={nuggetsEarned}
+                />
               </div>
               <div className="flex-1 mt-8 md:mt-0">
                 <div className="p-4 px-8 mb-4 bg-light mx-4 border-2 border-border">
@@ -398,24 +318,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <footer className="absolute text-text-light -translate-full left-full top-full w-full text-right text-sm p-2">
-            <p>
-              by{" "}
-              <LinkOrText
-                link="https://aaronson.org"
-                text="Adam Aaronson"
-                isWikipedia={false}
-              />
-            </p>
-            <p>
-              for{" "}
-              <LinkOrText
-                link="https://wikigamejam.org"
-                text="WikiGameJam 2025"
-                isWikipedia={false}
-              />
-            </p>
-          </footer>
+          <Footer />
         </div>
         <div className="flex-none md:flex hidden">
           <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
