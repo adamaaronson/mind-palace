@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import FountOfKnowledge from "./FountOfKnowledge";
 import { FOUNT_STREAK, REFRESH_TIME } from "../utils/constants";
+import Column from "./Column";
 
 const getCardLabel = (card: Card) => {
   if (isNew(card)) {
@@ -122,20 +123,10 @@ export default function App() {
   return (
     <div className="relative flex flex-col h-full font-theme">
       <div className="fixed h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
-      <div className="bg-light h-4 border-b-2 border-border flex-none hidden md:block"></div>
+      <Header />
       <div className="flex flex-row w-full grow-1">
-        <div className="flex-none md:flex hidden">
-          <div className="border-r-2 border-border w-[8px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-r-2 border-border w-[6px] h-full"></div>
-        </div>
-        <div className="flex-auto h-full flex flex-col items-center overflow-hidden relative">
-          <Header />
+        <Column />
+        <div className="flex-auto mt-4 pb-4 h-full flex flex-col items-center overflow-hidden relative">
           <div className="grow m-4 mt-0 text-text-dark max-w-[1200px] w-full">
             <div className="flex justify-stretch h-full flex-col md:flex-row">
               <div className="flex-1 flex flex-col h-full relative">
@@ -317,16 +308,7 @@ export default function App() {
           </div>
           <Footer />
         </div>
-        <div className="flex-none md:flex hidden">
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="bg-light border-l-2 border-border w-[6px] h-full"></div>
-          <div className="border-l-2 border-border w-[8px] h-full"></div>
-        </div>
+        <Column />
       </div>
       <div className="bg-light h-4 border-t-2 border-border flex-none"></div>
     </div>
