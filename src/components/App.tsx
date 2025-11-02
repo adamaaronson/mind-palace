@@ -121,7 +121,8 @@ export default function App() {
   };
 
   return (
-    <div className="relative flex flex-col h-full font-theme bg-background -z-30">
+    <div className="relative flex flex-col h-full font-theme">
+      <div className="fixed h-full w-full bg-background -z-30"></div>
       <div className="fixed h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
       <Header />
       <div className="flex flex-row w-full grow-1">
