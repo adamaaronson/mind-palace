@@ -1,7 +1,11 @@
 import numeral from "numeral";
 
-export function randrange(start: number, end: number) {
+export function randomRange(start: number, end: number) {
   return start + Math.floor(Math.random() * (end - start));
+}
+
+export function randomChoice<T>(list: T[]) {
+  return list[Math.floor(Math.random() * list.length)];
 }
 
 export function normalize(text: string) {

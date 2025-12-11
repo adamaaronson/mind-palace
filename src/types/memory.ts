@@ -1,5 +1,5 @@
 import { type Fact } from "./knowledge";
-import { randrange } from "../utils/utils";
+import { randomRange } from "../utils/utils";
 
 const PHI = (1 + Math.sqrt(5)) / 2;
 
@@ -67,7 +67,7 @@ export function reshuffle(queue: MemoryQueue, isCorrect: boolean) {
         randomnessCutoff,
         queue.alreadyStudiedIndex
       );
-      firstCard.interval = randrange(adjustedStart, queue.cards.length + 1);
+      firstCard.interval = randomRange(adjustedStart, queue.cards.length + 1);
 
       if (firstCard.interval >= queue.alreadyStudiedIndex) {
         decrementAlreadyStudiedIndex(queue);
