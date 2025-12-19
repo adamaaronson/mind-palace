@@ -37,7 +37,7 @@ export default function Block(props: BlockProps) {
         style={{
           left: left,
           top: top,
-          zIndex: x + y + z,
+          zIndex: x + y + z + 1,
           pointerEvents: "none",
           opacity: isGhost ? 0.5 : 1,
         }}
@@ -52,7 +52,7 @@ export default function Block(props: BlockProps) {
           style={{
             left: left,
             top: top,
-            zIndex: x + y + z,
+            zIndex: x + y + z + 1,
             cursor: "pointer",
             pointerEvents: "none",
           }}

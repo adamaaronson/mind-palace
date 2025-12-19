@@ -19,6 +19,8 @@ export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
   );
 
   const fountRef = useRef<HTMLImageElement | null>(null);
+  const DEFAULT_FOUNT_WIDTH = 423;
+  const fountSize = fountRef?.current?.clientWidth ?? DEFAULT_FOUNT_WIDTH;
 
   useEffect(() => {
     const nuggetsEarned = Math.min(
@@ -37,8 +39,6 @@ export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
       // don't make nugget particles too quickly
       return;
     }
-    const DEFAULT_FOUNT_WIDTH = 423;
-    const fountSize = fountRef?.current?.clientWidth ?? DEFAULT_FOUNT_WIDTH;
 
     for (let i = 0; i < nuggetsEarned; i++) {
       const nuggetTimestamp = now + i / nuggetsEarned;
@@ -85,14 +85,23 @@ export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
             key={nuggetParticleProps.timestamp}
           ></NuggetParticle>
         ))}
-        <div>
+        <div className="relative">
           <img
             className="relative w-3/4 m-auto"
             ref={fountRef}
             src="fount-of-knowledge.svg"
           ></img>
+          <div
+            className="-z-1 opacity-40 bg-radial rounded-full from-0% to-40% from-text-light absolute -translate-y-1/2"
+            style={{
+              width: "100%",
+              height: fountSize / 3,
+              top: "100%",
+              left: 0,
+            }}
+          />
         </div>
-        <div className="font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-2 border-border m-auto">
+        <div className="z-1 font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-2 border-border m-auto">
           <span className="text-text-light">•</span> Fount of Knowledge{" "}
           <span className="text-text-light">•</span>
         </div>

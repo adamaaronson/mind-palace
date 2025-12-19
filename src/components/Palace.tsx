@@ -58,6 +58,15 @@ export default function Palace() {
             key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
           />
         ))}
+        <div
+          className="z-0 opacity-50 rounded-full bg-radial from-0% to-50% from-text-light to-light absolute -translate-x-1/2"
+          style={{
+            width: BLOCK_WIDTH * GRID_WIDTH * 1.2,
+            height: BLOCK_SIDE_HEIGHT * GRID_WIDTH * 1.1,
+            left: ORIGIN_X + BLOCK_WIDTH / 2,
+            top: ORIGIN_Y,
+          }}
+        />
       </div>
     </div>
   );
