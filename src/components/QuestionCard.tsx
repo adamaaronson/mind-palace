@@ -26,7 +26,7 @@ export default function QuestionCard(props: QuestionCardProps) {
 
   return (
     <div className="relative p-4 rounded-2xl bg-light-light text-center border-2 border-border">
-      <div className="absolute -ml-4 text-sm left-full translate-x-[-100%] font-normal rounded-sm border-2 border-border px-2">
+      <div className="absolute -ml-4 text-sm left-full -translate-x-full font-normal rounded-sm border-2 border-border px-2">
         {getCardLabel(card)}
       </div>
       <div className="text-text-light">
