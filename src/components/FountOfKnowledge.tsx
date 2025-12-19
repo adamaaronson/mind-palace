@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { formatNumber } from "../utils/utils";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
-import { REFRESH_TIME } from "../utils/constants";
+import { MAX_NUGGETS_AT_ONCE, REFRESH_TIME } from "../utils/constants";
 
 interface FountOfKnowledgeProps {
   displayNuggets: number;
@@ -21,7 +21,10 @@ export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
   const fountRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    const nuggetsEarned = displayNuggets - previousNuggetCount;
+    const nuggetsEarned = Math.min(
+      displayNuggets - previousNuggetCount,
+      MAX_NUGGETS_AT_ONCE
+    );
     if (nuggetsEarned <= 0) {
       setPreviousNuggetCount(displayNuggets);
       return;
