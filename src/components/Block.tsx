@@ -10,6 +10,7 @@ export interface BlockProps {
   onlyLeft?: boolean;
   onlyRight?: boolean;
   isGhost?: boolean;
+  opacity?: number;
 }
 
 export default function Block(props: BlockProps) {
@@ -21,6 +22,7 @@ export default function Block(props: BlockProps) {
     onlyLeft = false,
     onlyRight = false,
     isGhost = false,
+    opacity = 1,
   } = props;
 
   const [hasRightGhost, setHasRightGhost] = useState(false);
@@ -37,13 +39,13 @@ export default function Block(props: BlockProps) {
     <>
       {/* Visible block */}
       <div
-        className="absolute"
+        className="absolute select-none"
         style={{
           left: left,
           top: top,
           zIndex: x + y + z + 1,
           pointerEvents: "none",
-          opacity: isGhost ? 0.5 : 1,
+          opacity: isGhost ? 0.5 : opacity,
           width: BLOCK_WIDTH,
           minWidth: BLOCK_WIDTH,
         }}
@@ -54,7 +56,7 @@ export default function Block(props: BlockProps) {
       {/* Hoverable block right */}
       {!onlyLeft && !onlyTop && !isGhost && (
         <div
-          className="absolute"
+          className="absolute select-none"
           style={{
             left: left,
             top: top,
@@ -76,7 +78,7 @@ export default function Block(props: BlockProps) {
       {/* Hoverable block top */}
       {!onlyLeft && !onlyRight && !isGhost && (
         <div
-          className="absolute"
+          className="absolute select-none"
           style={{
             left: left,
             top: top,
@@ -98,7 +100,7 @@ export default function Block(props: BlockProps) {
       {/* Hoverable block left */}
       {!onlyRight && !onlyTop && !isGhost && (
         <div
-          className="absolute"
+          className="absolute select-none"
           style={{
             left: left,
             top: top,
@@ -123,7 +125,6 @@ export default function Block(props: BlockProps) {
       {hasTopGhost && (
         <Block coordinates={{ x, y: y + 1, z }} skinUrl="block.svg" isGhost />
       )}
-
       {hasLeftGhost && (
         <Block coordinates={{ x, y, z: z + 1 }} skinUrl="block.svg" isGhost />
       )}

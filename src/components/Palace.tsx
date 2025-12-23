@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import Block, { type BlockProps } from "./Block";
 
 const GRID_WIDTH = 11;
@@ -23,7 +23,7 @@ export function getIsometricProjection(x: number, y: number, z: number) {
   };
 }
 
-export default function Palace() {
+function Palace() {
   const [blocks, setBlocks] = useState<BlockProps[]>([]);
 
   const addBlock = (coordinates: { x: number; y: number; z: number }) => {
@@ -55,6 +55,7 @@ export default function Palace() {
         skinUrl: "block-wall-right.svg",
         onlyRight: true,
         addBlock: addBlock,
+        opacity: 0.5,
       }))
     )
     .flat(1);
@@ -66,6 +67,7 @@ export default function Palace() {
         skinUrl: "block-wall-left.svg",
         onlyLeft: true,
         addBlock: addBlock,
+        opacity: 0.5,
       }))
     )
     .flat(1);
@@ -73,8 +75,8 @@ export default function Palace() {
   const allBlocks = [...floor, ...leftWall, ...rightWall, ...blocks];
 
   return (
-    <div className="p-4 mb-4 bg-light mx-4 border-2 border-border overflow-hidden">
-      <h3 className="text-2xl font-bold mb-2 pl-4">Build</h3>
+    <div className="p-4 px-8 mb-4 bg-light mx-4 border-2 border-border overflow-hidden">
+      <h3 className="text-2xl font-bold mb-2">Build</h3>
       <div
         className="relative m-auto mb-4"
         style={{
@@ -91,7 +93,7 @@ export default function Palace() {
           />
         ))}
         <div
-          className="z-0 opacity-50 rounded-full bg-radial from-0% to-50% from-text-light to-light absolute -translate-x-1/2"
+          className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light to-light absolute -translate-x-1/2"
           style={{
             width: BLOCK_WIDTH * GRID_WIDTH * 1.2,
             height: BLOCK_SIDE_HEIGHT * GRID_WIDTH * 1.1,
@@ -103,3 +105,5 @@ export default function Palace() {
     </div>
   );
 }
+
+export default memo(Palace);
