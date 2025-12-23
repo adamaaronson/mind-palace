@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
-import { getIsometricProjection } from "./Palace";
+import { BLOCK_WIDTH, getIsometricProjection } from "./Palace";
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };
   skinUrl: string;
   addBlock?: (coordinates: { x: number; y: number; z: number }) => void;
   onlyTop?: boolean;
+  onlyLeft?: boolean;
+  onlyRight?: boolean;
   isGhost?: boolean;
 }
 
@@ -16,6 +18,8 @@ export default function Block(props: BlockProps) {
     skinUrl,
     addBlock,
     onlyTop = false,
+    onlyLeft = false,
+    onlyRight = false,
     isGhost = false,
   } = props;
 
@@ -40,13 +44,15 @@ export default function Block(props: BlockProps) {
           zIndex: x + y + z + 1,
           pointerEvents: "none",
           opacity: isGhost ? 0.5 : 1,
+          width: BLOCK_WIDTH,
+          minWidth: BLOCK_WIDTH,
         }}
       >
         <img src={skinUrl} />
       </div>
 
       {/* Hoverable block right */}
-      {!onlyTop && !isGhost && (
+      {!onlyLeft && !onlyTop && !isGhost && (
         <div
           className="absolute"
           style={{
@@ -55,6 +61,8 @@ export default function Block(props: BlockProps) {
             zIndex: x + y + z + 1,
             cursor: "pointer",
             pointerEvents: "none",
+            width: BLOCK_WIDTH,
+            minWidth: BLOCK_WIDTH,
           }}
         >
           <BlockRight
@@ -66,15 +74,17 @@ export default function Block(props: BlockProps) {
       )}
 
       {/* Hoverable block top */}
-      {!isGhost && (
+      {!onlyLeft && !onlyRight && !isGhost && (
         <div
           className="absolute"
           style={{
             left: left,
             top: top,
-            zIndex: x + y + z,
+            zIndex: x + y + z + 1,
             cursor: "pointer",
             pointerEvents: "none",
+            width: BLOCK_WIDTH,
+            minWidth: BLOCK_WIDTH,
           }}
         >
           <BlockTop
@@ -86,15 +96,17 @@ export default function Block(props: BlockProps) {
       )}
 
       {/* Hoverable block left */}
-      {!onlyTop && !isGhost && (
+      {!onlyRight && !onlyTop && !isGhost && (
         <div
           className="absolute"
           style={{
             left: left,
             top: top,
-            zIndex: x + y + z,
+            zIndex: x + y + z + 1,
             cursor: "pointer",
             pointerEvents: "none",
+            width: BLOCK_WIDTH,
+            minWidth: BLOCK_WIDTH,
           }}
         >
           <BlockLeft
