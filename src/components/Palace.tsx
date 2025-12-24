@@ -1,9 +1,9 @@
 import { memo, useState } from "react";
 import Block, { type BlockProps } from "./Block";
 
-const GRID_WIDTH = 11;
-const GRID_DEPTH = 11;
-const GRID_HEIGHT = 11;
+export const GRID_WIDTH = 11;
+export const GRID_DEPTH = 11;
+export const GRID_HEIGHT = 11;
 
 const BLOCK_TOP_HEIGHT = 18;
 const BLOCK_SIDE_HEIGHT = 22;

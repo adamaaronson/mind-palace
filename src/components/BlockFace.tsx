@@ -2,10 +2,11 @@ interface BlockFaceProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onClick: () => void;
+  disabled: boolean;
 }
 
 export function BlockLeft(props: BlockFaceProps) {
-  const { onMouseEnter, onMouseLeave, onClick } = props;
+  const { onMouseEnter, onMouseLeave, onClick, disabled } = props;
   return (
     <svg
       width="36"
@@ -17,9 +18,9 @@ export function BlockLeft(props: BlockFaceProps) {
       <path
         d="M18 18L0 9V31L18 40V18Z"
         fill="none"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onClick={onClick}
+        onMouseEnter={disabled ? () => {} : onMouseEnter}
+        onMouseLeave={disabled ? () => {} : onMouseLeave}
+        onClick={disabled ? () => {} : onClick}
         style={{ pointerEvents: "all" }}
       />
     </svg>
@@ -27,7 +28,7 @@ export function BlockLeft(props: BlockFaceProps) {
 }
 
 export function BlockRight(props: BlockFaceProps) {
-  const { onMouseEnter, onMouseLeave, onClick } = props;
+  const { onMouseEnter, onMouseLeave, onClick, disabled } = props;
   return (
     <svg
       width="36"
@@ -39,9 +40,9 @@ export function BlockRight(props: BlockFaceProps) {
       <path
         d="M18 18L36 9V31L18 40V18Z"
         fill="none"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onClick={onClick}
+        onMouseEnter={disabled ? () => {} : onMouseEnter}
+        onMouseLeave={disabled ? () => {} : onMouseLeave}
+        onClick={disabled ? () => {} : onClick}
         style={{ pointerEvents: "all" }}
       />
     </svg>
@@ -49,7 +50,7 @@ export function BlockRight(props: BlockFaceProps) {
 }
 
 export function BlockTop(props: BlockFaceProps) {
-  const { onMouseEnter, onMouseLeave, onClick } = props;
+  const { onMouseEnter, onMouseLeave, onClick, disabled } = props;
   return (
     <svg
       width="36"
@@ -61,9 +62,9 @@ export function BlockTop(props: BlockFaceProps) {
       <path
         d="M0 9L18 0L36 9L18 18L0 9Z"
         fill="none"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onClick={onClick}
+        onMouseEnter={disabled ? () => {} : onMouseEnter}
+        onMouseLeave={disabled ? () => {} : onMouseLeave}
+        onClick={disabled ? () => {} : onClick}
         style={{ pointerEvents: "all" }}
       />
     </svg>

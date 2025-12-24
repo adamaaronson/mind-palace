@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
-import { BLOCK_WIDTH, getIsometricProjection } from "./Palace";
+import {
+  BLOCK_WIDTH,
+  getIsometricProjection,
+  GRID_DEPTH,
+  GRID_HEIGHT,
+  GRID_WIDTH,
+} from "./Palace";
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };
@@ -35,6 +41,10 @@ export default function Block(props: BlockProps) {
   const addTopBlock = () => addBlock?.({ x, y: y + 1, z });
   const addLeftBlock = () => addBlock?.({ x, y, z: z + 1 });
 
+  const isRight = x === GRID_WIDTH - 1;
+  const isTop = y === GRID_HEIGHT;
+  const isLeft = z === GRID_DEPTH - 1;
+
   return (
     <>
       {/* Visible block */}
@@ -61,7 +71,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: "pointer",
+            cursor: isRight ? "default" : "pointer",
             pointerEvents: "none",
             width: BLOCK_WIDTH,
             minWidth: BLOCK_WIDTH,
@@ -71,6 +81,7 @@ export default function Block(props: BlockProps) {
             onMouseEnter={() => setHasRightGhost(true)}
             onMouseLeave={() => setHasRightGhost(false)}
             onClick={() => addRightBlock()}
+            disabled={isRight}
           />
         </div>
       )}
@@ -83,7 +94,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: "pointer",
+            cursor: isTop ? "default" : "pointer",
             pointerEvents: "none",
             width: BLOCK_WIDTH,
             minWidth: BLOCK_WIDTH,
@@ -93,6 +104,7 @@ export default function Block(props: BlockProps) {
             onMouseEnter={() => setHasTopGhost(true)}
             onMouseLeave={() => setHasTopGhost(false)}
             onClick={() => addTopBlock()}
+            disabled={isTop}
           />
         </div>
       )}
@@ -105,7 +117,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: "pointer",
+            cursor: isLeft ? "default" : "pointer",
             pointerEvents: "none",
             width: BLOCK_WIDTH,
             minWidth: BLOCK_WIDTH,
@@ -115,6 +127,7 @@ export default function Block(props: BlockProps) {
             onMouseEnter={() => setHasLeftGhost(true)}
             onMouseLeave={() => setHasLeftGhost(false)}
             onClick={() => addLeftBlock()}
+            disabled={isLeft}
           />
         </div>
       )}
