@@ -15,14 +15,6 @@ export default function Footer() {
           isWikipedia={false}
         />
       </p>
-      <p>
-        for{" "}
-        <LinkOrText
-          link="https://wikigamejam.org"
-          text="WikiGameJam 2025"
-          isWikipedia={false}
-        />
-      </p>
     </footer>
   );
 }

@@ -1,16 +1,20 @@
+import { getBlockHeight } from "./Palace";
+
 interface BlockFaceProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onClick: () => void;
   disabled: boolean;
+  width: number;
 }
 
 export function BlockLeft(props: BlockFaceProps) {
-  const { onMouseEnter, onMouseLeave, onClick, disabled } = props;
+  const { onMouseEnter, onMouseLeave, onClick, disabled, width } = props;
+  const height = getBlockHeight(width);
   return (
     <svg
-      width="36"
-      height="40"
+      width={width}
+      height={height}
       viewBox="0 0 36 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -28,11 +32,12 @@ export function BlockLeft(props: BlockFaceProps) {
 }
 
 export function BlockRight(props: BlockFaceProps) {
-  const { onMouseEnter, onMouseLeave, onClick, disabled } = props;
+  const { onMouseEnter, onMouseLeave, onClick, disabled, width } = props;
+  const height = getBlockHeight(width);
   return (
     <svg
-      width="36"
-      height="40"
+      width={width}
+      height={height}
       viewBox="0 0 36 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +55,12 @@ export function BlockRight(props: BlockFaceProps) {
 }
 
 export function BlockTop(props: BlockFaceProps) {
-  const { onMouseEnter, onMouseLeave, onClick, disabled } = props;
+  const { onMouseEnter, onMouseLeave, onClick, disabled, width } = props;
+  const height = getBlockHeight(width);
   return (
     <svg
-      width="36"
-      height="40"
+      width={width}
+      height={height}
       viewBox="0 0 36 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
 import {
-  BLOCK_WIDTH,
   getIsometricProjection,
   GRID_DEPTH,
   GRID_HEIGHT,
@@ -10,6 +9,7 @@ import {
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };
+  width: number;
   skinUrl: string;
   addBlock?: (coordinates: { x: number; y: number; z: number }) => void;
   onlyTop?: boolean;
@@ -22,6 +22,7 @@ export interface BlockProps {
 export default function Block(props: BlockProps) {
   const {
     coordinates: { x, y, z },
+    width,
     skinUrl,
     addBlock,
     onlyTop = false,
@@ -35,7 +36,7 @@ export default function Block(props: BlockProps) {
   const [hasTopGhost, setHasTopGhost] = useState(false);
   const [hasLeftGhost, setHasLeftGhost] = useState(false);
 
-  const { x: left, y: top } = getIsometricProjection(x, y, z);
+  const { x: left, y: top } = getIsometricProjection(x, y, z, width);
 
   const addRightBlock = () => addBlock?.({ x: x + 1, y, z });
   const addTopBlock = () => addBlock?.({ x, y: y + 1, z });
@@ -56,11 +57,11 @@ export default function Block(props: BlockProps) {
           zIndex: x + y + z + 1,
           pointerEvents: "none",
           opacity: isGhost ? 0.5 : opacity,
-          width: BLOCK_WIDTH,
-          minWidth: BLOCK_WIDTH,
+          width: width,
+          minWidth: width,
         }}
       >
-        <img src={skinUrl} />
+        <img src={skinUrl} width={width} />
       </div>
 
       {/* Hoverable block right */}
@@ -71,10 +72,10 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isRight ? "default" : "pointer",
+            cursor: isRight ? "not-allowed" : "pointer",
             pointerEvents: "none",
-            width: BLOCK_WIDTH,
-            minWidth: BLOCK_WIDTH,
+            width: width,
+            minWidth: width,
           }}
         >
           <BlockRight
@@ -82,6 +83,7 @@ export default function Block(props: BlockProps) {
             onMouseLeave={() => setHasRightGhost(false)}
             onClick={() => addRightBlock()}
             disabled={isRight}
+            width={width}
           />
         </div>
       )}
@@ -94,10 +96,10 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isTop ? "default" : "pointer",
+            cursor: isTop ? "not-allowed" : "pointer",
             pointerEvents: "none",
-            width: BLOCK_WIDTH,
-            minWidth: BLOCK_WIDTH,
+            width: width,
+            minWidth: width,
           }}
         >
           <BlockTop
@@ -105,6 +107,7 @@ export default function Block(props: BlockProps) {
             onMouseLeave={() => setHasTopGhost(false)}
             onClick={() => addTopBlock()}
             disabled={isTop}
+            width={width}
           />
         </div>
       )}
@@ -117,10 +120,10 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isLeft ? "default" : "pointer",
+            cursor: isLeft ? "not-allowed" : "pointer",
             pointerEvents: "none",
-            width: BLOCK_WIDTH,
-            minWidth: BLOCK_WIDTH,
+            width: width,
+            minWidth: width,
           }}
         >
           <BlockLeft
@@ -128,18 +131,34 @@ export default function Block(props: BlockProps) {
             onMouseLeave={() => setHasLeftGhost(false)}
             onClick={() => addLeftBlock()}
             disabled={isLeft}
+            width={width}
           />
         </div>
       )}
 
       {hasRightGhost && (
-        <Block coordinates={{ x: x + 1, y, z }} skinUrl="block.svg" isGhost />
+        <Block
+          coordinates={{ x: x + 1, y, z }}
+          width={width}
+          skinUrl="block.svg"
+          isGhost
+        />
       )}
       {hasTopGhost && (
-        <Block coordinates={{ x, y: y + 1, z }} skinUrl="block.svg" isGhost />
+        <Block
+          coordinates={{ x, y: y + 1, z }}
+          width={width}
+          skinUrl="block.svg"
+          isGhost
+        />
       )}
       {hasLeftGhost && (
-        <Block coordinates={{ x, y, z: z + 1 }} skinUrl="block.svg" isGhost />
+        <Block
+          coordinates={{ x, y, z: z + 1 }}
+          width={width}
+          skinUrl="block.svg"
+          isGhost
+        />
       )}
     </>
   );
