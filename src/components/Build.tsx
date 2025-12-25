@@ -84,7 +84,7 @@ function Build() {
         skinUrl: "block-wall-right.svg",
         onlyRight: true,
         addBlock: addBlock,
-        opacity: 0.5,
+        opacity: 0.4,
       }))
     )
     .flat(1);
@@ -98,7 +98,7 @@ function Build() {
         skinUrl: "block-wall-left.svg",
         onlyLeft: true,
         addBlock: addBlock,
-        opacity: 0.5,
+        opacity: 0.4,
       }))
     )
     .flat(1);
@@ -106,7 +106,7 @@ function Build() {
   const allBlocks = [...floor, ...leftWall, ...rightWall, ...blocks];
 
   return (
-    <div className="p-4 px-8 mb-4 bg-light mx-4 border-2 border-border overflow-hidden inset-shadow-glossy">
+    <div className="p-4 px-8 mb-4 bg-light mx-4 border-2 border-border overflow-hidden">
       <h3 className="text-2xl font-bold mb-2">Build</h3>
       <div
         ref={(ref) => setPalaceRef(ref)}
