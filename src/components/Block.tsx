@@ -5,7 +5,7 @@ import {
   GRID_DEPTH,
   GRID_HEIGHT,
   GRID_WIDTH,
-} from "./Palace";
+} from "./Build";
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };

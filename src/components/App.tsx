@@ -12,7 +12,7 @@ import AnswerCard from "./AnswerCard";
 import QuestionCard from "./QuestionCard";
 import Shop from "./Shop";
 import { UPGRADES } from "../types/upgrade";
-import Palace from "./Palace";
+import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 
 export default function App() {
@@ -62,15 +62,15 @@ export default function App() {
       ? nuggetsPerCorrectAnswer
       : nuggetsPerWrongAnswer;
 
+    setNuggets((nuggets) => nuggets + nuggetsEarned);
+
     if (earnedFount) {
-      setNuggets((nuggets) => nuggets + nuggetsPerCorrectAnswer);
       setNuggetsPerSecond((nuggetsPerSecond) => nuggetsPerSecond + 1);
       card.known = true;
     } else if (lostFount) {
       setNuggetsPerSecond((nuggetsPerSecond) => nuggetsPerSecond - 1);
       card.known = false;
     } else {
-      setNuggets((nuggets) => nuggets + nuggetsEarned);
       if (!wasCorrect) {
         card.known = false;
       }
@@ -122,7 +122,7 @@ export default function App() {
               </div>
               <div className="flex-1 shrink min-w-0 mt-8 md:mt-0">
                 <Shop displayNuggets={displayNuggets} setNuggets={setNuggets} />
-                <Palace />
+                <Build />
               </div>
             </div>
           </div>

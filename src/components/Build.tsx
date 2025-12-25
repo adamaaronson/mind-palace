@@ -33,7 +33,7 @@ export function getIsometricProjection(
   };
 }
 
-function Palace() {
+function Build() {
   const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
   const [blockWidth, setBlockWidth] = useState(0);
 
@@ -142,4 +142,4 @@ function Palace() {
   );
 }
 
-export default memo(Palace);
+export default memo(Build);
