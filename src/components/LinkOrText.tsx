@@ -1,16 +1,20 @@
 interface LinkOrTextProps {
   link?: string;
   text: string;
-  isWikipedia?: boolean;
+  onClick?: () => void;
+  wikipedia?: boolean;
 }
 
 export default function LinkOrText(props: LinkOrTextProps) {
-  const { link, text, isWikipedia = true } = props;
+  const { link, text, onClick, wikipedia = false } = props;
+  const isExternal = link !== "#";
+
   return link ? (
     <a
       href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      onClick={onClick}
       className="link font-bold text-text-dark inline-block hover:text-text-light transition-colors"
       style={{
         backgroundImage: "linear-gradient(#9c7e4e 0%, #9c7e4e 100%)",
@@ -20,16 +24,18 @@ export default function LinkOrText(props: LinkOrTextProps) {
       }}
     >
       {text}
-      {isWikipedia ? (
+      {wikipedia ? (
         <img
           src="wikipedia.svg"
           className="inline-block w-[1em] align-middle ml-1 mb-[0.1em]"
         ></img>
       ) : (
-        <img
-          src="external.svg"
-          className="inline-block w-[0.6em] align-middle ml-1 mb-[0.15em]"
-        ></img>
+        isExternal && (
+          <img
+            src="external.svg"
+            className="inline-block w-[0.6em] align-middle ml-1 mb-[0.15em]"
+          ></img>
+        )
       )}
     </a>
   ) : (

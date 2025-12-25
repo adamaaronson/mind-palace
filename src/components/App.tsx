@@ -33,6 +33,7 @@ export default function App() {
   const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [nuggetsEarned, setNuggetsEarned] = useState(0);
   const [timestamp, setTimestamp] = useState(0);
+  const [tabIndex, setTabIndex] = useState(0);
 
   const displayNuggets = Math.round(nuggets);
   const nuggetsPerCorrectAnswer = UPGRADES.CORRECT_ANSWERS.level;
@@ -134,8 +135,12 @@ export default function App() {
                 />
               </div>
               <div className="flex-1 shrink min-w-0 mt-8 md:mt-0">
-                <Tabs labels={["Build", "Shop"]}>
-                  <Build />
+                <Tabs
+                  labels={["Build", "Shop"]}
+                  activeIndex={tabIndex}
+                  setActiveIndex={setTabIndex}
+                >
+                  <Build inventory={[]} goToShop={() => setTabIndex(1)} />
                   <Shop
                     displayNuggets={displayNuggets}
                     setNuggets={setNuggets}

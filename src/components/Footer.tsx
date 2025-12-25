@@ -8,12 +8,7 @@ export default function Footer() {
     "
     >
       <p>
-        by{" "}
-        <LinkOrText
-          link="https://aaronson.org"
-          text="Adam Aaronson"
-          isWikipedia={false}
-        />
+        by <LinkOrText link="https://aaronson.org" text="Adam Aaronson" />
       </p>
     </footer>
   );

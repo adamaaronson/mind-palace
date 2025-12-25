@@ -36,11 +36,16 @@ function AnswerCard(props: AnswerCardProps) {
           <LinkOrText
             link={previousCard.questionLink}
             text={previousCard.question}
+            wikipedia
           />{" "}
           is{" "}
           {previousCard.answers.map((answer, index) => (
             <React.Fragment key={index}>
-              <LinkOrText link={answer.link} text={answer.canonicalForm} />
+              <LinkOrText
+                link={answer.link}
+                text={answer.canonicalForm}
+                wikipedia
+              />
               {index < previousCard.answers.length - 1 && <span> / </span>}
             </React.Fragment>
           ))}

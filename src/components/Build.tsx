@@ -1,5 +1,6 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import Block, { type BlockProps } from "./Block";
+import LinkOrText from "./LinkOrText";
 
 export const GRID_WIDTH = 11;
 export const GRID_DEPTH = 11;
@@ -33,7 +34,13 @@ export function getIsometricProjection(
   };
 }
 
-function Build() {
+interface BuildProps {
+  inventory: { id: string; count: number }[];
+  goToShop: () => void;
+}
+
+function Build(props: BuildProps) {
+  const { inventory, goToShop } = props;
   const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
   const [blockWidth, setBlockWidth] = useState(0);
 
@@ -106,35 +113,50 @@ function Build() {
   const allBlocks = [...floor, ...leftWall, ...rightWall, ...blocks];
 
   return (
-    <div
-      ref={(ref) => setPalaceRef(ref)}
-      className="relative w-full m-auto my-2"
-      style={
-        blockWidth === 0
-          ? {}
-          : {
-              height:
-                getSideHeight(blockWidth) * GRID_HEIGHT +
-                getTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH),
-            }
-      }
-    >
-      {allBlocks.map((blockProps) => (
-        <Block
-          {...blockProps}
-          width={blockWidth}
-          key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
-        />
-      ))}
+    <div>
       <div
-        className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light absolute -translate-x-1/2"
-        style={{
-          width: blockWidth * GRID_WIDTH * 1.2,
-          height: getSideHeight(blockWidth) * GRID_WIDTH * 1.1,
-          left: getOriginX(blockWidth) + blockWidth / 2,
-          top: getOriginY(blockWidth),
-        }}
-      />
+        ref={(ref) => setPalaceRef(ref)}
+        className="relative w-full m-auto my-2"
+        style={
+          blockWidth === 0
+            ? {}
+            : {
+                height:
+                  getSideHeight(blockWidth) * GRID_HEIGHT +
+                  getTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH),
+              }
+        }
+      >
+        {allBlocks.map((blockProps) => (
+          <Block
+            {...blockProps}
+            width={blockWidth}
+            key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
+          />
+        ))}
+        <div
+          className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light absolute -translate-x-1/2 pointer-events-none"
+          style={{
+            width: blockWidth * GRID_WIDTH * 1.2,
+            height: getSideHeight(blockWidth) * GRID_WIDTH * 1.1,
+            left: getOriginX(blockWidth) + blockWidth / 2,
+            top: getOriginY(blockWidth),
+          }}
+        />
+      </div>
+      <h3 className="text-text-dark font-bold text-xl -mt-2 mb-2 ml-3">
+        Inventory
+      </h3>
+      <div className="border-2 border-border rounded-2xl bg-light-light p-4">
+        {inventory.length === 0 ? (
+          <p className="text-sm text-text-light text-center">
+            You don't have any blocks! Buy some in the{" "}
+            <LinkOrText link="#" onClick={goToShop} text="shop" />.
+          </p>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }

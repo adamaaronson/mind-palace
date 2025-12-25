@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 
 interface TabsProps {
   labels: string[];
+  activeIndex: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
   children: React.ReactNode[];
 }
 
 export default function Tabs(props: TabsProps) {
-  const { labels, children } = props;
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { labels, activeIndex, setActiveIndex, children } = props;
 
   return (
     <div className="mx-4">
