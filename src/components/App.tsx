@@ -14,6 +14,7 @@ import Shop from "./Shop";
 import { UPGRADES } from "../types/upgrade";
 import Build from "./Build";
 import DeckInfo from "./DeckInfo";
+import Tabs from "./Tabs";
 
 export default function App() {
   const [memoryQueue] = useState<MemoryQueue>(() => ({
@@ -121,8 +122,13 @@ export default function App() {
                 />
               </div>
               <div className="flex-1 shrink min-w-0 mt-8 md:mt-0">
-                <Shop displayNuggets={displayNuggets} setNuggets={setNuggets} />
-                <Build />
+                <Tabs labels={["Build", "Shop"]}>
+                  <Build />
+                  <Shop
+                    displayNuggets={displayNuggets}
+                    setNuggets={setNuggets}
+                  />
+                </Tabs>
               </div>
             </div>
           </div>

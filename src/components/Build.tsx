@@ -106,38 +106,35 @@ function Build() {
   const allBlocks = [...floor, ...leftWall, ...rightWall, ...blocks];
 
   return (
-    <div className="p-4 px-8 mb-4 bg-light mx-4 border-2 border-border overflow-hidden">
-      <h3 className="text-2xl font-bold mb-2">Build</h3>
-      <div
-        ref={(ref) => setPalaceRef(ref)}
-        className="relative w-[90%] m-auto mb-4"
-        style={
-          blockWidth === 0
-            ? {}
-            : {
-                height:
-                  getSideHeight(blockWidth) * GRID_HEIGHT +
-                  getTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH),
-              }
-        }
-      >
-        {allBlocks.map((blockProps) => (
-          <Block
-            {...blockProps}
-            width={blockWidth}
-            key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
-          />
-        ))}
-        <div
-          className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light absolute -translate-x-1/2"
-          style={{
-            width: blockWidth * GRID_WIDTH * 1.2,
-            height: getSideHeight(blockWidth) * GRID_WIDTH * 1.1,
-            left: getOriginX(blockWidth) + blockWidth / 2,
-            top: getOriginY(blockWidth),
-          }}
+    <div
+      ref={(ref) => setPalaceRef(ref)}
+      className="relative w-full m-auto my-2"
+      style={
+        blockWidth === 0
+          ? {}
+          : {
+              height:
+                getSideHeight(blockWidth) * GRID_HEIGHT +
+                getTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH),
+            }
+      }
+    >
+      {allBlocks.map((blockProps) => (
+        <Block
+          {...blockProps}
+          width={blockWidth}
+          key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
         />
-      </div>
+      ))}
+      <div
+        className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light absolute -translate-x-1/2"
+        style={{
+          width: blockWidth * GRID_WIDTH * 1.2,
+          height: getSideHeight(blockWidth) * GRID_WIDTH * 1.1,
+          left: getOriginX(blockWidth) + blockWidth / 2,
+          top: getOriginY(blockWidth),
+        }}
+      />
     </div>
   );
 }
