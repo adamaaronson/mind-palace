@@ -17,7 +17,7 @@ export default function Tabs(props: TabsProps) {
             className={`text-2xl font-bold p-2 px-4 border-2 border-border not-first:-ml-0.5 ${
               index === activeIndex
                 ? "bg-light border-b-0 pb-2.5 pt-3"
-                : "bg-light-light cursor-pointer hover:bg-light-medium transition-colors"
+                : "bg-light-light cursor-pointer hover:text-text-light transition-colors"
             }`}
             onClick={() => setActiveIndex(index)}
             key={index}

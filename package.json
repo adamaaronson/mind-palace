@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
+    "damerau-levenshtein": "^1.0.8",
     "lodash": "^4.17.21",
     "motion": "^12.23.22",
     "numeral": "^2.0.6",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@types/damerau-levenshtein": "^1.0.2",
     "@types/lodash": "^4.17.20",
     "@types/numeral": "^2.0.5",
     "@types/react": "^19.1.2",

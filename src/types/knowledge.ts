@@ -1,4 +1,5 @@
 import { normalize } from "../utils/utils";
+import levenshtein from "damerau-levenshtein";
 
 export interface Deck {
   title: string;
@@ -22,7 +23,7 @@ export interface Fact {
   alternateAnswers?: string[];
 }
 
-export function isCorrect(fact: Fact, answer: string) {
+export function getAnswerEditDistance(fact: Fact, answer: string) {
   const normalizedCorrectAnswers = ([] as string[])
     .concat(
       ...fact.answers.map((answer) => [
@@ -31,5 +32,13 @@ export function isCorrect(fact: Fact, answer: string) {
       ])
     )
     .map((correctAnswer) => normalize(correctAnswer));
-  return normalizedCorrectAnswers.includes(normalize(answer));
+
+  const normalizedAnswer = normalize(answer);
+
+  return Math.min(
+    ...normalizedCorrectAnswers.map(
+      (normalizedCorrectAnswer) =>
+        levenshtein(normalizedCorrectAnswer, normalizedAnswer).steps
+    )
+  );
 }

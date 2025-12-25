@@ -11,7 +11,7 @@ export default function LinkOrText(props: LinkOrTextProps) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="link font-bold text-text-dark inline-block hover:opacity-50"
+      className="link font-bold text-text-dark inline-block hover:text-text-light transition-colors"
       style={{
         backgroundImage: "linear-gradient(#9c7e4e 0%, #9c7e4e 100%)",
         backgroundPosition: "0 1.15em",

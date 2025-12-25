@@ -17,11 +17,12 @@ const getCardLabel = (card: Card) => {
 interface QuestionCardProps {
   deck: Deck;
   card: Card;
-  submitGuess: (guess: string) => void;
+  submitGuess: (guess: string) => boolean;
+  hadTypo: boolean;
 }
 
 export default function QuestionCard(props: QuestionCardProps) {
-  const { deck, card, submitGuess } = props;
+  const { deck, card, submitGuess, hadTypo } = props;
   const [guess, setGuess] = useState("");
 
   return (
@@ -44,8 +45,9 @@ export default function QuestionCard(props: QuestionCardProps) {
         className="relative w-fit mx-auto flex flex-col items-center gap-2 md:flex-row"
         onSubmit={(event) => {
           event.preventDefault();
-          submitGuess(guess);
-          setGuess("");
+          if (submitGuess(guess)) {
+            setGuess("");
+          }
         }}
       >
         <input
@@ -62,6 +64,11 @@ export default function QuestionCard(props: QuestionCardProps) {
           Enter
         </button>
       </form>
+      {hadTypo && (
+        <div className="text-text-light text-sm mt-2">
+          Close! Check your spelling...
+        </div>
+      )}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import deck from "../decks/json/world_capitals.json";
-import { isCorrect } from "../types/knowledge";
+import { getAnswerEditDistance } from "../types/knowledge";
 import Footer from "./Footer";
 import Header from "./Header";
 import FountOfKnowledge from "./FountOfKnowledge";
@@ -25,6 +25,7 @@ export default function App() {
   const [card, setCard] = useState(memoryQueue.cards[0]);
 
   const [wasCorrect, setWasCorrect] = useState(false);
+  const [hadTypo, setHadTypo] = useState(false);
   const [earnedFount, setEarnedFount] = useState(false);
   const [lostFount, setLostFount] = useState(false);
   const [previousCard, setPreviousCard] = useState<Card | null>(null);
@@ -53,7 +54,16 @@ export default function App() {
   }, [timestamp, nuggetsPerSecond]);
 
   const submitGuess = (guess: string) => {
-    const wasCorrect = isCorrect(card, guess);
+    const answerEditDistance = getAnswerEditDistance(card, guess);
+    const wasCorrect = answerEditDistance === 0;
+
+    if (answerEditDistance === 1) {
+      setHadTypo(true);
+      return false;
+    } else {
+      setHadTypo(false);
+    }
+
     const earnedFount =
       wasCorrect &&
       !card.known &&
@@ -85,6 +95,7 @@ export default function App() {
 
     reshuffle(memoryQueue, wasCorrect);
     setCard(memoryQueue.cards[0]);
+    return true;
   };
 
   return (
@@ -104,6 +115,7 @@ export default function App() {
                     deck={deck}
                     card={card}
                     submitGuess={submitGuess}
+                    hadTypo={hadTypo}
                   />
                   {previousCard && (
                     <AnswerCard
