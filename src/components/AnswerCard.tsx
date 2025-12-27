@@ -1,6 +1,6 @@
 import React from "react";
 import type { Deck } from "../types/knowledge";
-import LinkOrText from "./LinkOrText";
+import Link from "./Link";
 import type { Card } from "../types/memory";
 import { FOUNT_MESSAGES, WRONG_MESSAGES } from "../utils/constants";
 import { randomChoice } from "../utils/utils";
@@ -33,19 +33,15 @@ function AnswerCard(props: AnswerCardProps) {
             src={wasCorrect ? "check.svg" : "x.svg"}
           ></img>{" "}
           The {deck.answerLabel} of{" "}
-          <LinkOrText
-            link={previousCard.questionLink}
-            text={previousCard.question}
-            wikipedia
-          />{" "}
+          <Link href={previousCard.questionLink} wikipedia>
+            {previousCard.question}
+          </Link>{" "}
           is{" "}
           {previousCard.answers.map((answer, index) => (
             <React.Fragment key={index}>
-              <LinkOrText
-                link={answer.link}
-                text={answer.canonicalForm}
-                wikipedia
-              />
+              <Link href={answer.link} wikipedia>
+                {answer.canonicalForm}
+              </Link>
               {index < previousCard.answers.length - 1 && <span> / </span>}
             </React.Fragment>
           ))}

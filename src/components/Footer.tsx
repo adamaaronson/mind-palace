@@ -1,4 +1,4 @@
-import LinkOrText from "./LinkOrText";
+import Link from "./Link";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
     "
     >
       <p>
-        by <LinkOrText link="https://aaronson.org" text="Adam Aaronson" />
+        by <Link href="https://aaronson.org">Adam Aaronson</Link>
       </p>
     </footer>
   );

@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import Block, { type BlockProps } from "./Block";
-import LinkOrText from "./LinkOrText";
+import Link from "./Link";
+import LinkButton from "./LinkButton";
 
 export const GRID_WIDTH = 11;
 export const GRID_DEPTH = 11;
@@ -151,7 +152,7 @@ function Build(props: BuildProps) {
         {inventory.length === 0 ? (
           <p className="text-sm text-text-light text-center">
             You don't have any blocks! Buy some in the{" "}
-            <LinkOrText link="#" onClick={goToShop} text="shop" />.
+            <LinkButton onClick={goToShop}>shop</LinkButton>.
           </p>
         ) : (
           <></>
