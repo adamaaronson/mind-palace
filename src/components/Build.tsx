@@ -1,6 +1,5 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import Block, { type BlockProps } from "./Block";
-import Link from "./Link";
 import LinkButton from "./LinkButton";
 
 export const GRID_WIDTH = 11;
