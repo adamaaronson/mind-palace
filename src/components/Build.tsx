@@ -43,19 +43,24 @@ function Build(props: BuildProps) {
   const { inventory, goToShop } = props;
   const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
   const [blockWidth, setBlockWidth] = useState(0);
-
   const [palaceRef, setPalaceRef] = useState<HTMLDivElement | null>(null);
+
+  const resizeBlock = (palaceWidth: number) => {
+    setBlockWidth(palaceWidth / ((GRID_WIDTH + GRID_DEPTH) / 2));
+  };
 
   const resizePalace = useCallback(() => {
     const palaceWidth = palaceRef?.clientWidth;
-    setBlockWidth(
-      palaceWidth ? palaceWidth / Math.max(GRID_WIDTH, GRID_DEPTH) : 0
-    );
+    if (palaceWidth) {
+      resizeBlock(palaceWidth);
+    }
   }, [palaceRef]);
 
-  useEffect(() => {
-    resizePalace();
+  if (palaceRef && blockWidth === 0) {
+    resizeBlock(palaceRef.clientWidth);
+  }
 
+  useEffect(() => {
     window.addEventListener("resize", resizePalace);
     return () => window.removeEventListener("resize", resizePalace);
   }, [palaceRef]);

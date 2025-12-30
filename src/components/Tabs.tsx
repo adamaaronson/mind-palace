@@ -32,6 +32,7 @@ export default function Tabs(props: TabsProps) {
           className={`-mt-0.5 p-4 px-8 mb-4 bg-light border-2 border-border overflow-hidden ${
             index === activeIndex ? "visible" : "hidden"
           }`}
+          key={index}
         >
           {child}
         </div>
