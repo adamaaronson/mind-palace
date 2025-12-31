@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NUGGET_PARTICLE_DURATION_MS } from "../utils/constants";
 
 export interface NuggetParticleProps {
   timestamp: number;
@@ -7,15 +8,13 @@ export interface NuggetParticleProps {
   width: number;
 }
 
-const DURATION = 1000;
-
 export default function NuggetParticle(props: NuggetParticleProps) {
   const { timestamp, xDistance, yDistance, width } = props;
   const [isAnimating, setIsAnimating] = useState(false);
   const [, setAnimationFrame] = useState(0);
 
   const now = Date.now();
-  const percentage = (now - timestamp) / DURATION;
+  const percentage = (now - timestamp) / NUGGET_PARTICLE_DURATION_MS;
 
   const x = xDistance * percentage - width / 2;
   const y = -4 * yDistance * percentage * (percentage - 1);
@@ -27,7 +26,7 @@ export default function NuggetParticle(props: NuggetParticleProps) {
 
     const now = Date.now();
 
-    if (now - timestamp < DURATION * 2) {
+    if (now - timestamp < NUGGET_PARTICLE_DURATION_MS * 2) {
       requestAnimationFrame(animate);
     }
   };

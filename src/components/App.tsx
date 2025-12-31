@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import deck from "../decks/json/world_capitals.json";
@@ -15,6 +15,7 @@ import { UPGRADES } from "../types/upgrade";
 import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
+import { nuggetParticleReducer } from "./NuggetParticleReducer";
 
 export default function App() {
   const [memoryQueue] = useState<MemoryQueue>(() => ({
@@ -35,6 +36,14 @@ export default function App() {
   const [timestamp, setTimestamp] = useState(0);
   const [tabIndex, setTabIndex] = useState(0);
 
+  const [{ nuggetParticles }, dispatchNuggetParticles] = useReducer(
+    nuggetParticleReducer,
+    {
+      previousNuggetTimestamp: 0,
+      nuggetParticles: [],
+    }
+  );
+
   const displayNuggets = Math.round(nuggets);
   const nuggetsPerCorrectAnswer = UPGRADES.CORRECT_ANSWERS.level;
   const nuggetsPerWrongAnswer = UPGRADES.ANY_ANSWERS.level;
@@ -46,9 +55,17 @@ export default function App() {
 
     const now = Date.now();
     if (timestamp) {
-      setNuggets(
-        (nuggets) => nuggets + (nuggetsPerSecond * (now - timestamp)) / 1000
-      );
+      const nuggetsCreated = (nuggetsPerSecond * (now - timestamp)) / 1000;
+      setNuggets((nuggets) => nuggets + nuggetsCreated);
+
+      const newDisplayNuggets = Math.round(nuggets + nuggetsCreated);
+      if (newDisplayNuggets > displayNuggets) {
+        dispatchNuggetParticles({
+          type: "automatic",
+          nuggetsPerSecond: nuggetsPerSecond,
+          nuggetCount: newDisplayNuggets - displayNuggets,
+        });
+      }
     }
 
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
@@ -75,6 +92,11 @@ export default function App() {
       : nuggetsPerWrongAnswer;
 
     setNuggets((nuggets) => nuggets + nuggetsEarned);
+    dispatchNuggetParticles({
+      type: "manual",
+      nuggetCount: nuggetsEarned,
+    });
+    console.log("dispatched");
 
     if (earnedFount) {
       setNuggetsPerSecond((nuggetsPerSecond) => nuggetsPerSecond + 1);
@@ -132,6 +154,7 @@ export default function App() {
                 <FountOfKnowledge
                   displayNuggets={displayNuggets}
                   nuggetsPerSecond={nuggetsPerSecond}
+                  nuggetParticles={nuggetParticles}
                 />
               </div>
               <div className="flex-1 shrink min-w-0 mt-8 md:mt-0">

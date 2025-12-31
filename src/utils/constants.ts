@@ -16,6 +16,9 @@ export const GRID_WIDTH = 11;
 export const GRID_DEPTH = 11;
 export const GRID_HEIGHT = 11;
 
+export const DEFAULT_FOUNT_WIDTH = 423;
+export const NUGGET_PARTICLE_DURATION_MS = 1000;
+
 export const getBlockHeight = (blockWidth: number) => (blockWidth / 36) * 40;
 export const getBlockTopHeight = (blockWidth: number) => (blockWidth / 36) * 18;
 export const getBlockSideHeight = (blockWidth: number) =>

@@ -1,67 +1,22 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useState } from "react";
 import { formatNumber } from "../utils/utils";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
-import { MAX_NUGGETS_AT_ONCE, REFRESH_TIME } from "../utils/constants";
 
 interface FountOfKnowledgeProps {
   displayNuggets: number;
   nuggetsPerSecond: number;
+  nuggetParticles: NuggetParticleProps[];
 }
 
 function FountOfKnowledge(props: FountOfKnowledgeProps) {
-  const { displayNuggets, nuggetsPerSecond } = props;
+  const { displayNuggets, nuggetsPerSecond, nuggetParticles } = props;
 
-  const [nuggetParticleTimestamp, setNuggetParticleTimestamp] = useState(0);
-  const [previousNuggetCount, setPreviousNuggetCount] = useState(0);
-  const [nuggetParticles, setNuggetParticles] = useState<NuggetParticleProps[]>(
-    []
+  const [fountElement, setFountElement] = useState<HTMLImageElement | null>(
+    null
   );
 
-  const fountRef = useRef<HTMLImageElement | null>(null);
-  const DEFAULT_FOUNT_WIDTH = 423;
-  const fountSize = fountRef?.current?.clientWidth ?? DEFAULT_FOUNT_WIDTH;
-
-  useEffect(() => {
-    const nuggetsEarned = Math.min(
-      displayNuggets - previousNuggetCount,
-      MAX_NUGGETS_AT_ONCE
-    );
-    if (nuggetsEarned <= 0) {
-      setPreviousNuggetCount(displayNuggets);
-      return;
-    }
-    if (displayNuggets === 0) {
-      return;
-    }
-    const now = Date.now();
-    if (now - nuggetParticleTimestamp < REFRESH_TIME) {
-      // don't make nugget particles too quickly
-      return;
-    }
-
-    for (let i = 0; i < nuggetsEarned; i++) {
-      const nuggetTimestamp = now + i / nuggetsEarned;
-      const xDistance = (0.5 - Math.random()) * fountSize;
-      const yDistance = (-Math.random() * fountSize) / 2;
-      const width =
-        (Math.random() * 30 + 10) * (fountSize / DEFAULT_FOUNT_WIDTH);
-
-      const nuggetParticleProps = {
-        timestamp: nuggetTimestamp,
-        xDistance: xDistance,
-        yDistance: yDistance,
-        width: width,
-      };
-
-      setNuggetParticles((nuggetParticles) => [
-        ...nuggetParticles.filter(({ timestamp }) => now - timestamp < 2000),
-        nuggetParticleProps,
-      ]);
-      setNuggetParticleTimestamp(nuggetTimestamp);
-      setPreviousNuggetCount(displayNuggets);
-    }
-  }, [displayNuggets]);
+  const fountWidth = fountElement?.clientWidth;
 
   return (
     <div
@@ -82,27 +37,33 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
         </div>
       </div>
       <div>
-        {nuggetParticles.map((nuggetParticleProps) => (
-          <NuggetParticle
-            {...nuggetParticleProps}
-            key={nuggetParticleProps.timestamp}
-          ></NuggetParticle>
-        ))}
+        {fountWidth &&
+          nuggetParticles.map((nuggetParticleProps) => (
+            <NuggetParticle
+              xDistance={nuggetParticleProps.xDistance * fountWidth}
+              yDistance={nuggetParticleProps.yDistance * fountWidth}
+              width={nuggetParticleProps.width * fountWidth}
+              timestamp={nuggetParticleProps.timestamp}
+              key={nuggetParticleProps.timestamp}
+            ></NuggetParticle>
+          ))}
         <div className="relative">
           <img
             className="relative w-3/4 m-auto"
-            ref={fountRef}
+            ref={(ref) => setFountElement(ref)}
             src="fount-of-knowledge.svg"
           ></img>
-          <div
-            className="-z-1 opacity-40 bg-radial rounded-full from-0% to-40% from-text-light absolute -translate-y-1/2"
-            style={{
-              width: "100%",
-              height: fountSize / 3,
-              top: "100%",
-              left: 0,
-            }}
-          />
+          {fountWidth && (
+            <div
+              className="-z-1 opacity-40 bg-radial rounded-full from-0% to-40% from-text-light absolute -translate-y-1/2"
+              style={{
+                width: "100%",
+                height: fountWidth / 3,
+                top: "100%",
+                left: 0,
+              }}
+            />
+          )}
         </div>
         <div className="z-1 font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-standard m-auto">
           <span className="text-text-light">•</span> Fount of Knowledge{" "}

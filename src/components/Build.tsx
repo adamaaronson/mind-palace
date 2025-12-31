@@ -60,6 +60,7 @@ function Build(props: BuildProps) {
 
   if (
     palaceRef &&
+    palaceRef.checkVisibility() &&
     (blockWidth === 0 ||
       blockWidth >
         (palaceRef.clientWidth / ((GRID_WIDTH + GRID_DEPTH) / 2)) * 1.01)
@@ -128,7 +129,7 @@ function Build(props: BuildProps) {
     <div>
       <div
         ref={(ref) => setPalaceRef(ref)}
-        className="relative w-full m-auto my-2"
+        className="relative w-full m-auto my-2 pointer-events-none"
         style={{
           contain: "paint",
           height:
