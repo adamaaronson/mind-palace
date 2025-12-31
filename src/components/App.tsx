@@ -96,7 +96,6 @@ export default function App() {
       type: "manual",
       nuggetCount: nuggetsEarned,
     });
-    console.log("dispatched");
 
     if (earnedFount) {
       setNuggetsPerSecond((nuggetsPerSecond) => nuggetsPerSecond + 1);
