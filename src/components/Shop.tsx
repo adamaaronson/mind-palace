@@ -39,10 +39,10 @@ export default function Shop(props: ShopProps) {
           </div>
           <button
             type="submit"
-            className={`bg-gold-light border-gold border-2 rounded-md px-2 font-bold transition-colors text-sm inset-shadow-glossy ${
+            className={`button-standard py-0! px-2! text-sm ${
               displayNuggets >= upgrade.price
                 ? "opacity-100 cursor-pointer hover:bg-gold"
-                : "opacity-50"
+                : "disabled:opacity-50 disabled:pointer-events-none"
             }`}
             disabled={displayNuggets < upgrade.price}
             onClick={() => purchaseUpgrade(name)}

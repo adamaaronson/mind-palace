@@ -58,8 +58,8 @@ export default function QuestionCard(props: QuestionCardProps) {
         />
         <button
           type="submit"
-          className="cursor-pointer bg-gold-light border-gold border-2 rounded-md inset-shadow-glossy
-        p-1 px-4 hover:bg-gold font-bold transition-colors"
+          className="button-standard"
+          disabled={guess === ""}
         >
           Enter
         </button>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { formatNumber } from "../utils/utils";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
@@ -9,7 +9,7 @@ interface FountOfKnowledgeProps {
   nuggetsPerSecond: number;
 }
 
-export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
+function FountOfKnowledge(props: FountOfKnowledgeProps) {
   const { displayNuggets, nuggetsPerSecond } = props;
 
   const [nuggetParticleTimestamp, setNuggetParticleTimestamp] = useState(0);
@@ -109,3 +109,5 @@ export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
     </div>
   );
 }
+
+export default memo(FountOfKnowledge);
