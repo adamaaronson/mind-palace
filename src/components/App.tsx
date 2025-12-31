@@ -110,7 +110,7 @@ export default function App() {
           <div className="grow m-4 mt-0 text-text-dark max-w-300 w-full">
             <div className="flex justify-stretch h-full flex-col md:flex-row">
               <div className="flex-1 flex flex-col h-full relative">
-                <div className="px-8 py-4 bg-light mx-4 border-2 border-taupe">
+                <div className="px-8 py-4 bg-light mx-4 border-standard">
                   <DeckInfo deck={deck} memoryQueue={memoryQueue} />
                   <QuestionCard
                     deck={deck}
@@ -153,7 +153,7 @@ export default function App() {
         </div>
         <Column />
       </div>
-      <div className="bg-light h-4 border-t-2 border-taupe flex-none"></div>
+      <div className="bg-light h-4 border-t-standard flex-none"></div>
     </div>
   );
 }

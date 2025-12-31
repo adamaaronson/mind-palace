@@ -152,7 +152,7 @@ function Build(props: BuildProps) {
       <h3 className="text-text-dark font-bold text-xl -mt-2 mb-2 ml-3">
         Inventory
       </h3>
-      <div className="border-2 border-taupe rounded-2xl bg-light-light p-4">
+      <div className="border-standard rounded-2xl bg-light-light p-4">
         {inventory.length === 0 ? (
           <p className="text-sm text-text-light text-center">
             You don't have any blocks! Buy some in the{" "}
