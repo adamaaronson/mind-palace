@@ -26,8 +26,8 @@ export default function QuestionCard(props: QuestionCardProps) {
   const [guess, setGuess] = useState("");
 
   return (
-    <div className="relative p-4 rounded-2xl bg-light-light text-center border-2 border-border">
-      <div className="absolute -ml-4 text-sm left-full -translate-x-full font-normal rounded-sm border-2 border-border px-2">
+    <div className="relative p-4 rounded-2xl bg-light-light text-center border-2 border-taupe">
+      <div className="absolute -ml-4 text-sm left-full -translate-x-full font-normal rounded-sm border-2 border-taupe px-2">
         {getCardLabel(card)}
       </div>
       <div className="text-text-light">
@@ -53,7 +53,7 @@ export default function QuestionCard(props: QuestionCardProps) {
         <input
           value={guess}
           onChange={(event) => setGuess(event.target.value)}
-          className="bg-white p-1 border-border border-2 px-2"
+          className="bg-white p-1 border-taupe border-2 px-2"
           placeholder={`Type the ${deck.answerLabel}`}
         />
         <button

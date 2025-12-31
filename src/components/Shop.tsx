@@ -25,11 +25,11 @@ export default function Shop(props: ShopProps) {
   };
 
   return (
-    <div className="border-2 border-border rounded-2xl bg-light-light p-4 flex gap-2 overflow-scroll">
+    <div className="border-2 border-taupe rounded-2xl bg-light-light p-4 flex gap-2 overflow-scroll">
       {Object.entries(UPGRADES).map(([name, upgrade]) => (
         <div className="flex flex-col gap-1" key={name}>
           <div
-            className="relative bg-white border-border border-2 rounded-md h-20 w-20 p-2 flex justify-center align-center"
+            className="relative bg-white border-taupe border-2 rounded-md h-20 w-20 p-2 flex justify-center align-center"
             key={name}
           >
             <div className="absolute font-bold left-full top-0 -translate-x-full -ml-1">

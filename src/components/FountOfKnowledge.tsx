@@ -101,7 +101,7 @@ export default function FountOfKnowledge(props: FountOfKnowledgeProps) {
             }}
           />
         </div>
-        <div className="z-1 font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-2 border-border m-auto">
+        <div className="z-1 font-classical font-bold tracking-widest px-2 mt-4 text-sm w-fit rounded-md bg-light border-2 border-taupe m-auto">
           <span className="text-text-light">•</span> Fount of Knowledge{" "}
           <span className="text-text-light">•</span>
         </div>

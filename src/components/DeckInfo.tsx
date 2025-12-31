@@ -20,7 +20,7 @@ export default function DeckInfo(props: DeckInfoProps) {
           src="hamburger.svg"
         ></img>{" "}
         {deck.title}
-        <div className="h-1.5 w-30 bg-border ml-[1.25em] mt-1">
+        <div className="h-1.5 w-30 bg-taupe ml-[1.25em] mt-1">
           <div
             className="bg-text-dark h-full"
             style={{

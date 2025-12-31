@@ -25,7 +25,7 @@ function AnswerCard(props: AnswerCardProps) {
   } = props;
 
   return (
-    <div className="relative p-4 mt-4 rounded-2xl bg-light-light text-center border-2 border-border">
+    <div className="relative p-4 mt-4 rounded-2xl bg-light-light text-center border-2 border-taupe">
       <div className="text-text-light text-xl">
         <div className="leading-tight pb-0.5">
           <img
