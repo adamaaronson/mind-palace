@@ -1,4 +1,4 @@
-import { getBlockHeight } from "./Build";
+import { getBlockHeight } from "../utils/constants";
 
 interface BlockFaceProps {
   onMouseEnter: () => void;

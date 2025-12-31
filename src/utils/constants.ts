@@ -11,3 +11,12 @@ export const WRONG_MESSAGES = [
 ];
 
 export const FOUNT_MESSAGES = ["You know it!", "Nice work!", "Good memory!"];
+
+export const GRID_WIDTH = 11;
+export const GRID_DEPTH = 11;
+export const GRID_HEIGHT = 11;
+
+export const getBlockHeight = (blockWidth: number) => (blockWidth / 36) * 40;
+export const getBlockTopHeight = (blockWidth: number) => (blockWidth / 36) * 18;
+export const getBlockSideHeight = (blockWidth: number) =>
+  (blockWidth / 36) * 22;

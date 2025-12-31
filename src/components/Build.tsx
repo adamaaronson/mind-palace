@@ -1,19 +1,21 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import Block, { type BlockProps } from "./Block";
 import LinkButton from "./LinkButton";
+import {
+  getBlockSideHeight,
+  getBlockTopHeight,
+  GRID_DEPTH,
+  GRID_HEIGHT,
+  GRID_WIDTH,
+} from "../utils/constants";
 
-export const GRID_WIDTH = 11;
-export const GRID_DEPTH = 11;
-export const GRID_HEIGHT = 11;
-
-const getTopHeight = (blockWidth: number) => (blockWidth / 36) * 18;
-const getSideHeight = (blockWidth: number) => (blockWidth / 36) * 22;
-export const getBlockHeight = (blockWidth: number) => (blockWidth / 36) * 40;
+const getShadowHeight = (blockWidth: number) =>
+  getBlockSideHeight(blockWidth) * GRID_WIDTH * 1.1;
 
 const getOriginX = (blockWidth: number) =>
   (GRID_DEPTH / 2) * blockWidth - blockWidth / 2;
 const getOriginY = (blockWidth: number) =>
-  GRID_HEIGHT * getSideHeight(blockWidth);
+  GRID_HEIGHT * getBlockSideHeight(blockWidth);
 
 // project 3-dimensional coordinates onto isometric view
 // x: to the right and down a bit
@@ -29,8 +31,8 @@ export function getIsometricProjection(
     x: getOriginX(blockWidth) + (x - z) * (blockWidth / 2),
     y:
       getOriginY(blockWidth) +
-      (x + z) * (getTopHeight(blockWidth) / 2) -
-      y * getSideHeight(blockWidth),
+      (x + z) * (getBlockTopHeight(blockWidth) / 2) -
+      y * getBlockSideHeight(blockWidth),
   };
 }
 
@@ -56,7 +58,12 @@ function Build(props: BuildProps) {
     }
   }, [palaceRef]);
 
-  if (palaceRef && blockWidth === 0) {
+  if (
+    palaceRef &&
+    (blockWidth === 0 ||
+      blockWidth >
+        (palaceRef.clientWidth / ((GRID_WIDTH + GRID_DEPTH) / 2)) * 1.01)
+  ) {
     resizeBlock(palaceRef.clientWidth);
   }
 
@@ -122,15 +129,14 @@ function Build(props: BuildProps) {
       <div
         ref={(ref) => setPalaceRef(ref)}
         className="relative w-full m-auto my-2"
-        style={
-          blockWidth === 0
-            ? {}
-            : {
-                height:
-                  getSideHeight(blockWidth) * GRID_HEIGHT +
-                  getTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH),
-              }
-        }
+        style={{
+          contain: "paint",
+          height:
+            getBlockSideHeight(blockWidth) * GRID_HEIGHT +
+            getBlockTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH) +
+            getShadowHeight(blockWidth) * 0.5, // shadow space
+          marginBottom: -getShadowHeight(blockWidth) * 0.5, // shadow space
+        }}
       >
         {allBlocks.map((blockProps) => (
           <Block
@@ -143,7 +149,7 @@ function Build(props: BuildProps) {
           className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light absolute -translate-x-1/2 pointer-events-none"
           style={{
             width: blockWidth * GRID_WIDTH * 1.2,
-            height: getSideHeight(blockWidth) * GRID_WIDTH * 1.1,
+            height: getShadowHeight(blockWidth),
             left: getOriginX(blockWidth) + blockWidth / 2,
             top: getOriginY(blockWidth),
           }}

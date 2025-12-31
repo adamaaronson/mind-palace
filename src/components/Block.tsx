@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
-import {
-  getIsometricProjection,
-  GRID_DEPTH,
-  GRID_HEIGHT,
-  GRID_WIDTH,
-} from "./Build";
+import { getIsometricProjection } from "./Build";
+import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };

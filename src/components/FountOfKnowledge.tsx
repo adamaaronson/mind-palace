@@ -64,7 +64,10 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
   }, [displayNuggets]);
 
   return (
-    <div className="grow flex flex-col justify-end">
+    <div
+      className="grow flex flex-col justify-end"
+      style={{ contain: "paint" }}
+    >
       <div className="mb-4 text-center mt-8 md:mt-4 text-shadow-background text-shadow-[0px_0px_10px_#efd795]">
         <div className="font-bold text-4xl">
           {formatNumber(displayNuggets)}{" "}
@@ -78,7 +81,7 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
           <span className="text-text-light font-normal"> per second</span>
         </div>
       </div>
-      <div className="justify-self-end">
+      <div>
         {nuggetParticles.map((nuggetParticleProps) => (
           <NuggetParticle
             {...nuggetParticleProps}
