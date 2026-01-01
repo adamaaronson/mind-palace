@@ -6,6 +6,8 @@ import {
 } from "../utils/constants";
 import type { NuggetParticleProps } from "./NuggetParticle";
 
+let nuggetId = 0;
+
 export type NuggetParticleState = {
   previousNuggetTimestamp: number;
   nuggetParticles: NuggetParticleProps[];
@@ -35,7 +37,7 @@ export function createNuggetParticles(
     const width = (Math.random() * 30 + 10) / DEFAULT_FOUNT_WIDTH;
 
     nuggetParticles.push({
-      id: `${nuggetTimestamp}:${i}`,
+      id: `${++nuggetId}`,
       timestamp: nuggetTimestamp,
       xDistance: xDistance,
       yDistance: yDistance,

@@ -25,10 +25,14 @@ export default function QuestionCard(props: QuestionCardProps) {
   const { deck, card, submitGuess, hadTypo } = props;
   const [guess, setGuess] = useState("");
 
+  const noGuess = guess === "";
+
   return (
-    <div className="relative p-4 rounded-2xl bg-light-light text-center border-standard">
-      <div className="absolute -ml-4 text-sm left-full -translate-x-full font-normal rounded-sm border-standard px-2">
-        {getCardLabel(card)}
+    <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center">
+      <div className="block text-right mb-1 lg:mb-0 lg:absolute lg:-ml-4 text-sm left-full lg:-translate-x-full font-normal">
+        <span className="rounded-sm border-standard px-2">
+          {getCardLabel(card)}
+        </span>
       </div>
       <div className="text-text-light">
         Name the{" "}
@@ -42,7 +46,7 @@ export default function QuestionCard(props: QuestionCardProps) {
       </div>
 
       <form
-        className="relative w-fit mx-auto flex flex-col items-center gap-2 md:flex-row"
+        className="relative w-fit mx-auto flex flex-col flex-wrap items-center justify-center gap-2 md:flex-row"
         onSubmit={(event) => {
           event.preventDefault();
           if (submitGuess(guess)) {
@@ -56,13 +60,14 @@ export default function QuestionCard(props: QuestionCardProps) {
           className="bg-white p-1 border-standard px-2"
           placeholder={`Type the ${deck.answerLabel}`}
         />
-        <button
-          type="submit"
-          className="button-standard"
-          disabled={guess === ""}
-        >
-          Enter
-        </button>
+        <div className="flex flex-row gap-2">
+          <button
+            type="submit"
+            className={`button-standard ${noGuess ? "button-boring" : ""}`}
+          >
+            {noGuess ? "I don't know" : "Enter"}
+          </button>
+        </div>
       </form>
       {hadTypo && (
         <div className="text-text-light text-sm mt-2">
