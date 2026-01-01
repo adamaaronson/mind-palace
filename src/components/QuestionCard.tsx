@@ -19,13 +19,15 @@ interface QuestionCardProps {
   card: Card;
   submitGuess: (guess: string) => boolean;
   hadTypo: boolean;
+  wasCorrect: boolean;
 }
 
 export default function QuestionCard(props: QuestionCardProps) {
-  const { deck, card, submitGuess, hadTypo } = props;
+  const { deck, card, submitGuess, hadTypo, wasCorrect } = props;
   const [guess, setGuess] = useState("");
 
   const noGuess = guess === "";
+  const shouldShowIDontKnow = noGuess && wasCorrect;
 
   return (
     <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center">
@@ -63,9 +65,12 @@ export default function QuestionCard(props: QuestionCardProps) {
         <div className="flex flex-row gap-2">
           <button
             type="submit"
-            className={`button-standard ${noGuess ? "button-boring" : ""}`}
+            className={`button-standard ${
+              shouldShowIDontKnow ? "button-boring" : ""
+            }`}
+            disabled={!wasCorrect && !guess}
           >
-            {noGuess ? "I don't know" : "Enter"}
+            {shouldShowIDontKnow ? "I don't know" : "Enter"}
           </button>
         </div>
       </form>

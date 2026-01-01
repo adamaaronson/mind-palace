@@ -25,7 +25,7 @@ export default function App() {
   }));
   const [card, setCard] = useState(memoryQueue.cards[0]);
 
-  const [wasCorrect, setWasCorrect] = useState(false);
+  const [wasCorrect, setWasCorrect] = useState(true);
   const [hadTypo, setHadTypo] = useState(false);
   const [earnedFount, setEarnedFount] = useState(false);
   const [lostFount, setLostFount] = useState(false);
@@ -138,6 +138,7 @@ export default function App() {
                     deck={deck}
                     card={card}
                     submitGuess={submitGuess}
+                    wasCorrect={wasCorrect}
                     hadTypo={hadTypo}
                   />
                   {previousCard && (
