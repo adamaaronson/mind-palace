@@ -122,55 +122,51 @@ export default function App() {
   };
 
   return (
-    <div className="relative flex flex-col h-full font-theme">
+    <div className="relative flex flex-col h-full font-theme text-text-dark">
       <div className="fixed h-full w-full bg-background -z-30"></div>
       <div className="fixed h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
       <Header />
       <div className="flex flex-row w-full grow">
         <Column />
-        <div className="flex-auto mt-4 pb-4 h-full flex flex-col items-center overflow-hidden relative">
-          <div className="grow m-4 mt-0 text-text-dark max-w-300 w-full">
-            <div className="flex justify-stretch h-full flex-col md:flex-row">
-              <div className="flex-1 flex flex-col h-full relative">
-                <div className="px-8 py-4 bg-light mx-4 border-standard">
-                  <DeckInfo deck={deck} memoryQueue={memoryQueue} />
-                  <QuestionCard
-                    deck={deck}
-                    card={card}
-                    submitGuess={submitGuess}
-                    wasCorrect={wasCorrect}
-                    hadTypo={hadTypo}
-                  />
-                  {previousCard && (
-                    <AnswerCard
-                      deck={deck}
-                      previousCard={previousCard}
-                      wasCorrect={wasCorrect}
-                      nuggetsEarned={nuggetsEarned}
-                      earnedFount={earnedFount}
-                      lostFount={lostFount}
-                    />
-                  )}
-                </div>
-                <FountOfKnowledge
-                  displayNuggets={displayNuggets}
-                  nuggetsPerSecond={nuggetsPerSecond}
-                  nuggetParticles={nuggetParticles}
+        <div className="flex-auto mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">
+          <div className="flex m-4 mt-0 justify-center w-full h-full flex-col md:flex-row">
+            <div className="md:flex-1 flex flex-col md:h-full relative md:max-w-150">
+              <div className="px-8 py-4 bg-light mx-4 border-standard">
+                <DeckInfo deck={deck} memoryQueue={memoryQueue} />
+                <QuestionCard
+                  deck={deck}
+                  card={card}
+                  submitGuess={submitGuess}
+                  wasCorrect={wasCorrect}
+                  hadTypo={hadTypo}
                 />
-              </div>
-              <div className="flex-1 shrink min-w-0 mt-8 md:mt-0">
-                <Tabs
-                  labels={["Build", "Shop"]}
-                  activeIndex={tabIndex}
-                  setActiveIndex={setTabIndex}
-                >
-                  <Build inventory={[]} goToShop={() => setTabIndex(1)} />
-                  <Shop
-                    displayNuggets={displayNuggets}
-                    setNuggets={setNuggets}
+                {previousCard && (
+                  <AnswerCard
+                    deck={deck}
+                    previousCard={previousCard}
+                    wasCorrect={wasCorrect}
+                    nuggetsEarned={nuggetsEarned}
+                    earnedFount={earnedFount}
+                    lostFount={lostFount}
                   />
-                </Tabs>
+                )}
               </div>
+              <FountOfKnowledge
+                displayNuggets={displayNuggets}
+                nuggetsPerSecond={nuggetsPerSecond}
+                nuggetParticles={nuggetParticles}
+              />
+            </div>
+            <div className="md:flex-1 md:max-w-150 2xl:max-w-300 2xl:flex-2 mt-8 md:mt-0 min-w-0">
+              <Tabs
+                labels={["Build", "Shop"]}
+                widths={[3, 2]}
+                activeIndex={tabIndex}
+                setActiveIndex={setTabIndex}
+              >
+                <Build inventory={[]} goToShop={() => setTabIndex(1)} />
+                <Shop displayNuggets={displayNuggets} setNuggets={setNuggets} />
+              </Tabs>
             </div>
           </div>
           <Footer />

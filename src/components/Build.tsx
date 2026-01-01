@@ -17,6 +17,9 @@ const getOriginX = (blockWidth: number) =>
 const getOriginY = (blockWidth: number) =>
   GRID_HEIGHT * getBlockSideHeight(blockWidth);
 
+const palaceWidthToBlockWidth = (palaceWidth: number) =>
+  palaceWidth / ((GRID_WIDTH + GRID_DEPTH) / 2);
+
 // project 3-dimensional coordinates onto isometric view
 // x: to the right and down a bit
 // y: up
@@ -48,7 +51,7 @@ function Build(props: BuildProps) {
   const [palaceRef, setPalaceRef] = useState<HTMLDivElement | null>(null);
 
   const resizeBlock = (palaceWidth: number) => {
-    setBlockWidth(palaceWidth / ((GRID_WIDTH + GRID_DEPTH) / 2));
+    setBlockWidth(palaceWidthToBlockWidth(palaceWidth));
   };
 
   const resizePalace = useCallback(() => {
@@ -61,11 +64,10 @@ function Build(props: BuildProps) {
   if (
     palaceRef &&
     palaceRef.checkVisibility() &&
-    (blockWidth === 0 ||
-      blockWidth >
-        (palaceRef.clientWidth / ((GRID_WIDTH + GRID_DEPTH) / 2)) * 1.01)
+    (blockWidth < palaceWidthToBlockWidth(palaceRef.clientWidth) * 0.99 ||
+      blockWidth > palaceWidthToBlockWidth(palaceRef.clientWidth) * 1.01)
   ) {
-    resizeBlock(palaceRef.clientWidth);
+    resizePalace();
   }
 
   useEffect(() => {

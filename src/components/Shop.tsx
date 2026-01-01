@@ -25,7 +25,7 @@ export default function Shop(props: ShopProps) {
   };
 
   return (
-    <div className="border-standard rounded-2xl bg-light-light p-4 flex gap-2 overflow-scroll">
+    <div className="border-standard rounded-2xl bg-light-light p-4 flex gap-2 overflow-scroll min-w-0">
       {Object.entries(UPGRADES).map(([name, upgrade]) => (
         <div className="flex flex-col gap-1" key={name}>
           <div

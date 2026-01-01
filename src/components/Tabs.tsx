@@ -2,17 +2,18 @@ import { type Dispatch, type SetStateAction } from "react";
 
 interface TabsProps {
   labels: string[];
+  widths: number[];
   activeIndex: number;
   setActiveIndex: Dispatch<SetStateAction<number>>;
   children: React.ReactNode[];
 }
 
 export default function Tabs(props: TabsProps) {
-  const { labels, activeIndex, setActiveIndex, children } = props;
+  const { labels, widths, activeIndex, setActiveIndex, children } = props;
 
   return (
-    <div className="mx-4">
-      <div className="flex flex-row items-end">
+    <div className="mx-4 2xl:flex 2xl:flex-row 2xl:gap-8 2xl:items-start">
+      <div className="flex flex-row items-end 2xl:hidden">
         {labels.map((label, index) => (
           <button
             className={`text-2xl font-bold p-2 px-4 border-standard not-first:-ml-0.5 ${
@@ -29,11 +30,15 @@ export default function Tabs(props: TabsProps) {
       </div>
       {children.map((child, index) => (
         <div
-          className={`-mt-0.5 p-4 px-8 mb-4 bg-light border-standard overflow-hidden ${
-            index === activeIndex ? "visible" : "hidden"
+          className={`-mt-0.5 2xl:mt-0 p-4 px-8 mb-4 bg-light border-standard overflow-hidden md:min-w-50 md:max-w-150 ${
+            index === activeIndex ? "visible" : "hidden 2xl:block"
           }`}
+          style={{ flex: widths[index] }}
           key={index}
         >
+          <div className="hidden 2xl:block text-2xl font-bold mb-2">
+            {labels[index]}
+          </div>
           {child}
         </div>
       ))}

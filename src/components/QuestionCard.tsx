@@ -30,8 +30,8 @@ export default function QuestionCard(props: QuestionCardProps) {
   const shouldShowIDontKnow = noGuess && wasCorrect;
 
   return (
-    <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center">
-      <div className="block text-right mb-1 lg:mb-0 lg:absolute lg:-ml-4 text-sm left-full lg:-translate-x-full font-normal">
+    <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80">
+      <div className="absolute -ml-4 text-sm left-full -translate-x-full font-normal">
         <span className="rounded-sm border-standard px-2">
           {getCardLabel(card)}
         </span>

@@ -8,13 +8,9 @@ export default function Column() {
       <div className="bg-light border-standard border-t-0! w-[calc(100%+2px)] h-2 absolute top-0 left-0" />
       <div className="flex h-full">
         <div className="w-2 h-full"></div>
-        <Flute />
-        <Flute />
-        <Flute />
-        <Flute />
-        <Flute />
-        <Flute />
-        <Flute />
+        {Array.from({ length: 7 }, (_, index) => (
+          <Flute key={index} />
+        ))}
         <div className="border-l-standard w-2 h-full"></div>
       </div>
       <div className="bg-light border-standard border-b-0! w-[calc(100%+2px)] h-2 absolute top-full left-0 -translate-y-full" />
