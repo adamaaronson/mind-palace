@@ -32,9 +32,15 @@ export default function NuggetParticle(props: NuggetParticleProps) {
   };
 
   useEffect(() => {
+    let animationFrameId;
     if (!isAnimating) {
       setIsAnimating(true);
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    if (animationFrameId) {
+      return () => {
+        cancelAnimationFrame(animationFrameId);
+      };
     }
   }, []);
 

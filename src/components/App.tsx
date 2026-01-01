@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
 import { shuffle } from "lodash";
 import deck from "../decks/json/world_capitals.json";
@@ -33,6 +33,7 @@ export default function App() {
   const [nuggets, setNuggets] = useState(0);
   const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [nuggetsEarned, setNuggetsEarned] = useState(0);
+  const [previousTimestamp, setPreviousTimestamp] = useState(-1);
   const [timestamp, setTimestamp] = useState(0);
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -44,21 +45,20 @@ export default function App() {
     }
   );
 
-  const displayNuggets = Math.round(nuggets);
+  const displayNuggets = Math.floor(nuggets);
   const nuggetsPerCorrectAnswer = UPGRADES.CORRECT_ANSWERS.level;
   const nuggetsPerWrongAnswer = UPGRADES.ANY_ANSWERS.level;
 
-  useEffect(() => {
-    if (nuggets === 0 && nuggetsPerSecond === 0) {
-      return;
-    }
-
+  if (
+    timestamp !== previousTimestamp &&
+    !(nuggets === 0 && nuggetsPerSecond === 0)
+  ) {
     const now = Date.now();
     if (timestamp) {
       const nuggetsCreated = (nuggetsPerSecond * (now - timestamp)) / 1000;
       setNuggets((nuggets) => nuggets + nuggetsCreated);
 
-      const newDisplayNuggets = Math.round(nuggets + nuggetsCreated);
+      const newDisplayNuggets = Math.floor(nuggets + nuggetsCreated);
       if (newDisplayNuggets > displayNuggets) {
         dispatchNuggetParticles({
           type: "automatic",
@@ -68,8 +68,9 @@ export default function App() {
       }
     }
 
+    setPreviousTimestamp(timestamp);
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
-  }, [timestamp, nuggetsPerSecond]);
+  }
 
   const submitGuess = (guess: string) => {
     const answerEditDistance = getAnswerEditDistance(card, guess);
