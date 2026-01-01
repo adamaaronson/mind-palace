@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { formatNumber } from "../utils/utils";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
@@ -11,12 +11,30 @@ interface FountOfKnowledgeProps {
 
 function FountOfKnowledge(props: FountOfKnowledgeProps) {
   const { displayNuggets, nuggetsPerSecond, nuggetParticles } = props;
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [, setAnimationFrame] = useState(0);
+  const [fountImg, setFountImg] = useState<HTMLImageElement | null>(null);
 
-  const [fountElement, setFountElement] = useState<HTMLImageElement | null>(
-    null
-  );
+  const fountWidth = fountImg?.clientWidth;
 
-  const fountWidth = fountElement?.clientWidth;
+  const animate = (animationFrame: number) => {
+    setAnimationFrame(animationFrame);
+    requestAnimationFrame(animate);
+  };
+
+  useEffect(() => {
+    let animationFrameId;
+    if (!isAnimating) {
+      setIsAnimating(true);
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    if (animationFrameId) {
+      return () => {
+        cancelAnimationFrame(animationFrameId);
+      };
+    }
+  }, []);
 
   return (
     <div
@@ -40,17 +58,17 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
         {fountWidth &&
           nuggetParticles.map((nuggetParticleProps) => (
             <NuggetParticle
+              {...nuggetParticleProps}
               xDistance={nuggetParticleProps.xDistance * fountWidth}
               yDistance={nuggetParticleProps.yDistance * fountWidth}
               width={nuggetParticleProps.width * fountWidth}
-              timestamp={nuggetParticleProps.timestamp}
-              key={nuggetParticleProps.timestamp}
+              key={nuggetParticleProps.id}
             ></NuggetParticle>
           ))}
         <div className="relative">
           <img
             className="relative w-3/4 m-auto"
-            ref={(ref) => setFountElement(ref)}
+            ref={(ref) => setFountImg(ref)}
             src="fount-of-knowledge.svg"
           ></img>
           {fountWidth && (

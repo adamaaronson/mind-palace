@@ -35,6 +35,7 @@ export function createNuggetParticles(
     const width = (Math.random() * 30 + 10) / DEFAULT_FOUNT_WIDTH;
 
     nuggetParticles.push({
+      id: `${nuggetTimestamp}:${i}`,
       timestamp: nuggetTimestamp,
       xDistance: xDistance,
       yDistance: yDistance,
