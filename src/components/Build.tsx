@@ -130,7 +130,7 @@ function Build(props: BuildProps) {
   return (
     <div>
       <div
-        ref={(ref) => setPalaceRef(ref)}
+        ref={setPalaceRef}
         className="relative w-full m-auto my-2 pointer-events-none"
         style={{
           contain: "paint",
