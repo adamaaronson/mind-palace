@@ -68,7 +68,7 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
         <div className="relative">
           <img
             className="relative w-3/4 m-auto"
-            ref={(ref) => setFountImg(ref)}
+            ref={setFountImg}
             src="fount-of-knowledge.svg"
           ></img>
           {fountWidth && (
