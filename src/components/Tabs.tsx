@@ -12,7 +12,7 @@ export default function Tabs(props: TabsProps) {
   const { labels, widths, activeIndex, setActiveIndex, children } = props;
 
   return (
-    <div className="mx-4 2xl:flex 2xl:flex-row 2xl:gap-8 2xl:items-start">
+    <div className="mx-3 2xl:flex 2xl:flex-row 2xl:gap-6 2xl:items-start">
       <div className="flex flex-row items-end 2xl:hidden">
         {labels.map((label, index) => (
           <button

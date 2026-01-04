@@ -20,6 +20,7 @@ import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
 import { nuggetParticleReducer } from "./NuggetParticleReducer";
+import Banners from "./Banners";
 
 export default function App() {
   const [cardQueue, setCardQueue] = useState<CardQueue>(() =>
@@ -35,6 +36,7 @@ export default function App() {
   const [nuggetsEarned, setNuggetsEarned] = useState(0);
   const [previousTimestamp, setPreviousTimestamp] = useState(-1);
   const [timestamp, setTimestamp] = useState(0);
+  const [answerTimestamp, setAnswerTimestamp] = useState(0);
   const [tabIndex, setTabIndex] = useState(0);
 
   const [{ nuggetParticles }, dispatchNuggetParticles] = useReducer(
@@ -75,7 +77,6 @@ export default function App() {
 
   const submitGuess = (guess: string) => {
     const answerEditDistance = getAnswerEditDistance(card.fact, guess);
-    const wasCorrect = answerEditDistance === 0;
 
     if (answerEditDistance === 1) {
       setHadTypo(true);
@@ -84,6 +85,7 @@ export default function App() {
       setHadTypo(false);
     }
 
+    const wasCorrect = answerEditDistance === 0;
     const { answeredCard, cardQueue: newCardQueue } = answerFirstCard(
       cardQueue,
       wasCorrect
@@ -112,6 +114,7 @@ export default function App() {
     setEarnedFount(earnedFount);
     setNuggetsEarned(nuggetsEarned);
     setLostFount(lostFount);
+    setAnswerTimestamp(timestamp);
 
     setPreviousCard(answeredCard);
     setCardQueue(newCardQueue);
@@ -128,7 +131,7 @@ export default function App() {
         <div className="flex-auto mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">
           <div className="flex m-4 mt-0 justify-center w-full h-full flex-col md:flex-row">
             <div className="md:flex-1 flex flex-col md:h-full relative md:max-w-150">
-              <div className="px-8 py-4 bg-light mx-4 border-standard">
+              <div className="px-8 py-4 bg-light mx-3 border-standard flex flex-col gap-4 relative">
                 <DeckInfo deck={deck} cardQueue={cardQueue} />
                 <QuestionCard
                   deck={deck}
@@ -142,11 +145,15 @@ export default function App() {
                     deck={deck}
                     previousCard={previousCard}
                     wasCorrect={wasCorrect}
-                    nuggetsEarned={nuggetsEarned}
-                    earnedFount={earnedFount}
-                    lostFount={lostFount}
                   />
                 )}
+                <Banners
+                  nuggetsEarned={nuggetsEarned}
+                  wasCorrect={wasCorrect}
+                  earnedFount={earnedFount}
+                  lostFount={lostFount}
+                  answerTimestamp={answerTimestamp}
+                />
               </div>
               <FountOfKnowledge
                 displayNuggets={displayNuggets}

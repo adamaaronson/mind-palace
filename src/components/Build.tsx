@@ -165,7 +165,12 @@ function Build(props: BuildProps) {
         {inventory.length === 0 ? (
           <p className="text-sm text-text-light text-center">
             You don't have any blocks! Buy some in the{" "}
-            <LinkButton onClick={goToShop}>shop</LinkButton>.
+            <span className="whitespace-nowrap">
+              <LinkButton className="2xl:hidden" onClick={goToShop}>
+                shop
+              </LinkButton>
+              <span className="hidden 2xl:inline">shop</span>.
+            </span>
           </p>
         ) : (
           <></>

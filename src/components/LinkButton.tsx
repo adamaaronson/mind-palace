@@ -1,14 +1,15 @@
 interface LinkButtonProps {
   onClick?: () => void;
   children: string;
+  className: string;
 }
 
 export default function LinkButton(props: LinkButtonProps) {
-  const { children, onClick } = props;
+  const { children, onClick, className } = props;
 
   return (
     <button
-      className="font-bold text-text-dark inline-block hover:text-text-light transition-colors cursor-pointer"
+      className={`font-bold text-text-dark inline-block hover:text-text-light transition-colors cursor-pointer ${className}`}
       style={{
         backgroundImage: "linear-gradient(#9c7e4e 0%, #9c7e4e 100%)",
         backgroundPosition: "0 1.15em",

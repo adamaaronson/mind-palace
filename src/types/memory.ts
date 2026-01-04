@@ -108,7 +108,7 @@ export function answerFirstCard(
       }
     }
 
-    if (!newCard.seen || newCard.streak === KNOWLEDGE_STREAK) {
+    if (shouldMakeKnown(newCard)) {
       newCard.known = true;
     }
   } else {

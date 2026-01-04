@@ -13,7 +13,7 @@ export default function DeckInfo(props: DeckInfoProps) {
   const numSeen = cardQueue.cards.filter((card) => card.seen).length;
   const numKnown = cardQueue.cards.filter((card) => card.known).length;
   return (
-    <div className="flex justify-between mb-4">
+    <div className="flex justify-between">
       <h3 className="text-2xl font-bold">
         <img
           className="inline-block w-[0.8em] align-baseline mr-1"

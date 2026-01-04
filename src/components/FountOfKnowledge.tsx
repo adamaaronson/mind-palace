@@ -41,7 +41,7 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
       className="grow flex flex-col justify-end"
       style={{ contain: "paint" }}
     >
-      <div className="mb-4 text-center mt-8 md:mt-4 text-shadow-background text-shadow-[0px_0px_10px_#efd795]">
+      <div className="mb-4 text-center mt-20 md:mt-4 text-shadow-background text-shadow-[0px_0px_10px_#efd795]">
         <div className="font-bold text-4xl">
           {formatNumber(displayNuggets)}{" "}
           <span className="text-text-light font-normal">
@@ -67,7 +67,7 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
           ))}
         <div className="relative">
           <img
-            className="relative w-3/4 m-auto"
+            className="relative w-3/4 m-auto max-w-100"
             ref={setFountImg}
             src="fount-of-knowledge.svg"
           ></img>
