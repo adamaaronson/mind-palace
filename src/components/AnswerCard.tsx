@@ -24,6 +24,8 @@ function AnswerCard(props: AnswerCardProps) {
     lostFount,
   } = props;
 
+  const previousFact = previousCard.fact;
+
   return (
     <div className="relative p-4 mt-4 rounded-2xl bg-light-light text-center border-standard">
       <div className="text-text-light text-xl">
@@ -33,16 +35,16 @@ function AnswerCard(props: AnswerCardProps) {
             src={wasCorrect ? "check.svg" : "x.svg"}
           ></img>{" "}
           The {deck.answerLabel} of{" "}
-          <Link href={previousCard.questionLink} wikipedia>
-            {previousCard.question}
+          <Link href={previousFact.questionLink} wikipedia>
+            {previousFact.question}
           </Link>{" "}
           is{" "}
-          {previousCard.answers.map((answer, index) => (
+          {previousFact.answers.map((answer, index) => (
             <React.Fragment key={index}>
               <Link href={answer.link} wikipedia>
                 {answer.canonicalForm}
               </Link>
-              {index < previousCard.answers.length - 1 && <span> / </span>}
+              {index < previousFact.answers.length - 1 && <span> / </span>}
             </React.Fragment>
           ))}
         </div>

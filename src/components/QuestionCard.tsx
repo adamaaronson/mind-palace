@@ -1,17 +1,17 @@
 import { useState } from "react";
 import type { Deck } from "../types/knowledge";
-import { isNew, type Card } from "../types/memory";
-import { FOUNT_STREAK } from "../utils/constants";
+import { type Card } from "../types/memory";
+import { KNOWLEDGE_STREAK } from "../utils/constants";
 
 const getCardLabel = (card: Card) => {
-  if (isNew(card)) {
+  if (!card.seen) {
     return "new";
   }
   if (card.known) {
     return "review";
   }
 
-  return `${Math.min(card.streak ?? 0, FOUNT_STREAK)}/${FOUNT_STREAK}`;
+  return `${Math.min(card.streak ?? 0, KNOWLEDGE_STREAK)}/${KNOWLEDGE_STREAK}`;
 };
 
 interface QuestionCardProps {
@@ -41,14 +41,14 @@ export default function QuestionCard(props: QuestionCardProps) {
         <span className="font-bold text-text-dark">{deck.answerLabel}</span> of:
       </div>
       <div className="font-bold text-2xl leading-[1em] mt-1">
-        {card.question}
+        {card.fact.question}
       </div>
       <div className="font-bold mb-4 leading-tight">
-        ({card.questionSubtitle ?? deck.questionLabel})
+        ({card.fact.questionSubtitle ?? deck.questionLabel})
       </div>
 
       <form
-        className="relative w-fit mx-auto flex flex-col flex-wrap items-center justify-center gap-2 md:flex-row"
+        className="relative w-fit mx-auto flex flex-row flex-wrap items-center justify-center gap-2"
         onSubmit={(event) => {
           event.preventDefault();
           if (submitGuess(guess)) {
@@ -62,17 +62,15 @@ export default function QuestionCard(props: QuestionCardProps) {
           className="bg-white p-1 border-standard px-2"
           placeholder={`Type the ${deck.answerLabel}`}
         />
-        <div className="flex flex-row gap-2">
-          <button
-            type="submit"
-            className={`button-standard ${
-              shouldShowIDontKnow ? "button-boring" : ""
-            }`}
-            disabled={!wasCorrect && !guess}
-          >
-            {shouldShowIDontKnow ? "I don't know" : "Enter"}
-          </button>
-        </div>
+        <button
+          type="submit"
+          className={`button-standard px-0! w-30 ${
+            shouldShowIDontKnow ? "button-boring" : ""
+          }`}
+          disabled={!wasCorrect && !guess}
+        >
+          {shouldShowIDontKnow ? "I don't know" : "Enter"}
+        </button>
       </form>
       {hadTypo && (
         <div className="text-text-light text-sm mt-2">

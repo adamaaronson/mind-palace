@@ -5,7 +5,7 @@ export interface Deck {
   title: string;
   questionLabel: string;
   answerLabel: string;
-  cards: Fact[];
+  facts: Fact[];
 }
 
 export interface Fact {

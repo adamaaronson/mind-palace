@@ -1,17 +1,17 @@
 import type { Deck } from "../types/knowledge";
-import { isNew, type MemoryQueue } from "../types/memory";
+import { type CardQueue } from "../types/memory";
 
 interface DeckInfoProps {
   deck: Deck;
-  memoryQueue: MemoryQueue;
+  cardQueue: CardQueue;
 }
 
 export default function DeckInfo(props: DeckInfoProps) {
-  const { deck, memoryQueue } = props;
+  const { deck, cardQueue } = props;
 
-  const numItems = deck.cards.length;
-  const numSeen = memoryQueue.cards.filter((card) => !isNew(card)).length;
-  const numKnown = memoryQueue.cards.filter((card) => card.known).length;
+  const numItems = deck.facts.length;
+  const numSeen = cardQueue.cards.filter((card) => card.seen).length;
+  const numKnown = cardQueue.cards.filter((card) => card.known).length;
   return (
     <div className="flex justify-between mb-4">
       <h3 className="text-2xl font-bold">

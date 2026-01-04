@@ -1,12 +1,16 @@
 import { useReducer, useState } from "react";
-import { type MemoryQueue, type Card, reshuffle, isNew } from "../types/memory";
-import { shuffle } from "lodash";
+import {
+  type CardQueue,
+  type Card,
+  answerFirstCard,
+  createCardQueue,
+} from "../types/memory";
 import deck from "../decks/json/world_capitals.json";
 import { getAnswerEditDistance } from "../types/knowledge";
 import Footer from "./Footer";
 import Header from "./Header";
 import FountOfKnowledge from "./FountOfKnowledge";
-import { FOUNT_STREAK, REFRESH_TIME } from "../utils/constants";
+import { REFRESH_TIME } from "../utils/constants";
 import Column from "./Column";
 import AnswerCard from "./AnswerCard";
 import QuestionCard from "./QuestionCard";
@@ -18,13 +22,9 @@ import Tabs from "./Tabs";
 import { nuggetParticleReducer } from "./NuggetParticleReducer";
 
 export default function App() {
-  const [memoryQueue] = useState<MemoryQueue>(() => ({
-    cards: shuffle(deck.cards),
-    alreadyStudiedIndex: deck.cards.length,
-    randomness: 5,
-  }));
-  const [card, setCard] = useState(memoryQueue.cards[0]);
-
+  const [cardQueue, setCardQueue] = useState<CardQueue>(() =>
+    createCardQueue(deck)
+  );
   const [wasCorrect, setWasCorrect] = useState(true);
   const [hadTypo, setHadTypo] = useState(false);
   const [earnedFount, setEarnedFount] = useState(false);
@@ -48,6 +48,7 @@ export default function App() {
   const displayNuggets = Math.floor(nuggets);
   const nuggetsPerCorrectAnswer = UPGRADES.CORRECT_ANSWERS.level;
   const nuggetsPerWrongAnswer = UPGRADES.ANY_ANSWERS.level;
+  const card = cardQueue.cards[0];
 
   if (
     timestamp !== previousTimestamp &&
@@ -73,7 +74,7 @@ export default function App() {
   }
 
   const submitGuess = (guess: string) => {
-    const answerEditDistance = getAnswerEditDistance(card, guess);
+    const answerEditDistance = getAnswerEditDistance(card.fact, guess);
     const wasCorrect = answerEditDistance === 0;
 
     if (answerEditDistance === 1) {
@@ -83,11 +84,14 @@ export default function App() {
       setHadTypo(false);
     }
 
-    const earnedFount =
-      wasCorrect &&
-      !card.known &&
-      (isNew(card) || card.streak === FOUNT_STREAK - 1);
-    const lostFount = !wasCorrect && !!card.known;
+    const { answeredCard, cardQueue: newCardQueue } = answerFirstCard(
+      cardQueue,
+      wasCorrect
+    );
+
+    const earnedFount = wasCorrect && !card.known && answeredCard.known;
+    const lostFount = !wasCorrect && card.known;
+
     const nuggetsEarned = wasCorrect
       ? nuggetsPerCorrectAnswer
       : nuggetsPerWrongAnswer;
@@ -100,24 +104,17 @@ export default function App() {
 
     if (earnedFount) {
       setNuggetsPerSecond((nuggetsPerSecond) => nuggetsPerSecond + 1);
-      card.known = true;
     } else if (lostFount) {
       setNuggetsPerSecond((nuggetsPerSecond) => nuggetsPerSecond - 1);
-      card.known = false;
-    } else {
-      if (!wasCorrect) {
-        card.known = false;
-      }
     }
 
     setWasCorrect(wasCorrect);
     setEarnedFount(earnedFount);
     setNuggetsEarned(nuggetsEarned);
     setLostFount(lostFount);
-    setPreviousCard(card);
 
-    reshuffle(memoryQueue, wasCorrect);
-    setCard(memoryQueue.cards[0]);
+    setPreviousCard(answeredCard);
+    setCardQueue(newCardQueue);
     return true;
   };
 
@@ -132,7 +129,7 @@ export default function App() {
           <div className="flex m-4 mt-0 justify-center w-full h-full flex-col md:flex-row">
             <div className="md:flex-1 flex flex-col md:h-full relative md:max-w-150">
               <div className="px-8 py-4 bg-light mx-4 border-standard">
-                <DeckInfo deck={deck} memoryQueue={memoryQueue} />
+                <DeckInfo deck={deck} cardQueue={cardQueue} />
                 <QuestionCard
                   deck={deck}
                   card={card}
