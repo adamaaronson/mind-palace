@@ -2,15 +2,28 @@ import { memo, useEffect, useState } from "react";
 import { formatNumber } from "../utils/utils";
 import type { NuggetParticleProps } from "./NuggetParticle";
 import NuggetParticle from "./NuggetParticle";
+import { motion } from "motion/react";
 
 interface FountOfKnowledgeProps {
   displayNuggets: number;
   nuggetsPerSecond: number;
   nuggetParticles: NuggetParticleProps[];
+  nuggetsEarned: number;
+  earnedFount: boolean;
+  lostFount: boolean;
+  answerTimestamp: number;
 }
 
 function FountOfKnowledge(props: FountOfKnowledgeProps) {
-  const { displayNuggets, nuggetsPerSecond, nuggetParticles } = props;
+  const {
+    displayNuggets,
+    nuggetsPerSecond,
+    nuggetParticles,
+    nuggetsEarned,
+    earnedFount,
+    lostFount,
+    answerTimestamp,
+  } = props;
   const [isAnimating, setIsAnimating] = useState(false);
   const [, setAnimationFrame] = useState(0);
   const [fountImg, setFountImg] = useState<HTMLImageElement | null>(null);
@@ -44,14 +57,41 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
       <div className="mb-4 text-center mt-20 md:mt-4 text-shadow-background text-shadow-[0px_0px_10px_#efd795]">
         <div className="font-bold text-4xl">
           {formatNumber(displayNuggets)}{" "}
-          <span className="text-text-light font-normal">
+          <span className="text-text-light font-normal relative">
             {" "}
             nugget{displayNuggets === 1 ? "" : "s"}
+            {nuggetsEarned !== 0 && (
+              <motion.div
+                key={answerTimestamp}
+                className="absolute text-2xl text-text-dark font-bold top-0 left-full ml-1"
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1 }}
+              >
+                +{nuggetsEarned}
+              </motion.div>
+            )}
           </span>
         </div>
         <div className="font-bold">
           {formatNumber(nuggetsPerSecond)}{" "}
-          <span className="text-text-light font-normal"> per second</span>
+          <span className="text-text-light font-normal relative">
+            {" "}
+            per second
+            {(earnedFount || lostFount) && (
+              <motion.div
+                key={answerTimestamp}
+                className={`absolute font-bold top-0 left-full ml-1 whitespace-nowrap ${
+                  earnedFount ? "text-text-dark" : "text-red"
+                }`}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 0, y: -20 }}
+                transition={{ duration: 1 }}
+              >
+                {earnedFount ? "+1" : "–1"}
+              </motion.div>
+            )}
+          </span>
         </div>
       </div>
       <div>

@@ -7,18 +7,20 @@ interface AnswerCardProps {
   deck: Deck;
   previousCard: Card;
   wasCorrect: boolean;
+  earnedFount: boolean;
+  lostFount: boolean;
 }
 
 function AnswerCard(props: AnswerCardProps) {
-  const { deck, previousCard, wasCorrect } = props;
+  const { deck, previousCard, wasCorrect, earnedFount, lostFount } = props;
 
   const previousFact = previousCard.fact;
 
   return (
     <div>
       <div className="relative p-4 rounded-2xl bg-light-light text-center border-standard">
-        <div className="text-text-light text-xl">
-          <div className="leading-tight pb-0.5">
+        <div className="text-text-light text-lg">
+          <div className="leading-tight">
             <img
               className="inline-block align-baseline mb-[-0.1em] mr-1 w-[1em]"
               src={wasCorrect ? "check.svg" : "x.svg"}
@@ -37,6 +39,24 @@ function AnswerCard(props: AnswerCardProps) {
               </React.Fragment>
             ))}
           </div>
+        </div>
+        <div className="text-sm mt-0.5">
+          {earnedFount && (
+            <p>
+              <span className="text-amber-950 font-bold">+1</span>{" "}
+              <span className="text-text-light">
+                nugget per second! You know it!
+              </span>
+            </p>
+          )}
+          {lostFount && (
+            <p>
+              <span className="text-amber-950 font-bold">–1</span>{" "}
+              <span className="text-text-light">
+                nugget per second! You forgot!
+              </span>
+            </p>
+          )}
         </div>
       </div>
     </div>

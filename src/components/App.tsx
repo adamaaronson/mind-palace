@@ -20,7 +20,6 @@ import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
 import { nuggetParticleReducer } from "./NuggetParticleReducer";
-import Banners from "./Banners";
 
 export default function App() {
   const [cardQueue, setCardQueue] = useState<CardQueue>(() =>
@@ -145,20 +144,19 @@ export default function App() {
                     deck={deck}
                     previousCard={previousCard}
                     wasCorrect={wasCorrect}
+                    earnedFount={earnedFount}
+                    lostFount={lostFount}
                   />
                 )}
-                <Banners
-                  nuggetsEarned={nuggetsEarned}
-                  wasCorrect={wasCorrect}
-                  earnedFount={earnedFount}
-                  lostFount={lostFount}
-                  answerTimestamp={answerTimestamp}
-                />
               </div>
               <FountOfKnowledge
                 displayNuggets={displayNuggets}
                 nuggetsPerSecond={nuggetsPerSecond}
                 nuggetParticles={nuggetParticles}
+                earnedFount={earnedFount}
+                lostFount={lostFount}
+                nuggetsEarned={nuggetsEarned}
+                answerTimestamp={answerTimestamp}
               />
             </div>
             <div className="md:flex-1 md:max-w-150 2xl:max-w-300 2xl:flex-2 mt-8 md:mt-0 min-w-0">
