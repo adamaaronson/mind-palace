@@ -42,7 +42,7 @@ def read_csv(csv_file: str) -> list[dict]:
                         case _:
                             fact[column_name] = value
 
-                deck['cards'].append(fact)
+                deck['facts'].append(fact)
                 fact_id += 1
 
     return deck
@@ -50,7 +50,7 @@ def read_csv(csv_file: str) -> list[dict]:
 
 def write_json(deck: list[dict], json_file: str):
     with open(json_file, 'w') as f:
-        f.write(json.dumps(deck, indent=4))
+        f.write(json.dumps(deck, indent=2))
 
 
 def main():

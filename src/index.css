@@ -22,32 +22,32 @@
     inset 0px 4px 0px #ffffff44;
 }
 
-.border-standard {
+@utility .border-standard {
   border: 2px solid var(--color-taupe);
 }
 
-.border-l-standard {
+@utility .border-l-standard {
   border-left: 2px solid var(--color-taupe);
 }
 
-.border-r-standard {
+@utility .border-r-standard {
   border-right: 2px solid var(--color-taupe);
 }
 
-.border-t-standard {
+@utility .border-t-standard {
   border-top: 2px solid var(--color-taupe);
 }
 
-.border-b-standard {
+@utility .border-b-standard {
   border-bottom: 2px solid var(--color-taupe);
 }
 
-.button-standard {
+@utility .button-standard {
   @apply cursor-pointer font-bold bg-gold-light border-gold border-2 rounded-md inset-shadow-glossy p-1 px-4
          hover:scale-95 active:bg-gold active:scale-95 transition-all
          disabled:opacity-50 disabled:pointer-events-none;
 }
 
-.button-boring {
+@utility .button-boring {
   @apply bg-light! border-taupe! active:bg-taupe!;
 }
