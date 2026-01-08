@@ -23,7 +23,7 @@ import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
 
 export default function App() {
-  const [deck, setDeck] = useState<Deck>(decks[0]);
+  const [deck, setDeck] = useState<Deck>(decks.Geography[0]);
   const [showingDeckSelector, setShowingDeckSelector] = useState(true);
   const [cardQueue, setCardQueue] = useState<CardQueue>(() =>
     createCardQueue(deck)
@@ -145,6 +145,7 @@ export default function App() {
       {showingDeckSelector && (
         <DeckSelector
           decks={decks}
+          cardQueue={cardQueue}
           onSelectDeck={(deck) => selectDeck(deck)}
           onClose={() => setShowingDeckSelector(false)}
         />
@@ -158,6 +159,7 @@ export default function App() {
                 <DeckInfo
                   deck={deck}
                   cardQueue={cardQueue}
+                  showDeckSelector
                   onClickDeckSelector={() => setShowingDeckSelector(true)}
                 />
                 <QuestionCard
