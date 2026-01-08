@@ -64,8 +64,8 @@ export default function QuestionCard(props: QuestionCardProps) {
         />
         <button
           type="submit"
-          className={`button-standard px-0! w-30 ${
-            shouldShowIDontKnow ? "button-boring" : ""
+          className={`px-0! w-30 ${
+            shouldShowIDontKnow ? "button-boring" : "button-standard"
           }`}
           disabled={!wasCorrect && !guess}
         >

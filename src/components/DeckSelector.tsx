@@ -16,7 +16,7 @@ export default function DeckSelector(props: DeckSelectorProps) {
         {decks.map((deck) => (
           <div className="flex flex-row gap-4 items-center" key={deck.id}>
             <button
-              className="inline-block button-standard button-boring p-2 px-4 font-bold text-lg text-left"
+              className="inline-block button-boring font-bold text-lg text-left"
               onClick={() => onSelectDeck(deck)}
             >
               {deck.title}

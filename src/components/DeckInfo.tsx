@@ -16,7 +16,7 @@ export default function DeckInfo(props: DeckInfoProps) {
     <div className="flex justify-between">
       <div className="flex flex-row items-start gap-2">
         <button
-          className="text-2xl button-standard button-boring p-1.5!"
+          className="text-2xl button-boring p-1.5!"
           onClick={onClickDeckSelector}
         >
           <img

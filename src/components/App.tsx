@@ -5,7 +5,7 @@ import {
   answerFirstCard,
   createCardQueue,
 } from "../types/memory";
-import decks from "../decks/Decks";
+import decks from "../decks/decks";
 import { type Deck, getAnswerEditDistance } from "../types/knowledge";
 import Footer from "./Footer";
 import Header from "./Header";
