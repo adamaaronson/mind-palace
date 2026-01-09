@@ -142,15 +142,15 @@ export default function App() {
       <div className="fixed h-full w-full bg-background -z-30"></div>
       <div className="fixed h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
       <Header />
-      {showingDeckSelector && (
+
+      <div className="flex flex-row w-full grow relative">
         <DeckSelector
           decks={decks}
           cardQueue={cardQueue}
           onSelectDeck={(deck) => selectDeck(deck)}
+          isOpen={showingDeckSelector}
           onClose={() => setShowingDeckSelector(false)}
         />
-      )}
-      <div className="flex flex-row w-full grow">
         <Column />
         <div className="flex-auto mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">
           <div className="flex m-4 mt-0 justify-center w-full h-full flex-col md:flex-row">
@@ -205,7 +205,7 @@ export default function App() {
         </div>
         <Column />
       </div>
-      <div className="bg-light h-4 border-t-standard flex-none"></div>
+      <div className="bg-light h-4 border-t-standard flex-none z-100"></div>
     </div>
   );
 }

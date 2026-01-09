@@ -7,13 +7,19 @@ interface DeckSelectorProps {
   decks: Record<string, Deck[]>;
   cardQueue: CardQueue;
   onSelectDeck: (deck: Deck) => void;
+  isOpen: boolean;
   onClose: () => void;
 }
 
 export default function DeckSelector(props: DeckSelectorProps) {
-  const { decks, cardQueue, onSelectDeck, onClose } = props;
+  const { decks, cardQueue, onSelectDeck, isOpen, onClose } = props;
   return (
-    <Modal title="Select a Deck" onClose={onClose} className="w-100">
+    <Modal
+      title="Select a Topic"
+      isOpen={isOpen}
+      onClose={onClose}
+      className="w-100"
+    >
       <div className="flex flex-col gap-2 rounded-2xl bg-light-light border-standard p-4 pt-2">
         {Object.entries(decks).map(([category, categoryDecks]) => (
           <div className="flex flex-col gap-2" key={category}>
@@ -22,6 +28,7 @@ export default function DeckSelector(props: DeckSelectorProps) {
               <button
                 className="inline-block button-boring p-2 px-4 font-bold text-lg text-left"
                 onClick={() => onSelectDeck(deck)}
+                key={deck.id}
               >
                 <DeckInfo
                   deck={deck}
