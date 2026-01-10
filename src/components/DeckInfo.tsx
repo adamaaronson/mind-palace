@@ -1,4 +1,4 @@
-import type { Deck } from "../types/knowledge";
+import type { Deck } from "../types/deck";
 import { type CardQueue } from "../types/memory";
 
 interface DeckInfoProps {

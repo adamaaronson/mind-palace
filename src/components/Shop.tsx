@@ -1,32 +1,47 @@
-import { UPGRADES } from "../types/upgrade";
+import { type Upgrade } from "../types/upgrade";
 import { formatNumber } from "../utils/utils";
 
 interface ShopProps {
   displayNuggets: number;
   setNuggets: React.Dispatch<React.SetStateAction<number>>;
+  upgrades: Record<string, Upgrade>;
+  setUpgrades: React.Dispatch<React.SetStateAction<Record<string, Upgrade>>>;
 }
 
 export default function Shop(props: ShopProps) {
-  const { displayNuggets, setNuggets } = props;
+  const { displayNuggets, setNuggets, upgrades, setUpgrades } = props;
 
   const purchaseUpgrade = (upgradeName: string) => {
-    const upgrade = UPGRADES[upgradeName];
+    const upgrade = upgrades[upgradeName];
     const previousUpgradePrice = upgrade.price;
     if (displayNuggets < upgrade.price) {
       return;
     }
     setNuggets((nuggets) => nuggets - previousUpgradePrice);
 
-    upgrade.price = Math.floor(upgrade.price * 1.5);
-    upgrade.level += 1;
+    setUpgrades((upgrades) => ({
+      ...upgrades,
+      [upgradeName]: {
+        ...upgrade,
+        price: Math.floor(upgrade.price * 1.5),
+        level: upgrade.level + 1,
+      },
+    }));
+
     if (upgradeName === "ANY_ANSWERS") {
-      UPGRADES.CORRECT_ANSWERS.level += 1;
+      setUpgrades((upgrades) => ({
+        ...upgrades,
+        CORRECT_ANSWERS: {
+          ...upgrades.CORRECT_ANSWERS,
+          level: upgrades.CORRECT_ANSWERS.level + 1,
+        },
+      }));
     }
   };
 
   return (
     <div className="border-standard rounded-2xl bg-light-light p-4 flex gap-2 overflow-scroll min-w-0">
-      {Object.entries(UPGRADES).map(([name, upgrade]) => (
+      {Object.entries(upgrades).map(([name, upgrade]) => (
         <div className="flex flex-col gap-1" key={name}>
           <div
             className="relative bg-white border-standard rounded-md h-20 w-20 p-2 flex justify-center align-center"
@@ -41,7 +56,7 @@ export default function Shop(props: ShopProps) {
             type="submit"
             className={`button-standard py-0! px-2! text-sm ${
               displayNuggets >= upgrade.price
-                ? "opacity-100 cursor-pointer hover:bg-gold"
+                ? "opacity-100 cursor-pointer"
                 : "disabled:opacity-50 disabled:pointer-events-none"
             }`}
             disabled={displayNuggets < upgrade.price}

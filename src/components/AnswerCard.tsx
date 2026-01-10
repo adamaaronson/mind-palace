@@ -1,5 +1,5 @@
 import React from "react";
-import type { Deck } from "../types/knowledge";
+import type { Deck } from "../types/fact";
 import Link from "./Link";
 import type { Card } from "../types/memory";
 

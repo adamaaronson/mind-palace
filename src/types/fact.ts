@@ -1,14 +1,6 @@
 import { normalize } from "../utils/utils";
 import levenshtein from "damerau-levenshtein";
 
-export interface Deck {
-  id: number;
-  title: string;
-  questionLabel: string;
-  answerLabel: string;
-  facts: Fact[];
-}
-
 export interface Fact {
   id: number;
   question: string;

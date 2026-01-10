@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Deck } from "../types/knowledge";
+import type { Deck } from "../types/deck";
 import { type Card } from "../types/memory";
 import { KNOWLEDGE_STREAK } from "../utils/constants";
 

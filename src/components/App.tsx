@@ -5,8 +5,8 @@ import {
   answerFirstCard,
   createCardQueue,
 } from "../types/memory";
-import decks from "../decks/decks";
-import { type Deck, getAnswerEditDistance } from "../types/knowledge";
+import { type Deck, DECKS_BY_ID } from "../types/deck";
+import { getAnswerEditDistance } from "../types/fact";
 import Footer from "./Footer";
 import Header from "./Header";
 import FountOfKnowledge from "./FountOfKnowledge";
@@ -23,11 +23,16 @@ import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
 
 export default function App() {
-  const [deck, setDeck] = useState<Deck>(decks.Geography[0]);
-  const [showingDeckSelector, setShowingDeckSelector] = useState(true);
-  const [cardQueue, setCardQueue] = useState<CardQueue>(() =>
-    createCardQueue(deck)
+  const [deckId, setDeckId] = useState(0);
+  const [cardQueues, setCardQueues] = useState<Record<number, CardQueue>>(() =>
+    Object.fromEntries(
+      Object.entries(DECKS_BY_ID).map(([id, deck]) => [
+        id,
+        createCardQueue(deck),
+      ])
+    )
   );
+
   const [wasCorrect, setWasCorrect] = useState(true);
   const [hadTypo, setHadTypo] = useState(false);
   const [earnedFount, setEarnedFount] = useState(false);
@@ -36,10 +41,15 @@ export default function App() {
   const [nuggets, setNuggets] = useState(0);
   const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [nuggetsEarned, setNuggetsEarned] = useState(0);
+
   const [previousTimestamp, setPreviousTimestamp] = useState(-1);
   const [timestamp, setTimestamp] = useState(0);
   const [answerTimestamp, setAnswerTimestamp] = useState(0);
+
   const [tabIndex, setTabIndex] = useState(0);
+  const [showingDeckSelector, setShowingDeckSelector] = useState(true);
+
+  const [upgrades, setUpgrades] = useState(() => UPGRADES);
 
   const [{ nuggetParticles }, dispatchNuggetParticles] = useReducer(
     nuggetParticleReducer,
@@ -49,9 +59,12 @@ export default function App() {
     }
   );
 
+  const cardQueue = cardQueues[deckId];
+  const deck = DECKS_BY_ID[deckId];
+
   const displayNuggets = Math.floor(nuggets);
-  const nuggetsPerCorrectAnswer = UPGRADES.CORRECT_ANSWERS.level;
-  const nuggetsPerWrongAnswer = UPGRADES.ANY_ANSWERS.level;
+  const nuggetsPerCorrectAnswer = upgrades.CORRECT_ANSWERS.level;
+  const nuggetsPerWrongAnswer = upgrades.ANY_ANSWERS.level;
   const card = cardQueue.cards[0];
 
   if (
@@ -77,9 +90,8 @@ export default function App() {
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
   }
 
-  const selectDeck = (newDeck: Deck) => {
-    setDeck(newDeck);
-    setCardQueue(createCardQueue(newDeck));
+  const selectDeck = (deck: Deck) => {
+    setDeckId(deck.id);
     setPreviousCard(null);
     setWasCorrect(true);
     setEarnedFount(false);
@@ -129,7 +141,10 @@ export default function App() {
     setAnswerTimestamp(timestamp);
 
     setPreviousCard(answeredCard);
-    setCardQueue(newCardQueue);
+    setCardQueues((cardQueues) => ({
+      ...cardQueues,
+      [deckId]: newCardQueue,
+    }));
     return true;
   };
 
@@ -145,14 +160,13 @@ export default function App() {
 
       <div className="flex flex-row w-full grow relative">
         <DeckSelector
-          decks={decks}
-          cardQueue={cardQueue}
+          cardQueues={cardQueues}
           onSelectDeck={(deck) => selectDeck(deck)}
           isOpen={showingDeckSelector}
           onClose={() => setShowingDeckSelector(false)}
         />
         <Column />
-        <div className="flex-auto mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">
+        <div className="flex-auto mt-2 md:mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">
           <div className="flex m-4 mt-0 justify-center w-full h-full flex-col md:flex-row">
             <div className="md:flex-1 flex flex-col md:h-full relative md:max-w-150">
               <div className="px-8 py-4 bg-light mx-3 border-standard flex flex-col gap-4 relative">
@@ -197,7 +211,12 @@ export default function App() {
                 setActiveIndex={setTabIndex}
               >
                 <Build inventory={[]} goToShop={() => setTabIndex(1)} />
-                <Shop displayNuggets={displayNuggets} setNuggets={setNuggets} />
+                <Shop
+                  displayNuggets={displayNuggets}
+                  setNuggets={setNuggets}
+                  upgrades={upgrades}
+                  setUpgrades={setUpgrades}
+                />
               </Tabs>
             </div>
           </div>

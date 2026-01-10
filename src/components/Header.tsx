@@ -2,7 +2,7 @@ import { toRomanNumerals } from "../utils/utils";
 
 export default function Header() {
   return (
-    <div className="md:p-4 px-8 md:px-8 border-b-standard bg-light font-classical tracking-widest font-bold flex justify-center sm:justify-between items-center">
+    <div className="md:p-4 px-8 md:px-8 border-b-standard bg-light font-classical tracking-widest font-bold flex justify-center sm:justify-between items-center z-100">
       <span className="text-text-light md:text-xl hidden sm:block">
         v. Pre-Alpha
       </span>

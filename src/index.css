@@ -47,10 +47,10 @@
 
 @utility button-standard {
   @apply cursor-pointer font-bold bg-gold-light border-gold border-2 rounded-md inset-shadow-glossy p-1 px-4
-         hover:scale-95 active:bg-gold active:scale-95 transition-all
+         hover:scale-95 active:brightness-92 active:saturate-125 active:scale-95 transition-all
          disabled:opacity-50 disabled:pointer-events-none;
 }
 
 @utility button-boring {
-  @apply button-standard bg-light! border-taupe! active:bg-taupe!;
+  @apply button-standard bg-light! border-taupe!;
 }
