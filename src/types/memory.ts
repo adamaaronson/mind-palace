@@ -1,4 +1,5 @@
-import { type Deck, type Fact } from "./fact";
+import { type Deck } from "./deck";
+import { type Fact } from "./fact";
 import { randomRange } from "../utils/utils";
 import { shuffle } from "lodash";
 import { KNOWLEDGE_STREAK } from "../utils/constants";
