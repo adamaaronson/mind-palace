@@ -4,7 +4,7 @@ import DeckInfo from "./DeckInfo";
 import { Modal } from "./Modal";
 
 interface DeckSelectorProps {
-  cardQueues: Record<number, CardQueue>;
+  cardQueues: Record<string, CardQueue>;
   onSelectDeck: (deck: Deck) => void;
   isOpen: boolean;
   onClose: () => void;
@@ -20,13 +20,13 @@ export default function DeckSelector(props: DeckSelectorProps) {
       className="w-100"
     >
       <div className="flex flex-col gap-4">
-        {Object.entries(DECKS).map(([category, categoryDecks]) => (
+        {DECKS.map((deckCategory) => (
           <div
             className="flex flex-col gap-2 rounded-2xl bg-light-light border-standard p-4 pt-2"
-            key={category}
+            key={deckCategory.id}
           >
-            <div className="font-bold text-xl">{category}</div>
-            {categoryDecks.map((deck) => {
+            <div className="font-bold text-xl">{deckCategory.displayName}</div>
+            {deckCategory.decks.map((deck) => {
               const cardQueue = cardQueues[deck.id];
               const isGold =
                 cardQueue.cards.filter((card) => card.known).length ===

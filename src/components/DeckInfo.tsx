@@ -35,7 +35,7 @@ export default function DeckInfo(props: DeckInfoProps) {
           </button>
         )}
         <h3 className={`text-2xl font-bold ${small ? "text-lg!" : ""}`}>
-          <div>{deck.title}</div>
+          <div>{deck.displayName}</div>
           <div
             className={`h-2 w-40 bg-taupe mt-1 ml-px ${small ? "w-30!" : ""}`}
           >

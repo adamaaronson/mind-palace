@@ -1,73 +1,110 @@
-import { type Upgrade } from "../types/upgrade";
+import {
+  getShopItem,
+  type ShopItem,
+  type ShopItemCategory,
+} from "../types/shop";
 import { formatNumber } from "../utils/utils";
 
 interface ShopProps {
   displayNuggets: number;
   setNuggets: React.Dispatch<React.SetStateAction<number>>;
-  upgrades: Record<string, Upgrade>;
-  setUpgrades: React.Dispatch<React.SetStateAction<Record<string, Upgrade>>>;
+  shopItems: ShopItemCategory[];
+  setShopItems: React.Dispatch<React.SetStateAction<ShopItemCategory[]>>;
 }
 
 export default function Shop(props: ShopProps) {
-  const { displayNuggets, setNuggets, upgrades, setUpgrades } = props;
+  const { displayNuggets, setNuggets, shopItems, setShopItems } = props;
 
-  const purchaseUpgrade = (upgradeName: string) => {
-    const upgrade = upgrades[upgradeName];
-    const previousUpgradePrice = upgrade.price;
-    if (displayNuggets < upgrade.price) {
+  const purchaseItem = (itemCategoryId: string, itemId: string) => {
+    const item = getShopItem(shopItems, itemCategoryId, itemId);
+    if (!item) {
       return;
     }
-    setNuggets((nuggets) => nuggets - previousUpgradePrice);
 
-    setUpgrades((upgrades) => ({
-      ...upgrades,
-      [upgradeName]: {
-        ...upgrade,
-        price: Math.floor(upgrade.price * 1.5),
-        level: upgrade.level + 1,
-      },
-    }));
+    const previousItemPrice = item.price;
+    if (displayNuggets < item.price) {
+      return;
+    }
+    setNuggets((nuggets) => nuggets - previousItemPrice);
+    setShopItems((shopItems) =>
+      shopItems.map((category) =>
+        category.id === itemCategoryId
+          ? {
+              ...category,
+              items: category.items.map((item: ShopItem) =>
+                item.id === itemId
+                  ? {
+                      ...item,
+                      price: Math.floor(item.price * 1.5),
+                      level: item.level + 1,
+                    }
+                  : item
+              ),
+            }
+          : category
+      )
+    );
 
-    if (upgradeName === "ANY_ANSWERS") {
-      setUpgrades((upgrades) => ({
-        ...upgrades,
-        CORRECT_ANSWERS: {
-          ...upgrades.CORRECT_ANSWERS,
-          level: upgrades.CORRECT_ANSWERS.level + 1,
-        },
-      }));
+    if (itemCategoryId === "upgrades" && itemId === "any-answers") {
+      // Upgrading "nuggets per any answer" also increases "nuggets per correct answer" by 1
+      setShopItems((shopItems) =>
+        shopItems.map((category) =>
+          category.id === "upgrades"
+            ? {
+                ...category,
+                items: category.items.map((item: ShopItem) =>
+                  item.id === "correct-answers"
+                    ? {
+                        ...item,
+                        price: Math.floor(item.price * 1.5),
+                        level: item.level + 1,
+                      }
+                    : item
+                ),
+              }
+            : category
+        )
+      );
     }
   };
 
   return (
-    <div className="border-standard rounded-2xl bg-light-light p-4 flex gap-2 overflow-scroll min-w-0">
-      {Object.entries(upgrades).map(([name, upgrade]) => (
-        <div className="flex flex-col gap-1" key={name}>
-          <div
-            className="relative bg-white border-standard rounded-md h-20 w-20 p-2 flex justify-center align-center"
-            key={name}
-          >
-            <div className="absolute font-bold left-full top-0 -translate-x-full -ml-1">
-              +{upgrade.level}
-            </div>
-            <img src={upgrade.image} width="80%"></img>
+    <div className="flex flex-col gap-4">
+      {shopItems.map((itemCategory) => (
+        <div
+          className="border-standard rounded-2xl bg-light-light p-4 pt-2 flex flex-col gap-2 min-w-0"
+          key={itemCategory.id}
+        >
+          <div className="text-xl font-bold">{itemCategory.displayName}</div>
+          <div className="flex gap-2 overflow-scroll min-w-0">
+            {itemCategory.items.map((item) => (
+              <div className="flex flex-col gap-1" key={item.id}>
+                <div className="relative bg-white border-standard rounded-md h-20 w-20 p-2 flex justify-center align-center">
+                  <div className="absolute font-bold left-full top-0 -translate-x-full -ml-1">
+                    {itemCategory.id === "upgrades" ? "+" : ""}
+                    {item.level}
+                  </div>
+                  <img src={item.image} width="80%"></img>
+                </div>
+                <button
+                  type="submit"
+                  className={`button-standard py-0! px-2! text-sm ${
+                    displayNuggets >= item.price
+                      ? "opacity-100 cursor-pointer"
+                      : "disabled:opacity-50 disabled:pointer-events-none"
+                  }`}
+                  disabled={displayNuggets < item.price}
+                  onClick={() => purchaseItem(itemCategory.id, item.id)}
+                >
+                  <img
+                    src="nugget.svg"
+                    className="inline-block h-[1em] align-baseline -mb-0.5"
+                  ></img>{" "}
+                  {formatNumber(item.price)}
+                </button>
+              </div>
+            ))}
           </div>
-          <button
-            type="submit"
-            className={`button-standard py-0! px-2! text-sm ${
-              displayNuggets >= upgrade.price
-                ? "opacity-100 cursor-pointer"
-                : "disabled:opacity-50 disabled:pointer-events-none"
-            }`}
-            disabled={displayNuggets < upgrade.price}
-            onClick={() => purchaseUpgrade(name)}
-          >
-            <img
-              src="nugget.svg"
-              className="inline-block h-[1em] align-baseline -mb-0.5"
-            ></img>{" "}
-            {formatNumber(upgrade.price)}
-          </button>
         </div>
       ))}
     </div>

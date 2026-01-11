@@ -15,7 +15,7 @@ import Column from "./Column";
 import AnswerCard from "./AnswerCard";
 import QuestionCard from "./QuestionCard";
 import Shop from "./Shop";
-import { UPGRADES } from "../types/upgrade";
+import { getShopItem, SHOP_ITEMS } from "../types/shop";
 import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
@@ -23,8 +23,8 @@ import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
 
 export default function App() {
-  const [deckId, setDeckId] = useState(0);
-  const [cardQueues, setCardQueues] = useState<Record<number, CardQueue>>(() =>
+  const [deckId, setDeckId] = useState("world-capitals");
+  const [cardQueues, setCardQueues] = useState<Record<string, CardQueue>>(() =>
     Object.fromEntries(
       Object.entries(DECKS_BY_ID).map(([id, deck]) => [
         id,
@@ -49,7 +49,7 @@ export default function App() {
   const [tabIndex, setTabIndex] = useState(0);
   const [showingDeckSelector, setShowingDeckSelector] = useState(true);
 
-  const [upgrades, setUpgrades] = useState(() => UPGRADES);
+  const [shopItems, setShopItems] = useState(() => SHOP_ITEMS);
 
   const [{ nuggetParticles }, dispatchNuggetParticles] = useReducer(
     nuggetParticleReducer,
@@ -63,8 +63,16 @@ export default function App() {
   const deck = DECKS_BY_ID[deckId];
 
   const displayNuggets = Math.floor(nuggets);
-  const nuggetsPerCorrectAnswer = upgrades.CORRECT_ANSWERS.level;
-  const nuggetsPerWrongAnswer = upgrades.ANY_ANSWERS.level;
+  const nuggetsPerWrongAnswer = getShopItem(
+    shopItems,
+    "upgrades",
+    "any-answers"
+  )!.level;
+  const nuggetsPerCorrectAnswer = getShopItem(
+    shopItems,
+    "upgrades",
+    "correct-answers"
+  )!.level;
   const card = cardQueue.cards[0];
 
   if (
@@ -214,8 +222,8 @@ export default function App() {
                 <Shop
                   displayNuggets={displayNuggets}
                   setNuggets={setNuggets}
-                  upgrades={upgrades}
-                  setUpgrades={setUpgrades}
+                  shopItems={shopItems}
+                  setShopItems={setShopItems}
                 />
               </Tabs>
             </div>
