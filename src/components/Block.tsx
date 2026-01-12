@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
-import { getIsometricProjection } from "./Build";
+import { getIsometricProjection } from "./Palace";
 import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
 import type { ShopItem } from "../types/shop";
 
