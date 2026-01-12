@@ -38,10 +38,17 @@ export const SHOP_ITEMS: ShopItemCategory[] = [
     displayName: "Blocks",
     items: [
       {
-        id: "plain-block",
+        id: "block",
         displayName: "Block",
-        price: 200,
+        price: 5,
         image: "block.svg",
+        level: 0,
+      },
+      {
+        id: "block-marble",
+        displayName: "Marble",
+        price: 5,
+        image: "block-marble.svg",
         level: 0,
       },
     ],
@@ -55,4 +62,11 @@ export const getShopItem = (
 ) => {
   const category = shopItems.find((item) => item.id === itemCategoryId);
   return category?.items.find((item) => item.id === itemId);
+};
+
+export const getShopItemCategory = (
+  shopItems: ShopItemCategory[],
+  itemCategoryId: string
+) => {
+  return shopItems.find((item) => item.id === itemCategoryId);
 };

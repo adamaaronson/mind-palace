@@ -5,7 +5,7 @@ interface DeckInfoProps {
   deck: Deck;
   cardQueue: CardQueue;
   showDeckSelector?: boolean;
-  small?: boolean;
+  isSmall?: boolean;
   onClickDeckSelector?: () => void;
 }
 
@@ -14,7 +14,7 @@ export default function DeckInfo(props: DeckInfoProps) {
     deck,
     cardQueue,
     showDeckSelector = false,
-    small = false,
+    isSmall = false,
     onClickDeckSelector,
   } = props;
   const numItems = deck.facts.length;
@@ -34,10 +34,10 @@ export default function DeckInfo(props: DeckInfoProps) {
             ></img>
           </button>
         )}
-        <h3 className={`text-2xl font-bold ${small ? "text-lg!" : ""}`}>
+        <h3 className={`text-2xl font-bold ${isSmall ? "text-lg!" : ""}`}>
           <div>{deck.displayName}</div>
           <div
-            className={`h-2 w-40 bg-taupe mt-1 ml-px ${small ? "w-30!" : ""}`}
+            className={`h-2 w-40 bg-taupe mt-1 ml-px ${isSmall ? "w-30!" : ""}`}
           >
             <div
               className="bg-text-dark h-full"
@@ -49,7 +49,7 @@ export default function DeckInfo(props: DeckInfoProps) {
         </h3>
       </div>
 
-      <div className="text-text-light text-right leading-tight text-sm font-normal">
+      <div className="text-text-light text-right leading-tight text-xs sm:text-sm font-normal">
         <p>
           <span className="font-bold text-text-dark">{numItems}</span> items
         </p>

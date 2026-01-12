@@ -1,6 +1,5 @@
 import { memo, useCallback, useEffect, useState } from "react";
 import Block, { type BlockProps } from "./Block";
-import LinkButton from "./LinkButton";
 import {
   getBlockSideHeight,
   getBlockTopHeight,
@@ -8,6 +7,12 @@ import {
   GRID_HEIGHT,
   GRID_WIDTH,
 } from "../utils/constants";
+import Inventory from "./Inventory";
+import {
+  getShopItemCategory,
+  type ShopItem,
+  type ShopItemCategory,
+} from "../types/shop";
 
 const getShadowHeight = (blockWidth: number) =>
   getBlockSideHeight(blockWidth) * GRID_WIDTH * 1.1;
@@ -40,13 +45,20 @@ export function getIsometricProjection(
 }
 
 interface BuildProps {
-  inventory: { id: string; count: number }[];
+  shopItems: ShopItemCategory[];
   goToShop: () => void;
 }
 
 function Build(props: BuildProps) {
-  const { inventory, goToShop } = props;
+  const { shopItems, goToShop } = props;
   const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
+  const [equippedBlock, setEquippedBlock] = useState<ShopItem | undefined>(
+    undefined
+  );
+
+  // Maps block ID to number of times used
+  const [usedBlocks, setUsedBlocks] = useState<Record<string, number>>({});
+
   const [blockWidth, setBlockWidth] = useState(0);
   const [palaceRef, setPalaceRef] = useState<HTMLDivElement | null>(null);
 
@@ -75,23 +87,31 @@ function Build(props: BuildProps) {
     return () => window.removeEventListener("resize", resizePalace);
   }, [palaceRef]);
 
-  const addBlock = (coordinates: { x: number; y: number; z: number }) => {
+  const addBlock = (
+    equippedBlock: ShopItem,
+    coordinates: { x: number; y: number; z: number }
+  ) => {
     setBlocks((blocks) => [
       ...blocks,
       {
         coordinates: coordinates,
-        skinUrl: "block.svg",
+        block: equippedBlock,
         addBlock: addBlock,
       },
     ]);
+    setUsedBlocks((usedBlocks) => ({
+      ...usedBlocks,
+      [equippedBlock.id]: (usedBlocks[equippedBlock.id] || 0) + 1,
+    }));
   };
 
   const floor: Omit<BlockProps, "width">[] = Array.from({ length: GRID_WIDTH })
     .map((_, width) =>
       Array.from({ length: GRID_DEPTH }).map((_, depth) => ({
         coordinates: { x: width, y: 0, z: depth },
-        skinUrl: "block-floor.svg",
+        block: "block-floor.svg",
         onlyTop: true,
+        erasable: false,
         addBlock: addBlock,
       }))
     )
@@ -103,8 +123,9 @@ function Build(props: BuildProps) {
     .map((_, depth) =>
       Array.from({ length: GRID_HEIGHT }).map((_, height) => ({
         coordinates: { x: -1, y: height + 1, z: depth },
-        skinUrl: "block-wall-right.svg",
+        block: "block-wall-right.svg",
         onlyRight: true,
+        erasable: false,
         addBlock: addBlock,
         opacity: 0.4,
       }))
@@ -117,8 +138,9 @@ function Build(props: BuildProps) {
     .map((_, width) =>
       Array.from({ length: GRID_HEIGHT }).map((_, height) => ({
         coordinates: { x: width, y: height + 1, z: -1 },
-        skinUrl: "block-wall-left.svg",
+        block: "block-wall-left.svg",
         onlyLeft: true,
+        erasable: false,
         addBlock: addBlock,
         opacity: 0.4,
       }))
@@ -126,6 +148,27 @@ function Build(props: BuildProps) {
     .flat(1);
 
   const allBlocks = [...floor, ...leftWall, ...rightWall, ...blocks];
+
+  const equipBlock = useCallback((block: ShopItem) => {
+    setEquippedBlock(block);
+  }, []);
+
+  const inventory = getShopItemCategory(shopItems, "blocks")!
+    .items.map((item) => ({
+      ...item,
+      level: item.level - (usedBlocks[item.id] || 0),
+    }))
+    .filter((item) => item.level > 0);
+  const noMoreEquippedBlock =
+    equippedBlock &&
+    inventory.find((item) => item.id === equippedBlock.id) == undefined;
+
+  if (equippedBlock && noMoreEquippedBlock) {
+    setEquippedBlock(undefined);
+  }
+  if ((!equippedBlock || noMoreEquippedBlock) && inventory.length >= 1) {
+    equipBlock(inventory[0]);
+  }
 
   return (
     <div>
@@ -144,6 +187,7 @@ function Build(props: BuildProps) {
         {allBlocks.map((blockProps) => (
           <Block
             {...blockProps}
+            equippedBlock={equippedBlock}
             width={blockWidth}
             key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
           />
@@ -158,24 +202,12 @@ function Build(props: BuildProps) {
           }}
         />
       </div>
-      <h3 className="text-text-dark font-bold text-xl -mt-2 mb-2 ml-3">
-        Inventory
-      </h3>
-      <div className="border-standard rounded-2xl bg-light-light p-4">
-        {inventory.length === 0 ? (
-          <p className="text-sm text-text-light text-center">
-            You don't have any blocks! Buy some in the{" "}
-            <span className="whitespace-nowrap">
-              <LinkButton className="2xl:hidden" onClick={goToShop}>
-                shop
-              </LinkButton>
-              <span className="hidden 2xl:inline">shop</span>.
-            </span>
-          </p>
-        ) : (
-          <></>
-        )}
-      </div>
+      <Inventory
+        inventory={inventory}
+        goToShop={goToShop}
+        equipBlock={equipBlock}
+        equippedBlock={equippedBlock}
+      />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import {
   type ShopItemCategory,
 } from "../types/shop";
 import { formatNumber } from "../utils/utils";
+import ItemCard from "./ItemCard";
 
 interface ShopProps {
   displayNuggets: number;
@@ -79,13 +80,10 @@ export default function Shop(props: ShopProps) {
           <div className="flex gap-2 overflow-scroll min-w-0">
             {itemCategory.items.map((item) => (
               <div className="flex flex-col gap-1" key={item.id}>
-                <div className="relative bg-white border-standard rounded-md h-20 w-20 p-2 flex justify-center align-center">
-                  <div className="absolute font-bold left-full top-0 -translate-x-full -ml-1">
-                    {itemCategory.id === "upgrades" ? "+" : ""}
-                    {item.level}
-                  </div>
-                  <img src={item.image} width="80%"></img>
-                </div>
+                <ItemCard
+                  item={item}
+                  isUpgrade={itemCategory.id === "upgrades"}
+                />
                 <button
                   type="submit"
                   className={`button-standard py-0! px-2! text-sm ${

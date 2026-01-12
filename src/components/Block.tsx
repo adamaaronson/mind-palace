@@ -2,12 +2,17 @@ import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
 import { getIsometricProjection } from "./Build";
 import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
+import type { ShopItem } from "../types/shop";
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };
   width: number;
-  skinUrl: string;
-  addBlock?: (coordinates: { x: number; y: number; z: number }) => void;
+  block: ShopItem | string;
+  equippedBlock?: ShopItem;
+  addBlock?: (
+    block: ShopItem,
+    coordinates: { x: number; y: number; z: number }
+  ) => void;
   onlyTop?: boolean;
   onlyLeft?: boolean;
   onlyRight?: boolean;
@@ -19,7 +24,8 @@ export default function Block(props: BlockProps) {
   const {
     coordinates: { x, y, z },
     width,
-    skinUrl,
+    block,
+    equippedBlock,
     addBlock,
     onlyTop = false,
     onlyLeft = false,
@@ -34,9 +40,14 @@ export default function Block(props: BlockProps) {
 
   const { x: left, y: top } = getIsometricProjection(x, y, z, width);
 
-  const addRightBlock = () => addBlock?.({ x: x + 1, y, z });
-  const addTopBlock = () => addBlock?.({ x, y: y + 1, z });
-  const addLeftBlock = () => addBlock?.({ x, y, z: z + 1 });
+  const addAdjacentBlock = (coordinates: { x: number; y: number; z: number }) =>
+    addBlock && equippedBlock
+      ? () => addBlock(equippedBlock, coordinates)
+      : () => {};
+
+  const addRightBlock = addAdjacentBlock({ x: x + 1, y, z });
+  const addTopBlock = addAdjacentBlock({ x, y: y + 1, z });
+  const addLeftBlock = addAdjacentBlock({ x, y, z: z + 1 });
 
   const isRight = x === GRID_WIDTH - 1;
   const isTop = y === GRID_HEIGHT;
@@ -57,7 +68,10 @@ export default function Block(props: BlockProps) {
           minWidth: width,
         }}
       >
-        <img src={skinUrl} width={width} />
+        <img
+          src={typeof block === "string" ? block : block.image}
+          width={width}
+        />
       </div>
 
       {/* Hoverable block right */}
@@ -68,7 +82,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isRight ? "not-allowed" : "pointer",
+            cursor: isRight || !equippedBlock ? "not-allowed" : "pointer",
             pointerEvents: "none",
             width: width,
             minWidth: width,
@@ -92,7 +106,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isTop ? "not-allowed" : "pointer",
+            cursor: isTop || !equippedBlock ? "not-allowed" : "pointer",
             pointerEvents: "none",
             width: width,
             minWidth: width,
@@ -116,7 +130,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isLeft ? "not-allowed" : "pointer",
+            cursor: isLeft || !equippedBlock ? "not-allowed" : "pointer",
             pointerEvents: "none",
             width: width,
             minWidth: width,
@@ -132,27 +146,27 @@ export default function Block(props: BlockProps) {
         </div>
       )}
 
-      {hasRightGhost && (
+      {hasRightGhost && equippedBlock && (
         <Block
           coordinates={{ x: x + 1, y, z }}
           width={width}
-          skinUrl="block.svg"
+          block={equippedBlock}
           isGhost
         />
       )}
-      {hasTopGhost && (
+      {hasTopGhost && equippedBlock && (
         <Block
           coordinates={{ x, y: y + 1, z }}
           width={width}
-          skinUrl="block.svg"
+          block={equippedBlock}
           isGhost
         />
       )}
-      {hasLeftGhost && (
+      {hasLeftGhost && equippedBlock && (
         <Block
           coordinates={{ x, y, z: z + 1 }}
           width={width}
-          skinUrl="block.svg"
+          block={equippedBlock}
           isGhost
         />
       )}

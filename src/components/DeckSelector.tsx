@@ -59,7 +59,7 @@ export default function DeckSelector(props: DeckSelectorProps) {
                     <DeckInfo
                       deck={deck}
                       cardQueue={cardQueue}
-                      small
+                      isSmall={true}
                       onClickDeckSelector={() => {}}
                     />
                   </div>

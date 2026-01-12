@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useCallback, useReducer, useState } from "react";
 import {
   type CardQueue,
   type Card,
@@ -156,6 +156,10 @@ export default function App() {
     return true;
   };
 
+  const goToShop = useCallback(() => {
+    setTabIndex(1);
+  }, [setTabIndex]);
+
   return (
     <div
       className={`relative flex flex-col h-full font-theme text-text-dark ${
@@ -177,7 +181,7 @@ export default function App() {
         <div className="flex-auto mt-2 md:mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">
           <div className="flex m-4 mt-0 justify-center w-full h-full flex-col md:flex-row">
             <div className="md:flex-1 flex flex-col md:h-full relative md:max-w-150">
-              <div className="px-8 py-4 bg-light mx-3 border-standard flex flex-col gap-4 relative">
+              <div className="p-4 sm:px-8 bg-light mx-3 border-standard flex flex-col gap-4 relative">
                 <DeckInfo
                   deck={deck}
                   cardQueue={cardQueue}
@@ -218,7 +222,7 @@ export default function App() {
                 activeIndex={tabIndex}
                 setActiveIndex={setTabIndex}
               >
-                <Build inventory={[]} goToShop={() => setTabIndex(1)} />
+                <Build shopItems={shopItems} goToShop={goToShop} />
                 <Shop
                   displayNuggets={displayNuggets}
                   setNuggets={setNuggets}
