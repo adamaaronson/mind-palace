@@ -9,12 +9,13 @@ import {
 import Palace from "./Palace";
 
 interface BuildProps {
+  isVisible: boolean;
   shopItems: ShopItemCategory[];
   goToShop: () => void;
 }
 
 function Build(props: BuildProps) {
-  const { shopItems, goToShop } = props;
+  const { isVisible, shopItems, goToShop } = props;
   const [equippedBlock, setEquippedBlock] = useState<ShopItem | undefined>(
     undefined
   );
@@ -43,7 +44,11 @@ function Build(props: BuildProps) {
 
   return (
     <div>
-      <Palace equippedBlock={equippedBlock} setUsedBlocks={setUsedBlocks} />
+      <Palace
+        isVisible={isVisible}
+        equippedBlock={equippedBlock}
+        setUsedBlocks={setUsedBlocks}
+      />
       <Inventory
         inventory={inventory}
         goToShop={goToShop}

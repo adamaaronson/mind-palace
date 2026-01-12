@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import {
   getBlockSideHeight,
   getBlockTopHeight,
@@ -10,6 +10,7 @@ import type { ShopItem } from "../types/shop";
 import type { BlockProps } from "./Block";
 import Block from "./Block";
 import PalaceWalls from "./PalaceWalls";
+import { approximatelyEqual } from "../utils/utils";
 
 const getShadowHeight = (blockWidth: number) =>
   getBlockSideHeight(blockWidth) * GRID_WIDTH * 1.1;
@@ -42,12 +43,13 @@ export function getIsometricProjection(
 }
 
 interface PalaceProps {
+  isVisible: boolean;
   equippedBlock?: ShopItem;
   setUsedBlocks: React.Dispatch<React.SetStateAction<Record<string, number>>>;
 }
 
-export default function Palace(props: PalaceProps) {
-  const { equippedBlock, setUsedBlocks } = props;
+function Palace(props: PalaceProps) {
+  const { isVisible, equippedBlock, setUsedBlocks } = props;
   const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
 
   const [blockWidth, setBlockWidth] = useState(0);
@@ -64,19 +66,28 @@ export default function Palace(props: PalaceProps) {
     }
   }, [palaceRef]);
 
-  if (
-    palaceRef &&
-    palaceRef.checkVisibility() &&
-    (blockWidth < palaceWidthToBlockWidth(palaceRef.clientWidth) * 0.99 ||
-      blockWidth > palaceWidthToBlockWidth(palaceRef.clientWidth) * 1.01)
-  ) {
-    resizePalace();
-  }
+  useEffect(() => {
+    if (palaceRef) {
+      resizePalace();
+    }
+  }, [palaceRef, resizePalace, isVisible]);
 
   useEffect(() => {
     window.addEventListener("resize", resizePalace);
     return () => window.removeEventListener("resize", resizePalace);
-  }, [palaceRef]);
+  }, [resizePalace]);
+
+  if (
+    palaceRef &&
+    palaceRef.checkVisibility() &&
+    blockWidth > 0 &&
+    !approximatelyEqual(
+      blockWidth,
+      palaceWidthToBlockWidth(palaceRef.clientWidth)
+    )
+  ) {
+    resizePalace();
+  }
 
   const addBlock = (
     equippedBlock: ShopItem,
@@ -134,3 +145,5 @@ export default function Palace(props: PalaceProps) {
     </div>
   );
 }
+
+export default memo(Palace);

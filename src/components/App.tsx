@@ -222,7 +222,11 @@ export default function App() {
                 activeIndex={tabIndex}
                 setActiveIndex={setTabIndex}
               >
-                <Build shopItems={shopItems} goToShop={goToShop} />
+                <Build
+                  shopItems={shopItems}
+                  goToShop={goToShop}
+                  isVisible={tabIndex === 0}
+                />
                 <Shop
                   displayNuggets={displayNuggets}
                   setNuggets={setNuggets}

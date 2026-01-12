@@ -40,14 +40,14 @@ export const SHOP_ITEMS: ShopItemCategory[] = [
       {
         id: "block",
         displayName: "Block",
-        price: 0,
+        price: 5,
         image: "block.svg",
         level: 0,
       },
       {
         id: "block-marble",
         displayName: "Marble",
-        price: 0,
+        price: 5,
         image: "block-marble.svg",
         level: 0,
       },
