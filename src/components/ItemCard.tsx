@@ -29,14 +29,16 @@ export default function ItemCard(props: ItemCardProps) {
       }`}
       onClick={onClick}
     >
-      <div
-        className={`absolute font-bold left-full top-0 -translate-x-full  ${
-          isSmall ? "-ml-0.5 -mt-0.5" : "-ml-1"
-        }`}
-      >
-        {isUpgrade ? "+" : ""}
-        {item.level}
-      </div>
+      {item.level !== 0 && (
+        <div
+          className={`absolute font-bold left-full top-0 -translate-x-full  ${
+            isSmall ? "-ml-0.5 -mt-0.5" : "-ml-1"
+          }`}
+        >
+          {isUpgrade ? "+" : ""}
+          {item.level}
+        </div>
+      )}
       <img src={item.image} width="80%"></img>
     </button>
   );

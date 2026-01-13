@@ -55,6 +55,38 @@ export const SHOP_ITEMS: ShopItemCategory[] = [
   },
 ];
 
+export const ERASER: ShopItem = {
+  id: "eraser",
+  displayName: "Eraser",
+  price: 0,
+  image: "eraser.svg",
+  level: 0,
+};
+
+export const FLOOR: ShopItem = {
+  id: "floor",
+  displayName: "Floor",
+  price: 0,
+  image: "block-floor.svg",
+  level: 0,
+};
+
+export const WALL_LEFT: ShopItem = {
+  id: "wall-left",
+  displayName: "Left wall",
+  price: 0,
+  image: "block-wall-left.svg",
+  level: 0,
+};
+
+export const WALL_RIGHT: ShopItem = {
+  id: "wall-right",
+  displayName: "Right wall",
+  price: 0,
+  image: "block-wall-right.svg",
+  level: 0,
+};
+
 export const getShopItem = (
   shopItems: ShopItemCategory[],
   itemCategoryId: string,

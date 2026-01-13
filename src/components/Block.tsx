@@ -2,21 +2,23 @@ import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
 import { getIsometricProjection } from "./Palace";
 import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
-import type { ShopItem } from "../types/shop";
+import { ERASER, type ShopItem } from "../types/shop";
 
 export interface BlockProps {
   coordinates: { x: number; y: number; z: number };
   width: number;
-  block: ShopItem | string;
+  block: ShopItem;
   equippedBlock?: ShopItem;
   addBlock?: (
     block: ShopItem,
     coordinates: { x: number; y: number; z: number }
   ) => void;
+  removeBlock?: (coordinates: { x: number; y: number; z: number }) => void;
   onlyTop?: boolean;
   onlyLeft?: boolean;
   onlyRight?: boolean;
   isGhost?: boolean;
+  isErasable?: boolean;
   opacity?: number;
 }
 
@@ -27,10 +29,12 @@ export default function Block(props: BlockProps) {
     block,
     equippedBlock,
     addBlock,
+    removeBlock,
     onlyTop = false,
     onlyLeft = false,
     onlyRight = false,
     isGhost = false,
+    isErasable = true,
     opacity = 1,
   } = props;
 
@@ -40,8 +44,13 @@ export default function Block(props: BlockProps) {
 
   const { x: left, y: top } = getIsometricProjection(x, y, z, width);
 
+  const isErasing = equippedBlock?.id === ERASER.id;
+  const isHoveringErasing =
+    (hasRightGhost || hasTopGhost || hasLeftGhost) && isErasing && isErasable;
+  const isClickingForbidden = !equippedBlock || (isErasing && !isErasable);
+
   const addAdjacentBlock = (coordinates: { x: number; y: number; z: number }) =>
-    addBlock && equippedBlock
+    addBlock && !isErasing && equippedBlock
       ? () => addBlock(equippedBlock, coordinates)
       : () => {};
 
@@ -63,7 +72,7 @@ export default function Block(props: BlockProps) {
           top: top,
           zIndex: x + y + z + 1,
           pointerEvents: "none",
-          opacity: isGhost ? 0.5 : opacity,
+          opacity: isGhost || isHoveringErasing ? 0.5 : opacity,
           width: width,
           minWidth: width,
         }}
@@ -82,7 +91,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isRight || !equippedBlock ? "not-allowed" : "pointer",
+            cursor: isRight || isClickingForbidden ? "not-allowed" : "pointer",
             pointerEvents: "none",
             width: width,
             minWidth: width,
@@ -91,7 +100,9 @@ export default function Block(props: BlockProps) {
           <BlockRight
             onMouseEnter={() => setHasRightGhost(true)}
             onMouseLeave={() => setHasRightGhost(false)}
-            onClick={() => addRightBlock()}
+            onClick={() =>
+              isHoveringErasing ? removeBlock?.({ x, y, z }) : addRightBlock()
+            }
             disabled={isRight}
             width={width}
           />
@@ -106,7 +117,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isTop || !equippedBlock ? "not-allowed" : "pointer",
+            cursor: isTop || isClickingForbidden ? "not-allowed" : "pointer",
             pointerEvents: "none",
             width: width,
             minWidth: width,
@@ -115,7 +126,9 @@ export default function Block(props: BlockProps) {
           <BlockTop
             onMouseEnter={() => setHasTopGhost(true)}
             onMouseLeave={() => setHasTopGhost(false)}
-            onClick={() => addTopBlock()}
+            onClick={() =>
+              isHoveringErasing ? removeBlock?.({ x, y, z }) : addTopBlock()
+            }
             disabled={isTop}
             width={width}
           />
@@ -130,7 +143,7 @@ export default function Block(props: BlockProps) {
             left: left,
             top: top,
             zIndex: x + y + z + 1,
-            cursor: isLeft || !equippedBlock ? "not-allowed" : "pointer",
+            cursor: isLeft || isClickingForbidden ? "not-allowed" : "pointer",
             pointerEvents: "none",
             width: width,
             minWidth: width,
@@ -139,14 +152,16 @@ export default function Block(props: BlockProps) {
           <BlockLeft
             onMouseEnter={() => setHasLeftGhost(true)}
             onMouseLeave={() => setHasLeftGhost(false)}
-            onClick={() => addLeftBlock()}
+            onClick={() =>
+              isHoveringErasing ? removeBlock?.({ x, y, z }) : addLeftBlock()
+            }
             disabled={isLeft}
             width={width}
           />
         </div>
       )}
 
-      {hasRightGhost && equippedBlock && (
+      {hasRightGhost && equippedBlock && !isErasing && (
         <Block
           coordinates={{ x: x + 1, y, z }}
           width={width}
@@ -154,7 +169,7 @@ export default function Block(props: BlockProps) {
           isGhost
         />
       )}
-      {hasTopGhost && equippedBlock && (
+      {hasTopGhost && equippedBlock && !isErasing && (
         <Block
           coordinates={{ x, y: y + 1, z }}
           width={width}
@@ -162,7 +177,7 @@ export default function Block(props: BlockProps) {
           isGhost
         />
       )}
-      {hasLeftGhost && equippedBlock && (
+      {hasLeftGhost && equippedBlock && !isErasing && (
         <Block
           coordinates={{ x, y, z: z + 1 }}
           width={width}

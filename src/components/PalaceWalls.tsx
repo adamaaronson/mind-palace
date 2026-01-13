@@ -1,3 +1,4 @@
+import { FLOOR, WALL_LEFT, WALL_RIGHT } from "../types/shop";
 import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
 import type { BlockProps } from "./Block";
 import Block from "./Block";
@@ -14,9 +15,9 @@ export default function PalaceWalls(props: PalaceWallsProps) {
     .map((_, width) =>
       Array.from({ length: GRID_DEPTH }).map((_, depth) => ({
         coordinates: { x: width, y: 0, z: depth },
-        block: "block-floor.svg",
+        block: FLOOR,
         onlyTop: true,
-        erasable: false,
+        isErasable: false,
         addBlock: addBlock,
       }))
     )
@@ -28,9 +29,9 @@ export default function PalaceWalls(props: PalaceWallsProps) {
     .map((_, depth) =>
       Array.from({ length: GRID_HEIGHT }).map((_, height) => ({
         coordinates: { x: -1, y: height + 1, z: depth },
-        block: "block-wall-right.svg",
+        block: WALL_RIGHT,
         onlyRight: true,
-        erasable: false,
+        isErasable: false,
         addBlock: addBlock,
         opacity: 0.4,
       }))
@@ -43,9 +44,9 @@ export default function PalaceWalls(props: PalaceWallsProps) {
     .map((_, width) =>
       Array.from({ length: GRID_HEIGHT }).map((_, height) => ({
         coordinates: { x: width, y: height + 1, z: -1 },
-        block: "block-wall-left.svg",
+        block: WALL_LEFT,
         onlyLeft: true,
-        erasable: false,
+        isErasable: false,
         addBlock: addBlock,
         opacity: 0.4,
       }))

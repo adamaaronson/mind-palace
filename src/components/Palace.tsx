@@ -6,11 +6,12 @@ import {
   GRID_HEIGHT,
   GRID_WIDTH,
 } from "../utils/constants";
-import type { ShopItem } from "../types/shop";
+import { ERASER, type ShopItem } from "../types/shop";
 import type { BlockProps } from "./Block";
 import Block from "./Block";
 import PalaceWalls from "./PalaceWalls";
 import { approximatelyEqual } from "../utils/utils";
+import { isEqual } from "lodash";
 
 const getShadowHeight = (blockWidth: number) =>
   getBlockSideHeight(blockWidth) * GRID_WIDTH * 1.1;
@@ -107,6 +108,23 @@ function Palace(props: PalaceProps) {
     }));
   };
 
+  const removeBlock = (coordinates: { x: number; y: number; z: number }) => {
+    const blockToRemove = blocks.find((block) =>
+      isEqual(coordinates, block.coordinates)
+    );
+    if (!blockToRemove) {
+      return;
+    }
+
+    setBlocks((blocks) =>
+      blocks.filter((block) => !isEqual(coordinates, block.coordinates))
+    );
+    setUsedBlocks((usedBlocks) => ({
+      ...usedBlocks,
+      [blockToRemove.block.id]: (usedBlocks[blockToRemove.block.id] || 0) - 1,
+    }));
+  };
+
   return (
     <div
       ref={setPalaceRef}
@@ -128,6 +146,7 @@ function Palace(props: PalaceProps) {
       {blocks.map((blockProps) => (
         <Block
           {...blockProps}
+          removeBlock={removeBlock}
           equippedBlock={equippedBlock}
           width={blockWidth}
           key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}

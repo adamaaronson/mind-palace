@@ -2,6 +2,7 @@ import { memo, useCallback, useState } from "react";
 
 import Inventory from "./Inventory";
 import {
+  ERASER,
   getShopItemCategory,
   type ShopItem,
   type ShopItemCategory,
@@ -25,6 +26,10 @@ function Build(props: BuildProps) {
     setEquippedBlock(block);
   }, []);
 
+  const equipEraser = useCallback(() => {
+    setEquippedBlock(ERASER);
+  }, []);
+
   const inventory = getShopItemCategory(shopItems, "blocks")!
     .items.map((item) => ({
       ...item,
@@ -33,6 +38,7 @@ function Build(props: BuildProps) {
     .filter((item) => item.level > 0);
   const noMoreEquippedBlock =
     equippedBlock &&
+    equippedBlock.id !== ERASER.id &&
     inventory.find((item) => item.id === equippedBlock.id) == undefined;
 
   if (equippedBlock && noMoreEquippedBlock) {
@@ -53,6 +59,7 @@ function Build(props: BuildProps) {
         inventory={inventory}
         goToShop={goToShop}
         equipBlock={equipBlock}
+        equipEraser={equipEraser}
         equippedBlock={equippedBlock}
       />
     </div>
