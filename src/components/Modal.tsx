@@ -32,7 +32,7 @@ export function Modal(props: ModalProps) {
             <div className="absolute top-0 w-[calc(100%+48px)] h-2 -left-6 bg-text-dark -translate-y-5 rounded-full"></div>
             <div className="absolute top-0 w-[calc(100%+24px)] h-4 -left-3 bg-text-dark -translate-y-6"></div>
             <div className="absolute top-0 w-[calc(100%+16px)] h-8 border-standard -left-2 bg-light -translate-y-full inset-shadow-glossy"></div>
-            <div className="p-4 sm:px-8 overflow-scroll">
+            <div className="p-4 sm:px-8 overflow-auto">
               <motion.div
                 initial={{ height: 0 }}
                 animate={{ height: "auto" }}

@@ -77,7 +77,7 @@ export default function Shop(props: ShopProps) {
           key={itemCategory.id}
         >
           <div className="text-xl font-bold">{itemCategory.displayName}</div>
-          <div className="flex gap-2 overflow-scroll min-w-0">
+          <div className="flex gap-2 overflow-x-auto min-w-0">
             {itemCategory.items.map((item) => (
               <div className="flex flex-col gap-1" key={item.id}>
                 <ItemCard
@@ -86,11 +86,7 @@ export default function Shop(props: ShopProps) {
                 />
                 <button
                   type="submit"
-                  className={`button-standard py-0! px-2! text-sm ${
-                    displayNuggets >= item.price
-                      ? "opacity-100 cursor-pointer"
-                      : "disabled:opacity-50 disabled:pointer-events-none"
-                  }`}
+                  className="button-standard py-0! px-2! text-sm"
                   disabled={displayNuggets < item.price}
                   onClick={() => purchaseItem(itemCategory.id, item.id)}
                 >

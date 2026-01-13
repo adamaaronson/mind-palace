@@ -30,7 +30,7 @@ export default function Tabs(props: TabsProps) {
       </div>
       {children.map((child, index) => (
         <div
-          className={`-mt-0.5 2xl:mt-0 p-4 sm:px-8 mb-4 bg-light border-standard overflow-hidden md:min-w-50 md:max-w-150 ${
+          className={`-mt-0.5 2xl:mt-0 p-4 sm:px-8 mb-4 md:mb-0 bg-light border-standard overflow-hidden md:min-w-50 ${
             index === activeIndex ? "visible" : "hidden 2xl:block"
           }`}
           style={{ flex: widths[index] }}

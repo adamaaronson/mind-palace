@@ -215,7 +215,7 @@ export default function App() {
                 answerTimestamp={answerTimestamp}
               />
             </div>
-            <div className="md:flex-1 md:max-w-150 2xl:max-w-300 2xl:flex-2 mt-8 md:mt-0 min-w-0">
+            <div className="md:flex-1 md:max-w-150 2xl:max-w-350 2xl:flex-2 mt-8 md:mt-0 min-w-0">
               <Tabs
                 labels={["Build", "Shop"]}
                 widths={[3, 2]}
