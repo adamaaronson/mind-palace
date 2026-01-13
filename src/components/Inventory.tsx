@@ -19,8 +19,8 @@ function Inventory(props: InventoryProps) {
       <h3 className="text-text-dark font-bold text-xl -mt-2 mb-2 ml-3">
         Inventory
       </h3>
-      <div className="border-standard rounded-2xl bg-light-light p-4 overflow-hidden flex items-center">
-        <div className="grow">
+      <div className="border-standard rounded-2xl bg-light-light p-4 overflow-hidden flex items-center justify-between">
+        <div className="shrink min-w-0">
           {inventory.length > 0 ? (
             <div className="flex gap-2 overflow-x-auto min-w-0">
               {inventory.map((block) => (
