@@ -6,7 +6,7 @@ import {
   GRID_HEIGHT,
   GRID_WIDTH,
 } from "../utils/constants";
-import { ERASER, type ShopItem } from "../types/shop";
+import { type ShopItem } from "../types/shop";
 import type { BlockProps } from "./Block";
 import Block from "./Block";
 import PalaceWalls from "./PalaceWalls";
