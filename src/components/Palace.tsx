@@ -12,6 +12,7 @@ import Block from "./Block";
 import PalaceWalls from "./PalaceWalls";
 import { approximatelyEqual } from "../utils/utils";
 import { isEqual } from "lodash";
+import type { Coordinates } from "../types/coordinates";
 
 const getShadowHeight = (blockWidth: number) =>
   getBlockSideHeight(blockWidth) * GRID_WIDTH * 1.1;
@@ -29,11 +30,10 @@ const palaceWidthToBlockWidth = (palaceWidth: number) =>
 // y: up
 // z: to the left and down a bit
 export function getIsometricProjection(
-  x: number,
-  y: number,
-  z: number,
+  coordinates: Coordinates,
   blockWidth: number
 ) {
+  const { x, y, z } = coordinates;
   return {
     x: getOriginX(blockWidth) + (x - z) * (blockWidth / 2),
     y:
@@ -90,10 +90,7 @@ function Palace(props: PalaceProps) {
     resizePalace();
   }
 
-  const addBlock = (
-    equippedBlock: ShopItem,
-    coordinates: { x: number; y: number; z: number }
-  ) => {
+  const addBlock = (equippedBlock: ShopItem, coordinates: Coordinates) => {
     setBlocks((blocks) => [
       ...blocks,
       {
@@ -108,7 +105,7 @@ function Palace(props: PalaceProps) {
     }));
   };
 
-  const removeBlock = (coordinates: { x: number; y: number; z: number }) => {
+  const removeBlock = (coordinates: Coordinates) => {
     const blockToRemove = blocks.find((block) =>
       isEqual(coordinates, block.coordinates)
     );

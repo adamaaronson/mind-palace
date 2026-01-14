@@ -3,17 +3,15 @@ import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
 import { getIsometricProjection } from "./Palace";
 import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
 import { ERASER, type ShopItem } from "../types/shop";
+import type { Coordinates } from "../types/coordinates";
 
 export interface BlockProps {
-  coordinates: { x: number; y: number; z: number };
+  coordinates: Coordinates;
   width: number;
   block: ShopItem;
   equippedBlock?: ShopItem;
-  addBlock?: (
-    block: ShopItem,
-    coordinates: { x: number; y: number; z: number }
-  ) => void;
-  removeBlock?: (coordinates: { x: number; y: number; z: number }) => void;
+  addBlock?: (block: ShopItem, coordinates: Coordinates) => void;
+  removeBlock?: (coordinates: Coordinates) => void;
   onlyTop?: boolean;
   onlyLeft?: boolean;
   onlyRight?: boolean;
@@ -42,14 +40,14 @@ export default function Block(props: BlockProps) {
   const [hasTopGhost, setHasTopGhost] = useState(false);
   const [hasLeftGhost, setHasLeftGhost] = useState(false);
 
-  const { x: left, y: top } = getIsometricProjection(x, y, z, width);
+  const { x: left, y: top } = getIsometricProjection({ x, y, z }, width);
 
   const isErasing = equippedBlock?.id === ERASER.id;
   const isHoveringErasing =
     (hasRightGhost || hasTopGhost || hasLeftGhost) && isErasing && isErasable;
   const isClickingForbidden = !equippedBlock || (isErasing && !isErasable);
 
-  const addAdjacentBlock = (coordinates: { x: number; y: number; z: number }) =>
+  const addAdjacentBlock = (coordinates: Coordinates) =>
     addBlock && !isErasing && equippedBlock
       ? () => addBlock(equippedBlock, coordinates)
       : () => {};
