@@ -16,36 +16,35 @@ function Inventory(props: InventoryProps) {
 
   return (
     <div className="w-full">
-      <h3 className="text-text-dark font-bold text-xl -mt-2 mb-2 ml-3">
-        Inventory
-      </h3>
-      <div className="border-standard rounded-2xl bg-light-light p-4 overflow-hidden flex items-center justify-between">
-        <div className="shrink min-w-0">
-          {inventory.length > 0 ? (
-            <div className="flex gap-2 overflow-x-auto min-w-0">
-              {inventory.map((block) => (
-                <ItemCard
-                  key={block.id}
-                  item={block}
-                  isSmall={true}
-                  onClick={() => equipBlock(block)}
-                  isEquipped={equippedBlock?.id === block.id}
-                />
-              ))}
-            </div>
-          ) : (
-            <p className="text-sm italic text-text-light text-center p-2">
-              You need blocks to build your palace! Buy some in the{" "}
-              <span className="whitespace-nowrap">
-                <LinkButton className="2xl:hidden" onClick={goToShop}>
-                  shop
-                </LinkButton>
-                <span className="hidden 2xl:inline">shop</span>.
-              </span>
-            </p>
-          )}
-        </div>
-        <div className="border-l-standard pl-2 ml-2">
+      <div className="border-standard rounded-2xl bg-light-light p-4 flex items-center justify-between mt-8">
+        {inventory.length > 0 ? (
+          <div className="shrink flex gap-2 overflow-x-auto min-w-0">
+            {inventory.map((block) => (
+              <ItemCard
+                key={block.id}
+                item={block}
+                isSmall={true}
+                onClick={() => equipBlock(block)}
+                isEquipped={equippedBlock?.id === block.id}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="grow text-sm text-text-light text-center p-2">
+            You need blocks to build your palace!{" "}
+            <span className="hidden xl:inline">
+              <br />
+            </span>
+            Buy some in the{" "}
+            <span className="whitespace-nowrap">
+              <LinkButton className="2xl:hidden" onClick={goToShop}>
+                shop
+              </LinkButton>
+              <span className="hidden 2xl:inline">shop</span>.
+            </span>
+          </p>
+        )}
+        <div className="border-l-standard pl-4 ml-4">
           <ItemCard
             item={ERASER}
             isSmall={true}

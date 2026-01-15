@@ -36,10 +36,7 @@ export default function QuestionCard(props: QuestionCardProps) {
           {getCardLabel(card)}
         </span>
       </div>
-      <div className="text-text-light">
-        Name the{" "}
-        <span className="font-bold text-text-dark">{deck.answerLabel}</span> of:
-      </div>
+      <div className="text-text-light">Name the {deck.answerLabel}:</div>
       <div className="font-bold text-2xl leading-[1em] mt-1">
         {card.fact.question}
       </div>
