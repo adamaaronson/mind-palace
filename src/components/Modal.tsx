@@ -18,7 +18,7 @@ export function Modal(props: ModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.1 }}
-          className={`fixed w-full h-full max-w-screen max-h-screen top-0 left-0 flex justify-center items-center z-50 p-4 ${
+          className={`fixed w-full h-full max-w-screen max-h-screen top-0 left-0 flex justify-center items-center-safe z-50 p-4 overflow-y-scroll ${
             isOpen ? "block" : "hidden"
           }`}
         >
@@ -27,7 +27,7 @@ export function Modal(props: ModalProps) {
             onClick={onClose}
           ></div>
           <div
-            className={`bg-light border-standard min-w-0 z-52 relative inset-shadow-scroll m-4 mt-12 md:mt-22 ${className}`}
+            className={`bg-light border-standard min-w-0 z-52 relative inset-shadow-scroll m-4 mt-14 md:mt-22 ${className}`}
           >
             <div className="absolute top-0 w-[calc(100%+48px)] h-2 -left-6 bg-text-dark -translate-y-5 rounded-full"></div>
             <div className="absolute top-0 w-[calc(100%+24px)] h-4 -left-3 bg-text-dark -translate-y-6"></div>

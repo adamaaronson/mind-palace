@@ -2,6 +2,7 @@
   "displayName": "World Capitals",
   "questionLabel": "country",
   "answerLabel": "capital",
+  "answerTemplate": "The capital of <question> is <answer>",
   "facts": [
     {
       "id": 1,

@@ -1,0 +1,46 @@
+number,president,questionSubtitle,isName,answerLink
+1st,George Washington,1789–1797,TRUE,https://en.wikipedia.org/wiki/George_Washington
+2nd,John Adams,1797–1801,TRUE,https://en.wikipedia.org/wiki/John_Adams
+3rd,Thomas Jefferson,1801–1809,TRUE,https://en.wikipedia.org/wiki/Thomas_Jefferson
+4th,James Madison,1809–1817,TRUE,https://en.wikipedia.org/wiki/James_Madison
+5th,James Monroe,1817–1825,TRUE,https://en.wikipedia.org/wiki/James_Monroe
+6th,John Quincy Adams|JQA|John Adams|John Q. Adams|Quincy Adams,1825–1829,TRUE,https://en.wikipedia.org/wiki/John_Quincy_Adams
+7th,Andrew Jackson,1829–1837,TRUE,https://en.wikipedia.org/wiki/Andrew_Jackson
+8th,Martin Van Buren|Van Buren,1837–1841,TRUE,https://en.wikipedia.org/wiki/Martin_Van_Buren
+9th,William Henry Harrison|William Harrison|William H. Harrison,1841–1841,TRUE,https://en.wikipedia.org/wiki/William_Henry_Harrison
+10th,John Tyler,1841–1845,TRUE,https://en.wikipedia.org/wiki/John_Tyler
+11th,James K. Polk|James Polk|James Knox Polk,1845–1849,TRUE,https://en.wikipedia.org/wiki/James_K._Polk
+12th,Zachary Taylor|Zach Taylor,1849–1850,TRUE,https://en.wikipedia.org/wiki/Zachary_Taylor
+13th,Millard Fillmore,1850–1853,TRUE,https://en.wikipedia.org/wiki/Millard_Fillmore
+14th,Franklin Pierce,1853–1857,TRUE,https://en.wikipedia.org/wiki/Franklin_Pierce
+15th,James Buchanan,1857–1861,TRUE,https://en.wikipedia.org/wiki/James_Buchanan
+16th,Abraham Lincoln|Abe Lincoln,1861–1865,TRUE,https://en.wikipedia.org/wiki/Abraham_Lincoln
+17th,Andrew Johnson,1865–1869,TRUE,https://en.wikipedia.org/wiki/Andrew_Johnson
+18th,Ulysses S. Grant|Ulysses Grant|Hiram Grant|Hiram Ulysses Grant,1869–1877,TRUE,https://en.wikipedia.org/wiki/Ulysses_S._Grant
+19th,Rutherford B. Hayes|Rutherford Hayes|Rutherford Birchard Hayes,1877–1881,TRUE,https://en.wikipedia.org/wiki/Rutherford_B._Hayes
+20th,James A. Garfield|James Garfield|James Abram Garfield,1881–1881,TRUE,https://en.wikipedia.org/wiki/James_A._Garfield
+21st,Chester A. Arthur|Chester Arthur|Chester Alan Arthur,1881–1885,TRUE,https://en.wikipedia.org/wiki/Chester_A._Arthur
+"22nd, 24th",Grover Cleveland|Stephen Grover Cleveland,"1885–1889, 1893–1897",TRUE,https://en.wikipedia.org/wiki/Grover_Cleveland
+23rd,Benjamin Harrison,1889–1893,TRUE,https://en.wikipedia.org/wiki/Benjamin_Harrison
+25th,William McKinley,1897–1901,TRUE,https://en.wikipedia.org/wiki/William_McKinley
+26th,Theodore Roosevelt|Teddy Roosevelt,1901–1909,TRUE,https://en.wikipedia.org/wiki/Theodore_Roosevelt
+27th,William H. Taft|William Taft|William Howard Taft,1909–1913,TRUE,https://en.wikipedia.org/wiki/William_Howard_Taft
+28th,Woodrow Wilson|Thomas Woodrow Wilson,1913–1921,TRUE,https://en.wikipedia.org/wiki/Woodrow_Wilson
+29th,Warren G. Harding|Warren Harding|Warren Gamaliel Harding,1921–1923,TRUE,https://en.wikipedia.org/wiki/Warren_G._Harding
+30th,Calvin Coolidge|John Calvin Coolidge,1923–1929,TRUE,https://en.wikipedia.org/wiki/Calvin_Coolidge
+31st,Herbert Hoover|Herbert Clark Hoover,1929–1933,TRUE,https://en.wikipedia.org/wiki/Herbert_Hoover
+32nd,Franklin D. Roosevelt|Franklin Roosevelt|FDR|Franklin Delano Roosevelt,1933–1945,TRUE,https://en.wikipedia.org/wiki/Franklin_D._Roosevelt
+33rd,Harry S. Truman|Harry Truman|HST,1945–1953,TRUE,https://en.wikipedia.org/wiki/Harry_S._Truman
+34th,Dwight D. Eisenhower|Dwight David Eisenhower|Dwight Eisenhower|DDE|Ike Eisenhower,1953–1961,TRUE,https://en.wikipedia.org/wiki/Dwight_D._Eisenhower
+35th,John F. Kennedy|John Kennedy|John Fitzgerald Kennedy|JFK,1961–1963,TRUE,https://en.wikipedia.org/wiki/John_F._Kennedy
+36th,Lyndon B. Johnson|Lyndon Johnson|Lyndon Baines Johnson|LBJ,1963–1969,TRUE,https://en.wikipedia.org/wiki/Lyndon_B._Johnson
+37th,Richard Nixon|Richard M. Nixon|Richard Milhous Nixon,1969–1974,TRUE,https://en.wikipedia.org/wiki/Richard_Nixon
+38th,Gerald Ford|Gerald R. Ford|Gerald Rudolph Ford,1974–1977,TRUE,https://en.wikipedia.org/wiki/Gerald_Ford
+39th,Jimmy Carter|James Carter|James Earl Carter,1977–1981,TRUE,https://en.wikipedia.org/wiki/Jimmy_Carter
+40th,Ronald Reagan|Ronald W. Reagan|Ronald Wilson Reagan,1981–1989,TRUE,https://en.wikipedia.org/wiki/Ronald_Reagan
+41st,George H. W. Bush|George Bush|H. W. Bush|Bush Sr.|George Herbert Walker Bush,1989–1993,TRUE,https://en.wikipedia.org/wiki/George_H._W._Bush
+42nd,Bill Clinton|William Clinton|William Jefferson Clinton,1993–2001,TRUE,https://en.wikipedia.org/wiki/Bill_Clinton
+43rd,George W. Bush|George Bush|George Walker Bush|W. Bush|Bush Jr.,2001–2009,TRUE,https://en.wikipedia.org/wiki/George_W._Bush
+44th,Barack Obama|Barack Hussein Obama,2009–2017,TRUE,https://en.wikipedia.org/wiki/Barack_Obama
+"45th, 47th",Donald Trump|Donald J. Trump|Donald John Trump,"2017–2021, 2025–present",TRUE,https://en.wikipedia.org/wiki/Donald_Trump
+46th,Joe Biden|Joseph Biden|Joe R. Biden|Joseph R. Biden|Joe Robinette Biden|Joseph Robinette Biden,2021–2025,TRUE,https://en.wikipedia.org/wiki/Joe_Biden

@@ -25,19 +25,38 @@ function AnswerCard(props: AnswerCardProps) {
               className="inline-block align-baseline mb-[-0.1em] mr-1 w-[1em]"
               src={wasCorrect ? "check.svg" : "x.svg"}
             ></img>{" "}
-            The {deck.answerLabel} of{" "}
-            <Link href={previousFact.questionLink} wikipedia>
-              {previousFact.question}
-            </Link>{" "}
-            is{" "}
-            {previousFact.answers.map((answer, index) => (
-              <React.Fragment key={index}>
-                <Link href={answer.link} wikipedia>
-                  {answer.canonicalForm}
-                </Link>
-                {index < previousFact.answers.length - 1 && <span> / </span>}
-              </React.Fragment>
-            ))}
+            {deck.answerTemplate
+              .split(" ")
+              .map((token, index) => {
+                switch (token) {
+                  case "<question>":
+                    return (
+                      <Link
+                        key={index}
+                        href={previousFact.questionLink}
+                        wikipedia
+                      >
+                        {previousFact.question}
+                      </Link>
+                    );
+                  case "<answer>":
+                    return previousFact.answers.map((answer, answerIndex) => (
+                      <React.Fragment key={`${index},${answerIndex}`}>
+                        <Link href={answer.link} wikipedia>
+                          {answer.canonicalForm}
+                        </Link>
+                        {index < previousFact.answers.length - 1 && (
+                          <span> / </span>
+                        )}
+                      </React.Fragment>
+                    ));
+                  default:
+                    return <React.Fragment key={index}>{token}</React.Fragment>;
+                }
+              })
+              .map((token, index) => (
+                <React.Fragment key={index}>{token} </React.Fragment>
+              ))}
           </div>
         </div>
         <div className="text-sm mt-0.5">

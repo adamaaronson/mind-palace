@@ -1,19 +1,27 @@
 import { normalize } from "../utils/utils";
 import levenshtein from "damerau-levenshtein";
 
+interface Answer {
+  canonicalForm: string;
+  alternateForms?: string[];
+  link?: string;
+  isName?: boolean;
+  familyName?: string;
+}
+
 export interface Fact {
   id: number;
   question: string;
   questionLink?: string;
   questionSubtitle?: string;
-  answers: {
-    canonicalForm: string;
-    alternateForms?: string[];
-    link?: string;
-  }[];
-  isName?: boolean;
-  familyName?: string;
-  alternateAnswers?: string[];
+  answers: Answer[];
+}
+
+export function getFamilyName(answer: Answer) {
+  return (
+    answer.familyName ??
+    answer.canonicalForm.split(" ")[answer.canonicalForm.split(" ").length - 1]
+  );
 }
 
 export function getAnswerEditDistance(fact: Fact, answer: string) {
@@ -22,6 +30,7 @@ export function getAnswerEditDistance(fact: Fact, answer: string) {
       ...fact.answers.map((answer) => [
         answer.canonicalForm,
         ...(answer.alternateForms ?? []),
+        ...(answer.isName ? [getFamilyName(answer)] : []),
       ])
     )
     .map((correctAnswer) => normalize(correctAnswer));

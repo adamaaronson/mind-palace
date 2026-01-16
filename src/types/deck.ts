@@ -1,3 +1,4 @@
+import usPresidents from "../decks/json/us-presidents.json";
 import usStateCapitals from "../decks/json/us-state-capitals.json";
 import worldCapitals from "../decks/json/world-capitals.json";
 import type { Fact } from "./fact";
@@ -7,6 +8,7 @@ export interface Deck {
   displayName: string;
   questionLabel: string;
   answerLabel: string;
+  answerTemplate: string;
   facts: Fact[];
 }
 
@@ -24,6 +26,11 @@ export const DECKS: DeckCategory[] = [
       { id: "world-capitals", ...worldCapitals },
       { id: "us-state-capitals", ...usStateCapitals },
     ],
+  },
+  {
+    id: "history",
+    displayName: "History",
+    decks: [{ id: "us-presidents", ...usPresidents }],
   },
 ];
 
