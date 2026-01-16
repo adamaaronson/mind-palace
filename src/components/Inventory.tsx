@@ -13,7 +13,7 @@ interface InventoryProps {
 
 function Inventory(props: InventoryProps) {
   const { inventory, goToShop, equippedBlock, equipBlock, equipEraser } = props;
-  const [scroll, setScroll] = useState(0);
+  const [, setScroll] = useState(0);
 
   return (
     <div className="w-full">
@@ -30,7 +30,6 @@ function Inventory(props: InventoryProps) {
                 isSmall={true}
                 onClick={() => equipBlock(block)}
                 isEquipped={equippedBlock?.id === block.id}
-                scroll={scroll}
               />
             ))}
           </div>

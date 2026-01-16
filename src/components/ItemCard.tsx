@@ -1,6 +1,7 @@
-import { memo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { ShopItem } from "../types/shop";
 import { AnimatePresence, motion } from "motion/react";
+import { formatNumber } from "../utils/utils";
 
 interface ItemCardProps {
   item: ShopItem;
@@ -8,16 +9,20 @@ interface ItemCardProps {
   isSmall?: boolean;
   onClick?: () => void;
   isEquipped?: boolean;
-  scroll?: number;
+  showPurchaseButton?: boolean;
+  canPurchase?: boolean;
+  onPurchase?: () => void;
 }
 
-function ItemCard(props: ItemCardProps) {
+export default function ItemCard(props: ItemCardProps) {
   const {
     item,
     isUpgrade = false,
     isSmall = false,
     onClick,
     isEquipped = false,
+    canPurchase = false,
+    onPurchase,
   } = props;
   const [isHovered, setIsHovered] = useState(false);
   const isClickable = onClick != undefined;
@@ -26,54 +31,70 @@ function ItemCard(props: ItemCardProps) {
   const buttonBoundingBox = buttonRef.current?.getBoundingClientRect();
 
   return (
-    <button
-      className={`relative cursor-pointer bg-white border-standard rounded-md flex shrink-0 justify-center items-center ${
-        isSmall ? "size-15 p-1 text-sm" : "size-20 p-2"
-      } ${
-        isClickable && !isEquipped
-          ? "bg-inherit! border-[#ffffff00]! hover:bg-white!"
-          : ""
-      }`}
+    <div
+      className="flex flex-col gap-1"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
-      ref={buttonRef}
     >
-      {item.level !== 0 && (
-        <div
-          className={`absolute font-bold left-full top-0 -translate-x-full  ${
-            isSmall ? "-ml-0.5 -mt-0.5" : "-ml-1"
-          }`}
-        >
-          {isUpgrade ? "+" : ""}
-          {item.level}
-        </div>
-      )}
-      <img src={item.image} width="80%"></img>
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, translateY: 10 }}
-            animate={{ opacity: 0.9, translateY: 0 }}
-            exit={{ opacity: 0, translateY: 10 }}
-            transition={{ duration: 0.1 }}
-            className="border-standard bg-white text-xs rounded-md fixed text-text-dark font-bold p-0.5 px-2 -translate-y-full -translate-x-1/2 -mt-1 text-nowrap"
-            style={
-              buttonBoundingBox
-                ? {
-                    top: buttonBoundingBox.top,
-                    left:
-                      (buttonBoundingBox.left + buttonBoundingBox.right) / 2,
-                  }
-                : undefined
-            }
+      <button
+        className={`relative cursor-pointer bg-white border-standard rounded-md flex shrink-0 justify-center items-center ${
+          isSmall ? "size-15 p-1 text-sm" : "size-20 p-2"
+        } ${
+          isClickable && !isEquipped
+            ? "bg-inherit! border-[#ffffff00]! hover:bg-white!"
+            : ""
+        }`}
+        onClick={onClick}
+        ref={buttonRef}
+      >
+        {item.level !== 0 && (
+          <div
+            className={`absolute font-bold left-full top-0 -translate-x-full  ${
+              isSmall ? "-ml-0.5 -mt-0.5" : "-ml-1"
+            }`}
           >
-            {item.displayName}
-          </motion.div>
+            {isUpgrade ? "+" : ""}
+            {item.level}
+          </div>
         )}
-      </AnimatePresence>
-    </button>
+        <img src={item.image} width="80%"></img>
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ opacity: 0, translateY: 10 }}
+              animate={{ opacity: 0.9, translateY: 0 }}
+              exit={{ opacity: 0, translateY: 10 }}
+              transition={{ duration: 0.1 }}
+              className="border-standard bg-white text-xs rounded-md fixed text-text-dark font-bold p-0.5 px-2 -translate-y-full -translate-x-1/2 -mt-1 text-nowrap"
+              style={
+                buttonBoundingBox
+                  ? {
+                      top: buttonBoundingBox.top,
+                      left:
+                        (buttonBoundingBox.left + buttonBoundingBox.right) / 2,
+                    }
+                  : undefined
+              }
+            >
+              {item.displayName}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </button>
+      {onPurchase != undefined && (
+        <button
+          type="submit"
+          className="button-standard py-0! px-2! text-sm"
+          disabled={canPurchase}
+          onClick={onPurchase}
+        >
+          <img
+            src="nugget.svg"
+            className="inline-block h-[1em] align-baseline -mb-0.5"
+          ></img>{" "}
+          {formatNumber(item.price)}
+        </button>
+      )}
+    </div>
   );
 }
-
-export default memo(ItemCard);

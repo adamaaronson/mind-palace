@@ -4,7 +4,6 @@ import {
   type ShopItem,
   type ShopItemCategory,
 } from "../types/shop";
-import { formatNumber } from "../utils/utils";
 import ItemCard from "./ItemCard";
 
 interface ShopProps {
@@ -16,9 +15,7 @@ interface ShopProps {
 
 export default function Shop(props: ShopProps) {
   const { displayNuggets, setNuggets, shopItems, setShopItems } = props;
-  const [scrollDivs, setScrollDivs] = useState<Record<string, HTMLDivElement>>(
-    {}
-  );
+  const [, setScrolls] = useState<Record<string, HTMLDivElement>>({});
 
   const purchaseItem = (itemCategoryId: string, itemId: string) => {
     const item = getShopItem(shopItems, itemCategoryId, itemId);
@@ -84,8 +81,8 @@ export default function Shop(props: ShopProps) {
           <div
             className="flex gap-2 overflow-x-auto min-w-0"
             onScroll={(e) =>
-              setScrollDivs((prev) => ({
-                ...prev,
+              setScrolls((scrolls) => ({
+                ...scrolls,
                 [itemCategory.id]: e.target as HTMLDivElement,
               }))
             }
@@ -95,20 +92,9 @@ export default function Shop(props: ShopProps) {
                 <ItemCard
                   item={item}
                   isUpgrade={itemCategory.id === "upgrades"}
-                  scroll={scrollDivs[itemCategory.id]?.scrollLeft}
+                  canPurchase={displayNuggets < item.price}
+                  onPurchase={() => purchaseItem(itemCategory.id, item.id)}
                 />
-                <button
-                  type="submit"
-                  className="button-standard py-0! px-2! text-sm"
-                  disabled={displayNuggets < item.price}
-                  onClick={() => purchaseItem(itemCategory.id, item.id)}
-                >
-                  <img
-                    src="nugget.svg"
-                    className="inline-block h-[1em] align-baseline -mb-0.5"
-                  ></img>{" "}
-                  {formatNumber(item.price)}
-                </button>
               </div>
             ))}
           </div>
