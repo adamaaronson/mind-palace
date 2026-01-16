@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import { ERASER, type ShopItem } from "../types/shop";
 import ItemCard from "./ItemCard";
 import LinkButton from "./LinkButton";
@@ -13,12 +13,16 @@ interface InventoryProps {
 
 function Inventory(props: InventoryProps) {
   const { inventory, goToShop, equippedBlock, equipBlock, equipEraser } = props;
+  const [scroll, setScroll] = useState(0);
 
   return (
     <div className="w-full">
       <div className="border-standard rounded-2xl bg-light-light p-4 flex items-center justify-between mt-8">
         {inventory.length > 0 ? (
-          <div className="shrink flex gap-2 overflow-x-auto min-w-0">
+          <div
+            className="shrink flex gap-2 overflow-x-auto min-w-0"
+            onScroll={(e) => setScroll((e.target as HTMLDivElement).scrollLeft)}
+          >
             {inventory.map((block) => (
               <ItemCard
                 key={block.id}
@@ -26,6 +30,7 @@ function Inventory(props: InventoryProps) {
                 isSmall={true}
                 onClick={() => equipBlock(block)}
                 isEquipped={equippedBlock?.id === block.id}
+                scroll={scroll}
               />
             ))}
           </div>

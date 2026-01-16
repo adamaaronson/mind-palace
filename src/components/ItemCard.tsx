@@ -8,6 +8,7 @@ interface ItemCardProps {
   isSmall?: boolean;
   onClick?: () => void;
   isEquipped?: boolean;
+  scroll?: number;
 }
 
 function ItemCard(props: ItemCardProps) {

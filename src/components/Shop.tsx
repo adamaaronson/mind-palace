@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   getShopItem,
   type ShopItem,
@@ -15,6 +16,9 @@ interface ShopProps {
 
 export default function Shop(props: ShopProps) {
   const { displayNuggets, setNuggets, shopItems, setShopItems } = props;
+  const [scrollDivs, setScrollDivs] = useState<Record<string, HTMLDivElement>>(
+    {}
+  );
 
   const purchaseItem = (itemCategoryId: string, itemId: string) => {
     const item = getShopItem(shopItems, itemCategoryId, itemId);
@@ -77,12 +81,21 @@ export default function Shop(props: ShopProps) {
           key={itemCategory.id}
         >
           <div className="text-xl font-bold">{itemCategory.displayName}</div>
-          <div className="flex gap-2 overflow-x-auto min-w-0">
+          <div
+            className="flex gap-2 overflow-x-auto min-w-0"
+            onScroll={(e) =>
+              setScrollDivs((prev) => ({
+                ...prev,
+                [itemCategory.id]: e.target as HTMLDivElement,
+              }))
+            }
+          >
             {itemCategory.items.map((item) => (
               <div className="flex flex-col gap-1" key={item.id}>
                 <ItemCard
                   item={item}
                   isUpgrade={itemCategory.id === "upgrades"}
+                  scroll={scrollDivs[itemCategory.id]?.scrollLeft}
                 />
                 <button
                   type="submit"

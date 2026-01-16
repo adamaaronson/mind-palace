@@ -19,14 +19,14 @@ export const SHOP_ITEMS: ShopItemCategory[] = [
     items: [
       {
         id: "correct-answers",
-        displayName: "Nuggets per correct answer",
+        displayName: "Nuggets for a correct answer",
         price: 500,
         image: "check.svg",
         level: 1,
       },
       {
         id: "any-answers",
-        displayName: "Nuggets per any answer",
+        displayName: "Nuggets for any answer",
         price: 1000,
         image: "check-and-x.svg",
         level: 1,
