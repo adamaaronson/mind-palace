@@ -15,6 +15,7 @@ export interface Fact {
   questionLink?: string;
   questionSubtitle?: string;
   answers: Answer[];
+  answerTemplate?: string;
 }
 
 export function getFamilyName(answer: Answer) {
@@ -31,7 +32,7 @@ export function getAnswerEditDistance(fact: Fact, answer: string) {
         answer.canonicalForm,
         ...(answer.alternateForms ?? []),
         ...(answer.isName ? [getFamilyName(answer)] : []),
-      ])
+      ]),
     )
     .map((correctAnswer) => normalize(correctAnswer));
 
@@ -40,7 +41,7 @@ export function getAnswerEditDistance(fact: Fact, answer: string) {
   return Math.min(
     ...normalizedCorrectAnswers.map(
       (normalizedCorrectAnswer) =>
-        levenshtein(normalizedCorrectAnswer, normalizedAnswer).steps
-    )
+        levenshtein(normalizedCorrectAnswer, normalizedAnswer).steps,
+    ),
   );
 }

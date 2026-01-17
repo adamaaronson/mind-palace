@@ -26,7 +26,7 @@ export type NuggetParticleAction =
 
 export function createNuggetParticles(
   nuggetCount: number,
-  timestamp: number
+  timestamp: number,
 ): NuggetParticleProps[] {
   const nuggetParticles = [];
   for (let i = 0; i < nuggetCount; i++) {
@@ -34,7 +34,7 @@ export function createNuggetParticles(
 
     const xDistance = 0.5 - Math.random();
     const yDistance = -Math.random() / 2;
-    const width = (Math.random() * 30 + 10) / DEFAULT_FOUNT_WIDTH;
+    const width = (Math.random() * 30 + 8) / DEFAULT_FOUNT_WIDTH;
 
     nuggetParticles.push({
       id: `${++nuggetId}`,
@@ -49,17 +49,17 @@ export function createNuggetParticles(
 
 function cleanUpNuggetParticles(
   nuggetParticles: NuggetParticleProps[],
-  timestamp: number
+  timestamp: number,
 ) {
   return nuggetParticles.filter(
     ({ timestamp: nuggetTimestamp }) =>
-      timestamp - nuggetTimestamp < NUGGET_PARTICLE_DURATION_MS * 1.5
+      timestamp - nuggetTimestamp < NUGGET_PARTICLE_DURATION_MS * 1.5,
   );
 }
 
 export function nuggetParticleReducer(
   state: NuggetParticleState,
-  action: NuggetParticleAction
+  action: NuggetParticleAction,
 ) {
   const timestamp = Date.now();
 
@@ -72,7 +72,7 @@ export function nuggetParticleReducer(
       const nuggetsToCreate = Math.min(
         action.nuggetCount,
         MAX_NUGGETS_AT_ONCE, // Do not create tons of nuggets at once if nuggetsPerSecond is high
-        action.nuggetsPerSecond * 0.1 // Do not create tons of nuggets at once when page is re-entered
+        action.nuggetsPerSecond * 0.1, // Do not create tons of nuggets at once when page is re-entered
       );
 
       return {

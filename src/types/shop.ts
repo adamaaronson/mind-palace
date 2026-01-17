@@ -90,7 +90,7 @@ export const WALL_RIGHT: ShopItem = {
 export const getShopItem = (
   shopItems: ShopItemCategory[],
   itemCategoryId: string,
-  itemId: string
+  itemId: string,
 ) => {
   const category = shopItems.find((item) => item.id === itemCategoryId);
   return category?.items.find((item) => item.id === itemId);
@@ -98,7 +98,7 @@ export const getShopItem = (
 
 export const getShopItemCategory = (
   shopItems: ShopItemCategory[],
-  itemCategoryId: string
+  itemCategoryId: string,
 ) => {
   return shopItems.find((item) => item.id === itemCategoryId);
 };

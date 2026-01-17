@@ -2,7 +2,7 @@
   "displayName": "U.S. Presidents",
   "questionLabel": "number",
   "answerLabel": "president",
-  "answerTemplate": "The <question> president is <answer>",
+  "answerTemplate": "The <question> president was <answer>",
   "facts": [
     {
       "id": 1,
@@ -602,7 +602,8 @@
         }
       ],
       "question": "45th, 47th",
-      "questionSubtitle": "2017\u20132021, 2025\u2013present"
+      "questionSubtitle": "2017\u20132021, 2025\u2013present",
+      "answerTemplate": "The <question> president is <answer>"
     },
     {
       "id": 45,

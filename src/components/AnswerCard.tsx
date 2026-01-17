@@ -25,7 +25,7 @@ function AnswerCard(props: AnswerCardProps) {
               className="inline-block align-baseline mb-[-0.1em] mr-1 w-[1em]"
               src={wasCorrect ? "check.svg" : "x.svg"}
             ></img>{" "}
-            {deck.answerTemplate
+            {(previousFact.answerTemplate ?? deck.answerTemplate)
               .split(" ")
               .map((token, index) => {
                 switch (token) {

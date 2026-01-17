@@ -40,7 +40,7 @@ export function createCardQueue(deck: Deck): CardQueue {
 
 export function replaceFirstCard(
   queue: CardQueue,
-  newFirstCard: Card
+  newFirstCard: Card,
 ): CardQueue {
   const interval = newFirstCard.interval;
 
@@ -73,7 +73,7 @@ export function decrementAlreadyStudiedIndex(queue: CardQueue): CardQueue {
 
 export function answerFirstCard(
   queue: CardQueue,
-  isCorrect: boolean
+  isCorrect: boolean,
 ): { answeredCard: Card; cardQueue: CardQueue } {
   const newCard: Card = { ...queue.cards[0] };
 
@@ -100,7 +100,7 @@ export function answerFirstCard(
       // but no sooner than the alreadyStudiedIndex
       const adjustedStart = Math.max(
         randomnessCutoff,
-        queue.alreadyStudiedIndex
+        queue.alreadyStudiedIndex,
       );
       newCard.interval = randomRange(adjustedStart, queue.cards.length + 1);
 

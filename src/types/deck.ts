@@ -35,5 +35,5 @@ export const DECKS: DeckCategory[] = [
 ];
 
 export const DECKS_BY_ID: Record<string, Deck> = Object.fromEntries(
-  DECKS.flatMap((category) => category.decks).map((deck) => [deck.id, deck])
+  DECKS.flatMap((category) => category.decks).map((deck) => [deck.id, deck]),
 );
