@@ -15,7 +15,7 @@ import Column from "./Column";
 import AnswerCard from "./AnswerCard";
 import QuestionCard from "./QuestionCard";
 import Shop from "./Shop";
-import { getShopItem, SHOP_ITEMS } from "../types/shop";
+import { getShopItem, SHOP_ITEMS, type ShopItem } from "../types/shop";
 import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
@@ -29,8 +29,8 @@ export default function App() {
       Object.entries(DECKS_BY_ID).map(([id, deck]) => [
         id,
         createCardQueue(deck),
-      ])
-    )
+      ]),
+    ),
   );
 
   const [wasCorrect, setWasCorrect] = useState(true);
@@ -50,13 +50,16 @@ export default function App() {
   const [showingDeckSelector, setShowingDeckSelector] = useState(true);
 
   const [shopItems, setShopItems] = useState(() => SHOP_ITEMS);
+  const [equippedBlock, setEquippedBlock] = useState<ShopItem | undefined>(
+    undefined,
+  );
 
   const [{ nuggetParticles }, dispatchNuggetParticles] = useReducer(
     nuggetParticleReducer,
     {
       previousNuggetTimestamp: 0,
       nuggetParticles: [],
-    }
+    },
   );
 
   const cardQueue = cardQueues[deckId];
@@ -66,12 +69,12 @@ export default function App() {
   const nuggetsPerWrongAnswer = getShopItem(
     shopItems,
     "upgrades",
-    "any-answers"
+    "any-answers",
   )!.level;
   const nuggetsPerCorrectAnswer = getShopItem(
     shopItems,
     "upgrades",
-    "correct-answers"
+    "correct-answers",
   )!.level;
   const card = cardQueue.cards[0];
 
@@ -120,7 +123,7 @@ export default function App() {
     const wasCorrect = answerEditDistance === 0;
     const { answeredCard, cardQueue: newCardQueue } = answerFirstCard(
       cardQueue,
-      wasCorrect
+      wasCorrect,
     );
 
     const earnedFount = wasCorrect && !card.known && answeredCard.known;
@@ -226,12 +229,15 @@ export default function App() {
                   shopItems={shopItems}
                   goToShop={goToShop}
                   isVisible={tabIndex === 0}
+                  equippedBlock={equippedBlock}
+                  setEquippedBlock={setEquippedBlock}
                 />
                 <Shop
                   displayNuggets={displayNuggets}
                   setNuggets={setNuggets}
                   shopItems={shopItems}
                   setShopItems={setShopItems}
+                  setEquippedBlock={setEquippedBlock}
                 />
               </Tabs>
             </div>

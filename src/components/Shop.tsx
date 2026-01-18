@@ -11,10 +11,17 @@ interface ShopProps {
   setNuggets: React.Dispatch<React.SetStateAction<number>>;
   shopItems: ShopItemCategory[];
   setShopItems: React.Dispatch<React.SetStateAction<ShopItemCategory[]>>;
+  setEquippedBlock: React.Dispatch<React.SetStateAction<ShopItem | undefined>>;
 }
 
 export default function Shop(props: ShopProps) {
-  const { displayNuggets, setNuggets, shopItems, setShopItems } = props;
+  const {
+    displayNuggets,
+    setNuggets,
+    shopItems,
+    setShopItems,
+    setEquippedBlock,
+  } = props;
   const [, setScrolls] = useState<Record<string, HTMLDivElement>>({});
 
   const purchaseItem = (itemCategoryId: string, itemId: string) => {
@@ -40,11 +47,11 @@ export default function Shop(props: ShopProps) {
                       price: Math.floor(item.price * 1.5),
                       level: item.level + 1,
                     }
-                  : item
+                  : item,
               ),
             }
-          : category
-      )
+          : category,
+      ),
     );
 
     if (itemCategoryId === "upgrades" && itemId === "any-answers") {
@@ -61,12 +68,16 @@ export default function Shop(props: ShopProps) {
                         price: Math.floor(item.price * 1.5),
                         level: item.level + 1,
                       }
-                    : item
+                    : item,
                 ),
               }
-            : category
-        )
+            : category,
+        ),
       );
+    }
+
+    if (itemCategoryId === "blocks") {
+      setEquippedBlock(item);
     }
   };
 

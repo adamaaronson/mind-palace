@@ -13,13 +13,13 @@ interface BuildProps {
   isVisible: boolean;
   shopItems: ShopItemCategory[];
   goToShop: () => void;
+  equippedBlock: ShopItem | undefined;
+  setEquippedBlock: React.Dispatch<React.SetStateAction<ShopItem | undefined>>;
 }
 
 function Build(props: BuildProps) {
-  const { isVisible, shopItems, goToShop } = props;
-  const [equippedBlock, setEquippedBlock] = useState<ShopItem | undefined>(
-    undefined
-  );
+  const { isVisible, shopItems, goToShop, equippedBlock, setEquippedBlock } =
+    props;
   const [usedBlocks, setUsedBlocks] = useState<Record<string, number>>({});
 
   const equipBlock = useCallback((block: ShopItem) => {
