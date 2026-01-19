@@ -35,16 +35,21 @@ function Inventory(props: InventoryProps) {
           </div>
         ) : (
           <p className="grow text-sm text-text-light text-center p-2">
-            You need blocks to build your palace!{" "}
-            <span className="hidden xl:inline">
-              <br />
+            <span className="hidden md:inline lg:hidden">
+              Buy blocks in the
             </span>
-            Buy some in the{" "}
+            <span className="inline md:hidden lg:inline">
+              You need blocks to build your palace.{" "}
+              <span className="hidden xl:inline">
+                <br />
+              </span>
+              Buy some in the
+            </span>{" "}
             <span className="whitespace-nowrap">
               <LinkButton className="2xl:hidden" onClick={goToShop}>
                 shop
               </LinkButton>
-              <span className="hidden 2xl:inline">shop</span>.
+              <span className="hidden 2xl:inline">shop</span>!
             </span>
           </p>
         )}

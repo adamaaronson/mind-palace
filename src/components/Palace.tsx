@@ -31,7 +31,7 @@ const palaceWidthToBlockWidth = (palaceWidth: number) =>
 // z: to the left and down a bit
 export function getIsometricProjection(
   coordinates: Coordinates,
-  blockWidth: number
+  blockWidth: number,
 ) {
   const { x, y, z } = coordinates;
   return {
@@ -84,7 +84,7 @@ function Palace(props: PalaceProps) {
     blockWidth > 0 &&
     !approximatelyEqual(
       blockWidth,
-      palaceWidthToBlockWidth(palaceRef.clientWidth)
+      palaceWidthToBlockWidth(palaceRef.clientWidth),
     )
   ) {
     resizePalace();
@@ -107,14 +107,14 @@ function Palace(props: PalaceProps) {
 
   const removeBlock = (coordinates: Coordinates) => {
     const blockToRemove = blocks.find((block) =>
-      isEqual(coordinates, block.coordinates)
+      isEqual(coordinates, block.coordinates),
     );
     if (!blockToRemove) {
       return;
     }
 
     setBlocks((blocks) =>
-      blocks.filter((block) => !isEqual(coordinates, block.coordinates))
+      blocks.filter((block) => !isEqual(coordinates, block.coordinates)),
     );
     setUsedBlocks((usedBlocks) => ({
       ...usedBlocks,

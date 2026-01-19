@@ -242,11 +242,10 @@ export default function App() {
               </Tabs>
             </div>
           </div>
-          <Footer />
         </div>
         <Column />
       </div>
-      <div className="bg-light h-4 border-t-standard flex-none z-100"></div>
+      <Footer />
     </div>
   );
 }
