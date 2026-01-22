@@ -5,6 +5,7 @@ import {
   type ShopItemCategory,
 } from "../types/shop";
 import ItemCard from "./ItemCard";
+import { PRICE_MULTIPLIER } from "../utils/constants";
 
 interface ShopProps {
   displayNuggets: number;
@@ -44,7 +45,7 @@ export default function Shop(props: ShopProps) {
                 item.id === itemId
                   ? {
                       ...item,
-                      price: Math.floor(item.price * 1.5),
+                      price: Math.floor(item.price * PRICE_MULTIPLIER),
                       level: item.level + 1,
                     }
                   : item,
@@ -65,7 +66,6 @@ export default function Shop(props: ShopProps) {
                   item.id === "correct-answers"
                     ? {
                         ...item,
-                        price: Math.floor(item.price * 1.5),
                         level: item.level + 1,
                       }
                     : item,

@@ -41,11 +41,11 @@ function AnswerCard(props: AnswerCardProps) {
                     );
                   case "<answer>":
                     return previousFact.answers.map((answer, answerIndex) => (
-                      <React.Fragment key={`${index},${answerIndex}`}>
+                      <React.Fragment key={`${answerIndex},${answerIndex}`}>
                         <Link href={answer.link} wikipedia>
                           {answer.canonicalForm}
                         </Link>
-                        {index < previousFact.answers.length - 1 && (
+                        {answerIndex < previousFact.answers.length - 1 && (
                           <span> / </span>
                         )}
                       </React.Fragment>

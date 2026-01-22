@@ -13,3 +13,5 @@ export const getBlockHeight = (blockWidth: number) => (blockWidth / 36) * 40;
 export const getBlockTopHeight = (blockWidth: number) => (blockWidth / 36) * 18;
 export const getBlockSideHeight = (blockWidth: number) =>
   (blockWidth / 36) * 22;
+
+export const PRICE_MULTIPLIER = 1.2;
