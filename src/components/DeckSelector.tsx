@@ -1,6 +1,7 @@
 import { DECKS, type Deck } from "../types/deck";
 import type { CardQueue } from "../types/memory";
 import DeckInfo from "./DeckInfo";
+import { Gilt } from "./Gilt";
 import { Modal } from "./Modal";
 
 interface DeckSelectorProps {
@@ -39,22 +40,7 @@ export default function DeckSelector(props: DeckSelectorProps) {
                   onClick={() => onSelectDeck(deck)}
                   key={deck.id}
                 >
-                  {isGold && (
-                    <svg
-                      className="absolute size-full top-0 left-0 pointer-events-none"
-                      viewBox="0 0 200 20"
-                      preserveAspectRatio="none"
-                    >
-                      <polygon
-                        points="50,0 100,0 50,20 0,20"
-                        className="fill-[#ffffff55]"
-                      />
-                      <polygon
-                        points="120,0 145,0 95,20 70,20"
-                        className="fill-[#ffffff55]"
-                      />
-                    </svg>
-                  )}
+                  {isGold && <Gilt />}
                   <div className="p-2 px-4 relative">
                     <DeckInfo
                       deck={deck}

@@ -151,7 +151,7 @@ export default function App() {
     setLostFount(lostFount);
     setAnswerTimestamp(timestamp);
 
-    setPreviousCard(answeredCard);
+    setPreviousCard(card);
     setCardQueues((cardQueues) => ({
       ...cardQueues,
       [deckId]: newCardQueue,

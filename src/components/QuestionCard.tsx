@@ -1,18 +1,7 @@
 import { useState } from "react";
 import type { Deck } from "../types/deck";
 import { type Card } from "../types/memory";
-import { KNOWLEDGE_STREAK } from "../utils/constants";
-
-const getCardLabel = (card: Card) => {
-  if (!card.seen) {
-    return "new";
-  }
-  if (card.known) {
-    return "review";
-  }
-
-  return `${Math.min(card.streak ?? 0, KNOWLEDGE_STREAK)}/${KNOWLEDGE_STREAK}`;
-};
+import CardLabel from "./CardLabel";
 
 interface QuestionCardProps {
   deck: Deck;
@@ -30,17 +19,13 @@ export default function QuestionCard(props: QuestionCardProps) {
   const shouldShowIDontKnow = noGuess && wasCorrect;
 
   return (
-    <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80">
-      <div className="absolute -ml-4 text-sm left-full -translate-x-full font-normal">
-        <span className="rounded-sm border-standard px-2">
-          {getCardLabel(card)}
-        </span>
-      </div>
+    <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80 overflow-hidden">
+      <CardLabel card={card} />
       <div className="text-text-light">Name the {deck.answerLabel}:</div>
       <div className="font-bold text-2xl leading-[1em] mt-1">
         {card.fact.question}
       </div>
-      <div className="font-bold mb-4 leading-tight">
+      <div className="font-bold mb-5 leading-tight">
         ({card.fact.questionSubtitle ?? deck.questionLabel})
       </div>
       {/* {card.fact.questionImage && (
@@ -63,7 +48,7 @@ export default function QuestionCard(props: QuestionCardProps) {
         <input
           value={guess}
           onChange={(event) => setGuess(event.target.value)}
-          className="bg-white p-1 border-standard px-2"
+          className="bg-white p-1 border-standard px-2 w-54"
           placeholder={`Type the ${deck.answerLabel}`}
         />
         <button
