@@ -28,13 +28,13 @@ export default function CardLabel(props: CardLabelProps) {
     (wasCorrect && (!card.seen || card.streak >= KNOWLEDGE_STREAK - 1));
 
   return (
-    <div className="-mt-4 -mr-4.5 text-right leading-0 mb-1">
-      <span
-        className={`text-xs pl-2 pr-3 border-standard rounded-bl-sm text-text-light relative ${isGilded ? "bg-gold-light" : ""}`}
+    <div className="-mt-4.5 -mr-4.5 text-right leading-0 mb-1">
+      <div
+        className={`inline-block text-xs pl-2 pr-3 border-standard rounded-bl-sm text-text-light relative overflow-hidden ${isGilded ? "bg-gold-light" : ""}`}
       >
         {isGilded && <Gilt />}
         <span className="relative">{cardLabel}</span>
-      </span>
+      </div>
     </div>
   );
 }
