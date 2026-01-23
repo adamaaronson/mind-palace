@@ -27,3 +27,5 @@ TerritoryCapitals.ts
 TestCapitals.ts
 USStateCapitals.ts
 capital_to_country.py
+
+__pycache__

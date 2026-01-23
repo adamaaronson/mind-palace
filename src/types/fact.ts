@@ -14,6 +14,7 @@ export interface Fact {
   question: string;
   questionLink?: string;
   questionSubtitle?: string;
+  questionImage?: string;
   answers: Answer[];
   answerTemplate?: string;
 }

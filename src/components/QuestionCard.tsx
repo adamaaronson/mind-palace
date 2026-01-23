@@ -43,6 +43,13 @@ export default function QuestionCard(props: QuestionCardProps) {
       <div className="font-bold mb-4 leading-tight">
         ({card.fact.questionSubtitle ?? deck.questionLabel})
       </div>
+      {/* {card.fact.questionImage && (
+        <img
+          key={card.fact.id}
+          src={card.fact.questionImage}
+          className="block max-w-1/2 mb-4 m-auto"
+        />
+      )} */}
 
       <form
         className="relative w-fit mx-auto flex flex-row flex-wrap items-center justify-center gap-2"
