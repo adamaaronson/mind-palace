@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import type { ShopItem } from "../types/shop";
 import { AnimatePresence, motion } from "motion/react";
-import { formatNumber } from "../utils/utils";
+import { formatNumberShort } from "../utils/utils";
 
 interface ItemCardProps {
   item: ShopItem;
@@ -38,7 +38,7 @@ export default function ItemCard(props: ItemCardProps) {
     >
       <button
         className={`relative cursor-pointer bg-white border-standard rounded-md flex shrink-0 justify-center items-center ${
-          isSmall ? "size-15 p-1 text-sm" : "size-20 p-2"
+          isSmall ? "size-15 p-1 text-sm" : "size-22 p-2"
         } ${
           isClickable && !isEquipped
             ? "bg-inherit! border-[#ffffff00]! hover:bg-white!"
@@ -84,7 +84,7 @@ export default function ItemCard(props: ItemCardProps) {
       {onPurchase != undefined && (
         <button
           type="submit"
-          className="button-standard py-0! px-2! text-sm"
+          className="button-standard py-0! px-0! text-sm"
           disabled={canPurchase}
           onClick={onPurchase}
         >
@@ -92,7 +92,7 @@ export default function ItemCard(props: ItemCardProps) {
             src="nugget.svg"
             className="inline-block h-[1em] align-baseline -mb-0.5"
           ></img>{" "}
-          {formatNumber(item.price)}
+          {formatNumberShort(item.price)}
         </button>
       )}
     </div>

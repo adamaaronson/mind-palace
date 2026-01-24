@@ -20,6 +20,14 @@ export function formatNumber(num: number) {
   return numeral(num).format("0,0");
 }
 
+export function formatNumberShort(num: number) {
+  if (num >= 1_000_000) {
+    return numeral(num.toPrecision(3)).format("0[.][00]a").toUpperCase();
+  } else {
+    return formatNumber(num);
+  }
+}
+
 // adapted from https://stackoverflow.com/a/32851198
 export function toRomanNumerals(num: number) {
   const lookup = {
