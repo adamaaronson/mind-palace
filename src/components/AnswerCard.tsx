@@ -54,7 +54,7 @@ function AnswerCard(props: AnswerCardProps) {
                 case "<questionImage>":
                   return (
                     <img
-                      className="h-[1em] inline pr-0.5 align-top"
+                      className="h-[1em] inline px-0.5 align-top mt-px"
                       src={getQuestionImageUrl(previousFact, deck)}
                     ></img>
                   );
