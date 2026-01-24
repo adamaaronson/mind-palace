@@ -11,7 +11,7 @@ interface Answer {
 
 export interface Fact {
   id: number;
-  question: string;
+  question?: string;
   questionLink?: string;
   questionSubtitle?: string;
   questionImage?: string;

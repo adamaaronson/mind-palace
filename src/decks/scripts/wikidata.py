@@ -1,4 +1,7 @@
 import requests
+from pprint import pprint
+
+headers = {'User-Agent': 'Mind Palace'}
 
 
 def get_wikibase_item_id(wikipedia_link: str) -> str | None:
@@ -14,8 +17,6 @@ def get_wikibase_item_id(wikipedia_link: str) -> str | None:
         'format': 'json',
         'redirects': 1,
     }
-
-    headers = {'User-Agent': 'Mind Palace'}
 
     response = requests.get(api_url, params=params, headers=headers, timeout=10)
     response.raise_for_status()
@@ -41,8 +42,6 @@ def get_wikidata_image_url(wikibase_item_id: str, property_id: str) -> str | Non
         'format': 'json',
     }
 
-    headers = {'User-Agent': 'Mind Palace'}
-
     response = requests.get(api_url, params=params, headers=headers, timeout=10)
     response.raise_for_status()
     data = response.json()
@@ -54,25 +53,16 @@ def get_wikidata_image_url(wikibase_item_id: str, property_id: str) -> str | Non
     if not claims:
         return None
 
-    # Get the filename from the first claim
-    filenames = [
-        claim['mainsnak']['datavalue']['value'].replace(' ', '_') for claim in claims
-    ]
+    if len(claims) == 1:
+        claim = claims[0]
+    else:
+        claims = [claim for claim in claims if claim['rank'] == 'preferred']
+        claim = claims[0]
 
-    filenames = [
-        f'https://commons.wikimedia.org/wiki/Special:FilePath/{filename}'
-        for filename in filenames
-    ]
+    filename = claim['mainsnak']['datavalue']['value'].replace(' ', '_')
 
-    return filenames
+    return f'https://commons.wikimedia.org/wiki/Special:FilePath/{filename}'
 
 
 if __name__ == '__main__':
-    print(
-        get_wikidata_image_url(
-            get_wikibase_item_id(
-                ('https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis')
-            ),
-            'P242',
-        )
-    )
+    get_wikidata_image_url('Q842', 'P41')

@@ -1,12 +1,13 @@
 import usPresidents from "../decks/json/us-presidents.json";
 import usStateCapitals from "../decks/json/us-state-capitals.json";
 import worldCapitals from "../decks/json/world-capitals.json";
+import worldFlags from "../decks/json/world-flags.json";
 import type { Fact } from "./fact";
 
 export interface Deck {
   id: string;
   displayName: string;
-  questionLabel: string;
+  questionLabel?: string;
   answerLabel: string;
   answerTemplate: string;
   facts: Fact[];
@@ -24,6 +25,7 @@ export const DECKS: DeckCategory[] = [
     displayName: "Geography",
     decks: [
       { id: "world-capitals", ...worldCapitals },
+      { id: "world-flags", ...worldFlags },
       { id: "us-state-capitals", ...usStateCapitals },
     ],
   },
@@ -37,3 +39,7 @@ export const DECKS: DeckCategory[] = [
 export const DECKS_BY_ID: Record<string, Deck> = Object.fromEntries(
   DECKS.flatMap((category) => category.decks).map((deck) => [deck.id, deck]),
 );
+
+export function getQuestionImageUrl(fact: Fact, deck: Deck) {
+  return `${deck.id}/${fact.questionImage}`;
+}

@@ -1,4 +1,4 @@
-country,capital,questionLink,answerLink
+question,answer,questionLink,answerLink
 Afghanistan,Kabul,https://en.wikipedia.org/wiki/Afghanistan,https://en.wikipedia.org/wiki/Kabul
 Albania,Tirana|Tirane,https://en.wikipedia.org/wiki/Albania,https://en.wikipedia.org/wiki/Tirana
 Algeria,Algiers,https://en.wikipedia.org/wiki/Algeria,https://en.wikipedia.org/wiki/Algiers
@@ -117,7 +117,7 @@ Morocco,Rabat,https://en.wikipedia.org/wiki/Morocco,https://en.wikipedia.org/wik
 Mozambique,Maputo,https://en.wikipedia.org/wiki/Mozambique,https://en.wikipedia.org/wiki/Maputo
 Myanmar,Naypyidaw|Nay Pyi Taw,https://en.wikipedia.org/wiki/Myanmar,https://en.wikipedia.org/wiki/Naypyidaw
 Namibia,Windhoek,https://en.wikipedia.org/wiki/Namibia,https://en.wikipedia.org/wiki/Windhoek
-Nauru,Yaren|Yaren District|None|Nowhere|Nothing,https://en.wikipedia.org/wiki/Yaren,https://en.wikipedia.org/wiki/Yaren_District
+Nauru,Yaren|Yaren District|None|Nowhere|Nothing,https://en.wikipedia.org/wiki/Nauru,https://en.wikipedia.org/wiki/Yaren_District
 Nepal,Kathmandu|Katmandu,https://en.wikipedia.org/wiki/Nepal,https://en.wikipedia.org/wiki/Kathmandu
 Netherlands,Amsterdam,https://en.wikipedia.org/wiki/Netherlands,https://en.wikipedia.org/wiki/Amsterdam
 New Zealand,Wellington,https://en.wikipedia.org/wiki/New_Zealand,https://en.wikipedia.org/wiki/Wellington

@@ -35,7 +35,9 @@ export default function DeckSelector(props: DeckSelectorProps) {
               return (
                 <button
                   className={`inline-block p-0! overflow-hidden font-bold text-lg text-left relative ${
-                    isGold ? "button-standard" : "button-boring"
+                    isGold
+                      ? "button-standard button-big"
+                      : "button-boring button-big"
                   }`}
                   onClick={() => onSelectDeck(deck)}
                   key={deck.id}

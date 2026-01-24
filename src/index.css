@@ -18,11 +18,11 @@
   --color-red: #c51e1e;
   --color-red-light: #ed6161;
 
-  --inset-shadow-glossy: inset 0px -2px 0px #00000011,
-    inset 0px 4px 0px #ffffff44;
+  --inset-shadow-glossy:
+    inset 0px -2px 0px #00000011, inset 0px 4px 0px #ffffff44;
 
-  --inset-shadow-scroll: inset 0px -4px 0px #00000011,
-    inset 0px 4px 0px #00000011;
+  --inset-shadow-scroll:
+    inset 0px -4px 0px #00000011, inset 0px 4px 0px #00000011;
 }
 
 @utility border-standard {
@@ -53,4 +53,8 @@
 
 @utility button-boring {
   @apply button-standard bg-light! border-taupe!;
+}
+
+@utility button-big {
+  @apply enabled:hover:scale-98 enabled:active:scale-98;
 }

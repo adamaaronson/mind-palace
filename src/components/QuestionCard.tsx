@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Deck } from "../types/deck";
+import { getQuestionImageUrl, type Deck } from "../types/deck";
 import { type Card } from "../types/memory";
 import CardLabel from "./CardLabel";
 
@@ -17,24 +17,29 @@ export default function QuestionCard(props: QuestionCardProps) {
 
   const noGuess = guess === "";
   const shouldShowIDontKnow = noGuess && wasCorrect;
+  const fact = card.fact;
 
   return (
     <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80 overflow-hidden">
       <CardLabel card={card} />
-      <div className="text-text-light">Name the {deck.answerLabel}:</div>
-      <div className="font-bold text-2xl leading-[1em] mt-1">
-        {card.fact.question}
-      </div>
-      <div className="font-bold mb-5 leading-tight">
-        ({card.fact.questionSubtitle ?? deck.questionLabel})
-      </div>
-      {/* {card.fact.questionImage && (
+      <div className="text-text-light mb-1">Name the {deck.answerLabel}:</div>
+      {fact.question && (
+        <>
+          <div className="font-bold text-2xl leading-[1em]">
+            {fact.question}
+          </div>
+          <div className="font-bold mb-5 leading-tight">
+            ({fact.questionSubtitle ?? deck.questionLabel})
+          </div>
+        </>
+      )}
+      {fact.questionImage && (
         <img
           key={card.fact.id}
-          src={card.fact.questionImage}
-          className="block max-w-1/2 mb-4 m-auto"
+          src={getQuestionImageUrl(fact, deck)}
+          className="block max-h-24 mb-4 m-auto"
         />
-      )} */}
+      )}
 
       <form
         className="relative w-fit mx-auto flex flex-row flex-wrap items-center justify-center gap-2"

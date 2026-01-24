@@ -1,5 +1,5 @@
 import React from "react";
-import type { Deck } from "../types/deck";
+import { getQuestionImageUrl, type Deck } from "../types/deck";
 import Link from "./Link";
 import type { Card } from "../types/memory";
 import CardLabel from "./CardLabel";
@@ -37,12 +37,12 @@ function AnswerCard(props: AnswerCardProps) {
                       href={previousFact.questionLink}
                       wikipedia
                     >
-                      {previousFact.question}
+                      {previousFact.question ?? ""}
                     </Link>
                   );
                 case "<answer>":
                   return previousFact.answers.map((answer, answerIndex) => (
-                    <React.Fragment key={`${answerIndex},${answerIndex}`}>
+                    <React.Fragment key={`${index},${answerIndex}`}>
                       <Link href={answer.link} wikipedia>
                         {answer.canonicalForm}
                       </Link>
@@ -51,6 +51,13 @@ function AnswerCard(props: AnswerCardProps) {
                       )}
                     </React.Fragment>
                   ));
+                case "<questionImage>":
+                  return (
+                    <img
+                      className="h-[1em] inline pr-0.5 align-top"
+                      src={getQuestionImageUrl(previousFact, deck)}
+                    ></img>
+                  );
                 default:
                   return <React.Fragment key={index}>{token}</React.Fragment>;
               }

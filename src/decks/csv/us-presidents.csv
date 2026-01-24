@@ -1,4 +1,4 @@
-number,president,questionSubtitle,isName,answerLink
+question,answer,questionSubtitle,isName,answerLink
 1st,George Washington,1789–1797,TRUE,https://en.wikipedia.org/wiki/George_Washington
 2nd,John Adams,1797–1801,TRUE,https://en.wikipedia.org/wiki/John_Adams
 3rd,Thomas Jefferson,1801–1809,TRUE,https://en.wikipedia.org/wiki/Thomas_Jefferson
