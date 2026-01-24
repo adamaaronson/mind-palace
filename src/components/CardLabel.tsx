@@ -24,7 +24,9 @@ export default function CardLabel(props: CardLabelProps) {
   const { card, wasCorrect } = props;
   const cardLabel = getCardLabel(card, wasCorrect);
   const isGilded =
-    (card.known && wasCorrect === undefined) ||
+    // already gilded
+    (card.known && (wasCorrect === undefined || wasCorrect)) ||
+    // newly gilded
     (wasCorrect && (!card.seen || card.streak >= KNOWLEDGE_STREAK - 1));
 
   return (
