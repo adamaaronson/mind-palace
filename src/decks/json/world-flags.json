@@ -371,7 +371,7 @@
       "answers": [
         {
           "canonicalForm": "Chad",
-          "alternateForms": [],
+          "alternateForms": ["Romania"],
           "link": "https://en.wikipedia.org/wiki/Chad"
         }
       ],
@@ -840,7 +840,7 @@
       "answers": [
         {
           "canonicalForm": "Indonesia",
-          "alternateForms": [],
+          "alternateForms": ["Monaco"],
           "link": "https://en.wikipedia.org/wiki/Indonesia"
         }
       ],
@@ -1239,7 +1239,7 @@
       "answers": [
         {
           "canonicalForm": "Monaco",
-          "alternateForms": [],
+          "alternateForms": ["Indonesia"],
           "link": "https://en.wikipedia.org/wiki/Monaco"
         }
       ],
@@ -1577,7 +1577,7 @@
       "answers": [
         {
           "canonicalForm": "Romania",
-          "alternateForms": [],
+          "alternateForms": ["Chad"],
           "link": "https://en.wikipedia.org/wiki/Romania"
         }
       ],
