@@ -5,7 +5,7 @@ import {
   answerFirstCard,
   createCardQueue,
 } from "../types/memory";
-import { type Deck, DECKS_BY_ID } from "../types/deck";
+import { type Deck, DECKS_BY_ID, isAnyAnswer } from "../types/deck";
 import { getAnswerEditDistance } from "../types/fact";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -113,7 +113,7 @@ export default function App() {
   const submitGuess = (guess: string) => {
     const answerEditDistance = getAnswerEditDistance(card.fact, guess);
 
-    if (answerEditDistance === 1) {
+    if (answerEditDistance === 1 && !isAnyAnswer(deck, guess)) {
       setHadTypo(true);
       return false;
     } else {

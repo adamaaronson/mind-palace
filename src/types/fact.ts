@@ -26,17 +26,18 @@ export function getFamilyName(answer: Answer) {
   );
 }
 
-export function getAnswerEditDistance(fact: Fact, answer: string) {
-  const normalizedCorrectAnswers = ([] as string[])
-    .concat(
-      ...fact.answers.map((answer) => [
-        answer.canonicalForm,
-        ...(answer.alternateForms ?? []),
-        ...(answer.isName ? [getFamilyName(answer)] : []),
-      ]),
-    )
+export function getAllAnswers(fact: Fact) {
+  return fact.answers
+    .flatMap((answer) => [
+      answer.canonicalForm,
+      ...(answer.alternateForms ?? []),
+      ...(answer.isName ? [getFamilyName(answer)] : []),
+    ])
     .map((correctAnswer) => normalize(correctAnswer));
+}
 
+export function getAnswerEditDistance(fact: Fact, answer: string) {
+  const normalizedCorrectAnswers = getAllAnswers(fact);
   const normalizedAnswer = normalize(answer);
 
   return Math.min(
