@@ -27,7 +27,7 @@ export const SHOP_ITEMS: ShopItemCategory[] = [
       {
         id: "any-answers",
         displayName: "Nuggets for any answer",
-        price: 1234567,
+        price: 1000,
         image: "check-and-x.svg",
         level: 1,
       },
