@@ -1,9 +1,10 @@
 import csv
 import json
 import sys
+from typing import Any
 
 
-def read_csv(csv_file: str) -> list[dict]:
+def read_csv(csv_file: str) -> dict[str, Any]:
     with open(csv_file, 'r') as f:
         reader = csv.reader(f)
         column_names = []
@@ -54,7 +55,7 @@ def read_csv(csv_file: str) -> list[dict]:
     return deck
 
 
-def write_json(deck: list[dict], json_file: str):
+def write_json(deck: dict[str, Any], json_file: str):
     with open(json_file, 'w') as f:
         f.write(json.dumps(deck, indent=2))
 
