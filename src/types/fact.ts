@@ -16,6 +16,7 @@ export interface Fact {
   questionSubtitle?: string;
   questionImage?: string;
   answers: Answer[];
+  closeAnswers?: string[];
   answerTemplate?: string;
 }
 
@@ -46,4 +47,16 @@ export function getAnswerEditDistance(fact: Fact, answer: string) {
         levenshtein(normalizedCorrectAnswer, normalizedAnswer).steps,
     ),
   );
+}
+
+export function isCloseAnswer(fact: Fact, answer: string) {
+  if (!fact.closeAnswers) {
+    return false;
+  }
+  const normalizedCloseAnswers = fact.closeAnswers.map((answer) =>
+    normalize(answer),
+  );
+  const normalizedAnswer = normalize(answer);
+
+  return normalizedCloseAnswers.includes(normalizedAnswer);
 }

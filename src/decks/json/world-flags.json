@@ -371,10 +371,11 @@
       "answers": [
         {
           "canonicalForm": "Chad",
-          "alternateForms": ["Romania"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Chad"
         }
       ],
+      "closeAnswers": ["Romania"],
       "questionImage": "Flag_of_Chad.svg"
     },
     {
@@ -840,10 +841,11 @@
       "answers": [
         {
           "canonicalForm": "Indonesia",
-          "alternateForms": ["Monaco"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Indonesia"
         }
       ],
+      "closeAnswers": ["Monaco"],
       "questionImage": "Flag_of_Indonesia.svg"
     },
     {
@@ -1239,10 +1241,11 @@
       "answers": [
         {
           "canonicalForm": "Monaco",
-          "alternateForms": ["Indonesia"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Monaco"
         }
       ],
+      "closeAnswers": ["Indonesia"],
       "questionImage": "Flag_of_Monaco.svg"
     },
     {
@@ -1577,10 +1580,11 @@
       "answers": [
         {
           "canonicalForm": "Romania",
-          "alternateForms": ["Chad"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Romania"
         }
       ],
+      "closeAnswers": ["Chad"],
       "questionImage": "Flag_of_Romania.svg"
     },
     {

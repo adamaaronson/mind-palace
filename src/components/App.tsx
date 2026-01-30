@@ -6,14 +6,14 @@ import {
   createCardQueue,
 } from "../types/memory";
 import { type Deck, DECKS_BY_ID, isAnyAnswer } from "../types/deck";
-import { getAnswerEditDistance } from "../types/fact";
+import { getAnswerEditDistance, isCloseAnswer } from "../types/fact";
 import Footer from "./Footer";
 import Header from "./Header";
 import FountOfKnowledge from "./FountOfKnowledge";
 import { REFRESH_TIME } from "../utils/constants";
 import Column from "./Column";
 import AnswerCard from "./AnswerCard";
-import QuestionCard from "./QuestionCard";
+import QuestionCard, { type AnswerStatus } from "./QuestionCard";
 import Shop from "./Shop";
 import { getShopItem, SHOP_ITEMS, type ShopItem } from "../types/shop";
 import Build from "./Build";
@@ -34,7 +34,7 @@ export default function App() {
   );
 
   const [wasCorrect, setWasCorrect] = useState(true);
-  const [hadTypo, setHadTypo] = useState(false);
+  const [answerStatus, setAnswerStatus] = useState<AnswerStatus>(null);
   const [earnedFount, setEarnedFount] = useState(false);
   const [lostFount, setLostFount] = useState(false);
   const [previousCard, setPreviousCard] = useState<Card | null>(null);
@@ -114,10 +114,13 @@ export default function App() {
     const answerEditDistance = getAnswerEditDistance(card.fact, guess);
 
     if (answerEditDistance === 1 && !isAnyAnswer(deck, guess)) {
-      setHadTypo(true);
+      setAnswerStatus("typo");
+      return false;
+    } else if (isCloseAnswer(card.fact, guess)) {
+      setAnswerStatus("close");
       return false;
     } else {
-      setHadTypo(false);
+      setAnswerStatus(null);
     }
 
     const wasCorrect = answerEditDistance === 0;
@@ -192,11 +195,12 @@ export default function App() {
                   onClickDeckSelector={() => setShowingDeckSelector(true)}
                 />
                 <QuestionCard
+                  key={deck.id}
                   deck={deck}
                   card={card}
                   submitGuess={submitGuess}
                   wasCorrect={wasCorrect}
-                  hadTypo={hadTypo}
+                  answerStatus={answerStatus}
                 />
                 {previousCard && (
                   <AnswerCard

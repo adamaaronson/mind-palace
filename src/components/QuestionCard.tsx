@@ -7,12 +7,19 @@ interface QuestionCardProps {
   deck: Deck;
   card: Card;
   submitGuess: (guess: string) => boolean;
-  hadTypo: boolean;
   wasCorrect: boolean;
+  answerStatus: AnswerStatus;
 }
 
+const ANSWER_STATUS_MESSAGES = {
+  typo: "Close! Check your spelling...",
+  close: "Good guess! Try again...",
+} as const;
+
+export type AnswerStatus = keyof typeof ANSWER_STATUS_MESSAGES | null;
+
 export default function QuestionCard(props: QuestionCardProps) {
-  const { deck, card, submitGuess, hadTypo, wasCorrect } = props;
+  const { deck, card, submitGuess, answerStatus, wasCorrect } = props;
   const [guess, setGuess] = useState("");
 
   const noGuess = guess === "";
@@ -65,9 +72,9 @@ export default function QuestionCard(props: QuestionCardProps) {
           {shouldShowIDontKnow ? "I don't know" : "Enter"}
         </button>
       </form>
-      {hadTypo && (
+      {answerStatus && (
         <div className="text-text-light text-sm mt-2">
-          Close! Check your spelling...
+          {ANSWER_STATUS_MESSAGES[answerStatus]}
         </div>
       )}
     </div>
