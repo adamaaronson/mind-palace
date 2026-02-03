@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { ERASER, type ShopItem } from "../types/shop";
-import ItemCard from "./ItemCard";
+import ShopItemCard from "./ShopItemCard";
 import LinkButton from "./LinkButton";
 
 interface InventoryProps {
@@ -24,7 +24,7 @@ function Inventory(props: InventoryProps) {
             onScroll={(e) => setScroll((e.target as HTMLDivElement).scrollLeft)}
           >
             {inventory.map((block) => (
-              <ItemCard
+              <ShopItemCard
                 key={block.id}
                 item={block}
                 isSmall={true}
@@ -54,7 +54,7 @@ function Inventory(props: InventoryProps) {
           </p>
         )}
         <div className="border-l-standard pl-4 ml-4">
-          <ItemCard
+          <ShopItemCard
             item={ERASER}
             isSmall={true}
             onClick={equipEraser}

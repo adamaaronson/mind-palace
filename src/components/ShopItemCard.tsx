@@ -3,7 +3,7 @@ import type { ShopItem } from "../types/shop";
 import { AnimatePresence, motion } from "motion/react";
 import { formatNumberShort } from "../utils/utils";
 
-interface ItemCardProps {
+interface ShopItemCardProps {
   item: ShopItem;
   isUpgrade?: boolean;
   isSmall?: boolean;
@@ -14,7 +14,7 @@ interface ItemCardProps {
   onPurchase?: () => void;
 }
 
-export default function ItemCard(props: ItemCardProps) {
+export default function ShopItemCard(props: ShopItemCardProps) {
   const {
     item,
     isUpgrade = false,
@@ -65,7 +65,7 @@ export default function ItemCard(props: ItemCardProps) {
               animate={{ opacity: 0.9, translateY: 0 }}
               exit={{ opacity: 0, translateY: 10 }}
               transition={{ duration: 0.1 }}
-              className="border-standard bg-white text-xs rounded-md fixed text-text-dark font-bold p-0.5 px-2 -translate-y-full -translate-x-1/2 -mt-1 text-nowrap"
+              className="border-standard bg-white text-xs rounded-md fixed text-text-dark font-bold p-0.5 px-2 -translate-y-full -translate-x-1/2 -mt-1 text-nowrap pointer-events-none"
               style={
                 buttonBoundingBox
                   ? {

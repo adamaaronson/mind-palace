@@ -4,7 +4,7 @@ import {
   type ShopItem,
   type ShopItemCategory,
 } from "../types/shop";
-import ItemCard from "./ItemCard";
+import ShopItemCard from "./ShopItemCard";
 import { PRICE_MULTIPLIER } from "../utils/constants";
 
 interface ShopProps {
@@ -100,7 +100,7 @@ export default function Shop(props: ShopProps) {
           >
             {itemCategory.items.map((item) => (
               <div className="flex flex-col gap-1" key={item.id}>
-                <ItemCard
+                <ShopItemCard
                   item={item}
                   isUpgrade={itemCategory.id === "upgrades"}
                   canPurchase={displayNuggets < item.price}
