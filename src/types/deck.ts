@@ -1,6 +1,7 @@
 import usPresidents from "../decks/json/us-presidents.json";
 import usStateCapitals from "../decks/json/us-state-capitals.json";
 import worldCapitals from "../decks/json/world-capitals.json";
+import worldCountries from "../decks/json/world-countries.json";
 import worldFlags from "../decks/json/world-flags.json";
 import { normalize } from "../utils/utils";
 import { getAllAnswers, type Fact } from "./fact";
@@ -42,6 +43,7 @@ export const DECKS: DeckCategory[] = [
     displayName: "Geography",
     decks: [
       createDeck("world-capitals", worldCapitals),
+      createDeck("world-countries", worldCountries),
       createDeck("world-flags", worldFlags),
       createDeck("us-state-capitals", usStateCapitals),
     ],

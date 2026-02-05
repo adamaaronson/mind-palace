@@ -1,6 +1,6 @@
 import requests
 
-headers = {'User-Agent': 'Mind Palace'}
+headers = {'User-Agent': 'Mind Palace, adamaaronson@gmail.com'}
 
 
 def get_wikibase_item_id(wikipedia_link: str) -> str | None:

@@ -43,7 +43,7 @@ export default function QuestionCard(props: QuestionCardProps) {
       {fact.questionImage && (
         <img
           src={getQuestionImageUrl(fact, deck)}
-          className="block max-h-24 mb-4 m-auto"
+          className="block max-h-40 mb-4 m-auto contain-paint"
         />
       )}
 
