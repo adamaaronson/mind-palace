@@ -28,7 +28,6 @@ export default function QuestionCard(props: QuestionCardProps) {
 
   return (
     <div className="relative">
-      <CardLabel card={card} />
       <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80">
         {!fact.questionImage && (
           <div className="text-text-light mb-1">
@@ -83,6 +82,7 @@ export default function QuestionCard(props: QuestionCardProps) {
           </div>
         )}
       </div>
+      <CardLabel card={card} />
     </div>
   );
 }

@@ -19,7 +19,6 @@ export default function AnswerCard(props: AnswerCardProps) {
 
   return (
     <div className="relative">
-      <CardLabel card={previousCard} wasCorrect={wasCorrect} />
       <div className="relative p-4 rounded-2xl bg-light-light text-center border-standard overflow-hidden">
         <div className="text-text-light text-lg">
           <div className="leading-tight">
@@ -87,6 +86,7 @@ export default function AnswerCard(props: AnswerCardProps) {
           )}
         </div>
       </div>
+      <CardLabel card={previousCard} wasCorrect={wasCorrect} />
     </div>
   );
 }

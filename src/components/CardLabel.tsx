@@ -30,7 +30,7 @@ export default function CardLabel(props: CardLabelProps) {
     (wasCorrect && (!card.seen || card.streak >= KNOWLEDGE_STREAK - 1));
 
   return (
-    <div className="left-full -translate-x-full -ml-4 -translate-y-[calc(50%-1px)] leading-0 absolute z-50">
+    <div className="top-0 left-full -translate-x-full -ml-4 -translate-y-[calc(50%-1px)] leading-0 absolute">
       <div
         className={`inline-block text-xs px-2 border-standard rounded-sm text-text-light relative overflow-hidden ${isGilded ? "bg-gold-light" : "bg-light-light"}`}
       >
