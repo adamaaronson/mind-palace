@@ -28,7 +28,7 @@ export default function QuestionCard(props: QuestionCardProps) {
 
   return (
     <div className="relative">
-      <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80">
+      <div className="relative p-4 rounded-2xl bg-light-light border-standard text-center md:min-w-80 contain-paint">
         {!fact.questionImage && (
           <div className="text-text-light mb-1">
             Name the {deck.answerLabel}:
@@ -47,7 +47,7 @@ export default function QuestionCard(props: QuestionCardProps) {
         {fact.questionImage && (
           <img
             src={getQuestionImageUrl(fact, deck)}
-            className="block max-h-40 mb-4 m-auto contain-paint"
+            className="block max-h-40 mb-4 m-auto"
           />
         )}
 
