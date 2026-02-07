@@ -5,7 +5,12 @@ import {
   answerFirstCard,
   createCardQueue,
 } from "../types/memory";
-import { type Deck, DECKS_BY_ID, isAnyAnswer } from "../types/deck";
+import {
+  type Deck,
+  DECKS_BY_ID,
+  getQuestionImageUrl,
+  isAnyAnswer,
+} from "../types/deck";
 import { getAnswerEditDistance, isCloseAnswer } from "../types/fact";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -21,6 +26,7 @@ import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
 import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
+import { preload } from "react-dom";
 
 export default function App() {
   const [deckId, setDeckId] = useState("world-capitals");
@@ -101,6 +107,15 @@ export default function App() {
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
   }
 
+  const preloadCardImages = (deck: Deck, num: number) => {
+    cardQueues[deck.id].cards.slice(1, num + 1).forEach((card) => {
+      const image = card.fact.questionImage;
+      if (image) {
+        preload(getQuestionImageUrl(card.fact, deck), { as: "image" });
+      }
+    });
+  };
+
   const selectDeck = (deck: Deck) => {
     setDeckId(deck.id);
     setPreviousCard(null);
@@ -108,6 +123,7 @@ export default function App() {
     setEarnedFount(false);
     setLostFount(false);
     setShowingDeckSelector(false);
+    preloadCardImages(deck, 1);
   };
 
   const submitGuess = (guess: string) => {
@@ -159,6 +175,8 @@ export default function App() {
       ...cardQueues,
       [deckId]: newCardQueue,
     }));
+
+    preloadCardImages(deck, 3);
     return true;
   };
 
