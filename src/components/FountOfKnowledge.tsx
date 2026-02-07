@@ -52,7 +52,11 @@ function FountOfKnowledge(props: FountOfKnowledgeProps) {
   return (
     <div
       className="grow flex flex-col justify-end"
-      style={{ contain: "paint" }}
+      style={{
+        contain: "paint",
+        transform: "translateZ(0)",
+        willChange: "transform",
+      }}
     >
       <div className="mb-4 text-center mt-8 md:mt-4 text-shadow-background text-shadow-[0px_0px_10px_#efd795]">
         <div className="font-bold text-4xl">

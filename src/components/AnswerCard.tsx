@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { getQuestionImageUrl, type Deck } from "../types/deck";
 import Link from "./Link";
 import type { Card } from "../types/memory";
@@ -12,7 +12,7 @@ interface AnswerCardProps {
   lostFount: boolean;
 }
 
-export default function AnswerCard(props: AnswerCardProps) {
+function AnswerCard(props: AnswerCardProps) {
   const { deck, previousCard, wasCorrect, earnedFount, lostFount } = props;
 
   const previousFact = previousCard.fact;
@@ -90,3 +90,5 @@ export default function AnswerCard(props: AnswerCardProps) {
     </div>
   );
 }
+
+export default memo(AnswerCard);

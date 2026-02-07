@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { getQuestionImageUrl, type Deck } from "../types/deck";
 import { type Card } from "../types/memory";
 import CardLabel from "./CardLabel";
@@ -18,7 +18,7 @@ const ANSWER_STATUS_MESSAGES = {
 
 export type AnswerStatus = keyof typeof ANSWER_STATUS_MESSAGES | null;
 
-export default function QuestionCard(props: QuestionCardProps) {
+function QuestionCard(props: QuestionCardProps) {
   const { deck, card, submitGuess, answerStatus, wasCorrect } = props;
   const [guess, setGuess] = useState("");
 
@@ -47,7 +47,11 @@ export default function QuestionCard(props: QuestionCardProps) {
         {fact.questionImage && (
           <img
             src={getQuestionImageUrl(fact, deck)}
-            className="block w-full max-h-40 min-h-0 object-contain mb-4 m-auto"
+            className="block w-full max-h-40 min-h-0 object-contain mb-4 m-auto will-change-contents"
+            style={{
+              transform: "translateZ(0)",
+              willChange: "transform",
+            }}
           />
         )}
 
@@ -86,3 +90,5 @@ export default function QuestionCard(props: QuestionCardProps) {
     </div>
   );
 }
+
+export default memo(QuestionCard);
