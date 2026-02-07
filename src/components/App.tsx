@@ -107,7 +107,7 @@ export default function App() {
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
   }
 
-  const preloadCardImages = (deck: Deck, num: number) => {
+  const preloadQuestionImages = (deck: Deck, num: number) => {
     cardQueues[deck.id].cards.slice(1, num + 1).forEach((card) => {
       const image = card.fact.questionImage;
       if (image) {
@@ -123,7 +123,7 @@ export default function App() {
     setEarnedFount(false);
     setLostFount(false);
     setShowingDeckSelector(false);
-    preloadCardImages(deck, 1);
+    preloadQuestionImages(deck, 1);
   };
 
   const submitGuess = (guess: string) => {
@@ -176,7 +176,7 @@ export default function App() {
       [deckId]: newCardQueue,
     }));
 
-    preloadCardImages(deck, 3);
+    preloadQuestionImages(deck, 3);
     return true;
   };
 
