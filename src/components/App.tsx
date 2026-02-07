@@ -107,14 +107,22 @@ export default function App() {
     setTimeout(() => setTimestamp(now), REFRESH_TIME);
   }
 
-  const preloadQuestionImages = (deck: Deck, num: number) => {
-    cardQueues[deck.id].cards.slice(1, num + 1).forEach((card) => {
+  const preloadQuestionImages = (cardQueue: CardQueue, num: number) => {
+    cardQueue.cards.slice(0, num).forEach((card) => {
       const image = card.fact.questionImage;
       if (image) {
-        preload(getQuestionImageUrl(card.fact, deck), { as: "image" });
+        preload(getQuestionImageUrl(card.fact, DECKS_BY_ID[cardQueue.deckId]), {
+          as: "image",
+        });
       }
     });
   };
+
+  if (showingDeckSelector) {
+    Object.values(cardQueues).forEach((cardQueue) =>
+      preloadQuestionImages(cardQueue, 2),
+    );
+  }
 
   const selectDeck = (deck: Deck) => {
     setDeckId(deck.id);
@@ -123,7 +131,7 @@ export default function App() {
     setEarnedFount(false);
     setLostFount(false);
     setShowingDeckSelector(false);
-    preloadQuestionImages(deck, 1);
+    preloadQuestionImages(cardQueue, 2);
   };
 
   const submitGuess = (guess: string) => {
@@ -176,7 +184,7 @@ export default function App() {
       [deckId]: newCardQueue,
     }));
 
-    preloadQuestionImages(deck, 3);
+    preloadQuestionImages(newCardQueue, 2);
     return true;
   };
 

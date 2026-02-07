@@ -16,6 +16,7 @@ export interface Card {
 
 export interface CardQueue {
   cards: Card[];
+  deckId: string;
   alreadyStudiedIndex: number;
   randomness: number;
 }
@@ -33,6 +34,7 @@ export function createCardQueue(deck: Deck): CardQueue {
       seen: false,
       known: false,
     })),
+    deckId: deck.id,
     alreadyStudiedIndex: deck.facts.length,
     randomness: 5,
   };
