@@ -1,3 +1,4 @@
+import bestPictures from "../decks/json/best-pictures.json";
 import usPresidents from "../decks/json/us-presidents.json";
 import usStateCapitals from "../decks/json/us-state-capitals.json";
 import worldCapitals from "../decks/json/world-capitals.json";
@@ -53,6 +54,16 @@ export const DECKS: DeckCategory[] = [
     displayName: "History",
     decks: [createDeck("us-presidents", usPresidents)],
   },
+  {
+    id: "arts",
+    displayName: "Arts",
+    decks: [createDeck("best-pictures", bestPictures)],
+  },
+];
+
+export const DECK_COLUMNS: [number, number | undefined][] = [
+  [0, 1],
+  [1, undefined],
 ];
 
 export const DECKS_BY_ID: Record<string, Deck> = Object.fromEntries(

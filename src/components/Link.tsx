@@ -2,11 +2,18 @@ interface LinkProps {
   href?: string;
   children: string;
   onClick?: () => void;
-  wikipedia?: boolean;
+  isItalic?: boolean;
+  isWikipedia?: boolean;
 }
 
 export default function Link(props: LinkProps) {
-  const { href, children, onClick, wikipedia = false } = props;
+  const {
+    href,
+    children,
+    onClick,
+    isItalic = false,
+    isWikipedia = false,
+  } = props;
 
   return href ? (
     <a
@@ -14,7 +21,7 @@ export default function Link(props: LinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={onClick}
-      className="font-bold text-text-dark hover:text-text-light transition-colors"
+      className={`font-bold text-text-dark hover:text-text-light transition-colors ${isItalic ? "italic" : ""}`}
       style={{
         backgroundImage: "linear-gradient(#9c7e4e 0%, #9c7e4e 100%)",
         backgroundPosition: "0 1.15em",
@@ -25,7 +32,7 @@ export default function Link(props: LinkProps) {
       {children.split(" ").slice(0, -1).join(" ")}{" "}
       <span className="whitespace-nowrap">
         {children.split(" ").at(-1)}
-        {wikipedia ? (
+        {isWikipedia ? (
           <img
             src="wikipedia.svg"
             className="inline-block w-[1em] align-middle ml-1 mb-[0.1em]"
@@ -39,6 +46,8 @@ export default function Link(props: LinkProps) {
       </span>
     </a>
   ) : (
-    <span className="font-bold text-text-dark">{children}</span>
+    <span className={`font-bold text-text-dark ${isItalic ? "italic" : ""}`}>
+      {children}
+    </span>
   );
 }

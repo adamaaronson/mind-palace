@@ -1,15 +1,16 @@
 import { AnimatePresence, motion } from "motion/react";
+import Damask from "./Damask";
 
 interface ModalProps {
   title: string;
   children: React.ReactNode;
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   className?: string;
 }
 
 export function Modal(props: ModalProps) {
-  const { title, children, isOpen, onClose, className } = props;
+  const { title, children, isOpen, onClose = () => {}, className } = props;
   return (
     <AnimatePresence>
       {isOpen && (
@@ -18,16 +19,17 @@ export function Modal(props: ModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.1 }}
-          className={`fixed w-full h-full max-w-screen max-h-screen top-0 left-0 flex justify-center items-center-safe z-50 p-4 overflow-y-scroll ${
+          className={`absolute w-full h-full top-0 left-0 flex justify-center items-center-safe z-50 p-4 overflow-y-scroll ${
             isOpen ? "block" : "hidden"
           }`}
         >
           <div
-            className="fixed w-full h-full top-0 left-0 bg-light-light opacity-90 z-51"
+            className="fixed w-full h-full top-0 left-0 bg-light-light z-51"
             onClick={onClose}
           ></div>
+          <Damask className="z-52 opacity-5!" />
           <div
-            className={`bg-light border-standard min-w-0 z-52 relative inset-shadow-scroll m-4 mt-14 md:mt-22 ${className}`}
+            className={`bg-light border-standard min-w-0 z-52 relative inset-shadow-scroll m-4 my-5 ${className}`}
           >
             <div className="absolute top-0 w-[calc(100%+48px)] h-2 -left-6 bg-text-dark -translate-y-5 rounded-full"></div>
             <div className="absolute top-0 w-[calc(100%+24px)] h-4 -left-3 bg-text-dark -translate-y-6"></div>

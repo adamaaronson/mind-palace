@@ -7,6 +7,7 @@ interface Answer {
   link?: string;
   isName?: boolean;
   familyName?: string;
+  isItalic?: boolean;
 }
 
 export interface Fact {
@@ -15,6 +16,7 @@ export interface Fact {
   questionLink?: string;
   questionSubtitle?: string;
   questionImage?: string;
+  questionIsItalic?: boolean;
   answers: Answer[];
   closeAnswers?: string[];
   answerTemplate?: string;

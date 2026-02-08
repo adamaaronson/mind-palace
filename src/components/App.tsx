@@ -1,4 +1,4 @@
-import { useCallback, useReducer, useState } from "react";
+import { useCallback, useEffect, useReducer, useState } from "react";
 import {
   type CardQueue,
   type Card,
@@ -27,6 +27,7 @@ import Tabs from "./Tabs";
 import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
 import { preload } from "react-dom";
+import Damask from "./Damask";
 
 export default function App() {
   const [deckId, setDeckId] = useState("world-capitals");
@@ -118,11 +119,18 @@ export default function App() {
     });
   };
 
-  if (showingDeckSelector) {
-    Object.values(cardQueues).forEach((cardQueue) =>
-      preloadQuestionImages(cardQueue, 2),
-    );
-  }
+  useEffect(() => {
+    if (showingDeckSelector) {
+      // Wait for animation to complete before preloading
+      const timer = setTimeout(() => {
+        Object.values(cardQueues).forEach((cardQueue) =>
+          preloadQuestionImages(cardQueue, 2),
+        );
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [showingDeckSelector]);
 
   const selectDeck = (deck: Deck) => {
     setDeckId(deck.id);
@@ -199,15 +207,16 @@ export default function App() {
       }`}
     >
       <div className="fixed h-full w-full bg-background -z-30"></div>
-      <div className="fixed h-full w-full bg-[url(/damask.png)] bg-size-[400px] md:bg-size-[600px] opacity-10 -z-20"></div>
+      <Damask />
       <Header />
 
-      <div className="flex flex-row w-full grow relative">
+      <div
+        className={`flex flex-row w-full grow relative ${showingDeckSelector ? "h-full overflow-y-hidden" : ""}`}
+      >
         <DeckSelector
           cardQueues={cardQueues}
           onSelectDeck={(deck) => selectDeck(deck)}
           isOpen={showingDeckSelector}
-          onClose={() => setShowingDeckSelector(false)}
         />
         <Column />
         <div className="flex-auto mt-2 md:mt-4 pb-4 h-full flex flex-col justify-center items-center overflow-hidden relative">

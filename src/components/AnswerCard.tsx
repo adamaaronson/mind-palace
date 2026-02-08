@@ -35,7 +35,8 @@ function AnswerCard(props: AnswerCardProps) {
                       <Link
                         key={index}
                         href={previousFact.questionLink}
-                        wikipedia
+                        isItalic={previousFact.questionIsItalic}
+                        isWikipedia
                       >
                         {previousFact.question ?? ""}
                       </Link>
@@ -43,7 +44,11 @@ function AnswerCard(props: AnswerCardProps) {
                   case "<answer>":
                     return previousFact.answers.map((answer, answerIndex) => (
                       <React.Fragment key={`${index},${answerIndex}`}>
-                        <Link href={answer.link} wikipedia>
+                        <Link
+                          href={answer.link}
+                          isItalic={answer.isItalic}
+                          isWikipedia
+                        >
                           {answer.canonicalForm}
                         </Link>
                         {answerIndex < previousFact.answers.length - 1 && (

@@ -1,6 +1,5 @@
 {
   "displayName": "U.S. Presidents",
-  "questionLabel": "number",
   "answerLabel": "president",
   "answerTemplate": "The <question> president was <answer>",
   "facts": [

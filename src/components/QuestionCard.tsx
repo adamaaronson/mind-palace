@@ -67,7 +67,7 @@ function QuestionCard(props: QuestionCardProps) {
           <input
             value={guess}
             onChange={(event) => setGuess(event.target.value)}
-            className="bg-white p-1 border-standard px-2 w-54"
+            className="bg-white p-1 border-standard px-2 w-60"
             placeholder={`Type the ${deck.answerLabel}`}
           />
           <button

@@ -37,14 +37,16 @@ def read_csv(csv_file: str) -> dict[str, Any]:
                                     'alternateForms': alternates,
                                 }
                             )
-                    case 'answerLink' | 'isName' | 'familyName':
+                    case 'answerLink' | 'isName' | 'familyName' | 'isItalic':
                         values = value.split('|')
                         field_name = (
                             'link' if column_name == 'answerLink' else column_name
                         )
                         for answer, value in zip(fact['answers'], values):
                             answer[field_name] = (
-                                bool(value) if column_name == 'isName' else value
+                                bool(value)
+                                if column_name in ['isName', 'isItalic']
+                                else value
                             )
                     case _:
                         fact[column_name] = value
