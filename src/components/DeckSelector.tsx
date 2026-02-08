@@ -16,7 +16,7 @@ export default function DeckSelector(props: DeckSelectorProps) {
     <Modal title="Select a Topic" isOpen={isOpen} className="w-100 lg:w-200">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {DECK_COLUMNS.map(([columnStart, columnEnd]) => (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4" key={columnStart}>
             {DECKS.slice(columnStart, columnEnd).map((deckCategory) => (
               <div
                 className="flex flex-col gap-2 rounded-2xl bg-light-light border-standard p-4 pt-2"
