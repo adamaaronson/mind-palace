@@ -1,4 +1,5 @@
 import numeral from "numeral";
+import { STOP_WORDS } from "./constants";
 
 export function randomRange(start: number, end: number) {
   return start + Math.floor(Math.random() * (end - start));
@@ -11,6 +12,9 @@ export function randomChoice<T>(list: T[]) {
 export function normalize(text: string) {
   return text
     .toLowerCase() // convert to lowercase
+    .split(" ")
+    .filter((x) => !STOP_WORDS.includes(x)) // remove stop words
+    .join(" ")
     .replace(/[\p{P}\s]/gu, "") // remove punctuation and spaces
     .normalize("NFD") // normalize unicode characters
     .replace(/\p{Diacritic}/gu, ""); // remove diacritics

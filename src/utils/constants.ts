@@ -15,3 +15,4 @@ export const getBlockSideHeight = (blockWidth: number) =>
   (blockWidth / 36) * 22;
 
 export const PRICE_MULTIPLIER = 1.2;
+export const STOP_WORDS = ["a", "an", "and", "the"];

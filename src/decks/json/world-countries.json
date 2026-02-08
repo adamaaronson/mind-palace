@@ -63,7 +63,7 @@
       "answers": [
         {
           "canonicalForm": "Antigua and Barbuda",
-          "alternateForms": ["Antigua Barbuda"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Antigua_and_Barbuda"
         }
       ],
@@ -239,7 +239,7 @@
       "answers": [
         {
           "canonicalForm": "Bosnia and Herzegovina",
-          "alternateForms": ["Bosnia Herzegovina"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina"
         }
       ],
@@ -493,8 +493,6 @@
         {
           "canonicalForm": "Democratic Republic of the Congo",
           "alternateForms": [
-            "Democratic Republic of Congo",
-            "Dem Rep of the Congo",
             "Dem Rep of Congo",
             "Dem Rep Congo",
             "DRC",
@@ -1214,10 +1212,7 @@
       "answers": [
         {
           "canonicalForm": "Micronesia",
-          "alternateForms": [
-            "Federated States of Micronesia",
-            "The Federated States of Micronesia"
-          ],
+          "alternateForms": ["Federated States of Micronesia"],
           "link": "https://en.wikipedia.org/wiki/Federated_States_of_Micronesia"
         }
       ],
@@ -1338,7 +1333,7 @@
       "answers": [
         {
           "canonicalForm": "Netherlands",
-          "alternateForms": ["The Netherlands"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Netherlands"
         }
       ],
@@ -1562,11 +1557,7 @@
       "answers": [
         {
           "canonicalForm": "Republic of the Congo",
-          "alternateForms": [
-            "Rep Congo",
-            "Republic of Congo",
-            "Republic Congo"
-          ],
+          "alternateForms": ["Rep Congo", "Republic Congo"],
           "link": "https://en.wikipedia.org/wiki/Republic_of_the_Congo"
         }
       ],
@@ -1610,11 +1601,7 @@
       "answers": [
         {
           "canonicalForm": "Saint Kitts and Nevis",
-          "alternateForms": [
-            "St. Kitts and Nevis",
-            "Saint Kitts Nevis",
-            "St. Kitts Nevis"
-          ],
+          "alternateForms": ["St. Kitts and Nevis"],
           "link": "https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis"
         }
       ],
@@ -1638,12 +1625,6 @@
           "canonicalForm": "Saint Vincent and the Grenadines",
           "alternateForms": [
             "St. Vincent and the Grenadines",
-            "Saint Vincent and Grenadines",
-            "St. Vincent and Grenadines",
-            "Saint Vincent the Grenadines",
-            "St. Vincent the Grenadines",
-            "Saint Vincent Grenadines",
-            "St. Vincent Grenadines",
             "Saint Vincent",
             "St. Vincent"
           ],
@@ -1679,7 +1660,7 @@
       "answers": [
         {
           "canonicalForm": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
-          "alternateForms": ["S\u00e3o Tom\u00e9 Principe"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/S\u00e3o_Tom\u00e9_and_Pr\u00edncipe"
         }
       ],
@@ -1954,7 +1935,7 @@
       "answers": [
         {
           "canonicalForm": "The Gambia",
-          "alternateForms": ["Gambia"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/The_Gambia"
         }
       ],
@@ -1998,7 +1979,7 @@
       "answers": [
         {
           "canonicalForm": "Trinidad and Tobago",
-          "alternateForms": ["Trinidad Tobago"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Trinidad_and_Tobago"
         }
       ],
@@ -2064,7 +2045,7 @@
       "answers": [
         {
           "canonicalForm": "Ukraine",
-          "alternateForms": ["The Ukraine"],
+          "alternateForms": [],
           "link": "https://en.wikipedia.org/wiki/Ukraine"
         }
       ],
@@ -2086,7 +2067,7 @@
       "answers": [
         {
           "canonicalForm": "United Kingdom",
-          "alternateForms": ["U.K.", "The U.K."],
+          "alternateForms": ["U.K."],
           "link": "https://en.wikipedia.org/wiki/United_Kingdom"
         }
       ],
@@ -2097,13 +2078,7 @@
       "answers": [
         {
           "canonicalForm": "United States",
-          "alternateForms": [
-            "U.S.",
-            "U.S.A.",
-            "The U.S.",
-            "The U.S.A.",
-            "America"
-          ],
+          "alternateForms": ["U.S.", "U.S.A.", "America"],
           "link": "https://en.wikipedia.org/wiki/United_States"
         }
       ],
@@ -2147,12 +2122,7 @@
       "answers": [
         {
           "canonicalForm": "Vatican City",
-          "alternateForms": [
-            "Vatican",
-            "The Vatican",
-            "The Holy See",
-            "Holy See"
-          ],
+          "alternateForms": ["Vatican", "Holy See"],
           "link": "https://en.wikipedia.org/wiki/Vatican_City"
         }
       ],
