@@ -29,7 +29,7 @@ export function Modal(props: ModalProps) {
           ></div>
           <Damask className="z-52 opacity-5!" />
           <div
-            className={`bg-light border-standard min-w-0 z-52 relative inset-shadow-scroll m-4 my-5 ${className}`}
+            className={`bg-light border-standard min-w-0 z-52 relative inset-shadow-scroll m-4 my-8 ${className}`}
           >
             <div className="absolute top-0 w-[calc(100%+48px)] h-2 -left-6 bg-text-dark -translate-y-5 rounded-full"></div>
             <div className="absolute top-0 w-[calc(100%+24px)] h-4 -left-3 bg-text-dark -translate-y-6"></div>
