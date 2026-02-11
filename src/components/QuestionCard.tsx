@@ -48,10 +48,6 @@ function QuestionCard(props: QuestionCardProps) {
           <img
             src={getQuestionImageUrl(fact, deck)}
             className="block w-full max-h-40 min-h-0 object-contain mb-4 m-auto will-change-contents"
-            style={{
-              transform: "translateZ(0)",
-              willChange: "transform",
-            }}
           />
         )}
 
