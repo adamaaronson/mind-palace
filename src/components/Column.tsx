@@ -4,7 +4,7 @@ function Flute() {
 
 export default function Column() {
   return (
-    <div className="flex-none md:block hidden h-full relative mr-1 ml-0.5 z-100">
+    <div className="flex-none md:block hidden h-full relative mx-1 z-100">
       <div className="bg-light rounded-full border-standard w-full h-2.5 -translate-y-0.5 absolute top-0 left-0" />
       <div className="flex h-full">
         <div className="w-1.5 h-full"></div>
