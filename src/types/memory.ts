@@ -1,6 +1,5 @@
 import { type Deck } from "./deck";
 import { type Fact } from "./fact";
-import { randomRange } from "../utils/utils";
 import { shuffle } from "lodash";
 import { KNOWLEDGE_STREAK } from "../utils/constants";
 
@@ -17,8 +16,6 @@ export interface Card {
 export interface CardQueue {
   cards: Card[];
   deckId: string;
-  alreadyStudiedIndex: number;
-  randomness: number;
 }
 
 export function shouldMakeKnown(card: Card) {
@@ -35,8 +32,6 @@ export function createCardQueue(deck: Deck): CardQueue {
       known: false,
     })),
     deckId: deck.id,
-    alreadyStudiedIndex: deck.facts.length,
-    randomness: 5,
   };
 }
 
@@ -62,54 +57,24 @@ export function replaceFirstCard(
   };
 }
 
-export function decrementAlreadyStudiedIndex(queue: CardQueue): CardQueue {
-  return {
-    ...queue,
-    alreadyStudiedIndex:
-      ((((queue.alreadyStudiedIndex - 2) % queue.cards.length) +
-        queue.cards.length) %
-        queue.cards.length) +
-      1,
-  };
-}
-
 export function answerFirstCard(
   queue: CardQueue,
   isCorrect: boolean,
 ): { answeredCard: Card; cardQueue: CardQueue } {
   const newCard: Card = { ...queue.cards[0] };
-
-  newCard.streak = isCorrect ? newCard.streak + 1 : 0;
-
-  const randomnessCutoff = queue.cards.length - queue.randomness + 1;
+  const maxInterval = queue.cards.length;
 
   if (isCorrect) {
-    if (newCard.seen && newCard.interval < randomnessCutoff) {
-      // update first card's interval, if it's not already too big
-      newCard.interval = Math.round(newCard.interval * PHI);
-    }
-
-    if (newCard.seen && newCard.interval < randomnessCutoff) {
-      // question has been answered wrong before
-      // and will be inserted before the cutoff
-      if (newCard.interval >= queue.alreadyStudiedIndex + 1) {
-        queue = decrementAlreadyStudiedIndex(queue);
-      }
-    } else {
-      // question has never been answered wrong before
-      // or has been answered right enough times to appear perfect:
-      // insert into the last <randomness> spots,
-      // but no sooner than the alreadyStudiedIndex
-      const adjustedStart = Math.max(
-        randomnessCutoff,
-        queue.alreadyStudiedIndex,
+    if (newCard.seen) {
+      newCard.interval = Math.min(
+        maxInterval,
+        Math.round(newCard.interval * PHI),
       );
-      newCard.interval = randomRange(adjustedStart, queue.cards.length + 1);
-
-      if (newCard.interval >= queue.alreadyStudiedIndex) {
-        queue = decrementAlreadyStudiedIndex(queue);
-      }
+    } else {
+      newCard.interval = maxInterval;
     }
+
+    newCard.streak += 1;
 
     if (shouldMakeKnown(newCard)) {
       newCard.known = true;
@@ -117,6 +82,7 @@ export function answerFirstCard(
   } else {
     // question was answered wrong, reset interval
     newCard.interval = 1;
+    newCard.streak = 0;
     newCard.known = false;
   }
 
