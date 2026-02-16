@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { getQuestionImageUrl, type Deck } from "../types/deck";
-import { type Card } from "../types/memory";
+import { type Card } from "../types/card";
 import CardLabel from "./CardLabel";
 
 interface QuestionCardProps {
@@ -24,7 +24,7 @@ function QuestionCard(props: QuestionCardProps) {
 
   const noGuess = guess === "";
   const shouldShowIDontKnow = noGuess && wasCorrect;
-  const fact = card.fact;
+  const fact = deck.facts[card.factId];
 
   return (
     <div className="relative">
@@ -63,7 +63,7 @@ function QuestionCard(props: QuestionCardProps) {
           <input
             value={guess}
             onChange={(event) => setGuess(event.target.value)}
-            className="bg-white p-1 border-standard px-2 w-60"
+            className="bg-white p-1 border-standard px-2 w-50 xs:w-60"
             placeholder={`Type the ${deck.answerLabel}`}
           />
           <button

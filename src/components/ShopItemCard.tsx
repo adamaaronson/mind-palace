@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
-import type { ShopItem } from "../types/shop";
+import { getPrice, type ShopItem } from "../types/shop";
 import { AnimatePresence, motion } from "motion/react";
 import { formatNumberShort } from "../utils/utils";
 
 interface ShopItemCardProps {
   item: ShopItem;
+  level: number;
   isUpgrade?: boolean;
   isSmall?: boolean;
   onClick?: () => void;
@@ -17,6 +18,7 @@ interface ShopItemCardProps {
 export default function ShopItemCard(props: ShopItemCardProps) {
   const {
     item,
+    level,
     isUpgrade = false,
     isSmall = false,
     onClick,
@@ -47,14 +49,14 @@ export default function ShopItemCard(props: ShopItemCardProps) {
         onClick={onClick}
         ref={buttonRef}
       >
-        {item.level !== 0 && (
+        {level !== 0 && (
           <div
             className={`absolute font-bold left-full top-0 -translate-x-full  ${
               isSmall ? "-ml-0.5 -mt-0.5" : "-ml-1"
             }`}
           >
             {isUpgrade ? "+" : ""}
-            {item.level}
+            {level}
           </div>
         )}
         <img src={item.image} width="80%"></img>
@@ -85,14 +87,14 @@ export default function ShopItemCard(props: ShopItemCardProps) {
         <button
           type="submit"
           className="button-standard py-0! px-0! text-sm"
-          disabled={canPurchase}
+          disabled={!canPurchase}
           onClick={onPurchase}
         >
           <img
             src="nugget.svg"
             className="inline-block h-[1em] align-baseline -mb-0.5"
           ></img>{" "}
-          {formatNumberShort(item.price)}
+          {formatNumberShort(getPrice(item, level))}
         </button>
       )}
     </div>

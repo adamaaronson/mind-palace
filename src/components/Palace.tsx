@@ -6,7 +6,7 @@ import {
   GRID_HEIGHT,
   GRID_WIDTH,
 } from "../utils/constants";
-import { type ShopItem } from "../types/shop";
+import { type Inventory, type ShopItem } from "../types/shop";
 import type { BlockProps } from "./Block";
 import Block from "./Block";
 import PalaceWalls from "./PalaceWalls";
@@ -46,12 +46,14 @@ export function getIsometricProjection(
 interface PalaceProps {
   isVisible: boolean;
   equippedBlock?: ShopItem;
-  setUsedBlocks: React.Dispatch<React.SetStateAction<Record<string, number>>>;
+  setUsedBlocks: React.Dispatch<React.SetStateAction<Inventory>>;
 }
 
 function Palace(props: PalaceProps) {
   const { isVisible, equippedBlock, setUsedBlocks } = props;
   const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
+
+  // console.log(blocks);
 
   const [blockWidth, setBlockWidth] = useState(0);
   const [palaceRef, setPalaceRef] = useState<HTMLDivElement | null>(null);

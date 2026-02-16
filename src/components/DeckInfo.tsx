@@ -1,5 +1,5 @@
 import type { Deck } from "../types/deck";
-import { type CardQueue } from "../types/memory";
+import { type CardQueue } from "../types/card";
 
 interface DeckInfoProps {
   deck: Deck;
@@ -17,7 +17,7 @@ export default function DeckInfo(props: DeckInfoProps) {
     isSmall = false,
     onClickDeckSelector,
   } = props;
-  const numItems = deck.facts.length;
+  const numItems = cardQueue.cards.length;
   const numSeen = cardQueue.cards.filter((card) => card.seen).length;
   const numKnown = cardQueue.cards.filter((card) => card.known).length;
   return (
@@ -34,10 +34,14 @@ export default function DeckInfo(props: DeckInfoProps) {
             ></img>
           </button>
         )}
-        <h3 className={`text-2xl font-bold ${isSmall ? "text-lg!" : ""}`}>
-          <div>{deck.displayName}</div>
+        <div className="flex flex-col justify-center h-full gap-1 pb-2">
           <div
-            className={`h-2 w-40 bg-taupe mt-1 ml-px ${isSmall ? "w-30!" : ""}`}
+            className={`text-lg xs:text-2xl font-bold ${isSmall ? "text-sm xs:text-lg" : ""}`}
+          >
+            {deck.displayName}
+          </div>
+          <div
+            className={`h-2 w-30 xs:w-40 bg-taupe ml-px ${isSmall ? "xs:w-30" : ""}`}
           >
             <div
               className="bg-text-dark h-full"
@@ -46,7 +50,7 @@ export default function DeckInfo(props: DeckInfoProps) {
               }}
             ></div>
           </div>
-        </h3>
+        </div>
       </div>
 
       <div className="text-text-light text-right leading-tight text-xs sm:text-sm font-normal">

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 26rem;
+
   --font-theme: "Source Serif 4";
   --font-classical: "Spectral SC";
 

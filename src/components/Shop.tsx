@@ -1,17 +1,18 @@
 import { useState } from "react";
 import {
+  getPrice,
   getShopItem,
+  SHOP_ITEMS,
+  type Inventory,
   type ShopItem,
-  type ShopItemCategory,
 } from "../types/shop";
 import ShopItemCard from "./ShopItemCard";
-import { PRICE_MULTIPLIER } from "../utils/constants";
 
 interface ShopProps {
   displayNuggets: number;
   setNuggets: React.Dispatch<React.SetStateAction<number>>;
-  shopItems: ShopItemCategory[];
-  setShopItems: React.Dispatch<React.SetStateAction<ShopItemCategory[]>>;
+  inventory: Inventory;
+  setInventory: React.Dispatch<React.SetStateAction<Inventory>>;
   setEquippedBlock: React.Dispatch<React.SetStateAction<ShopItem | undefined>>;
 }
 
@@ -19,71 +20,44 @@ export default function Shop(props: ShopProps) {
   const {
     displayNuggets,
     setNuggets,
-    shopItems,
-    setShopItems,
+    inventory,
+    setInventory,
     setEquippedBlock,
   } = props;
   const [, setScrolls] = useState<Record<string, HTMLDivElement>>({});
 
-  const purchaseItem = (itemCategoryId: string, itemId: string) => {
-    const item = getShopItem(shopItems, itemCategoryId, itemId);
+  const purchaseItem = (itemId: string) => {
+    const item = getShopItem(itemId);
     if (!item) {
       return;
     }
 
-    const previousItemPrice = item.price;
-    if (displayNuggets < item.price) {
+    const previousItemPrice = getPrice(item, inventory[itemId] ?? 0);
+    if (displayNuggets < previousItemPrice) {
       return;
     }
     setNuggets((nuggets) => nuggets - previousItemPrice);
-    setShopItems((shopItems) =>
-      shopItems.map((category) =>
-        category.id === itemCategoryId
-          ? {
-              ...category,
-              items: category.items.map((item: ShopItem) =>
-                item.id === itemId
-                  ? {
-                      ...item,
-                      price: Math.floor(item.price * PRICE_MULTIPLIER),
-                      level: item.level + 1,
-                    }
-                  : item,
-              ),
-            }
-          : category,
-      ),
-    );
+    setInventory((inventory) => ({
+      ...inventory,
+      [itemId]: inventory[itemId] + 1,
+    }));
 
-    if (itemCategoryId === "upgrades" && itemId === "any-answers") {
+    if (itemId === "any-answers") {
       // Upgrading "nuggets per any answer" also increases "nuggets per correct answer" by 1
-      setShopItems((shopItems) =>
-        shopItems.map((category) =>
-          category.id === "upgrades"
-            ? {
-                ...category,
-                items: category.items.map((item: ShopItem) =>
-                  item.id === "correct-answers"
-                    ? {
-                        ...item,
-                        level: item.level + 1,
-                      }
-                    : item,
-                ),
-              }
-            : category,
-        ),
-      );
+      setInventory((inventory) => ({
+        ...inventory,
+        "correct-answers": inventory["correct-answers"] + 1,
+      }));
     }
 
-    if (itemCategoryId === "blocks") {
+    if (item.categoryId === "blocks") {
       setEquippedBlock(item);
     }
   };
 
   return (
     <div className="flex flex-col gap-4">
-      {shopItems.map((itemCategory) => (
+      {SHOP_ITEMS.map((itemCategory) => (
         <div
           className="border-standard rounded-2xl bg-light-light p-4 pt-2 flex flex-col gap-2 min-w-0"
           key={itemCategory.id}
@@ -102,9 +76,12 @@ export default function Shop(props: ShopProps) {
               <div className="flex flex-col gap-1" key={item.id}>
                 <ShopItemCard
                   item={item}
+                  level={inventory[item.id]}
                   isUpgrade={itemCategory.id === "upgrades"}
-                  canPurchase={displayNuggets < item.price}
-                  onPurchase={() => purchaseItem(itemCategory.id, item.id)}
+                  canPurchase={
+                    getPrice(item, inventory[item.id]) <= displayNuggets
+                  }
+                  onPurchase={() => purchaseItem(item.id)}
                 />
               </div>
             ))}

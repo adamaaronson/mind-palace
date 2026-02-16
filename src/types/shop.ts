@@ -1,104 +1,121 @@
+import { PRICE_MULTIPLIER } from "../utils/constants";
+
 export interface ShopItem {
   id: string;
+  categoryId?: string;
   displayName: string;
-  price: number;
   image: string;
-  level: number;
+  basePrice?: number;
+  baseLevel?: number;
 }
 
-export interface ShopItemCategory {
+interface ShopItemCategory {
   id: string;
   displayName: string;
   items: ShopItem[];
 }
 
+export type Inventory = Record<string, number>;
+
+function createShopItemCategory(
+  id: string,
+  displayName: string,
+  items: Omit<ShopItem, "categoryId">[],
+): ShopItemCategory {
+  return {
+    id,
+    displayName,
+    items: items.map((item) => ({ ...item, categoryId: id })),
+  };
+}
+
 export const SHOP_ITEMS: ShopItemCategory[] = [
-  {
-    id: "upgrades",
-    displayName: "Upgrades",
-    items: [
-      {
-        id: "correct-answers",
-        displayName: "Nuggets for a correct answer",
-        price: 500,
-        image: "check.svg",
-        level: 1,
-      },
-      {
-        id: "any-answers",
-        displayName: "Nuggets for any answer",
-        price: 1000,
-        image: "check-and-x.svg",
-        level: 1,
-      },
-    ],
-  },
-  {
-    id: "blocks",
-    displayName: "Blocks",
-    items: [
-      {
-        id: "block",
-        displayName: "Block",
-        price: 5,
-        image: "block.svg",
-        level: 0,
-      },
-      {
-        id: "block-marble",
-        displayName: "Marble",
-        price: 5,
-        image: "block-marble.svg",
-        level: 0,
-      },
-    ],
-  },
+  createShopItemCategory("upgrades", "Upgrades", [
+    {
+      id: "correct-answers",
+      displayName: "Nuggets for a correct answer",
+      image: "check.svg",
+      basePrice: 500,
+      baseLevel: 1,
+    },
+    {
+      id: "any-answers",
+      displayName: "Nuggets for any answer",
+      image: "check-and-x.svg",
+      basePrice: 1000,
+      baseLevel: 1,
+    },
+  ]),
+  createShopItemCategory("blocks", "Blocks", [
+    {
+      id: "block",
+      displayName: "Block",
+      image: "block.svg",
+      basePrice: 5,
+    },
+    {
+      id: "block-marble",
+      displayName: "Marble",
+      image: "block-marble.svg",
+      basePrice: 5,
+    },
+  ]),
 ];
 
 export const ERASER: ShopItem = {
   id: "eraser",
   displayName: "Eraser",
-  price: 0,
   image: "eraser.svg",
-  level: 0,
 };
 
 export const FLOOR: ShopItem = {
   id: "floor",
   displayName: "Floor",
-  price: 0,
   image: "block-floor.svg",
-  level: 0,
 };
 
 export const WALL_LEFT: ShopItem = {
   id: "wall-left",
   displayName: "Left wall",
-  price: 0,
   image: "block-wall-left.svg",
-  level: 0,
 };
 
 export const WALL_RIGHT: ShopItem = {
   id: "wall-right",
   displayName: "Right wall",
-  price: 0,
   image: "block-wall-right.svg",
-  level: 0,
 };
 
-export const getShopItem = (
-  shopItems: ShopItemCategory[],
-  itemCategoryId: string,
-  itemId: string,
-) => {
-  const category = shopItems.find((item) => item.id === itemCategoryId);
-  return category?.items.find((item) => item.id === itemId);
-};
+export function createInventory(): Inventory {
+  return Object.fromEntries(
+    SHOP_ITEMS.flatMap((shopItemCategory) =>
+      shopItemCategory.items.map((shopItem) => [
+        shopItem.id,
+        shopItem.baseLevel ?? 0,
+      ]),
+    ),
+  );
+}
 
-export const getShopItemCategory = (
-  shopItems: ShopItemCategory[],
-  itemCategoryId: string,
-) => {
-  return shopItems.find((item) => item.id === itemCategoryId);
-};
+export function updateInventory(previousInventory: Inventory): Inventory {
+  return Object.fromEntries(
+    SHOP_ITEMS.flatMap((shopItemCategory) =>
+      shopItemCategory.items.map((shopItem) => [
+        shopItem.id,
+        previousInventory[shopItem.id] ?? shopItem.baseLevel ?? 0,
+      ]),
+    ),
+  );
+}
+
+export function getShopItem(itemId: string) {
+  return SHOP_ITEMS.flatMap((shopItemCategory) => shopItemCategory.items).find(
+    (shopItem) => shopItem.id === itemId,
+  );
+}
+
+export function getPrice(item: ShopItem, level: number) {
+  return Math.floor(
+    (item.basePrice ?? 0) * PRICE_MULTIPLIER ** (level - (item.baseLevel ?? 0)),
+  );
+}

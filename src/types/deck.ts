@@ -9,12 +9,12 @@ import { getAllAnswers, type Fact } from "./fact";
 
 export interface Deck {
   id: string;
+  facts: Record<number, Fact>;
+  allAnswers: Set<string>;
   displayName: string;
   questionLabel?: string;
   answerLabel: string;
   answerTemplate: string;
-  facts: Fact[];
-  allAnswers: Set<string>;
 }
 
 export interface DeckCategory {
@@ -24,15 +24,14 @@ export interface DeckCategory {
 }
 
 function createDeck(
-  id: string,
-  deckData: Omit<Deck, "id" | "allAnswers">,
+  facts: Fact[],
+  deckData: Omit<Deck, "facts" | "allAnswers">,
 ): Deck {
-  const allAnswers = new Set(
-    deckData.facts.flatMap((fact) => getAllAnswers(fact)),
-  );
+  const factsById = Object.fromEntries(facts.map((fact) => [fact.id, fact]));
+  const allAnswers = new Set(facts.flatMap((fact) => getAllAnswers(fact)));
 
   return {
-    id: id,
+    facts: factsById,
     allAnswers: allAnswers,
     ...deckData,
   };
@@ -43,21 +42,57 @@ export const DECKS: DeckCategory[] = [
     id: "geography",
     displayName: "Geography",
     decks: [
-      createDeck("world-capitals", worldCapitals),
-      createDeck("world-countries", worldCountries),
-      createDeck("world-flags", worldFlags),
-      createDeck("us-state-capitals", usStateCapitals),
+      createDeck(worldCapitals, {
+        id: "world-capitals",
+        displayName: "World Capitals",
+        questionLabel: "country",
+        answerLabel: "capital",
+        answerTemplate: "The capital of <question> is <answer>",
+      }),
+      createDeck(worldCountries, {
+        id: "world-countries",
+        displayName: "World Countries",
+        answerLabel: "country",
+        answerTemplate: "The country was <answer>",
+      }),
+      createDeck(worldFlags, {
+        id: "world-flags",
+        displayName: "World Flags",
+        answerLabel: "country",
+        answerTemplate: "<questionImage> is the flag of <answer>",
+      }),
+      createDeck(usStateCapitals, {
+        id: "us-state-capitals",
+        displayName: "U.S. State Capitals",
+        questionLabel: "U.S. state",
+        answerLabel: "capital",
+        answerTemplate: "The capital of <question> is <answer>",
+      }),
     ],
   },
   {
     id: "history",
     displayName: "History",
-    decks: [createDeck("us-presidents", usPresidents)],
+    decks: [
+      createDeck(usPresidents, {
+        id: "us-presidents",
+        displayName: "U.S. Presidents",
+        answerLabel: "president",
+        answerTemplate: "The <question> president was <answer>",
+      }),
+    ],
   },
   {
     id: "arts",
     displayName: "Arts",
-    decks: [createDeck("best-pictures", bestPictures)],
+    decks: [
+      createDeck(bestPictures, {
+        id: "best-pictures",
+        displayName: "Best Pictures",
+        answerLabel: "Best Picture winner",
+        answerTemplate: "The <question> Best Picture winner was <answer>",
+      }),
+    ],
   },
 ];
 
@@ -66,7 +101,7 @@ export const DECK_COLUMNS: [number, number | undefined][] = [
   [1, undefined],
 ];
 
-export const DECKS_BY_ID: Record<string, Deck> = Object.fromEntries(
+export const decksById: Record<string, Deck> = Object.fromEntries(
   DECKS.flatMap((category) => category.decks).map((deck) => [deck.id, deck]),
 );
 

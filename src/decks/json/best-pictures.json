@@ -1,1287 +1,1282 @@
-{
-  "displayName": "Best Pictures",
-  "answerLabel": "Best Picture winner",
-  "answerTemplate": "The <question> Best Picture winner was <answer>",
-  "facts": [
-    {
-      "id": 1,
-      "answers": [
-        {
-          "canonicalForm": "Wings",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Wings_(1927_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1927",
-      "questionSubtitle": "1st Academy Awards, 1929"
-    },
-    {
-      "id": 2,
-      "answers": [
-        {
-          "canonicalForm": "The Broadway Melody",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Broadway_Melody",
-          "isItalic": true
-        }
-      ],
-      "question": "1929",
-      "questionSubtitle": "2nd Academy Awards, 1930"
-    },
-    {
-      "id": 3,
-      "answers": [
-        {
-          "canonicalForm": "All Quiet on the Western Front",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/All_Quiet_on_the_Western_Front_(1930_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1930",
-      "questionSubtitle": "3rd Academy Awards, 1930"
-    },
-    {
-      "id": 4,
-      "answers": [
-        {
-          "canonicalForm": "Cimarron",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Cimarron_(1931_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1931",
-      "questionSubtitle": "4th Academy Awards, 1931"
-    },
-    {
-      "id": 5,
-      "answers": [
-        {
-          "canonicalForm": "Grand Hotel",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Grand_Hotel_(1932_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1932",
-      "questionSubtitle": "5th Academy Awards, 1932"
-    },
-    {
-      "id": 6,
-      "answers": [
-        {
-          "canonicalForm": "Cavalcade",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Cavalcade_(1933_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1933",
-      "questionSubtitle": "6th Academy Awards, 1934"
-    },
-    {
-      "id": 7,
-      "answers": [
-        {
-          "canonicalForm": "It Happened One Night",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/It_Happened_One_Night",
-          "isItalic": true
-        }
-      ],
-      "question": "1934",
-      "questionSubtitle": "7th Academy Awards, 1935"
-    },
-    {
-      "id": 8,
-      "answers": [
-        {
-          "canonicalForm": "Mutiny on the Bounty",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Mutiny_on_the_Bounty_(1935_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1935",
-      "questionSubtitle": "8th Academy Awards, 1936"
-    },
-    {
-      "id": 9,
-      "answers": [
-        {
-          "canonicalForm": "The Great Ziegfeld",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Great_Ziegfeld",
-          "isItalic": true
-        }
-      ],
-      "question": "1936",
-      "questionSubtitle": "9th Academy Awards, 1937"
-    },
-    {
-      "id": 10,
-      "answers": [
-        {
-          "canonicalForm": "The Life of Emile Zola",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Life_of_Emile_Zola",
-          "isItalic": true
-        }
-      ],
-      "question": "1937",
-      "questionSubtitle": "10th Academy Awards, 1938"
-    },
-    {
-      "id": 11,
-      "answers": [
-        {
-          "canonicalForm": "You Can't Take It with You",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/You_Can%27t_Take_It_with_You_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1938",
-      "questionSubtitle": "11th Academy Awards, 1939"
-    },
-    {
-      "id": 12,
-      "answers": [
-        {
-          "canonicalForm": "Gone with the Wind",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1939",
-      "questionSubtitle": "12th Academy Awards, 1940"
-    },
-    {
-      "id": 13,
-      "answers": [
-        {
-          "canonicalForm": "Rebecca",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Rebecca_(1940_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1940",
-      "questionSubtitle": "13th Academy Awards, 1941"
-    },
-    {
-      "id": 14,
-      "answers": [
-        {
-          "canonicalForm": "How Green Was My Valley",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/How_Green_Was_My_Valley_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1941",
-      "questionSubtitle": "14th Academy Awards, 1942"
-    },
-    {
-      "id": 15,
-      "answers": [
-        {
-          "canonicalForm": "Mrs. Miniver",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Mrs._Miniver",
-          "isItalic": true
-        }
-      ],
-      "question": "1942",
-      "questionSubtitle": "15th Academy Awards, 1943"
-    },
-    {
-      "id": 16,
-      "answers": [
-        {
-          "canonicalForm": "Casablanca",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Casablanca_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1943",
-      "questionSubtitle": "16th Academy Awards, 1944"
-    },
-    {
-      "id": 17,
-      "answers": [
-        {
-          "canonicalForm": "Going My Way",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Going_My_Way",
-          "isItalic": true
-        }
-      ],
-      "question": "1944",
-      "questionSubtitle": "17th Academy Awards, 1945"
-    },
-    {
-      "id": 18,
-      "answers": [
-        {
-          "canonicalForm": "The Lost Weekend",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Lost_Weekend",
-          "isItalic": true
-        }
-      ],
-      "question": "1945",
-      "questionSubtitle": "18th Academy Awards, 1946"
-    },
-    {
-      "id": 19,
-      "answers": [
-        {
-          "canonicalForm": "The Best Years of Our Lives",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Best_Years_of_Our_Lives",
-          "isItalic": true
-        }
-      ],
-      "question": "1946",
-      "questionSubtitle": "19th Academy Awards, 1947"
-    },
-    {
-      "id": 20,
-      "answers": [
-        {
-          "canonicalForm": "Gentleman's Agreement",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Gentleman%27s_Agreement",
-          "isItalic": true
-        }
-      ],
-      "question": "1947",
-      "questionSubtitle": "20th Academy Awards, 1948"
-    },
-    {
-      "id": 21,
-      "answers": [
-        {
-          "canonicalForm": "Hamlet",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Hamlet_(1948_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1948",
-      "questionSubtitle": "21st Academy Awards, 1949"
-    },
-    {
-      "id": 22,
-      "answers": [
-        {
-          "canonicalForm": "All the King's Men",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/All_the_King%27s_Men_(1949_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1949",
-      "questionSubtitle": "22nd Academy Awards, 1950"
-    },
-    {
-      "id": 23,
-      "answers": [
-        {
-          "canonicalForm": "All About Eve",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/All_About_Eve",
-          "isItalic": true
-        }
-      ],
-      "question": "1950",
-      "questionSubtitle": "23rd Academy Awards, 1951"
-    },
-    {
-      "id": 24,
-      "answers": [
-        {
-          "canonicalForm": "An American in Paris",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/An_American_in_Paris_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1951",
-      "questionSubtitle": "24th Academy Awards, 1952"
-    },
-    {
-      "id": 25,
-      "answers": [
-        {
-          "canonicalForm": "The Greatest Show on Earth",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Greatest_Show_on_Earth_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1952",
-      "questionSubtitle": "25th Academy Awards, 1953"
-    },
-    {
-      "id": 26,
-      "answers": [
-        {
-          "canonicalForm": "From Here to Eternity",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/From_Here_to_Eternity",
-          "isItalic": true
-        }
-      ],
-      "question": "1953",
-      "questionSubtitle": "26th Academy Awards, 1954"
-    },
-    {
-      "id": 27,
-      "answers": [
-        {
-          "canonicalForm": "On the Waterfront",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/On_the_Waterfront",
-          "isItalic": true
-        }
-      ],
-      "question": "1954",
-      "questionSubtitle": "27th Academy Awards, 1955"
-    },
-    {
-      "id": 28,
-      "answers": [
-        {
-          "canonicalForm": "Marty",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Marty_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1955",
-      "questionSubtitle": "28th Academy Awards, 1956"
-    },
-    {
-      "id": 29,
-      "answers": [
-        {
-          "canonicalForm": "Around the World in 80 Days",
-          "alternateForms": ["Around the World in Eighty Days"],
-          "link": "https://en.wikipedia.org/wiki/Around_the_World_in_80_Days_(1956_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1956",
-      "questionSubtitle": "29th Academy Awards, 1957"
-    },
-    {
-      "id": 30,
-      "answers": [
-        {
-          "canonicalForm": "The Bridge on the River Kwai",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Bridge_on_the_River_Kwai",
-          "isItalic": true
-        }
-      ],
-      "question": "1957",
-      "questionSubtitle": "30th Academy Awards, 1958"
-    },
-    {
-      "id": 31,
-      "answers": [
-        {
-          "canonicalForm": "Gigi",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Gigi_(1958_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1958",
-      "questionSubtitle": "31st Academy Awards, 1959"
-    },
-    {
-      "id": 32,
-      "answers": [
-        {
-          "canonicalForm": "Ben-Hur",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Ben-Hur_(1959_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1959",
-      "questionSubtitle": "32nd Academy Awards, 1960"
-    },
-    {
-      "id": 33,
-      "answers": [
-        {
-          "canonicalForm": "The Apartment",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Apartment",
-          "isItalic": true
-        }
-      ],
-      "question": "1960",
-      "questionSubtitle": "33rd Academy Awards, 1961"
-    },
-    {
-      "id": 34,
-      "answers": [
-        {
-          "canonicalForm": "West Side Story",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/West_Side_Story_(1961_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1961",
-      "questionSubtitle": "34th Academy Awards, 1962"
-    },
-    {
-      "id": 35,
-      "answers": [
-        {
-          "canonicalForm": "Lawrence of Arabia",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1962",
-      "questionSubtitle": "35th Academy Awards, 1963"
-    },
-    {
-      "id": 36,
-      "answers": [
-        {
-          "canonicalForm": "Tom Jones",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Tom_Jones_(1963_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1963",
-      "questionSubtitle": "36th Academy Awards, 1964"
-    },
-    {
-      "id": 37,
-      "answers": [
-        {
-          "canonicalForm": "My Fair Lady",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/My_Fair_Lady_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1964",
-      "questionSubtitle": "37th Academy Awards, 1965"
-    },
-    {
-      "id": 38,
-      "answers": [
-        {
-          "canonicalForm": "The Sound of Music",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Sound_of_Music_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1965",
-      "questionSubtitle": "38th Academy Awards, 1966"
-    },
-    {
-      "id": 39,
-      "answers": [
-        {
-          "canonicalForm": "A Man for All Seasons",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/A_Man_for_All_Seasons_(1966_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1966",
-      "questionSubtitle": "39th Academy Awards, 1967"
-    },
-    {
-      "id": 40,
-      "answers": [
-        {
-          "canonicalForm": "In the Heat of the Night",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/In_the_Heat_of_the_Night_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1967",
-      "questionSubtitle": "40th Academy Awards, 1968"
-    },
-    {
-      "id": 41,
-      "answers": [
-        {
-          "canonicalForm": "Oliver!",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Oliver!_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1968",
-      "questionSubtitle": "41st Academy Awards, 1969"
-    },
-    {
-      "id": 42,
-      "answers": [
-        {
-          "canonicalForm": "Midnight Cowboy",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Midnight_Cowboy",
-          "isItalic": true
-        }
-      ],
-      "question": "1969",
-      "questionSubtitle": "42nd Academy Awards, 1970"
-    },
-    {
-      "id": 43,
-      "answers": [
-        {
-          "canonicalForm": "Patton",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Patton_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1970",
-      "questionSubtitle": "43rd Academy Awards, 1971"
-    },
-    {
-      "id": 44,
-      "answers": [
-        {
-          "canonicalForm": "The French Connection",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_French_Connection_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1971",
-      "questionSubtitle": "44th Academy Awards, 1972"
-    },
-    {
-      "id": 45,
-      "answers": [
-        {
-          "canonicalForm": "The Godfather",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Godfather",
-          "isItalic": true
-        }
-      ],
-      "question": "1972",
-      "questionSubtitle": "45th Academy Awards, 1973"
-    },
-    {
-      "id": 46,
-      "answers": [
-        {
-          "canonicalForm": "The Sting",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Sting",
-          "isItalic": true
-        }
-      ],
-      "question": "1973",
-      "questionSubtitle": "46th Academy Awards, 1974"
-    },
-    {
-      "id": 47,
-      "answers": [
-        {
-          "canonicalForm": "The Godfather Part II",
-          "alternateForms": ["The Godfather Part 2"],
-          "link": "https://en.wikipedia.org/wiki/The_Godfather_Part_II",
-          "isItalic": true
-        },
-        {
-          "canonicalForm": "The Godfather II",
-          "alternateForms": ["The Godfather 2"]
-        },
-        {
-          "canonicalForm": "The Godfather Part Two",
-          "alternateForms": ["The Godfather Two"]
-        }
-      ],
-      "question": "1974",
-      "questionSubtitle": "47th Academy Awards, 1975"
-    },
-    {
-      "id": 48,
-      "answers": [
-        {
-          "canonicalForm": "One Flew Over the Cuckoo's Nest",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/One_Flew_Over_the_Cuckoo%27s_Nest_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1975",
-      "questionSubtitle": "48th Academy Awards, 1976"
-    },
-    {
-      "id": 49,
-      "answers": [
-        {
-          "canonicalForm": "Rocky",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Rocky",
-          "isItalic": true
-        }
-      ],
-      "question": "1976",
-      "questionSubtitle": "49th Academy Awards, 1977"
-    },
-    {
-      "id": 50,
-      "answers": [
-        {
-          "canonicalForm": "Annie Hall",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Annie_Hall",
-          "isItalic": true
-        }
-      ],
-      "question": "1977",
-      "questionSubtitle": "50th Academy Awards, 1978"
-    },
-    {
-      "id": 51,
-      "answers": [
-        {
-          "canonicalForm": "The Deer Hunter",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Deer_Hunter",
-          "isItalic": true
-        }
-      ],
-      "question": "1978",
-      "questionSubtitle": "51st Academy Awards, 1979"
-    },
-    {
-      "id": 52,
-      "answers": [
-        {
-          "canonicalForm": "Kramer vs. Kramer",
-          "alternateForms": ["Kramer versus Kramer", "Kramer v Kramer"],
-          "link": "https://en.wikipedia.org/wiki/Kramer_vs._Kramer",
-          "isItalic": true
-        }
-      ],
-      "question": "1979",
-      "questionSubtitle": "52nd Academy Awards, 1980"
-    },
-    {
-      "id": 53,
-      "answers": [
-        {
-          "canonicalForm": "Ordinary People",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Ordinary_People",
-          "isItalic": true
-        }
-      ],
-      "question": "1980",
-      "questionSubtitle": "53rd Academy Awards, 1981"
-    },
-    {
-      "id": 54,
-      "answers": [
-        {
-          "canonicalForm": "Chariots of Fire",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Chariots_of_Fire",
-          "isItalic": true
-        }
-      ],
-      "question": "1981",
-      "questionSubtitle": "54th Academy Awards, 1982"
-    },
-    {
-      "id": 55,
-      "answers": [
-        {
-          "canonicalForm": "Gandhi",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Gandhi_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1982",
-      "questionSubtitle": "55th Academy Awards, 1983"
-    },
-    {
-      "id": 56,
-      "answers": [
-        {
-          "canonicalForm": "Terms of Endearment",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Terms_of_Endearment",
-          "isItalic": true
-        }
-      ],
-      "question": "1983",
-      "questionSubtitle": "56th Academy Awards, 1984"
-    },
-    {
-      "id": 57,
-      "answers": [
-        {
-          "canonicalForm": "Amadeus",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Amadeus_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1984",
-      "questionSubtitle": "57th Academy Awards, 1985"
-    },
-    {
-      "id": 58,
-      "answers": [
-        {
-          "canonicalForm": "Out of Africa",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Out_of_Africa_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1985",
-      "questionSubtitle": "58th Academy Awards, 1986"
-    },
-    {
-      "id": 59,
-      "answers": [
-        {
-          "canonicalForm": "Platoon",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Platoon_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1986",
-      "questionSubtitle": "59th Academy Awards, 1987"
-    },
-    {
-      "id": 60,
-      "answers": [
-        {
-          "canonicalForm": "The Last Emperor",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Last_Emperor",
-          "isItalic": true
-        }
-      ],
-      "question": "1987",
-      "questionSubtitle": "60th Academy Awards, 1988"
-    },
-    {
-      "id": 61,
-      "answers": [
-        {
-          "canonicalForm": "Rain Man",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Rain_Man",
-          "isItalic": true
-        }
-      ],
-      "question": "1988",
-      "questionSubtitle": "61st Academy Awards, 1989"
-    },
-    {
-      "id": 62,
-      "answers": [
-        {
-          "canonicalForm": "Driving Miss Daisy",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Driving_Miss_Daisy",
-          "isItalic": true
-        }
-      ],
-      "question": "1989",
-      "questionSubtitle": "62nd Academy Awards, 1990"
-    },
-    {
-      "id": 63,
-      "answers": [
-        {
-          "canonicalForm": "Dances With Wolves",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Dances_With_Wolves",
-          "isItalic": true
-        }
-      ],
-      "question": "1990",
-      "questionSubtitle": "63rd Academy Awards, 1991"
-    },
-    {
-      "id": 64,
-      "answers": [
-        {
-          "canonicalForm": "The Silence of the Lambs",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1991",
-      "questionSubtitle": "64th Academy Awards, 1992"
-    },
-    {
-      "id": 65,
-      "answers": [
-        {
-          "canonicalForm": "Unforgiven",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Unforgiven",
-          "isItalic": true
-        }
-      ],
-      "question": "1992",
-      "questionSubtitle": "65th Academy Awards, 1993"
-    },
-    {
-      "id": 66,
-      "answers": [
-        {
-          "canonicalForm": "Schindler's List",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Schindler%27s_List",
-          "isItalic": true
-        }
-      ],
-      "question": "1993",
-      "questionSubtitle": "66th Academy Awards, 1994"
-    },
-    {
-      "id": 67,
-      "answers": [
-        {
-          "canonicalForm": "Forrest Gump",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Forrest_Gump",
-          "isItalic": true
-        }
-      ],
-      "question": "1994",
-      "questionSubtitle": "67th Academy Awards, 1995"
-    },
-    {
-      "id": 68,
-      "answers": [
-        {
-          "canonicalForm": "Braveheart",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Braveheart",
-          "isItalic": true
-        }
-      ],
-      "question": "1995",
-      "questionSubtitle": "68th Academy Awards, 1996"
-    },
-    {
-      "id": 69,
-      "answers": [
-        {
-          "canonicalForm": "The English Patient",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_English_Patient_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1996",
-      "questionSubtitle": "69th Academy Awards, 1997"
-    },
-    {
-      "id": 70,
-      "answers": [
-        {
-          "canonicalForm": "Titanic",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1997",
-      "questionSubtitle": "70th Academy Awards, 1998"
-    },
-    {
-      "id": 71,
-      "answers": [
-        {
-          "canonicalForm": "Shakespeare in Love",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Shakespeare_in_Love",
-          "isItalic": true
-        }
-      ],
-      "question": "1998",
-      "questionSubtitle": "71st Academy Awards, 1999"
-    },
-    {
-      "id": 72,
-      "answers": [
-        {
-          "canonicalForm": "American Beauty",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/American_Beauty_(1999_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "1999",
-      "questionSubtitle": "72nd Academy Awards, 2000"
-    },
-    {
-      "id": 73,
-      "answers": [
-        {
-          "canonicalForm": "Gladiator",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Gladiator_(2000_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2000",
-      "questionSubtitle": "73rd Academy Awards, 2001"
-    },
-    {
-      "id": 74,
-      "answers": [
-        {
-          "canonicalForm": "A Beautiful Mind",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/A_Beautiful_Mind_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2001",
-      "questionSubtitle": "74th Academy Awards, 2002"
-    },
-    {
-      "id": 75,
-      "answers": [
-        {
-          "canonicalForm": "Chicago",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Chicago_(2002_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2002",
-      "questionSubtitle": "75th Academy Awards, 2003"
-    },
-    {
-      "id": 76,
-      "answers": [
-        {
-          "canonicalForm": "The Lord of the Rings: The Return of the King",
-          "alternateForms": [
-            "The Return of the King",
-            "LotR RotK",
-            "Lord of the Rings 2"
-          ],
-          "link": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King",
-          "isItalic": true
-        },
-        {
-          "canonicalForm": "Lord of the Rings Two",
-          "alternateForms": ["Lord of the Rings II"]
-        }
-      ],
-      "question": "2003",
-      "questionSubtitle": "76th Academy Awards, 2004"
-    },
-    {
-      "id": 77,
-      "answers": [
-        {
-          "canonicalForm": "Million Dollar Baby",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Million_Dollar_Baby",
-          "isItalic": true
-        }
-      ],
-      "question": "2004",
-      "questionSubtitle": "77th Academy Awards, 2005"
-    },
-    {
-      "id": 78,
-      "answers": [
-        {
-          "canonicalForm": "Crash",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Crash_(2004_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2005",
-      "questionSubtitle": "78th Academy Awards, 2006"
-    },
-    {
-      "id": 79,
-      "answers": [
-        {
-          "canonicalForm": "The Departed",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Departed",
-          "isItalic": true
-        }
-      ],
-      "question": "2006",
-      "questionSubtitle": "79th Academy Awards, 2007"
-    },
-    {
-      "id": 80,
-      "answers": [
-        {
-          "canonicalForm": "No Country for Old Men",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/No_Country_for_Old_Men",
-          "isItalic": true
-        }
-      ],
-      "question": "2007",
-      "questionSubtitle": "80th Academy Awards, 2008"
-    },
-    {
-      "id": 81,
-      "answers": [
-        {
-          "canonicalForm": "Slumdog Millionaire",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Slumdog_Millionaire",
-          "isItalic": true
-        }
-      ],
-      "question": "2008",
-      "questionSubtitle": "81st Academy Awards, 2009"
-    },
-    {
-      "id": 82,
-      "answers": [
-        {
-          "canonicalForm": "The Hurt Locker",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Hurt_Locker",
-          "isItalic": true
-        }
-      ],
-      "question": "2009",
-      "questionSubtitle": "82nd Academy Awards, 2010"
-    },
-    {
-      "id": 83,
-      "answers": [
-        {
-          "canonicalForm": "The King's Speech",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_King%27s_Speech",
-          "isItalic": true
-        }
-      ],
-      "question": "2010",
-      "questionSubtitle": "83rd Academy Awards, 2011"
-    },
-    {
-      "id": 84,
-      "answers": [
-        {
-          "canonicalForm": "The Artist",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Artist_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2011",
-      "questionSubtitle": "84th Academy Awards, 2012"
-    },
-    {
-      "id": 85,
-      "answers": [
-        {
-          "canonicalForm": "Argo",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Argo_(2012_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2012",
-      "questionSubtitle": "85th Academy Awards, 2013"
-    },
-    {
-      "id": 86,
-      "answers": [
-        {
-          "canonicalForm": "12 Years a Slave",
-          "alternateForms": ["Twelve Years a Slave"],
-          "link": "https://en.wikipedia.org/wiki/12_Years_a_Slave_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2013",
-      "questionSubtitle": "86th Academy Awards, 2014"
-    },
-    {
-      "id": 87,
-      "answers": [
-        {
-          "canonicalForm": "Birdman",
-          "alternateForms": [
-            "Birdman or (The Unexpected Virtue of Ignorance)",
-            "The Unexpected Virtue of Ignorance"
-          ],
-          "link": "https://en.wikipedia.org/wiki/Birdman_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2014",
-      "questionSubtitle": "87th Academy Awards, 2015"
-    },
-    {
-      "id": 88,
-      "answers": [
-        {
-          "canonicalForm": "Spotlight",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Spotlight_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2015",
-      "questionSubtitle": "88th Academy Awards, 2016"
-    },
-    {
-      "id": 89,
-      "answers": [
-        {
-          "canonicalForm": "Moonlight",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Moonlight_(2016_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2016",
-      "questionSubtitle": "89th Academy Awards, 2017"
-    },
-    {
-      "id": 90,
-      "answers": [
-        {
-          "canonicalForm": "The Shape of Water",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/The_Shape_of_Water",
-          "isItalic": true
-        }
-      ],
-      "question": "2017",
-      "questionSubtitle": "90th Academy Awards, 2018"
-    },
-    {
-      "id": 91,
-      "answers": [
-        {
-          "canonicalForm": "Green Book",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Green_Book_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2018",
-      "questionSubtitle": "91st Academy Awards, 2019"
-    },
-    {
-      "id": 92,
-      "answers": [
-        {
-          "canonicalForm": "Parasite",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Parasite_(2019_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2019",
-      "questionSubtitle": "92nd Academy Awards, 2020"
-    },
-    {
-      "id": 93,
-      "answers": [
-        {
-          "canonicalForm": "Nomadland",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Nomadland",
-          "isItalic": true
-        }
-      ],
-      "question": "2020",
-      "questionSubtitle": "93rd Academy Awards, 2021"
-    },
-    {
-      "id": 94,
-      "answers": [
-        {
-          "canonicalForm": "CODA",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/CODA_(2021_film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2021",
-      "questionSubtitle": "94th Academy Awards, 2022"
-    },
-    {
-      "id": 95,
-      "answers": [
-        {
-          "canonicalForm": "Everything Everywhere All at Once",
-          "alternateForms": ["EEAAO"],
-          "link": "https://en.wikipedia.org/wiki/Everything_Everywhere_All_at_Once",
-          "isItalic": true
-        }
-      ],
-      "question": "2022",
-      "questionSubtitle": "95th Academy Awards, 2023"
-    },
-    {
-      "id": 96,
-      "answers": [
-        {
-          "canonicalForm": "Oppenheimer",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
-          "isItalic": true
-        }
-      ],
-      "question": "2023",
-      "questionSubtitle": "96th Academy Awards, 2024"
-    },
-    {
-      "id": 97,
-      "answers": [
-        {
-          "canonicalForm": "Anora",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Anora",
-          "isItalic": true
-        }
-      ],
-      "question": "2024",
-      "questionSubtitle": "97th Academy Awards, 2025"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "answers": [
+      {
+        "canonicalForm": "Wings",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Wings_(1927_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1927",
+    "questionSubtitle": "1st Academy Awards, 1929"
+  },
+  {
+    "id": 2,
+    "answers": [
+      {
+        "canonicalForm": "The Broadway Melody",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Broadway_Melody",
+        "isItalic": true
+      }
+    ],
+    "question": "1929",
+    "questionSubtitle": "2nd Academy Awards, 1930"
+  },
+  {
+    "id": 3,
+    "answers": [
+      {
+        "canonicalForm": "All Quiet on the Western Front",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/All_Quiet_on_the_Western_Front_(1930_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1930",
+    "questionSubtitle": "3rd Academy Awards, 1930"
+  },
+  {
+    "id": 4,
+    "answers": [
+      {
+        "canonicalForm": "Cimarron",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Cimarron_(1931_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1931",
+    "questionSubtitle": "4th Academy Awards, 1931"
+  },
+  {
+    "id": 5,
+    "answers": [
+      {
+        "canonicalForm": "Grand Hotel",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Grand_Hotel_(1932_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1932",
+    "questionSubtitle": "5th Academy Awards, 1932"
+  },
+  {
+    "id": 6,
+    "answers": [
+      {
+        "canonicalForm": "Cavalcade",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Cavalcade_(1933_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1933",
+    "questionSubtitle": "6th Academy Awards, 1934"
+  },
+  {
+    "id": 7,
+    "answers": [
+      {
+        "canonicalForm": "It Happened One Night",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/It_Happened_One_Night",
+        "isItalic": true
+      }
+    ],
+    "question": "1934",
+    "questionSubtitle": "7th Academy Awards, 1935"
+  },
+  {
+    "id": 8,
+    "answers": [
+      {
+        "canonicalForm": "Mutiny on the Bounty",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Mutiny_on_the_Bounty_(1935_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1935",
+    "questionSubtitle": "8th Academy Awards, 1936"
+  },
+  {
+    "id": 9,
+    "answers": [
+      {
+        "canonicalForm": "The Great Ziegfeld",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Great_Ziegfeld",
+        "isItalic": true
+      }
+    ],
+    "question": "1936",
+    "questionSubtitle": "9th Academy Awards, 1937"
+  },
+  {
+    "id": 10,
+    "answers": [
+      {
+        "canonicalForm": "The Life of Emile Zola",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Life_of_Emile_Zola",
+        "isItalic": true
+      }
+    ],
+    "question": "1937",
+    "questionSubtitle": "10th Academy Awards, 1938"
+  },
+  {
+    "id": 11,
+    "answers": [
+      {
+        "canonicalForm": "You Can't Take It with You",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/You_Can%27t_Take_It_with_You_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1938",
+    "questionSubtitle": "11th Academy Awards, 1939"
+  },
+  {
+    "id": 12,
+    "answers": [
+      {
+        "canonicalForm": "Gone with the Wind",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1939",
+    "questionSubtitle": "12th Academy Awards, 1940"
+  },
+  {
+    "id": 13,
+    "answers": [
+      {
+        "canonicalForm": "Rebecca",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Rebecca_(1940_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1940",
+    "questionSubtitle": "13th Academy Awards, 1941"
+  },
+  {
+    "id": 14,
+    "answers": [
+      {
+        "canonicalForm": "How Green Was My Valley",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/How_Green_Was_My_Valley_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1941",
+    "questionSubtitle": "14th Academy Awards, 1942"
+  },
+  {
+    "id": 15,
+    "answers": [
+      {
+        "canonicalForm": "Mrs. Miniver",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Mrs._Miniver",
+        "isItalic": true
+      }
+    ],
+    "question": "1942",
+    "questionSubtitle": "15th Academy Awards, 1943"
+  },
+  {
+    "id": 16,
+    "answers": [
+      {
+        "canonicalForm": "Casablanca",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Casablanca_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1943",
+    "questionSubtitle": "16th Academy Awards, 1944"
+  },
+  {
+    "id": 17,
+    "answers": [
+      {
+        "canonicalForm": "Going My Way",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Going_My_Way",
+        "isItalic": true
+      }
+    ],
+    "question": "1944",
+    "questionSubtitle": "17th Academy Awards, 1945"
+  },
+  {
+    "id": 18,
+    "answers": [
+      {
+        "canonicalForm": "The Lost Weekend",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Lost_Weekend",
+        "isItalic": true
+      }
+    ],
+    "question": "1945",
+    "questionSubtitle": "18th Academy Awards, 1946"
+  },
+  {
+    "id": 19,
+    "answers": [
+      {
+        "canonicalForm": "The Best Years of Our Lives",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Best_Years_of_Our_Lives",
+        "isItalic": true
+      }
+    ],
+    "question": "1946",
+    "questionSubtitle": "19th Academy Awards, 1947"
+  },
+  {
+    "id": 20,
+    "answers": [
+      {
+        "canonicalForm": "Gentleman's Agreement",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Gentleman%27s_Agreement",
+        "isItalic": true
+      }
+    ],
+    "question": "1947",
+    "questionSubtitle": "20th Academy Awards, 1948"
+  },
+  {
+    "id": 21,
+    "answers": [
+      {
+        "canonicalForm": "Hamlet",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Hamlet_(1948_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1948",
+    "questionSubtitle": "21st Academy Awards, 1949"
+  },
+  {
+    "id": 22,
+    "answers": [
+      {
+        "canonicalForm": "All the King's Men",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/All_the_King%27s_Men_(1949_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1949",
+    "questionSubtitle": "22nd Academy Awards, 1950"
+  },
+  {
+    "id": 23,
+    "answers": [
+      {
+        "canonicalForm": "All About Eve",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/All_About_Eve",
+        "isItalic": true
+      }
+    ],
+    "question": "1950",
+    "questionSubtitle": "23rd Academy Awards, 1951"
+  },
+  {
+    "id": 24,
+    "answers": [
+      {
+        "canonicalForm": "An American in Paris",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/An_American_in_Paris_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1951",
+    "questionSubtitle": "24th Academy Awards, 1952"
+  },
+  {
+    "id": 25,
+    "answers": [
+      {
+        "canonicalForm": "The Greatest Show on Earth",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Greatest_Show_on_Earth_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1952",
+    "questionSubtitle": "25th Academy Awards, 1953"
+  },
+  {
+    "id": 26,
+    "answers": [
+      {
+        "canonicalForm": "From Here to Eternity",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/From_Here_to_Eternity",
+        "isItalic": true
+      }
+    ],
+    "question": "1953",
+    "questionSubtitle": "26th Academy Awards, 1954"
+  },
+  {
+    "id": 27,
+    "answers": [
+      {
+        "canonicalForm": "On the Waterfront",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/On_the_Waterfront",
+        "isItalic": true
+      }
+    ],
+    "question": "1954",
+    "questionSubtitle": "27th Academy Awards, 1955"
+  },
+  {
+    "id": 28,
+    "answers": [
+      {
+        "canonicalForm": "Marty",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Marty_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1955",
+    "questionSubtitle": "28th Academy Awards, 1956"
+  },
+  {
+    "id": 29,
+    "answers": [
+      {
+        "canonicalForm": "Around the World in 80 Days",
+        "alternateForms": ["Around the World in Eighty Days"],
+        "link": "https://en.wikipedia.org/wiki/Around_the_World_in_80_Days_(1956_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1956",
+    "questionSubtitle": "29th Academy Awards, 1957"
+  },
+  {
+    "id": 30,
+    "answers": [
+      {
+        "canonicalForm": "The Bridge on the River Kwai",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Bridge_on_the_River_Kwai",
+        "isItalic": true
+      }
+    ],
+    "question": "1957",
+    "questionSubtitle": "30th Academy Awards, 1958"
+  },
+  {
+    "id": 31,
+    "answers": [
+      {
+        "canonicalForm": "Gigi",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Gigi_(1958_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1958",
+    "questionSubtitle": "31st Academy Awards, 1959"
+  },
+  {
+    "id": 32,
+    "answers": [
+      {
+        "canonicalForm": "Ben-Hur",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Ben-Hur_(1959_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1959",
+    "questionSubtitle": "32nd Academy Awards, 1960"
+  },
+  {
+    "id": 33,
+    "answers": [
+      {
+        "canonicalForm": "The Apartment",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Apartment",
+        "isItalic": true
+      }
+    ],
+    "question": "1960",
+    "questionSubtitle": "33rd Academy Awards, 1961"
+  },
+  {
+    "id": 34,
+    "answers": [
+      {
+        "canonicalForm": "West Side Story",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/West_Side_Story_(1961_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1961",
+    "questionSubtitle": "34th Academy Awards, 1962"
+  },
+  {
+    "id": 35,
+    "answers": [
+      {
+        "canonicalForm": "Lawrence of Arabia",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1962",
+    "questionSubtitle": "35th Academy Awards, 1963"
+  },
+  {
+    "id": 36,
+    "answers": [
+      {
+        "canonicalForm": "Tom Jones",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Tom_Jones_(1963_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1963",
+    "questionSubtitle": "36th Academy Awards, 1964"
+  },
+  {
+    "id": 37,
+    "answers": [
+      {
+        "canonicalForm": "My Fair Lady",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/My_Fair_Lady_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1964",
+    "questionSubtitle": "37th Academy Awards, 1965"
+  },
+  {
+    "id": 38,
+    "answers": [
+      {
+        "canonicalForm": "The Sound of Music",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Sound_of_Music_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1965",
+    "questionSubtitle": "38th Academy Awards, 1966"
+  },
+  {
+    "id": 39,
+    "answers": [
+      {
+        "canonicalForm": "A Man for All Seasons",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/A_Man_for_All_Seasons_(1966_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1966",
+    "questionSubtitle": "39th Academy Awards, 1967"
+  },
+  {
+    "id": 40,
+    "answers": [
+      {
+        "canonicalForm": "In the Heat of the Night",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/In_the_Heat_of_the_Night_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1967",
+    "questionSubtitle": "40th Academy Awards, 1968"
+  },
+  {
+    "id": 41,
+    "answers": [
+      {
+        "canonicalForm": "Oliver!",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Oliver!_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1968",
+    "questionSubtitle": "41st Academy Awards, 1969"
+  },
+  {
+    "id": 42,
+    "answers": [
+      {
+        "canonicalForm": "Midnight Cowboy",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Midnight_Cowboy",
+        "isItalic": true
+      }
+    ],
+    "question": "1969",
+    "questionSubtitle": "42nd Academy Awards, 1970"
+  },
+  {
+    "id": 43,
+    "answers": [
+      {
+        "canonicalForm": "Patton",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Patton_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1970",
+    "questionSubtitle": "43rd Academy Awards, 1971"
+  },
+  {
+    "id": 44,
+    "answers": [
+      {
+        "canonicalForm": "The French Connection",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_French_Connection_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1971",
+    "questionSubtitle": "44th Academy Awards, 1972"
+  },
+  {
+    "id": 45,
+    "answers": [
+      {
+        "canonicalForm": "The Godfather",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Godfather",
+        "isItalic": true
+      }
+    ],
+    "question": "1972",
+    "questionSubtitle": "45th Academy Awards, 1973"
+  },
+  {
+    "id": 46,
+    "answers": [
+      {
+        "canonicalForm": "The Sting",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Sting",
+        "isItalic": true
+      }
+    ],
+    "question": "1973",
+    "questionSubtitle": "46th Academy Awards, 1974"
+  },
+  {
+    "id": 47,
+    "answers": [
+      {
+        "canonicalForm": "The Godfather Part II",
+        "alternateForms": ["The Godfather Part 2"],
+        "link": "https://en.wikipedia.org/wiki/The_Godfather_Part_II",
+        "isItalic": true
+      },
+      {
+        "canonicalForm": "The Godfather II",
+        "alternateForms": ["The Godfather 2"]
+      },
+      {
+        "canonicalForm": "The Godfather Part Two",
+        "alternateForms": ["The Godfather Two"]
+      }
+    ],
+    "question": "1974",
+    "questionSubtitle": "47th Academy Awards, 1975"
+  },
+  {
+    "id": 48,
+    "answers": [
+      {
+        "canonicalForm": "One Flew Over the Cuckoo's Nest",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/One_Flew_Over_the_Cuckoo%27s_Nest_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1975",
+    "questionSubtitle": "48th Academy Awards, 1976"
+  },
+  {
+    "id": 49,
+    "answers": [
+      {
+        "canonicalForm": "Rocky",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Rocky",
+        "isItalic": true
+      }
+    ],
+    "question": "1976",
+    "questionSubtitle": "49th Academy Awards, 1977"
+  },
+  {
+    "id": 50,
+    "answers": [
+      {
+        "canonicalForm": "Annie Hall",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Annie_Hall",
+        "isItalic": true
+      }
+    ],
+    "question": "1977",
+    "questionSubtitle": "50th Academy Awards, 1978"
+  },
+  {
+    "id": 51,
+    "answers": [
+      {
+        "canonicalForm": "The Deer Hunter",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Deer_Hunter",
+        "isItalic": true
+      }
+    ],
+    "question": "1978",
+    "questionSubtitle": "51st Academy Awards, 1979"
+  },
+  {
+    "id": 52,
+    "answers": [
+      {
+        "canonicalForm": "Kramer vs. Kramer",
+        "alternateForms": ["Kramer versus Kramer", "Kramer v Kramer"],
+        "link": "https://en.wikipedia.org/wiki/Kramer_vs._Kramer",
+        "isItalic": true
+      }
+    ],
+    "question": "1979",
+    "questionSubtitle": "52nd Academy Awards, 1980"
+  },
+  {
+    "id": 53,
+    "answers": [
+      {
+        "canonicalForm": "Ordinary People",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Ordinary_People",
+        "isItalic": true
+      }
+    ],
+    "question": "1980",
+    "questionSubtitle": "53rd Academy Awards, 1981"
+  },
+  {
+    "id": 54,
+    "answers": [
+      {
+        "canonicalForm": "Chariots of Fire",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Chariots_of_Fire",
+        "isItalic": true
+      }
+    ],
+    "question": "1981",
+    "questionSubtitle": "54th Academy Awards, 1982"
+  },
+  {
+    "id": 55,
+    "answers": [
+      {
+        "canonicalForm": "Gandhi",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Gandhi_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1982",
+    "questionSubtitle": "55th Academy Awards, 1983"
+  },
+  {
+    "id": 56,
+    "answers": [
+      {
+        "canonicalForm": "Terms of Endearment",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Terms_of_Endearment",
+        "isItalic": true
+      }
+    ],
+    "question": "1983",
+    "questionSubtitle": "56th Academy Awards, 1984"
+  },
+  {
+    "id": 57,
+    "answers": [
+      {
+        "canonicalForm": "Amadeus",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Amadeus_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1984",
+    "questionSubtitle": "57th Academy Awards, 1985"
+  },
+  {
+    "id": 58,
+    "answers": [
+      {
+        "canonicalForm": "Out of Africa",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Out_of_Africa_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1985",
+    "questionSubtitle": "58th Academy Awards, 1986"
+  },
+  {
+    "id": 59,
+    "answers": [
+      {
+        "canonicalForm": "Platoon",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Platoon_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1986",
+    "questionSubtitle": "59th Academy Awards, 1987"
+  },
+  {
+    "id": 60,
+    "answers": [
+      {
+        "canonicalForm": "The Last Emperor",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Last_Emperor",
+        "isItalic": true
+      }
+    ],
+    "question": "1987",
+    "questionSubtitle": "60th Academy Awards, 1988"
+  },
+  {
+    "id": 61,
+    "answers": [
+      {
+        "canonicalForm": "Rain Man",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Rain_Man",
+        "isItalic": true
+      }
+    ],
+    "question": "1988",
+    "questionSubtitle": "61st Academy Awards, 1989"
+  },
+  {
+    "id": 62,
+    "answers": [
+      {
+        "canonicalForm": "Driving Miss Daisy",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Driving_Miss_Daisy",
+        "isItalic": true
+      }
+    ],
+    "question": "1989",
+    "questionSubtitle": "62nd Academy Awards, 1990"
+  },
+  {
+    "id": 63,
+    "answers": [
+      {
+        "canonicalForm": "Dances With Wolves",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Dances_With_Wolves",
+        "isItalic": true
+      }
+    ],
+    "question": "1990",
+    "questionSubtitle": "63rd Academy Awards, 1991"
+  },
+  {
+    "id": 64,
+    "answers": [
+      {
+        "canonicalForm": "The Silence of the Lambs",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Silence_of_the_Lambs_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1991",
+    "questionSubtitle": "64th Academy Awards, 1992"
+  },
+  {
+    "id": 65,
+    "answers": [
+      {
+        "canonicalForm": "Unforgiven",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Unforgiven",
+        "isItalic": true
+      }
+    ],
+    "question": "1992",
+    "questionSubtitle": "65th Academy Awards, 1993"
+  },
+  {
+    "id": 66,
+    "answers": [
+      {
+        "canonicalForm": "Schindler's List",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Schindler%27s_List",
+        "isItalic": true
+      }
+    ],
+    "question": "1993",
+    "questionSubtitle": "66th Academy Awards, 1994"
+  },
+  {
+    "id": 67,
+    "answers": [
+      {
+        "canonicalForm": "Forrest Gump",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Forrest_Gump",
+        "isItalic": true
+      }
+    ],
+    "question": "1994",
+    "questionSubtitle": "67th Academy Awards, 1995"
+  },
+  {
+    "id": 68,
+    "answers": [
+      {
+        "canonicalForm": "Braveheart",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Braveheart",
+        "isItalic": true
+      }
+    ],
+    "question": "1995",
+    "questionSubtitle": "68th Academy Awards, 1996"
+  },
+  {
+    "id": 69,
+    "answers": [
+      {
+        "canonicalForm": "The English Patient",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_English_Patient_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1996",
+    "questionSubtitle": "69th Academy Awards, 1997"
+  },
+  {
+    "id": 70,
+    "answers": [
+      {
+        "canonicalForm": "Titanic",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1997",
+    "questionSubtitle": "70th Academy Awards, 1998"
+  },
+  {
+    "id": 71,
+    "answers": [
+      {
+        "canonicalForm": "Shakespeare in Love",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Shakespeare_in_Love",
+        "isItalic": true
+      }
+    ],
+    "question": "1998",
+    "questionSubtitle": "71st Academy Awards, 1999"
+  },
+  {
+    "id": 72,
+    "answers": [
+      {
+        "canonicalForm": "American Beauty",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/American_Beauty_(1999_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "1999",
+    "questionSubtitle": "72nd Academy Awards, 2000"
+  },
+  {
+    "id": 73,
+    "answers": [
+      {
+        "canonicalForm": "Gladiator",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Gladiator_(2000_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2000",
+    "questionSubtitle": "73rd Academy Awards, 2001"
+  },
+  {
+    "id": 74,
+    "answers": [
+      {
+        "canonicalForm": "A Beautiful Mind",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/A_Beautiful_Mind_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2001",
+    "questionSubtitle": "74th Academy Awards, 2002"
+  },
+  {
+    "id": 75,
+    "answers": [
+      {
+        "canonicalForm": "Chicago",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Chicago_(2002_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2002",
+    "questionSubtitle": "75th Academy Awards, 2003"
+  },
+  {
+    "id": 76,
+    "answers": [
+      {
+        "canonicalForm": "The Lord of the Rings: The Return of the King",
+        "alternateForms": [
+          "The Return of the King",
+          "LotR RotK",
+          "Lord of the Rings 2"
+        ],
+        "link": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King",
+        "isItalic": true
+      },
+      {
+        "canonicalForm": "Lord of the Rings Two",
+        "alternateForms": ["Lord of the Rings II"]
+      }
+    ],
+    "question": "2003",
+    "questionSubtitle": "76th Academy Awards, 2004"
+  },
+  {
+    "id": 77,
+    "answers": [
+      {
+        "canonicalForm": "Million Dollar Baby",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Million_Dollar_Baby",
+        "isItalic": true
+      }
+    ],
+    "question": "2004",
+    "questionSubtitle": "77th Academy Awards, 2005"
+  },
+  {
+    "id": 78,
+    "answers": [
+      {
+        "canonicalForm": "Crash",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Crash_(2004_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2005",
+    "questionSubtitle": "78th Academy Awards, 2006"
+  },
+  {
+    "id": 79,
+    "answers": [
+      {
+        "canonicalForm": "The Departed",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Departed",
+        "isItalic": true
+      }
+    ],
+    "question": "2006",
+    "questionSubtitle": "79th Academy Awards, 2007"
+  },
+  {
+    "id": 80,
+    "answers": [
+      {
+        "canonicalForm": "No Country for Old Men",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/No_Country_for_Old_Men",
+        "isItalic": true
+      }
+    ],
+    "question": "2007",
+    "questionSubtitle": "80th Academy Awards, 2008"
+  },
+  {
+    "id": 81,
+    "answers": [
+      {
+        "canonicalForm": "Slumdog Millionaire",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Slumdog_Millionaire",
+        "isItalic": true
+      }
+    ],
+    "question": "2008",
+    "questionSubtitle": "81st Academy Awards, 2009"
+  },
+  {
+    "id": 82,
+    "answers": [
+      {
+        "canonicalForm": "The Hurt Locker",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Hurt_Locker",
+        "isItalic": true
+      }
+    ],
+    "question": "2009",
+    "questionSubtitle": "82nd Academy Awards, 2010"
+  },
+  {
+    "id": 83,
+    "answers": [
+      {
+        "canonicalForm": "The King's Speech",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_King%27s_Speech",
+        "isItalic": true
+      }
+    ],
+    "question": "2010",
+    "questionSubtitle": "83rd Academy Awards, 2011"
+  },
+  {
+    "id": 84,
+    "answers": [
+      {
+        "canonicalForm": "The Artist",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Artist_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2011",
+    "questionSubtitle": "84th Academy Awards, 2012"
+  },
+  {
+    "id": 85,
+    "answers": [
+      {
+        "canonicalForm": "Argo",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Argo_(2012_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2012",
+    "questionSubtitle": "85th Academy Awards, 2013"
+  },
+  {
+    "id": 86,
+    "answers": [
+      {
+        "canonicalForm": "12 Years a Slave",
+        "alternateForms": ["Twelve Years a Slave"],
+        "link": "https://en.wikipedia.org/wiki/12_Years_a_Slave_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2013",
+    "questionSubtitle": "86th Academy Awards, 2014"
+  },
+  {
+    "id": 87,
+    "answers": [
+      {
+        "canonicalForm": "Birdman",
+        "alternateForms": [
+          "Birdman or (The Unexpected Virtue of Ignorance)",
+          "The Unexpected Virtue of Ignorance"
+        ],
+        "link": "https://en.wikipedia.org/wiki/Birdman_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2014",
+    "questionSubtitle": "87th Academy Awards, 2015"
+  },
+  {
+    "id": 88,
+    "answers": [
+      {
+        "canonicalForm": "Spotlight",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Spotlight_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2015",
+    "questionSubtitle": "88th Academy Awards, 2016"
+  },
+  {
+    "id": 89,
+    "answers": [
+      {
+        "canonicalForm": "Moonlight",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Moonlight_(2016_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2016",
+    "questionSubtitle": "89th Academy Awards, 2017"
+  },
+  {
+    "id": 90,
+    "answers": [
+      {
+        "canonicalForm": "The Shape of Water",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/The_Shape_of_Water",
+        "isItalic": true
+      }
+    ],
+    "question": "2017",
+    "questionSubtitle": "90th Academy Awards, 2018"
+  },
+  {
+    "id": 91,
+    "answers": [
+      {
+        "canonicalForm": "Green Book",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Green_Book_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2018",
+    "questionSubtitle": "91st Academy Awards, 2019"
+  },
+  {
+    "id": 92,
+    "answers": [
+      {
+        "canonicalForm": "Parasite",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Parasite_(2019_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2019",
+    "questionSubtitle": "92nd Academy Awards, 2020"
+  },
+  {
+    "id": 93,
+    "answers": [
+      {
+        "canonicalForm": "Nomadland",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Nomadland",
+        "isItalic": true
+      }
+    ],
+    "question": "2020",
+    "questionSubtitle": "93rd Academy Awards, 2021"
+  },
+  {
+    "id": 94,
+    "answers": [
+      {
+        "canonicalForm": "CODA",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/CODA_(2021_film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2021",
+    "questionSubtitle": "94th Academy Awards, 2022"
+  },
+  {
+    "id": 95,
+    "answers": [
+      {
+        "canonicalForm": "Everything Everywhere All at Once",
+        "alternateForms": ["EEAAO"],
+        "link": "https://en.wikipedia.org/wiki/Everything_Everywhere_All_at_Once",
+        "isItalic": true
+      }
+    ],
+    "question": "2022",
+    "questionSubtitle": "95th Academy Awards, 2023"
+  },
+  {
+    "id": 96,
+    "answers": [
+      {
+        "canonicalForm": "Oppenheimer",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Oppenheimer_(film)",
+        "isItalic": true
+      }
+    ],
+    "question": "2023",
+    "questionSubtitle": "96th Academy Awards, 2024"
+  },
+  {
+    "id": 97,
+    "answers": [
+      {
+        "canonicalForm": "Anora",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Anora",
+        "isItalic": true
+      }
+    ],
+    "question": "2024",
+    "questionSubtitle": "97th Academy Awards, 2025"
+  }
+]

@@ -1,4 +1,4 @@
-import type { Card } from "../types/memory";
+import type { Card } from "../types/card";
 import { KNOWLEDGE_STREAK } from "../utils/constants";
 import { Gilt } from "./Gilt";
 

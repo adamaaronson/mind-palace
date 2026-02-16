@@ -1,608 +1,602 @@
-{
-  "displayName": "U.S. State Capitals",
-  "questionLabel": "U.S. state",
-  "answerLabel": "capital",
-  "answerTemplate": "The capital of <question> is <answer>",
-  "facts": [
-    {
-      "id": 1,
-      "answers": [
-        {
-          "canonicalForm": "Montgomery",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Montgomery,_Alabama"
-        }
-      ],
-      "question": "Alabama",
-      "questionLink": "https://en.wikipedia.org/wiki/Alabama"
-    },
-    {
-      "id": 2,
-      "answers": [
-        {
-          "canonicalForm": "Juneau",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Juneau,_Alaska"
-        }
-      ],
-      "question": "Alaska",
-      "questionLink": "https://en.wikipedia.org/wiki/Alaska"
-    },
-    {
-      "id": 3,
-      "answers": [
-        {
-          "canonicalForm": "Phoenix",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
-        }
-      ],
-      "question": "Arizona",
-      "questionLink": "https://en.wikipedia.org/wiki/Arizona"
-    },
-    {
-      "id": 4,
-      "answers": [
-        {
-          "canonicalForm": "Little Rock",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Little_Rock,_Arkansas"
-        }
-      ],
-      "question": "Arkansas",
-      "questionLink": "https://en.wikipedia.org/wiki/Arkansas"
-    },
-    {
-      "id": 5,
-      "answers": [
-        {
-          "canonicalForm": "Sacramento",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Sacramento,_California"
-        }
-      ],
-      "question": "California",
-      "questionLink": "https://en.wikipedia.org/wiki/California"
-    },
-    {
-      "id": 6,
-      "answers": [
-        {
-          "canonicalForm": "Denver",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Denver"
-        }
-      ],
-      "question": "Colorado",
-      "questionLink": "https://en.wikipedia.org/wiki/Colorado"
-    },
-    {
-      "id": 7,
-      "answers": [
-        {
-          "canonicalForm": "Hartford",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Hartford,_Connecticut"
-        }
-      ],
-      "question": "Connecticut",
-      "questionLink": "https://en.wikipedia.org/wiki/Connecticut"
-    },
-    {
-      "id": 8,
-      "answers": [
-        {
-          "canonicalForm": "Dover",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Dover,_Delaware"
-        }
-      ],
-      "question": "Delaware",
-      "questionLink": "https://en.wikipedia.org/wiki/Delaware"
-    },
-    {
-      "id": 9,
-      "answers": [
-        {
-          "canonicalForm": "Tallahassee",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Tallahassee,_Florida"
-        }
-      ],
-      "question": "Florida",
-      "questionLink": "https://en.wikipedia.org/wiki/Florida"
-    },
-    {
-      "id": 10,
-      "answers": [
-        {
-          "canonicalForm": "Atlanta",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Atlanta"
-        }
-      ],
-      "question": "Georgia",
-      "questionLink": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)"
-    },
-    {
-      "id": 11,
-      "answers": [
-        {
-          "canonicalForm": "Honolulu",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Honolulu"
-        }
-      ],
-      "question": "Hawaii",
-      "questionLink": "https://en.wikipedia.org/wiki/Hawaii"
-    },
-    {
-      "id": 12,
-      "answers": [
-        {
-          "canonicalForm": "Boise",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Boise,_Idaho"
-        }
-      ],
-      "question": "Idaho",
-      "questionLink": "https://en.wikipedia.org/wiki/Idaho"
-    },
-    {
-      "id": 13,
-      "answers": [
-        {
-          "canonicalForm": "Springfield",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Springfield,_Illinois"
-        }
-      ],
-      "question": "Illinois",
-      "questionLink": "https://en.wikipedia.org/wiki/Illinois"
-    },
-    {
-      "id": 14,
-      "answers": [
-        {
-          "canonicalForm": "Indianapolis",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Indianapolis"
-        }
-      ],
-      "question": "Indiana",
-      "questionLink": "https://en.wikipedia.org/wiki/Indiana"
-    },
-    {
-      "id": 15,
-      "answers": [
-        {
-          "canonicalForm": "Des Moines",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Des_Moines,_Iowa"
-        }
-      ],
-      "question": "Iowa",
-      "questionLink": "https://en.wikipedia.org/wiki/Iowa"
-    },
-    {
-      "id": 16,
-      "answers": [
-        {
-          "canonicalForm": "Topeka",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Topeka,_Kansas"
-        }
-      ],
-      "question": "Kansas",
-      "questionLink": "https://en.wikipedia.org/wiki/Kansas"
-    },
-    {
-      "id": 17,
-      "answers": [
-        {
-          "canonicalForm": "Frankfort",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Frankfort,_Kentucky"
-        }
-      ],
-      "question": "Kentucky",
-      "questionLink": "https://en.wikipedia.org/wiki/Kentucky"
-    },
-    {
-      "id": 18,
-      "answers": [
-        {
-          "canonicalForm": "Baton Rouge",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Baton_Rouge,_Louisiana"
-        }
-      ],
-      "question": "Louisiana",
-      "questionLink": "https://en.wikipedia.org/wiki/Louisiana"
-    },
-    {
-      "id": 19,
-      "answers": [
-        {
-          "canonicalForm": "Augusta",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Augusta,_Maine"
-        }
-      ],
-      "question": "Maine",
-      "questionLink": "https://en.wikipedia.org/wiki/Maine"
-    },
-    {
-      "id": 20,
-      "answers": [
-        {
-          "canonicalForm": "Annapolis",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Annapolis,_Maryland"
-        }
-      ],
-      "question": "Maryland",
-      "questionLink": "https://en.wikipedia.org/wiki/Maryland"
-    },
-    {
-      "id": 21,
-      "answers": [
-        {
-          "canonicalForm": "Boston",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Boston"
-        }
-      ],
-      "question": "Massachusetts",
-      "questionLink": "https://en.wikipedia.org/wiki/Massachusetts"
-    },
-    {
-      "id": 22,
-      "answers": [
-        {
-          "canonicalForm": "Lansing",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Lansing,_Michigan"
-        }
-      ],
-      "question": "Michigan",
-      "questionLink": "https://en.wikipedia.org/wiki/Michigan"
-    },
-    {
-      "id": 23,
-      "answers": [
-        {
-          "canonicalForm": "Saint Paul",
-          "alternateForms": ["St Paul"],
-          "link": "https://en.wikipedia.org/wiki/Saint_Paul,_Minnesota"
-        }
-      ],
-      "question": "Minnesota",
-      "questionLink": "https://en.wikipedia.org/wiki/Minnesota"
-    },
-    {
-      "id": 24,
-      "answers": [
-        {
-          "canonicalForm": "Jackson",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Jackson,_Mississippi"
-        }
-      ],
-      "question": "Mississippi",
-      "questionLink": "https://en.wikipedia.org/wiki/Mississippi"
-    },
-    {
-      "id": 25,
-      "answers": [
-        {
-          "canonicalForm": "Jefferson City",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Jefferson_City,_Missouri"
-        }
-      ],
-      "question": "Missouri",
-      "questionLink": "https://en.wikipedia.org/wiki/Missouri"
-    },
-    {
-      "id": 26,
-      "answers": [
-        {
-          "canonicalForm": "Helena",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Helena,_Montana"
-        }
-      ],
-      "question": "Montana",
-      "questionLink": "https://en.wikipedia.org/wiki/Montana"
-    },
-    {
-      "id": 27,
-      "answers": [
-        {
-          "canonicalForm": "Lincoln",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Lincoln,_Nebraska"
-        }
-      ],
-      "question": "Nebraska",
-      "questionLink": "https://en.wikipedia.org/wiki/Nebraska"
-    },
-    {
-      "id": 28,
-      "answers": [
-        {
-          "canonicalForm": "Carson City",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Carson_City,_Nevada"
-        }
-      ],
-      "question": "Nevada",
-      "questionLink": "https://en.wikipedia.org/wiki/Nevada"
-    },
-    {
-      "id": 29,
-      "answers": [
-        {
-          "canonicalForm": "Concord",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Concord,_New_Hampshire"
-        }
-      ],
-      "question": "New Hampshire",
-      "questionLink": "https://en.wikipedia.org/wiki/New_Hampshire"
-    },
-    {
-      "id": 30,
-      "answers": [
-        {
-          "canonicalForm": "Trenton",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Trenton,_New_Jersey"
-        }
-      ],
-      "question": "New Jersey",
-      "questionLink": "https://en.wikipedia.org/wiki/New_Jersey"
-    },
-    {
-      "id": 31,
-      "answers": [
-        {
-          "canonicalForm": "Santa Fe",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Santa_Fe,_New_Mexico"
-        }
-      ],
-      "question": "New Mexico",
-      "questionLink": "https://en.wikipedia.org/wiki/New_Mexico"
-    },
-    {
-      "id": 32,
-      "answers": [
-        {
-          "canonicalForm": "Albany",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Albany,_New_York"
-        }
-      ],
-      "question": "New York",
-      "questionLink": "https://en.wikipedia.org/wiki/New_York_(state)"
-    },
-    {
-      "id": 33,
-      "answers": [
-        {
-          "canonicalForm": "Raleigh",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Raleigh,_North_Carolina"
-        }
-      ],
-      "question": "North Carolina",
-      "questionLink": "https://en.wikipedia.org/wiki/North_Carolina"
-    },
-    {
-      "id": 34,
-      "answers": [
-        {
-          "canonicalForm": "Bismarck",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Bismarck,_North_Dakota"
-        }
-      ],
-      "question": "North Dakota",
-      "questionLink": "https://en.wikipedia.org/wiki/North_Dakota"
-    },
-    {
-      "id": 35,
-      "answers": [
-        {
-          "canonicalForm": "Columbus",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Columbus,_Ohio"
-        }
-      ],
-      "question": "Ohio",
-      "questionLink": "https://en.wikipedia.org/wiki/Ohio"
-    },
-    {
-      "id": 36,
-      "answers": [
-        {
-          "canonicalForm": "Oklahoma City",
-          "alternateForms": ["OKC"],
-          "link": "https://en.wikipedia.org/wiki/Oklahoma_City"
-        }
-      ],
-      "question": "Oklahoma",
-      "questionLink": "https://en.wikipedia.org/wiki/Oklahoma"
-    },
-    {
-      "id": 37,
-      "answers": [
-        {
-          "canonicalForm": "Salem",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Salem,_Oregon"
-        }
-      ],
-      "question": "Oregon",
-      "questionLink": "https://en.wikipedia.org/wiki/Oregon"
-    },
-    {
-      "id": 38,
-      "answers": [
-        {
-          "canonicalForm": "Harrisburg",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Harrisburg,_Pennsylvania"
-        }
-      ],
-      "question": "Pennsylvania",
-      "questionLink": "https://en.wikipedia.org/wiki/Pennsylvania"
-    },
-    {
-      "id": 39,
-      "answers": [
-        {
-          "canonicalForm": "Providence",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Providence,_Rhode_Island"
-        }
-      ],
-      "question": "Rhode Island",
-      "questionLink": "https://en.wikipedia.org/wiki/Rhode_Island"
-    },
-    {
-      "id": 40,
-      "answers": [
-        {
-          "canonicalForm": "Columbia",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Columbia,_South_Carolina"
-        }
-      ],
-      "question": "South Carolina",
-      "questionLink": "https://en.wikipedia.org/wiki/South_Carolina"
-    },
-    {
-      "id": 41,
-      "answers": [
-        {
-          "canonicalForm": "Pierre",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Pierre,_South_Dakota"
-        }
-      ],
-      "question": "South Dakota",
-      "questionLink": "https://en.wikipedia.org/wiki/South_Dakota"
-    },
-    {
-      "id": 42,
-      "answers": [
-        {
-          "canonicalForm": "Nashville",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Nashville,_Tennessee"
-        }
-      ],
-      "question": "Tennessee",
-      "questionLink": "https://en.wikipedia.org/wiki/Tennessee"
-    },
-    {
-      "id": 43,
-      "answers": [
-        {
-          "canonicalForm": "Austin",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Austin,_Texas"
-        }
-      ],
-      "question": "Texas",
-      "questionLink": "https://en.wikipedia.org/wiki/Texas"
-    },
-    {
-      "id": 44,
-      "answers": [
-        {
-          "canonicalForm": "Salt Lake City",
-          "alternateForms": ["SLC"],
-          "link": "https://en.wikipedia.org/wiki/Salt_Lake_City"
-        }
-      ],
-      "question": "Utah",
-      "questionLink": "https://en.wikipedia.org/wiki/Utah"
-    },
-    {
-      "id": 45,
-      "answers": [
-        {
-          "canonicalForm": "Montpelier",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Montpelier,_Vermont"
-        }
-      ],
-      "question": "Vermont",
-      "questionLink": "https://en.wikipedia.org/wiki/Vermont"
-    },
-    {
-      "id": 46,
-      "answers": [
-        {
-          "canonicalForm": "Richmond",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Richmond,_Virginia"
-        }
-      ],
-      "question": "Virginia",
-      "questionLink": "https://en.wikipedia.org/wiki/Virginia"
-    },
-    {
-      "id": 47,
-      "answers": [
-        {
-          "canonicalForm": "Olympia",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Olympia,_Washington"
-        }
-      ],
-      "question": "Washington",
-      "questionLink": "https://en.wikipedia.org/wiki/Washington_(state)"
-    },
-    {
-      "id": 48,
-      "answers": [
-        {
-          "canonicalForm": "Charleston",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Charleston,_West_Virginia"
-        }
-      ],
-      "question": "West Virginia",
-      "questionLink": "https://en.wikipedia.org/wiki/West_Virginia"
-    },
-    {
-      "id": 49,
-      "answers": [
-        {
-          "canonicalForm": "Madison",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Madison,_Wisconsin"
-        }
-      ],
-      "question": "Wisconsin",
-      "questionLink": "https://en.wikipedia.org/wiki/Wisconsin"
-    },
-    {
-      "id": 50,
-      "answers": [
-        {
-          "canonicalForm": "Cheyenne",
-          "alternateForms": [],
-          "link": "https://en.wikipedia.org/wiki/Cheyenne,_Wyoming"
-        }
-      ],
-      "question": "Wyoming",
-      "questionLink": "https://en.wikipedia.org/wiki/Wyoming"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "answers": [
+      {
+        "canonicalForm": "Montgomery",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Montgomery,_Alabama"
+      }
+    ],
+    "question": "Alabama",
+    "questionLink": "https://en.wikipedia.org/wiki/Alabama"
+  },
+  {
+    "id": 2,
+    "answers": [
+      {
+        "canonicalForm": "Juneau",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Juneau,_Alaska"
+      }
+    ],
+    "question": "Alaska",
+    "questionLink": "https://en.wikipedia.org/wiki/Alaska"
+  },
+  {
+    "id": 3,
+    "answers": [
+      {
+        "canonicalForm": "Phoenix",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+      }
+    ],
+    "question": "Arizona",
+    "questionLink": "https://en.wikipedia.org/wiki/Arizona"
+  },
+  {
+    "id": 4,
+    "answers": [
+      {
+        "canonicalForm": "Little Rock",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Little_Rock,_Arkansas"
+      }
+    ],
+    "question": "Arkansas",
+    "questionLink": "https://en.wikipedia.org/wiki/Arkansas"
+  },
+  {
+    "id": 5,
+    "answers": [
+      {
+        "canonicalForm": "Sacramento",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Sacramento,_California"
+      }
+    ],
+    "question": "California",
+    "questionLink": "https://en.wikipedia.org/wiki/California"
+  },
+  {
+    "id": 6,
+    "answers": [
+      {
+        "canonicalForm": "Denver",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Denver"
+      }
+    ],
+    "question": "Colorado",
+    "questionLink": "https://en.wikipedia.org/wiki/Colorado"
+  },
+  {
+    "id": 7,
+    "answers": [
+      {
+        "canonicalForm": "Hartford",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Hartford,_Connecticut"
+      }
+    ],
+    "question": "Connecticut",
+    "questionLink": "https://en.wikipedia.org/wiki/Connecticut"
+  },
+  {
+    "id": 8,
+    "answers": [
+      {
+        "canonicalForm": "Dover",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Dover,_Delaware"
+      }
+    ],
+    "question": "Delaware",
+    "questionLink": "https://en.wikipedia.org/wiki/Delaware"
+  },
+  {
+    "id": 9,
+    "answers": [
+      {
+        "canonicalForm": "Tallahassee",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Tallahassee,_Florida"
+      }
+    ],
+    "question": "Florida",
+    "questionLink": "https://en.wikipedia.org/wiki/Florida"
+  },
+  {
+    "id": 10,
+    "answers": [
+      {
+        "canonicalForm": "Atlanta",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Atlanta"
+      }
+    ],
+    "question": "Georgia",
+    "questionLink": "https://en.wikipedia.org/wiki/Georgia_(U.S._state)"
+  },
+  {
+    "id": 11,
+    "answers": [
+      {
+        "canonicalForm": "Honolulu",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Honolulu"
+      }
+    ],
+    "question": "Hawaii",
+    "questionLink": "https://en.wikipedia.org/wiki/Hawaii"
+  },
+  {
+    "id": 12,
+    "answers": [
+      {
+        "canonicalForm": "Boise",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Boise,_Idaho"
+      }
+    ],
+    "question": "Idaho",
+    "questionLink": "https://en.wikipedia.org/wiki/Idaho"
+  },
+  {
+    "id": 13,
+    "answers": [
+      {
+        "canonicalForm": "Springfield",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Springfield,_Illinois"
+      }
+    ],
+    "question": "Illinois",
+    "questionLink": "https://en.wikipedia.org/wiki/Illinois"
+  },
+  {
+    "id": 14,
+    "answers": [
+      {
+        "canonicalForm": "Indianapolis",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Indianapolis"
+      }
+    ],
+    "question": "Indiana",
+    "questionLink": "https://en.wikipedia.org/wiki/Indiana"
+  },
+  {
+    "id": 15,
+    "answers": [
+      {
+        "canonicalForm": "Des Moines",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Des_Moines,_Iowa"
+      }
+    ],
+    "question": "Iowa",
+    "questionLink": "https://en.wikipedia.org/wiki/Iowa"
+  },
+  {
+    "id": 16,
+    "answers": [
+      {
+        "canonicalForm": "Topeka",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Topeka,_Kansas"
+      }
+    ],
+    "question": "Kansas",
+    "questionLink": "https://en.wikipedia.org/wiki/Kansas"
+  },
+  {
+    "id": 17,
+    "answers": [
+      {
+        "canonicalForm": "Frankfort",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Frankfort,_Kentucky"
+      }
+    ],
+    "question": "Kentucky",
+    "questionLink": "https://en.wikipedia.org/wiki/Kentucky"
+  },
+  {
+    "id": 18,
+    "answers": [
+      {
+        "canonicalForm": "Baton Rouge",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Baton_Rouge,_Louisiana"
+      }
+    ],
+    "question": "Louisiana",
+    "questionLink": "https://en.wikipedia.org/wiki/Louisiana"
+  },
+  {
+    "id": 19,
+    "answers": [
+      {
+        "canonicalForm": "Augusta",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Augusta,_Maine"
+      }
+    ],
+    "question": "Maine",
+    "questionLink": "https://en.wikipedia.org/wiki/Maine"
+  },
+  {
+    "id": 20,
+    "answers": [
+      {
+        "canonicalForm": "Annapolis",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Annapolis,_Maryland"
+      }
+    ],
+    "question": "Maryland",
+    "questionLink": "https://en.wikipedia.org/wiki/Maryland"
+  },
+  {
+    "id": 21,
+    "answers": [
+      {
+        "canonicalForm": "Boston",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Boston"
+      }
+    ],
+    "question": "Massachusetts",
+    "questionLink": "https://en.wikipedia.org/wiki/Massachusetts"
+  },
+  {
+    "id": 22,
+    "answers": [
+      {
+        "canonicalForm": "Lansing",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Lansing,_Michigan"
+      }
+    ],
+    "question": "Michigan",
+    "questionLink": "https://en.wikipedia.org/wiki/Michigan"
+  },
+  {
+    "id": 23,
+    "answers": [
+      {
+        "canonicalForm": "Saint Paul",
+        "alternateForms": ["St Paul"],
+        "link": "https://en.wikipedia.org/wiki/Saint_Paul,_Minnesota"
+      }
+    ],
+    "question": "Minnesota",
+    "questionLink": "https://en.wikipedia.org/wiki/Minnesota"
+  },
+  {
+    "id": 24,
+    "answers": [
+      {
+        "canonicalForm": "Jackson",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Jackson,_Mississippi"
+      }
+    ],
+    "question": "Mississippi",
+    "questionLink": "https://en.wikipedia.org/wiki/Mississippi"
+  },
+  {
+    "id": 25,
+    "answers": [
+      {
+        "canonicalForm": "Jefferson City",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Jefferson_City,_Missouri"
+      }
+    ],
+    "question": "Missouri",
+    "questionLink": "https://en.wikipedia.org/wiki/Missouri"
+  },
+  {
+    "id": 26,
+    "answers": [
+      {
+        "canonicalForm": "Helena",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Helena,_Montana"
+      }
+    ],
+    "question": "Montana",
+    "questionLink": "https://en.wikipedia.org/wiki/Montana"
+  },
+  {
+    "id": 27,
+    "answers": [
+      {
+        "canonicalForm": "Lincoln",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Lincoln,_Nebraska"
+      }
+    ],
+    "question": "Nebraska",
+    "questionLink": "https://en.wikipedia.org/wiki/Nebraska"
+  },
+  {
+    "id": 28,
+    "answers": [
+      {
+        "canonicalForm": "Carson City",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Carson_City,_Nevada"
+      }
+    ],
+    "question": "Nevada",
+    "questionLink": "https://en.wikipedia.org/wiki/Nevada"
+  },
+  {
+    "id": 29,
+    "answers": [
+      {
+        "canonicalForm": "Concord",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Concord,_New_Hampshire"
+      }
+    ],
+    "question": "New Hampshire",
+    "questionLink": "https://en.wikipedia.org/wiki/New_Hampshire"
+  },
+  {
+    "id": 30,
+    "answers": [
+      {
+        "canonicalForm": "Trenton",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Trenton,_New_Jersey"
+      }
+    ],
+    "question": "New Jersey",
+    "questionLink": "https://en.wikipedia.org/wiki/New_Jersey"
+  },
+  {
+    "id": 31,
+    "answers": [
+      {
+        "canonicalForm": "Santa Fe",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Santa_Fe,_New_Mexico"
+      }
+    ],
+    "question": "New Mexico",
+    "questionLink": "https://en.wikipedia.org/wiki/New_Mexico"
+  },
+  {
+    "id": 32,
+    "answers": [
+      {
+        "canonicalForm": "Albany",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Albany,_New_York"
+      }
+    ],
+    "question": "New York",
+    "questionLink": "https://en.wikipedia.org/wiki/New_York_(state)"
+  },
+  {
+    "id": 33,
+    "answers": [
+      {
+        "canonicalForm": "Raleigh",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Raleigh,_North_Carolina"
+      }
+    ],
+    "question": "North Carolina",
+    "questionLink": "https://en.wikipedia.org/wiki/North_Carolina"
+  },
+  {
+    "id": 34,
+    "answers": [
+      {
+        "canonicalForm": "Bismarck",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Bismarck,_North_Dakota"
+      }
+    ],
+    "question": "North Dakota",
+    "questionLink": "https://en.wikipedia.org/wiki/North_Dakota"
+  },
+  {
+    "id": 35,
+    "answers": [
+      {
+        "canonicalForm": "Columbus",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Columbus,_Ohio"
+      }
+    ],
+    "question": "Ohio",
+    "questionLink": "https://en.wikipedia.org/wiki/Ohio"
+  },
+  {
+    "id": 36,
+    "answers": [
+      {
+        "canonicalForm": "Oklahoma City",
+        "alternateForms": ["OKC"],
+        "link": "https://en.wikipedia.org/wiki/Oklahoma_City"
+      }
+    ],
+    "question": "Oklahoma",
+    "questionLink": "https://en.wikipedia.org/wiki/Oklahoma"
+  },
+  {
+    "id": 37,
+    "answers": [
+      {
+        "canonicalForm": "Salem",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Salem,_Oregon"
+      }
+    ],
+    "question": "Oregon",
+    "questionLink": "https://en.wikipedia.org/wiki/Oregon"
+  },
+  {
+    "id": 38,
+    "answers": [
+      {
+        "canonicalForm": "Harrisburg",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Harrisburg,_Pennsylvania"
+      }
+    ],
+    "question": "Pennsylvania",
+    "questionLink": "https://en.wikipedia.org/wiki/Pennsylvania"
+  },
+  {
+    "id": 39,
+    "answers": [
+      {
+        "canonicalForm": "Providence",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Providence,_Rhode_Island"
+      }
+    ],
+    "question": "Rhode Island",
+    "questionLink": "https://en.wikipedia.org/wiki/Rhode_Island"
+  },
+  {
+    "id": 40,
+    "answers": [
+      {
+        "canonicalForm": "Columbia",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Columbia,_South_Carolina"
+      }
+    ],
+    "question": "South Carolina",
+    "questionLink": "https://en.wikipedia.org/wiki/South_Carolina"
+  },
+  {
+    "id": 41,
+    "answers": [
+      {
+        "canonicalForm": "Pierre",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Pierre,_South_Dakota"
+      }
+    ],
+    "question": "South Dakota",
+    "questionLink": "https://en.wikipedia.org/wiki/South_Dakota"
+  },
+  {
+    "id": 42,
+    "answers": [
+      {
+        "canonicalForm": "Nashville",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Nashville,_Tennessee"
+      }
+    ],
+    "question": "Tennessee",
+    "questionLink": "https://en.wikipedia.org/wiki/Tennessee"
+  },
+  {
+    "id": 43,
+    "answers": [
+      {
+        "canonicalForm": "Austin",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Austin,_Texas"
+      }
+    ],
+    "question": "Texas",
+    "questionLink": "https://en.wikipedia.org/wiki/Texas"
+  },
+  {
+    "id": 44,
+    "answers": [
+      {
+        "canonicalForm": "Salt Lake City",
+        "alternateForms": ["SLC"],
+        "link": "https://en.wikipedia.org/wiki/Salt_Lake_City"
+      }
+    ],
+    "question": "Utah",
+    "questionLink": "https://en.wikipedia.org/wiki/Utah"
+  },
+  {
+    "id": 45,
+    "answers": [
+      {
+        "canonicalForm": "Montpelier",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Montpelier,_Vermont"
+      }
+    ],
+    "question": "Vermont",
+    "questionLink": "https://en.wikipedia.org/wiki/Vermont"
+  },
+  {
+    "id": 46,
+    "answers": [
+      {
+        "canonicalForm": "Richmond",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Richmond,_Virginia"
+      }
+    ],
+    "question": "Virginia",
+    "questionLink": "https://en.wikipedia.org/wiki/Virginia"
+  },
+  {
+    "id": 47,
+    "answers": [
+      {
+        "canonicalForm": "Olympia",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Olympia,_Washington"
+      }
+    ],
+    "question": "Washington",
+    "questionLink": "https://en.wikipedia.org/wiki/Washington_(state)"
+  },
+  {
+    "id": 48,
+    "answers": [
+      {
+        "canonicalForm": "Charleston",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Charleston,_West_Virginia"
+      }
+    ],
+    "question": "West Virginia",
+    "questionLink": "https://en.wikipedia.org/wiki/West_Virginia"
+  },
+  {
+    "id": 49,
+    "answers": [
+      {
+        "canonicalForm": "Madison",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Madison,_Wisconsin"
+      }
+    ],
+    "question": "Wisconsin",
+    "questionLink": "https://en.wikipedia.org/wiki/Wisconsin"
+  },
+  {
+    "id": 50,
+    "answers": [
+      {
+        "canonicalForm": "Cheyenne",
+        "alternateForms": [],
+        "link": "https://en.wikipedia.org/wiki/Cheyenne,_Wyoming"
+      }
+    ],
+    "question": "Wyoming",
+    "questionLink": "https://en.wikipedia.org/wiki/Wyoming"
+  }
+]

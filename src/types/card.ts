@@ -1,12 +1,9 @@
-import { type Deck } from "./deck";
-import { type Fact } from "./fact";
+import { decksById, type Deck } from "./deck";
 import { shuffle } from "lodash";
-import { KNOWLEDGE_STREAK } from "../utils/constants";
-
-const PHI = (1 + Math.sqrt(5)) / 2;
+import { KNOWLEDGE_STREAK, PHI } from "../utils/constants";
 
 export interface Card {
-  fact: Fact;
+  factId: number;
   interval: number;
   streak: number;
   seen: boolean;
@@ -18,6 +15,8 @@ export interface CardQueue {
   deckId: string;
 }
 
+export type CardQueueIndex = Record<string, CardQueue>;
+
 export function shouldMakeKnown(card: Card) {
   return !card.seen || card.streak === KNOWLEDGE_STREAK;
 }
@@ -25,7 +24,7 @@ export function shouldMakeKnown(card: Card) {
 export function createCardQueue(deck: Deck): CardQueue {
   return {
     cards: shuffle(deck.facts).map((fact) => ({
-      fact: fact,
+      factId: fact.id,
       interval: 1,
       streak: 0,
       seen: false,
@@ -33,6 +32,21 @@ export function createCardQueue(deck: Deck): CardQueue {
     })),
     deckId: deck.id,
   };
+}
+
+export function createCardQueues(): CardQueueIndex {
+  return Object.fromEntries(
+    Object.entries(decksById).map(([id, deck]) => [id, createCardQueue(deck)]),
+  );
+}
+
+export function updateCardQueues(cardQueues: CardQueueIndex) {
+  return Object.fromEntries(
+    Object.entries(decksById).map(([id, deck]) => [
+      id,
+      cardQueues[id] ?? createCardQueue(deck),
+    ]),
+  );
 }
 
 export function replaceFirstCard(

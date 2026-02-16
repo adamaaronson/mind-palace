@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { getQuestionImageUrl, type Deck } from "../types/deck";
 import Link from "./Link";
-import type { Card } from "../types/memory";
+import type { Card } from "../types/card";
 import CardLabel from "./CardLabel";
 
 interface AnswerCardProps {
@@ -15,7 +15,7 @@ interface AnswerCardProps {
 function AnswerCard(props: AnswerCardProps) {
   const { deck, previousCard, wasCorrect, earnedFount, lostFount } = props;
 
-  const previousFact = previousCard.fact;
+  const previousFact = deck.facts[previousCard.factId];
 
   return (
     <div className="relative">

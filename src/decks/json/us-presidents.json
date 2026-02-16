@@ -1,627 +1,622 @@
-{
-  "displayName": "U.S. Presidents",
-  "answerLabel": "president",
-  "answerTemplate": "The <question> president was <answer>",
-  "facts": [
-    {
-      "id": 1,
-      "answers": [
-        {
-          "canonicalForm": "George Washington",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/George_Washington"
-        }
-      ],
-      "question": "1st",
-      "questionSubtitle": "1789\u20131797"
-    },
-    {
-      "id": 2,
-      "answers": [
-        {
-          "canonicalForm": "John Adams",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/John_Adams"
-        }
-      ],
-      "question": "2nd",
-      "questionSubtitle": "1797\u20131801"
-    },
-    {
-      "id": 3,
-      "answers": [
-        {
-          "canonicalForm": "Thomas Jefferson",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Thomas_Jefferson"
-        }
-      ],
-      "question": "3rd",
-      "questionSubtitle": "1801\u20131809"
-    },
-    {
-      "id": 4,
-      "answers": [
-        {
-          "canonicalForm": "James Madison",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/James_Madison"
-        }
-      ],
-      "question": "4th",
-      "questionSubtitle": "1809\u20131817"
-    },
-    {
-      "id": 5,
-      "answers": [
-        {
-          "canonicalForm": "James Monroe",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/James_Monroe"
-        }
-      ],
-      "question": "5th",
-      "questionSubtitle": "1817\u20131825"
-    },
-    {
-      "id": 6,
-      "answers": [
-        {
-          "canonicalForm": "John Quincy Adams",
-          "alternateForms": [
-            "JQA",
-            "John Adams",
-            "John Q. Adams",
-            "Quincy Adams"
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/John_Quincy_Adams"
-        }
-      ],
-      "question": "6th",
-      "questionSubtitle": "1825\u20131829"
-    },
-    {
-      "id": 7,
-      "answers": [
-        {
-          "canonicalForm": "Andrew Jackson",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Andrew_Jackson"
-        }
-      ],
-      "question": "7th",
-      "questionSubtitle": "1829\u20131837"
-    },
-    {
-      "id": 8,
-      "answers": [
-        {
-          "canonicalForm": "Martin Van Buren",
-          "alternateForms": ["Van Buren"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Martin_Van_Buren"
-        }
-      ],
-      "question": "8th",
-      "questionSubtitle": "1837\u20131841"
-    },
-    {
-      "id": 9,
-      "answers": [
-        {
-          "canonicalForm": "William Henry Harrison",
-          "alternateForms": ["William Harrison", "William H. Harrison"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/William_Henry_Harrison"
-        }
-      ],
-      "question": "9th",
-      "questionSubtitle": "1841\u20131841"
-    },
-    {
-      "id": 10,
-      "answers": [
-        {
-          "canonicalForm": "John Tyler",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/John_Tyler"
-        }
-      ],
-      "question": "10th",
-      "questionSubtitle": "1841\u20131845"
-    },
-    {
-      "id": 11,
-      "answers": [
-        {
-          "canonicalForm": "James K. Polk",
-          "alternateForms": ["James Polk", "James Knox Polk"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/James_K._Polk"
-        }
-      ],
-      "question": "11th",
-      "questionSubtitle": "1845\u20131849"
-    },
-    {
-      "id": 12,
-      "answers": [
-        {
-          "canonicalForm": "Zachary Taylor",
-          "alternateForms": ["Zach Taylor"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Zachary_Taylor"
-        }
-      ],
-      "question": "12th",
-      "questionSubtitle": "1849\u20131850"
-    },
-    {
-      "id": 13,
-      "answers": [
-        {
-          "canonicalForm": "Millard Fillmore",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Millard_Fillmore"
-        }
-      ],
-      "question": "13th",
-      "questionSubtitle": "1850\u20131853"
-    },
-    {
-      "id": 14,
-      "answers": [
-        {
-          "canonicalForm": "Franklin Pierce",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Franklin_Pierce"
-        }
-      ],
-      "question": "14th",
-      "questionSubtitle": "1853\u20131857"
-    },
-    {
-      "id": 15,
-      "answers": [
-        {
-          "canonicalForm": "James Buchanan",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/James_Buchanan"
-        }
-      ],
-      "question": "15th",
-      "questionSubtitle": "1857\u20131861"
-    },
-    {
-      "id": 16,
-      "answers": [
-        {
-          "canonicalForm": "Abraham Lincoln",
-          "alternateForms": ["Abe Lincoln"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Abraham_Lincoln"
-        }
-      ],
-      "question": "16th",
-      "questionSubtitle": "1861\u20131865"
-    },
-    {
-      "id": 17,
-      "answers": [
-        {
-          "canonicalForm": "Andrew Johnson",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Andrew_Johnson"
-        }
-      ],
-      "question": "17th",
-      "questionSubtitle": "1865\u20131869"
-    },
-    {
-      "id": 18,
-      "answers": [
-        {
-          "canonicalForm": "Ulysses S. Grant",
-          "alternateForms": [
-            "Ulysses Grant",
-            "Hiram Grant",
-            "Hiram Ulysses Grant"
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Ulysses_S._Grant"
-        }
-      ],
-      "question": "18th",
-      "questionSubtitle": "1869\u20131877"
-    },
-    {
-      "id": 19,
-      "answers": [
-        {
-          "canonicalForm": "Rutherford B. Hayes",
-          "alternateForms": ["Rutherford Hayes", "Rutherford Birchard Hayes"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Rutherford_B._Hayes"
-        }
-      ],
-      "question": "19th",
-      "questionSubtitle": "1877\u20131881"
-    },
-    {
-      "id": 20,
-      "answers": [
-        {
-          "canonicalForm": "James A. Garfield",
-          "alternateForms": ["James Garfield", "James Abram Garfield"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/James_A._Garfield"
-        }
-      ],
-      "question": "20th",
-      "questionSubtitle": "1881\u20131881"
-    },
-    {
-      "id": 21,
-      "answers": [
-        {
-          "canonicalForm": "Chester A. Arthur",
-          "alternateForms": ["Chester Arthur", "Chester Alan Arthur"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Chester_A._Arthur"
-        }
-      ],
-      "question": "21st",
-      "questionSubtitle": "1881\u20131885"
-    },
-    {
-      "id": 22,
-      "answers": [
-        {
-          "canonicalForm": "Grover Cleveland",
-          "alternateForms": ["Stephen Grover Cleveland"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Grover_Cleveland"
-        }
-      ],
-      "question": "22nd, 24th",
-      "questionSubtitle": "1885\u20131889, 1893\u20131897"
-    },
-    {
-      "id": 23,
-      "answers": [
-        {
-          "canonicalForm": "Benjamin Harrison",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Benjamin_Harrison"
-        }
-      ],
-      "question": "23rd",
-      "questionSubtitle": "1889\u20131893"
-    },
-    {
-      "id": 24,
-      "answers": [
-        {
-          "canonicalForm": "William McKinley",
-          "alternateForms": [],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/William_McKinley"
-        }
-      ],
-      "question": "25th",
-      "questionSubtitle": "1897\u20131901"
-    },
-    {
-      "id": 25,
-      "answers": [
-        {
-          "canonicalForm": "Theodore Roosevelt",
-          "alternateForms": ["Teddy Roosevelt"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Theodore_Roosevelt"
-        }
-      ],
-      "question": "26th",
-      "questionSubtitle": "1901\u20131909"
-    },
-    {
-      "id": 26,
-      "answers": [
-        {
-          "canonicalForm": "William H. Taft",
-          "alternateForms": ["William Taft", "William Howard Taft"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/William_Howard_Taft"
-        }
-      ],
-      "question": "27th",
-      "questionSubtitle": "1909\u20131913"
-    },
-    {
-      "id": 27,
-      "answers": [
-        {
-          "canonicalForm": "Woodrow Wilson",
-          "alternateForms": ["Thomas Woodrow Wilson"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Woodrow_Wilson"
-        }
-      ],
-      "question": "28th",
-      "questionSubtitle": "1913\u20131921"
-    },
-    {
-      "id": 28,
-      "answers": [
-        {
-          "canonicalForm": "Warren G. Harding",
-          "alternateForms": ["Warren Harding", "Warren Gamaliel Harding"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Warren_G._Harding"
-        }
-      ],
-      "question": "29th",
-      "questionSubtitle": "1921\u20131923"
-    },
-    {
-      "id": 29,
-      "answers": [
-        {
-          "canonicalForm": "Calvin Coolidge",
-          "alternateForms": ["John Calvin Coolidge"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Calvin_Coolidge"
-        }
-      ],
-      "question": "30th",
-      "questionSubtitle": "1923\u20131929"
-    },
-    {
-      "id": 30,
-      "answers": [
-        {
-          "canonicalForm": "Herbert Hoover",
-          "alternateForms": ["Herbert Clark Hoover"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Herbert_Hoover"
-        }
-      ],
-      "question": "31st",
-      "questionSubtitle": "1929\u20131933"
-    },
-    {
-      "id": 31,
-      "answers": [
-        {
-          "canonicalForm": "Franklin D. Roosevelt",
-          "alternateForms": [
-            "Franklin Roosevelt",
-            "FDR",
-            "Franklin Delano Roosevelt"
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt"
-        }
-      ],
-      "question": "32nd",
-      "questionSubtitle": "1933\u20131945"
-    },
-    {
-      "id": 32,
-      "answers": [
-        {
-          "canonicalForm": "Harry S. Truman",
-          "alternateForms": ["Harry Truman", "HST"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Harry_S._Truman"
-        }
-      ],
-      "question": "33rd",
-      "questionSubtitle": "1945\u20131953"
-    },
-    {
-      "id": 33,
-      "answers": [
-        {
-          "canonicalForm": "Dwight D. Eisenhower",
-          "alternateForms": [
-            "Dwight David Eisenhower",
-            "Dwight Eisenhower",
-            "DDE",
-            "Ike Eisenhower"
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower"
-        }
-      ],
-      "question": "34th",
-      "questionSubtitle": "1953\u20131961"
-    },
-    {
-      "id": 34,
-      "answers": [
-        {
-          "canonicalForm": "John F. Kennedy",
-          "alternateForms": ["John Kennedy", "John Fitzgerald Kennedy", "JFK"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/John_F._Kennedy"
-        }
-      ],
-      "question": "35th",
-      "questionSubtitle": "1961\u20131963"
-    },
-    {
-      "id": 35,
-      "answers": [
-        {
-          "canonicalForm": "Lyndon B. Johnson",
-          "alternateForms": ["Lyndon Johnson", "Lyndon Baines Johnson", "LBJ"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson"
-        }
-      ],
-      "question": "36th",
-      "questionSubtitle": "1963\u20131969"
-    },
-    {
-      "id": 36,
-      "answers": [
-        {
-          "canonicalForm": "Richard Nixon",
-          "alternateForms": ["Richard M. Nixon", "Richard Milhous Nixon"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Richard_Nixon"
-        }
-      ],
-      "question": "37th",
-      "questionSubtitle": "1969\u20131974"
-    },
-    {
-      "id": 37,
-      "answers": [
-        {
-          "canonicalForm": "Gerald Ford",
-          "alternateForms": ["Gerald R. Ford", "Gerald Rudolph Ford"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Gerald_Ford"
-        }
-      ],
-      "question": "38th",
-      "questionSubtitle": "1974\u20131977"
-    },
-    {
-      "id": 38,
-      "answers": [
-        {
-          "canonicalForm": "Jimmy Carter",
-          "alternateForms": ["James Carter", "James Earl Carter"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Jimmy_Carter"
-        }
-      ],
-      "question": "39th",
-      "questionSubtitle": "1977\u20131981"
-    },
-    {
-      "id": 39,
-      "answers": [
-        {
-          "canonicalForm": "Ronald Reagan",
-          "alternateForms": ["Ronald W. Reagan", "Ronald Wilson Reagan"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Ronald_Reagan"
-        }
-      ],
-      "question": "40th",
-      "questionSubtitle": "1981\u20131989"
-    },
-    {
-      "id": 40,
-      "answers": [
-        {
-          "canonicalForm": "George H. W. Bush",
-          "alternateForms": [
-            "George Bush",
-            "H. W. Bush",
-            "Bush Sr.",
-            "George Herbert Walker Bush"
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/George_H._W._Bush"
-        }
-      ],
-      "question": "41st",
-      "questionSubtitle": "1989\u20131993"
-    },
-    {
-      "id": 41,
-      "answers": [
-        {
-          "canonicalForm": "Bill Clinton",
-          "alternateForms": ["William Clinton", "William Jefferson Clinton"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Bill_Clinton"
-        }
-      ],
-      "question": "42nd",
-      "questionSubtitle": "1993\u20132001"
-    },
-    {
-      "id": 42,
-      "answers": [
-        {
-          "canonicalForm": "George W. Bush",
-          "alternateForms": [
-            "George Bush",
-            "George Walker Bush",
-            "W. Bush",
-            "Bush Jr."
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/George_W._Bush"
-        }
-      ],
-      "question": "43rd",
-      "questionSubtitle": "2001\u20132009"
-    },
-    {
-      "id": 43,
-      "answers": [
-        {
-          "canonicalForm": "Barack Obama",
-          "alternateForms": ["Barack Hussein Obama"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Barack_Obama"
-        }
-      ],
-      "question": "44th",
-      "questionSubtitle": "2009\u20132017"
-    },
-    {
-      "id": 44,
-      "answers": [
-        {
-          "canonicalForm": "Donald Trump",
-          "alternateForms": ["Donald J. Trump", "Donald John Trump"],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Donald_Trump"
-        }
-      ],
-      "question": "45th, 47th",
-      "questionSubtitle": "2017\u20132021, 2025\u2013present",
-      "answerTemplate": "The <question> president is <answer>"
-    },
-    {
-      "id": 45,
-      "answers": [
-        {
-          "canonicalForm": "Joe Biden",
-          "alternateForms": [
-            "Joseph Biden",
-            "Joe R. Biden",
-            "Joseph R. Biden",
-            "Joe Robinette Biden",
-            "Joseph Robinette Biden"
-          ],
-          "isName": true,
-          "link": "https://en.wikipedia.org/wiki/Joe_Biden"
-        }
-      ],
-      "question": "46th",
-      "questionSubtitle": "2021\u20132025"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "answers": [
+      {
+        "canonicalForm": "George Washington",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/George_Washington"
+      }
+    ],
+    "question": "1st",
+    "questionSubtitle": "1789\u20131797"
+  },
+  {
+    "id": 2,
+    "answers": [
+      {
+        "canonicalForm": "John Adams",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/John_Adams"
+      }
+    ],
+    "question": "2nd",
+    "questionSubtitle": "1797\u20131801"
+  },
+  {
+    "id": 3,
+    "answers": [
+      {
+        "canonicalForm": "Thomas Jefferson",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Thomas_Jefferson"
+      }
+    ],
+    "question": "3rd",
+    "questionSubtitle": "1801\u20131809"
+  },
+  {
+    "id": 4,
+    "answers": [
+      {
+        "canonicalForm": "James Madison",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/James_Madison"
+      }
+    ],
+    "question": "4th",
+    "questionSubtitle": "1809\u20131817"
+  },
+  {
+    "id": 5,
+    "answers": [
+      {
+        "canonicalForm": "James Monroe",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/James_Monroe"
+      }
+    ],
+    "question": "5th",
+    "questionSubtitle": "1817\u20131825"
+  },
+  {
+    "id": 6,
+    "answers": [
+      {
+        "canonicalForm": "John Quincy Adams",
+        "alternateForms": [
+          "JQA",
+          "John Adams",
+          "John Q. Adams",
+          "Quincy Adams"
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/John_Quincy_Adams"
+      }
+    ],
+    "question": "6th",
+    "questionSubtitle": "1825\u20131829"
+  },
+  {
+    "id": 7,
+    "answers": [
+      {
+        "canonicalForm": "Andrew Jackson",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Andrew_Jackson"
+      }
+    ],
+    "question": "7th",
+    "questionSubtitle": "1829\u20131837"
+  },
+  {
+    "id": 8,
+    "answers": [
+      {
+        "canonicalForm": "Martin Van Buren",
+        "alternateForms": ["Van Buren"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Martin_Van_Buren"
+      }
+    ],
+    "question": "8th",
+    "questionSubtitle": "1837\u20131841"
+  },
+  {
+    "id": 9,
+    "answers": [
+      {
+        "canonicalForm": "William Henry Harrison",
+        "alternateForms": ["William Harrison", "William H. Harrison"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/William_Henry_Harrison"
+      }
+    ],
+    "question": "9th",
+    "questionSubtitle": "1841\u20131841"
+  },
+  {
+    "id": 10,
+    "answers": [
+      {
+        "canonicalForm": "John Tyler",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/John_Tyler"
+      }
+    ],
+    "question": "10th",
+    "questionSubtitle": "1841\u20131845"
+  },
+  {
+    "id": 11,
+    "answers": [
+      {
+        "canonicalForm": "James K. Polk",
+        "alternateForms": ["James Polk", "James Knox Polk"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/James_K._Polk"
+      }
+    ],
+    "question": "11th",
+    "questionSubtitle": "1845\u20131849"
+  },
+  {
+    "id": 12,
+    "answers": [
+      {
+        "canonicalForm": "Zachary Taylor",
+        "alternateForms": ["Zach Taylor"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Zachary_Taylor"
+      }
+    ],
+    "question": "12th",
+    "questionSubtitle": "1849\u20131850"
+  },
+  {
+    "id": 13,
+    "answers": [
+      {
+        "canonicalForm": "Millard Fillmore",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Millard_Fillmore"
+      }
+    ],
+    "question": "13th",
+    "questionSubtitle": "1850\u20131853"
+  },
+  {
+    "id": 14,
+    "answers": [
+      {
+        "canonicalForm": "Franklin Pierce",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Franklin_Pierce"
+      }
+    ],
+    "question": "14th",
+    "questionSubtitle": "1853\u20131857"
+  },
+  {
+    "id": 15,
+    "answers": [
+      {
+        "canonicalForm": "James Buchanan",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/James_Buchanan"
+      }
+    ],
+    "question": "15th",
+    "questionSubtitle": "1857\u20131861"
+  },
+  {
+    "id": 16,
+    "answers": [
+      {
+        "canonicalForm": "Abraham Lincoln",
+        "alternateForms": ["Abe Lincoln"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Abraham_Lincoln"
+      }
+    ],
+    "question": "16th",
+    "questionSubtitle": "1861\u20131865"
+  },
+  {
+    "id": 17,
+    "answers": [
+      {
+        "canonicalForm": "Andrew Johnson",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Andrew_Johnson"
+      }
+    ],
+    "question": "17th",
+    "questionSubtitle": "1865\u20131869"
+  },
+  {
+    "id": 18,
+    "answers": [
+      {
+        "canonicalForm": "Ulysses S. Grant",
+        "alternateForms": [
+          "Ulysses Grant",
+          "Hiram Grant",
+          "Hiram Ulysses Grant"
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Ulysses_S._Grant"
+      }
+    ],
+    "question": "18th",
+    "questionSubtitle": "1869\u20131877"
+  },
+  {
+    "id": 19,
+    "answers": [
+      {
+        "canonicalForm": "Rutherford B. Hayes",
+        "alternateForms": ["Rutherford Hayes", "Rutherford Birchard Hayes"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Rutherford_B._Hayes"
+      }
+    ],
+    "question": "19th",
+    "questionSubtitle": "1877\u20131881"
+  },
+  {
+    "id": 20,
+    "answers": [
+      {
+        "canonicalForm": "James A. Garfield",
+        "alternateForms": ["James Garfield", "James Abram Garfield"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/James_A._Garfield"
+      }
+    ],
+    "question": "20th",
+    "questionSubtitle": "1881\u20131881"
+  },
+  {
+    "id": 21,
+    "answers": [
+      {
+        "canonicalForm": "Chester A. Arthur",
+        "alternateForms": ["Chester Arthur", "Chester Alan Arthur"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Chester_A._Arthur"
+      }
+    ],
+    "question": "21st",
+    "questionSubtitle": "1881\u20131885"
+  },
+  {
+    "id": 22,
+    "answers": [
+      {
+        "canonicalForm": "Grover Cleveland",
+        "alternateForms": ["Stephen Grover Cleveland"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Grover_Cleveland"
+      }
+    ],
+    "question": "22nd, 24th",
+    "questionSubtitle": "1885\u20131889, 1893\u20131897"
+  },
+  {
+    "id": 23,
+    "answers": [
+      {
+        "canonicalForm": "Benjamin Harrison",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Benjamin_Harrison"
+      }
+    ],
+    "question": "23rd",
+    "questionSubtitle": "1889\u20131893"
+  },
+  {
+    "id": 24,
+    "answers": [
+      {
+        "canonicalForm": "William McKinley",
+        "alternateForms": [],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/William_McKinley"
+      }
+    ],
+    "question": "25th",
+    "questionSubtitle": "1897\u20131901"
+  },
+  {
+    "id": 25,
+    "answers": [
+      {
+        "canonicalForm": "Theodore Roosevelt",
+        "alternateForms": ["Teddy Roosevelt"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Theodore_Roosevelt"
+      }
+    ],
+    "question": "26th",
+    "questionSubtitle": "1901\u20131909"
+  },
+  {
+    "id": 26,
+    "answers": [
+      {
+        "canonicalForm": "William H. Taft",
+        "alternateForms": ["William Taft", "William Howard Taft"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/William_Howard_Taft"
+      }
+    ],
+    "question": "27th",
+    "questionSubtitle": "1909\u20131913"
+  },
+  {
+    "id": 27,
+    "answers": [
+      {
+        "canonicalForm": "Woodrow Wilson",
+        "alternateForms": ["Thomas Woodrow Wilson"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Woodrow_Wilson"
+      }
+    ],
+    "question": "28th",
+    "questionSubtitle": "1913\u20131921"
+  },
+  {
+    "id": 28,
+    "answers": [
+      {
+        "canonicalForm": "Warren G. Harding",
+        "alternateForms": ["Warren Harding", "Warren Gamaliel Harding"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Warren_G._Harding"
+      }
+    ],
+    "question": "29th",
+    "questionSubtitle": "1921\u20131923"
+  },
+  {
+    "id": 29,
+    "answers": [
+      {
+        "canonicalForm": "Calvin Coolidge",
+        "alternateForms": ["John Calvin Coolidge"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Calvin_Coolidge"
+      }
+    ],
+    "question": "30th",
+    "questionSubtitle": "1923\u20131929"
+  },
+  {
+    "id": 30,
+    "answers": [
+      {
+        "canonicalForm": "Herbert Hoover",
+        "alternateForms": ["Herbert Clark Hoover"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Herbert_Hoover"
+      }
+    ],
+    "question": "31st",
+    "questionSubtitle": "1929\u20131933"
+  },
+  {
+    "id": 31,
+    "answers": [
+      {
+        "canonicalForm": "Franklin D. Roosevelt",
+        "alternateForms": [
+          "Franklin Roosevelt",
+          "FDR",
+          "Franklin Delano Roosevelt"
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt"
+      }
+    ],
+    "question": "32nd",
+    "questionSubtitle": "1933\u20131945"
+  },
+  {
+    "id": 32,
+    "answers": [
+      {
+        "canonicalForm": "Harry S. Truman",
+        "alternateForms": ["Harry Truman", "HST"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Harry_S._Truman"
+      }
+    ],
+    "question": "33rd",
+    "questionSubtitle": "1945\u20131953"
+  },
+  {
+    "id": 33,
+    "answers": [
+      {
+        "canonicalForm": "Dwight D. Eisenhower",
+        "alternateForms": [
+          "Dwight David Eisenhower",
+          "Dwight Eisenhower",
+          "DDE",
+          "Ike Eisenhower"
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower"
+      }
+    ],
+    "question": "34th",
+    "questionSubtitle": "1953\u20131961"
+  },
+  {
+    "id": 34,
+    "answers": [
+      {
+        "canonicalForm": "John F. Kennedy",
+        "alternateForms": ["John Kennedy", "John Fitzgerald Kennedy", "JFK"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/John_F._Kennedy"
+      }
+    ],
+    "question": "35th",
+    "questionSubtitle": "1961\u20131963"
+  },
+  {
+    "id": 35,
+    "answers": [
+      {
+        "canonicalForm": "Lyndon B. Johnson",
+        "alternateForms": ["Lyndon Johnson", "Lyndon Baines Johnson", "LBJ"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson"
+      }
+    ],
+    "question": "36th",
+    "questionSubtitle": "1963\u20131969"
+  },
+  {
+    "id": 36,
+    "answers": [
+      {
+        "canonicalForm": "Richard Nixon",
+        "alternateForms": ["Richard M. Nixon", "Richard Milhous Nixon"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Richard_Nixon"
+      }
+    ],
+    "question": "37th",
+    "questionSubtitle": "1969\u20131974"
+  },
+  {
+    "id": 37,
+    "answers": [
+      {
+        "canonicalForm": "Gerald Ford",
+        "alternateForms": ["Gerald R. Ford", "Gerald Rudolph Ford"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Gerald_Ford"
+      }
+    ],
+    "question": "38th",
+    "questionSubtitle": "1974\u20131977"
+  },
+  {
+    "id": 38,
+    "answers": [
+      {
+        "canonicalForm": "Jimmy Carter",
+        "alternateForms": ["James Carter", "James Earl Carter"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Jimmy_Carter"
+      }
+    ],
+    "question": "39th",
+    "questionSubtitle": "1977\u20131981"
+  },
+  {
+    "id": 39,
+    "answers": [
+      {
+        "canonicalForm": "Ronald Reagan",
+        "alternateForms": ["Ronald W. Reagan", "Ronald Wilson Reagan"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Ronald_Reagan"
+      }
+    ],
+    "question": "40th",
+    "questionSubtitle": "1981\u20131989"
+  },
+  {
+    "id": 40,
+    "answers": [
+      {
+        "canonicalForm": "George H. W. Bush",
+        "alternateForms": [
+          "George Bush",
+          "H. W. Bush",
+          "Bush Sr.",
+          "George Herbert Walker Bush"
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/George_H._W._Bush"
+      }
+    ],
+    "question": "41st",
+    "questionSubtitle": "1989\u20131993"
+  },
+  {
+    "id": 41,
+    "answers": [
+      {
+        "canonicalForm": "Bill Clinton",
+        "alternateForms": ["William Clinton", "William Jefferson Clinton"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Bill_Clinton"
+      }
+    ],
+    "question": "42nd",
+    "questionSubtitle": "1993\u20132001"
+  },
+  {
+    "id": 42,
+    "answers": [
+      {
+        "canonicalForm": "George W. Bush",
+        "alternateForms": [
+          "George Bush",
+          "George Walker Bush",
+          "W. Bush",
+          "Bush Jr."
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/George_W._Bush"
+      }
+    ],
+    "question": "43rd",
+    "questionSubtitle": "2001\u20132009"
+  },
+  {
+    "id": 43,
+    "answers": [
+      {
+        "canonicalForm": "Barack Obama",
+        "alternateForms": ["Barack Hussein Obama"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Barack_Obama"
+      }
+    ],
+    "question": "44th",
+    "questionSubtitle": "2009\u20132017"
+  },
+  {
+    "id": 44,
+    "answers": [
+      {
+        "canonicalForm": "Donald Trump",
+        "alternateForms": ["Donald J. Trump", "Donald John Trump"],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Donald_Trump"
+      }
+    ],
+    "question": "45th, 47th",
+    "questionSubtitle": "2017\u20132021, 2025\u2013present",
+    "answerTemplate": "The <question> president is <answer>"
+  },
+  {
+    "id": 45,
+    "answers": [
+      {
+        "canonicalForm": "Joe Biden",
+        "alternateForms": [
+          "Joseph Biden",
+          "Joe R. Biden",
+          "Joseph R. Biden",
+          "Joe Robinette Biden",
+          "Joseph Robinette Biden"
+        ],
+        "isName": true,
+        "link": "https://en.wikipedia.org/wiki/Joe_Biden"
+      }
+    ],
+    "question": "46th",
+    "questionSubtitle": "2021\u20132025"
+  }
+]

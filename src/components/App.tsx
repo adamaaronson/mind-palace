@@ -3,11 +3,12 @@ import {
   type CardQueue,
   type Card,
   answerFirstCard,
-  createCardQueue,
-} from "../types/memory";
+  createCardQueues,
+  updateCardQueues,
+} from "../types/card";
 import {
   type Deck,
-  DECKS_BY_ID,
+  decksById,
   getQuestionImageUrl,
   isAnyAnswer,
 } from "../types/deck";
@@ -20,7 +21,7 @@ import Column from "./Column";
 import AnswerCard from "./AnswerCard";
 import QuestionCard, { type AnswerStatus } from "./QuestionCard";
 import Shop from "./Shop";
-import { getShopItem, SHOP_ITEMS, type ShopItem } from "../types/shop";
+import { createInventory, updateInventory, type ShopItem } from "../types/shop";
 import Build from "./Build";
 import DeckInfo from "./DeckInfo";
 import Tabs from "./Tabs";
@@ -28,26 +29,28 @@ import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
 import { preload } from "react-dom";
 import Damask from "./Damask";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 export default function App() {
-  const [deckId, setDeckId] = useState("world-capitals");
-  const [cardQueues, setCardQueues] = useState<Record<string, CardQueue>>(() =>
-    Object.fromEntries(
-      Object.entries(DECKS_BY_ID).map(([id, deck]) => [
-        id,
-        createCardQueue(deck),
-      ]),
-    ),
+  const [cardQueues, setCardQueues] = useLocalStorage(
+    "card-queues",
+    createCardQueues,
+    updateCardQueues,
   );
 
+  const [deckId, setDeckId] = useState(Object.keys(decksById)[0]);
   const [wasCorrect, setWasCorrect] = useState(true);
   const [answerStatus, setAnswerStatus] = useState<AnswerStatus>(null);
   const [earnedFount, setEarnedFount] = useState(false);
   const [lostFount, setLostFount] = useState(false);
-  const [previousCard, setPreviousCard] = useState<Card | null>(null);
-  const [nuggets, setNuggets] = useState(0);
-  const [nuggetsPerSecond, setNuggetsPerSecond] = useState(0);
   const [nuggetsEarned, setNuggetsEarned] = useState(0);
+  const [previousCard, setPreviousCard] = useState<Card | null>(null);
+
+  const [nuggets, setNuggets] = useState(0);
+  const [nuggetsPerSecond, setNuggetsPerSecond] = useLocalStorage(
+    "nuggets-per-second",
+    0,
+  );
 
   const [previousTimestamp, setPreviousTimestamp] = useState(-1);
   const [timestamp, setTimestamp] = useState(0);
@@ -56,7 +59,11 @@ export default function App() {
   const [tabIndex, setTabIndex] = useState(0);
   const [showingDeckSelector, setShowingDeckSelector] = useState(true);
 
-  const [shopItems, setShopItems] = useState(() => SHOP_ITEMS);
+  const [inventory, setInventory] = useLocalStorage(
+    "inventory",
+    createInventory,
+    updateInventory,
+  );
   const [equippedBlock, setEquippedBlock] = useState<ShopItem | undefined>(
     undefined,
   );
@@ -70,19 +77,11 @@ export default function App() {
   );
 
   const cardQueue = cardQueues[deckId];
-  const deck = DECKS_BY_ID[deckId];
+  const deck = decksById[deckId];
 
   const displayNuggets = Math.floor(nuggets);
-  const nuggetsPerWrongAnswer = getShopItem(
-    shopItems,
-    "upgrades",
-    "any-answers",
-  )!.level;
-  const nuggetsPerCorrectAnswer = getShopItem(
-    shopItems,
-    "upgrades",
-    "correct-answers",
-  )!.level;
+  const nuggetsPerWrongAnswer = inventory["any-answers"];
+  const nuggetsPerCorrectAnswer = inventory["correct-answers"];
   const card = cardQueue.cards[0];
 
   if (
@@ -109,10 +108,12 @@ export default function App() {
   }
 
   const preloadQuestionImages = (cardQueue: CardQueue, num: number) => {
+    const deck = decksById[cardQueue.deckId];
     cardQueue.cards.slice(0, num).forEach((card) => {
-      const image = card.fact.questionImage;
+      const fact = deck.facts[card.factId];
+      const image = fact.questionImage;
       if (image) {
-        preload(getQuestionImageUrl(card.fact, DECKS_BY_ID[cardQueue.deckId]), {
+        preload(getQuestionImageUrl(fact, decksById[cardQueue.deckId]), {
           as: "image",
         });
       }
@@ -139,16 +140,17 @@ export default function App() {
     setEarnedFount(false);
     setLostFount(false);
     setShowingDeckSelector(false);
-    preloadQuestionImages(cardQueue, 2);
+    preloadQuestionImages(cardQueues[deck.id], 2);
   };
 
   const submitGuess = (guess: string) => {
-    const answerEditDistance = getAnswerEditDistance(card.fact, guess);
+    const fact = deck.facts[card.factId];
+    const answerEditDistance = getAnswerEditDistance(fact, guess);
 
     if (answerEditDistance === 1 && !isAnyAnswer(deck, guess)) {
       setAnswerStatus("typo");
       return false;
-    } else if (isCloseAnswer(card.fact, guess)) {
+    } else if (isCloseAnswer(fact, guess)) {
       setAnswerStatus("close");
       return false;
     } else {
@@ -265,7 +267,7 @@ export default function App() {
                 setActiveIndex={setTabIndex}
               >
                 <Build
-                  shopItems={shopItems}
+                  inventory={inventory}
                   goToShop={goToShop}
                   isVisible={tabIndex === 0}
                   equippedBlock={equippedBlock}
@@ -274,8 +276,8 @@ export default function App() {
                 <Shop
                   displayNuggets={displayNuggets}
                   setNuggets={setNuggets}
-                  shopItems={shopItems}
-                  setShopItems={setShopItems}
+                  inventory={inventory}
+                  setInventory={setInventory}
                   setEquippedBlock={setEquippedBlock}
                 />
               </Tabs>

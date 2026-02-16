@@ -1,11 +1,11 @@
 import { DECK_COLUMNS, DECKS, type Deck } from "../types/deck";
-import type { CardQueue } from "../types/memory";
+import type { CardQueueIndex } from "../types/card";
 import DeckInfo from "./DeckInfo";
 import { Gilt } from "./Gilt";
 import { Modal } from "./Modal";
 
 interface DeckSelectorProps {
-  cardQueues: Record<string, CardQueue>;
+  cardQueues: CardQueueIndex;
   onSelectDeck: (deck: Deck) => void;
   isOpen: boolean;
 }
