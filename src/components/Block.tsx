@@ -95,7 +95,10 @@ export default function Block(props: BlockProps) {
             left: cqw(left),
             top: cqw(top),
             zIndex: x + y + z + 1,
-            cursor: isRight || isClickingForbidden ? "not-allowed" : "pointer",
+            cursor:
+              (!isErasing && isRight) || isClickingForbidden
+                ? "not-allowed"
+                : "pointer",
             pointerEvents: "none",
             width: cqw(BLOCK_WIDTH),
             height: cqw(BLOCK_HEIGHT),
@@ -108,7 +111,7 @@ export default function Block(props: BlockProps) {
             onClick={() =>
               isHoveringErasing ? removeBlock?.({ x, y, z }) : addRightBlock()
             }
-            disabled={isRight}
+            disabled={!isErasing && isRight}
           />
         </div>
       )}
@@ -121,7 +124,10 @@ export default function Block(props: BlockProps) {
             left: cqw(left),
             top: cqw(top),
             zIndex: x + y + z + 1,
-            cursor: isTop || isClickingForbidden ? "not-allowed" : "pointer",
+            cursor:
+              (!isErasing && isTop) || isClickingForbidden
+                ? "not-allowed"
+                : "pointer",
             pointerEvents: "none",
             width: cqw(BLOCK_WIDTH),
             height: cqw(BLOCK_HEIGHT),
@@ -134,7 +140,7 @@ export default function Block(props: BlockProps) {
             onClick={() =>
               isHoveringErasing ? removeBlock?.({ x, y, z }) : addTopBlock()
             }
-            disabled={isTop}
+            disabled={!isErasing && isTop}
           />
         </div>
       )}
@@ -147,7 +153,10 @@ export default function Block(props: BlockProps) {
             left: cqw(left),
             top: cqw(top),
             zIndex: x + y + z + 1,
-            cursor: isLeft || isClickingForbidden ? "not-allowed" : "pointer",
+            cursor:
+              (!isErasing && isLeft) || isClickingForbidden
+                ? "not-allowed"
+                : "pointer",
             pointerEvents: "none",
             width: cqw(BLOCK_WIDTH),
             height: cqw(BLOCK_HEIGHT),
@@ -160,7 +169,7 @@ export default function Block(props: BlockProps) {
             onClick={() =>
               isHoveringErasing ? removeBlock?.({ x, y, z }) : addLeftBlock()
             }
-            disabled={isLeft}
+            disabled={!isErasing && isLeft}
           />
         </div>
       )}
