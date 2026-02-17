@@ -21,7 +21,7 @@ function BuildInventory(props: BuildInventoryProps) {
   const [, setScroll] = useState(0);
 
   return (
-    <div className="border-standard rounded-2xl bg-light-light p-4 mt-8 overflow-x-auto w-full">
+    <div className="border-standard rounded-2xl bg-light-light p-4 overflow-x-auto w-full">
       <div className="min-w-50 flex items-center justify-between">
         {Object.keys(inventory).length > 0 ? (
           <div

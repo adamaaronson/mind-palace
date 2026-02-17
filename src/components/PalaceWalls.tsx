@@ -5,13 +5,12 @@ import Block from "./Block";
 
 interface PalaceWallsProps {
   addBlock: BlockProps["addBlock"];
-  blockWidth: number;
   equippedBlock?: BlockProps["equippedBlock"];
 }
 
 export default function PalaceWalls(props: PalaceWallsProps) {
-  const { addBlock, blockWidth, equippedBlock } = props;
-  const floor: Omit<BlockProps, "width">[] = Array.from({ length: GRID_WIDTH })
+  const { addBlock, equippedBlock } = props;
+  const floor: BlockProps[] = Array.from({ length: GRID_WIDTH })
     .map((_, width) =>
       Array.from({ length: GRID_DEPTH }).map((_, depth) => ({
         coordinates: { x: width, y: 0, z: depth },
@@ -19,11 +18,11 @@ export default function PalaceWalls(props: PalaceWallsProps) {
         onlyTop: true,
         isErasable: false,
         addBlock: addBlock,
-      }))
+      })),
     )
     .flat(1);
 
-  const leftWall: Omit<BlockProps, "width">[] = Array.from({
+  const leftWall: BlockProps[] = Array.from({
     length: GRID_DEPTH,
   })
     .map((_, depth) =>
@@ -34,11 +33,11 @@ export default function PalaceWalls(props: PalaceWallsProps) {
         isErasable: false,
         addBlock: addBlock,
         opacity: 0.4,
-      }))
+      })),
     )
     .flat(1);
 
-  const rightWall: Omit<BlockProps, "width">[] = Array.from({
+  const rightWall: BlockProps[] = Array.from({
     length: GRID_WIDTH,
   })
     .map((_, width) =>
@@ -49,7 +48,7 @@ export default function PalaceWalls(props: PalaceWallsProps) {
         isErasable: false,
         addBlock: addBlock,
         opacity: 0.4,
-      }))
+      })),
     )
     .flat(1);
 
@@ -59,7 +58,6 @@ export default function PalaceWalls(props: PalaceWallsProps) {
         <Block
           {...blockProps}
           equippedBlock={equippedBlock}
-          width={blockWidth}
           key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
         />
       ))}

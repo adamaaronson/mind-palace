@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
 import { getIsometricProjection } from "./Palace";
-import { GRID_DEPTH, GRID_HEIGHT, GRID_WIDTH } from "../utils/constants";
+import {
+  BLOCK_HEIGHT,
+  BLOCK_WIDTH,
+  GRID_DEPTH,
+  GRID_HEIGHT,
+  GRID_WIDTH,
+} from "../utils/constants";
 import { ERASER, type ShopItem } from "../types/shop";
 import type { Coordinates } from "../types/coordinates";
+import { cqw } from "../utils/utils";
 
 export interface BlockProps {
   coordinates: Coordinates;
-  width: number;
   block: ShopItem;
   equippedBlock?: ShopItem;
   addBlock?: (block: ShopItem, coordinates: Coordinates) => void;
@@ -23,7 +29,6 @@ export interface BlockProps {
 export default function Block(props: BlockProps) {
   const {
     coordinates: { x, y, z },
-    width,
     block,
     equippedBlock,
     addBlock,
@@ -40,7 +45,7 @@ export default function Block(props: BlockProps) {
   const [hasTopGhost, setHasTopGhost] = useState(false);
   const [hasLeftGhost, setHasLeftGhost] = useState(false);
 
-  const { x: left, y: top } = getIsometricProjection({ x, y, z }, width);
+  const { x: left, y: top } = getIsometricProjection({ x, y, z });
 
   const isErasing = equippedBlock?.id === ERASER.id;
   const isHoveringErasing =
@@ -66,18 +71,19 @@ export default function Block(props: BlockProps) {
       <div
         className="absolute select-none"
         style={{
-          left: left,
-          top: top,
+          left: cqw(left),
+          top: cqw(top),
           zIndex: x + y + z + 1,
           pointerEvents: "none",
           opacity: isGhost || isHoveringErasing ? 0.5 : opacity,
-          width: width,
-          minWidth: width,
+          width: cqw(BLOCK_WIDTH),
+          height: cqw(BLOCK_HEIGHT),
+          minWidth: cqw(BLOCK_WIDTH),
         }}
       >
         <img
           src={typeof block === "string" ? block : block.image}
-          width={width}
+          width="100%"
         />
       </div>
 
@@ -86,13 +92,14 @@ export default function Block(props: BlockProps) {
         <div
           className="absolute select-none"
           style={{
-            left: left,
-            top: top,
+            left: cqw(left),
+            top: cqw(top),
             zIndex: x + y + z + 1,
             cursor: isRight || isClickingForbidden ? "not-allowed" : "pointer",
             pointerEvents: "none",
-            width: width,
-            minWidth: width,
+            width: cqw(BLOCK_WIDTH),
+            height: cqw(BLOCK_HEIGHT),
+            minWidth: cqw(BLOCK_WIDTH),
           }}
         >
           <BlockRight
@@ -102,7 +109,6 @@ export default function Block(props: BlockProps) {
               isHoveringErasing ? removeBlock?.({ x, y, z }) : addRightBlock()
             }
             disabled={isRight}
-            width={width}
           />
         </div>
       )}
@@ -112,13 +118,14 @@ export default function Block(props: BlockProps) {
         <div
           className="absolute select-none"
           style={{
-            left: left,
-            top: top,
+            left: cqw(left),
+            top: cqw(top),
             zIndex: x + y + z + 1,
             cursor: isTop || isClickingForbidden ? "not-allowed" : "pointer",
             pointerEvents: "none",
-            width: width,
-            minWidth: width,
+            width: cqw(BLOCK_WIDTH),
+            height: cqw(BLOCK_HEIGHT),
+            minWidth: cqw(BLOCK_WIDTH),
           }}
         >
           <BlockTop
@@ -128,7 +135,6 @@ export default function Block(props: BlockProps) {
               isHoveringErasing ? removeBlock?.({ x, y, z }) : addTopBlock()
             }
             disabled={isTop}
-            width={width}
           />
         </div>
       )}
@@ -138,13 +144,14 @@ export default function Block(props: BlockProps) {
         <div
           className="absolute select-none"
           style={{
-            left: left,
-            top: top,
+            left: cqw(left),
+            top: cqw(top),
             zIndex: x + y + z + 1,
             cursor: isLeft || isClickingForbidden ? "not-allowed" : "pointer",
             pointerEvents: "none",
-            width: width,
-            minWidth: width,
+            width: cqw(BLOCK_WIDTH),
+            height: cqw(BLOCK_HEIGHT),
+            minWidth: cqw(BLOCK_WIDTH),
           }}
         >
           <BlockLeft
@@ -154,34 +161,18 @@ export default function Block(props: BlockProps) {
               isHoveringErasing ? removeBlock?.({ x, y, z }) : addLeftBlock()
             }
             disabled={isLeft}
-            width={width}
           />
         </div>
       )}
 
       {hasRightGhost && equippedBlock && !isErasing && (
-        <Block
-          coordinates={{ x: x + 1, y, z }}
-          width={width}
-          block={equippedBlock}
-          isGhost
-        />
+        <Block coordinates={{ x: x + 1, y, z }} block={equippedBlock} isGhost />
       )}
       {hasTopGhost && equippedBlock && !isErasing && (
-        <Block
-          coordinates={{ x, y: y + 1, z }}
-          width={width}
-          block={equippedBlock}
-          isGhost
-        />
+        <Block coordinates={{ x, y: y + 1, z }} block={equippedBlock} isGhost />
       )}
       {hasLeftGhost && equippedBlock && !isErasing && (
-        <Block
-          coordinates={{ x, y, z: z + 1 }}
-          width={width}
-          block={equippedBlock}
-          isGhost
-        />
+        <Block coordinates={{ x, y, z: z + 1 }} block={equippedBlock} isGhost />
       )}
     </>
   );

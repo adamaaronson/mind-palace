@@ -1,96 +1,43 @@
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, useState } from "react";
 import {
-  getBlockSideHeight,
-  getBlockTopHeight,
+  BLOCK_SIDE_HEIGHT,
+  BLOCK_TOP_HEIGHT,
+  BLOCK_WIDTH,
   GRID_DEPTH,
   GRID_HEIGHT,
   GRID_WIDTH,
+  ORIGIN_X,
+  ORIGIN_Y,
+  PALACE_SHADOW_HEIGHT,
 } from "../utils/constants";
 import { type Inventory, type ShopItem } from "../types/shop";
 import type { BlockProps } from "./Block";
 import Block from "./Block";
 import PalaceWalls from "./PalaceWalls";
-import { approximatelyEqual } from "../utils/utils";
 import { isEqual } from "lodash";
 import type { Coordinates } from "../types/coordinates";
-
-const getShadowHeight = (blockWidth: number) =>
-  getBlockSideHeight(blockWidth) * GRID_WIDTH * 1.1;
-
-const getOriginX = (blockWidth: number) =>
-  (GRID_DEPTH / 2) * blockWidth - blockWidth / 2;
-const getOriginY = (blockWidth: number) =>
-  GRID_HEIGHT * getBlockSideHeight(blockWidth);
-
-const palaceWidthToBlockWidth = (palaceWidth: number) =>
-  palaceWidth / ((GRID_WIDTH + GRID_DEPTH) / 2);
+import { cqw } from "../utils/utils";
 
 // project 3-dimensional coordinates onto isometric view
 // x: to the right and down a bit
 // y: up
 // z: to the left and down a bit
-export function getIsometricProjection(
-  coordinates: Coordinates,
-  blockWidth: number,
-) {
+export function getIsometricProjection(coordinates: Coordinates) {
   const { x, y, z } = coordinates;
   return {
-    x: getOriginX(blockWidth) + (x - z) * (blockWidth / 2),
-    y:
-      getOriginY(blockWidth) +
-      (x + z) * (getBlockTopHeight(blockWidth) / 2) -
-      y * getBlockSideHeight(blockWidth),
+    x: ORIGIN_X + (x - z) * (BLOCK_WIDTH / 2),
+    y: ORIGIN_Y + (x + z) * (BLOCK_TOP_HEIGHT / 2) - y * BLOCK_SIDE_HEIGHT,
   };
 }
 
 interface PalaceProps {
-  isVisible: boolean;
   equippedBlock?: ShopItem;
   setUsedBlocks: React.Dispatch<React.SetStateAction<Inventory>>;
 }
 
 function Palace(props: PalaceProps) {
-  const { isVisible, equippedBlock, setUsedBlocks } = props;
-  const [blocks, setBlocks] = useState<Omit<BlockProps, "width">[]>([]);
-
-  // console.log(blocks);
-
-  const [blockWidth, setBlockWidth] = useState(0);
-  const [palaceRef, setPalaceRef] = useState<HTMLDivElement | null>(null);
-
-  const resizeBlock = (palaceWidth: number) => {
-    setBlockWidth(palaceWidthToBlockWidth(palaceWidth));
-  };
-
-  const resizePalace = useCallback(() => {
-    const palaceWidth = palaceRef?.clientWidth;
-    if (palaceWidth) {
-      resizeBlock(palaceWidth);
-    }
-  }, [palaceRef]);
-
-  useEffect(() => {
-    if (palaceRef) {
-      resizePalace();
-    }
-  }, [palaceRef, resizePalace, isVisible]);
-
-  useEffect(() => {
-    window.addEventListener("resize", resizePalace);
-    return () => window.removeEventListener("resize", resizePalace);
-  }, [resizePalace]);
-
-  if (
-    palaceRef &&
-    palaceRef.checkVisibility() &&
-    blockWidth > 0 &&
-    !approximatelyEqual(
-      blockWidth,
-      palaceWidthToBlockWidth(palaceRef.clientWidth),
-    )
-  ) {
-    resizePalace();
-  }
+  const { equippedBlock, setUsedBlocks } = props;
+  const [blocks, setBlocks] = useState<BlockProps[]>([]);
 
   const addBlock = (equippedBlock: ShopItem, coordinates: Coordinates) => {
     setBlocks((blocks) => [
@@ -125,39 +72,33 @@ function Palace(props: PalaceProps) {
   };
 
   return (
-    <div
-      ref={setPalaceRef}
-      className="relative w-full m-auto my-2 pointer-events-none"
-      style={{
-        contain: "paint",
-        height:
-          getBlockSideHeight(blockWidth) * GRID_HEIGHT +
-          getBlockTopHeight(blockWidth) * Math.max(GRID_WIDTH, GRID_DEPTH) +
-          getShadowHeight(blockWidth) * 0.5,
-        marginBottom: -getShadowHeight(blockWidth) * 0.5,
-      }}
-    >
-      <PalaceWalls
-        addBlock={addBlock}
-        blockWidth={blockWidth}
-        equippedBlock={equippedBlock}
-      />
+    <div className="relative w-full m-auto pb-8 pointer-events-none contain-paint @container">
+      <PalaceWalls addBlock={addBlock} equippedBlock={equippedBlock} />
       {blocks.map((blockProps) => (
         <Block
           {...blockProps}
           removeBlock={removeBlock}
           equippedBlock={equippedBlock}
-          width={blockWidth}
           key={`${blockProps.coordinates.x},${blockProps.coordinates.y},${blockProps.coordinates.z}`}
         />
       ))}
       <div
+        style={{
+          height: cqw(
+            BLOCK_SIDE_HEIGHT * GRID_HEIGHT +
+              BLOCK_TOP_HEIGHT * ((GRID_WIDTH + GRID_DEPTH) / 2) +
+              PALACE_SHADOW_HEIGHT * 0.5,
+          ),
+          marginBottom: cqw(-PALACE_SHADOW_HEIGHT * 0.5),
+        }}
+      />
+      <div
         className="z-0 opacity-60 rounded-full bg-radial from-0% to-50% from-text-light absolute -translate-x-1/2 pointer-events-none"
         style={{
-          width: blockWidth * GRID_WIDTH * 1.2,
-          height: getShadowHeight(blockWidth),
-          left: getOriginX(blockWidth) + blockWidth / 2,
-          top: getOriginY(blockWidth),
+          width: cqw(BLOCK_WIDTH * GRID_WIDTH * 1.2),
+          height: cqw(PALACE_SHADOW_HEIGHT),
+          left: cqw(ORIGIN_X + BLOCK_WIDTH / 2),
+          top: cqw(ORIGIN_Y),
         }}
       />
     </div>

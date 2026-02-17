@@ -18,8 +18,7 @@ interface BuildProps {
 }
 
 function Build(props: BuildProps) {
-  const { isVisible, inventory, goToShop, equippedBlock, setEquippedBlock } =
-    props;
+  const { inventory, goToShop, equippedBlock, setEquippedBlock } = props;
   const [usedBlocks, setUsedBlocks] = useState<Inventory>({});
 
   const equipBlock = useCallback((block: ShopItem) => {
@@ -67,11 +66,7 @@ function Build(props: BuildProps) {
 
   return (
     <div>
-      <Palace
-        isVisible={isVisible}
-        equippedBlock={equippedBlock}
-        setUsedBlocks={setUsedBlocks}
-      />
+      <Palace equippedBlock={equippedBlock} setUsedBlocks={setUsedBlocks} />
       <BuildInventory
         inventory={unusedInventory}
         goToShop={goToShop}
