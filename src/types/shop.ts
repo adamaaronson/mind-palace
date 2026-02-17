@@ -108,10 +108,14 @@ export function updateInventory(previousInventory: Inventory): Inventory {
   );
 }
 
+const shopItemsById = Object.fromEntries(
+  SHOP_ITEMS.flatMap((shopItemCategory) => shopItemCategory.items).map(
+    (item) => [item.id, item],
+  ),
+);
+
 export function getShopItem(itemId: string) {
-  return SHOP_ITEMS.flatMap((shopItemCategory) => shopItemCategory.items).find(
-    (shopItem) => shopItem.id === itemId,
-  );
+  return shopItemsById[itemId];
 }
 
 export function getPrice(item: ShopItem, level: number) {

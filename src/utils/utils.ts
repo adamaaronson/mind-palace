@@ -1,5 +1,13 @@
 import numeral from "numeral";
-import { STOP_WORDS } from "./constants";
+import {
+  BLOCK_SIDE_HEIGHT,
+  BLOCK_TOP_HEIGHT,
+  BLOCK_WIDTH,
+  ORIGIN_X,
+  ORIGIN_Y,
+  STOP_WORDS,
+} from "./constants";
+import type { Coordinates } from "../types/coordinates";
 
 export function randomRange(start: number, end: number) {
   return start + Math.floor(Math.random() * (end - start));
@@ -60,6 +68,18 @@ export function toRomanNumerals(num: number) {
     }
   }
   return roman;
+}
+
+// project 3-dimensional coordinates onto isometric view
+// x: to the right and down a bit
+// y: up
+// z: to the left and down a bit
+export function getIsometricProjection(coordinates: Coordinates) {
+  const { x, y, z } = coordinates;
+  return {
+    x: ORIGIN_X + (x - z) * (BLOCK_WIDTH / 2),
+    y: ORIGIN_Y + (x + z) * (BLOCK_TOP_HEIGHT / 2) - y * BLOCK_SIDE_HEIGHT,
+  };
 }
 
 export function cqw(value: number) {

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BlockLeft, BlockRight, BlockTop } from "./BlockFace";
-import { getIsometricProjection } from "./Palace";
 import {
   BLOCK_HEIGHT,
   BLOCK_WIDTH,
@@ -10,13 +9,13 @@ import {
 } from "../utils/constants";
 import { ERASER, type ShopItem } from "../types/shop";
 import type { Coordinates } from "../types/coordinates";
-import { cqw } from "../utils/utils";
+import { cqw, getIsometricProjection } from "../utils/utils";
 
 export interface BlockProps {
   coordinates: Coordinates;
   block: ShopItem;
   equippedBlock?: ShopItem;
-  addBlock?: (block: ShopItem, coordinates: Coordinates) => void;
+  addBlock?: (coordinates: Coordinates) => void;
   removeBlock?: (coordinates: Coordinates) => void;
   onlyTop?: boolean;
   onlyLeft?: boolean;
@@ -24,6 +23,11 @@ export interface BlockProps {
   isGhost?: boolean;
   isErasable?: boolean;
   opacity?: number;
+}
+
+export interface BlockData {
+  coordinates: Coordinates;
+  blockId: string;
 }
 
 export default function Block(props: BlockProps) {
@@ -54,7 +58,7 @@ export default function Block(props: BlockProps) {
 
   const addAdjacentBlock = (coordinates: Coordinates) =>
     addBlock && !isErasing && equippedBlock
-      ? () => addBlock(equippedBlock, coordinates)
+      ? () => addBlock(coordinates)
       : () => {};
 
   const addRightBlock = addAdjacentBlock({ x: x + 1, y, z });
