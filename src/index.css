@@ -21,10 +21,10 @@
   --color-red-light: #ed6161;
 
   --inset-shadow-glossy:
-    inset 0px -2px 0px #00000011, inset 0px 4px 0px #ffffff44;
+    inset 0px -2px 0px #33000011, inset 0px 4px 0px #ffffff44;
 
   --inset-shadow-scroll:
-    inset 0px -4px 0px #00000011, inset 0px 4px 0px #00000011;
+    inset 0px -4px 0px #33000011, inset 0px 4px 0px #33000011;
 }
 
 @utility border-standard {
