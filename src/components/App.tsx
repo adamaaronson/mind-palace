@@ -29,7 +29,11 @@ import { nuggetParticleReducer } from "./NuggetParticleReducer";
 import DeckSelector from "./DeckSelector";
 import { preload } from "react-dom";
 import Damask from "./Damask";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import {
+  setLocalStorageItem,
+  useLocalStorage,
+  useLocalStorageInterval,
+} from "../hooks/useLocalStorage";
 
 export default function App() {
   const [cardQueues, setCardQueues] = useLocalStorage(
@@ -46,7 +50,7 @@ export default function App() {
   const [nuggetsEarned, setNuggetsEarned] = useState(0);
   const [previousCard, setPreviousCard] = useState<Card | null>(null);
 
-  const [nuggets, setNuggets] = useState(0);
+  const [nuggets, setNuggets] = useLocalStorageInterval("nuggets", 0);
   const [nuggetsPerSecond, setNuggetsPerSecond] = useLocalStorage(
     "nuggets-per-second",
     0,
@@ -171,6 +175,7 @@ export default function App() {
       : nuggetsPerWrongAnswer;
 
     setNuggets((nuggets) => nuggets + nuggetsEarned);
+    setLocalStorageItem("nuggets", nuggets + nuggetsEarned);
     dispatchNuggetParticles({
       type: "manual",
       nuggetCount: nuggetsEarned,
@@ -274,6 +279,7 @@ export default function App() {
                   setEquippedBlock={setEquippedBlock}
                 />
                 <Shop
+                  nuggets={nuggets}
                   displayNuggets={displayNuggets}
                   setNuggets={setNuggets}
                   inventory={inventory}

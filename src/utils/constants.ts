@@ -2,6 +2,7 @@ export const KNOWLEDGE_STREAK = 6; // number of correct answers in a row needed 
 export const PHI = (1 + Math.sqrt(5)) / 2;
 
 export const REFRESH_TIME = 42; // milliseconds to render a new animation frame
+export const AUTOSAVE_SECONDS = 10; // seconds between autosaves
 export const MAX_NUGGETS_AT_ONCE = 20; // most nuggets to render all at the same time
 
 export const GRID_WIDTH = 11;

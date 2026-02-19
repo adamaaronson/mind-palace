@@ -7,8 +7,10 @@ import {
   type ShopItem,
 } from "../types/shop";
 import ShopItemCard from "./ShopItemCard";
+import { setLocalStorageItem } from "../hooks/useLocalStorage";
 
 interface ShopProps {
+  nuggets: number;
   displayNuggets: number;
   setNuggets: React.Dispatch<React.SetStateAction<number>>;
   inventory: Inventory;
@@ -18,6 +20,7 @@ interface ShopProps {
 
 export default function Shop(props: ShopProps) {
   const {
+    nuggets,
     displayNuggets,
     setNuggets,
     inventory,
@@ -36,7 +39,9 @@ export default function Shop(props: ShopProps) {
     if (displayNuggets < previousItemPrice) {
       return;
     }
+
     setNuggets((nuggets) => nuggets - previousItemPrice);
+    setLocalStorageItem("nuggets", nuggets - previousItemPrice);
     setInventory((inventory) => ({
       ...inventory,
       [itemId]: inventory[itemId] + 1,
