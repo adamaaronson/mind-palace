@@ -72,7 +72,7 @@ function AnswerCard(props: AnswerCardProps) {
               ))}
           </div>
         </div>
-        <div className="text-sm my-0.5">
+        <div className="text-sm mt-0.5">
           {earnedFount && (
             <p>
               <span className="text-amber-950 font-bold">+1</span>{" "}
