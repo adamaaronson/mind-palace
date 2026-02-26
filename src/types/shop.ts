@@ -48,13 +48,13 @@ export const SHOP_ITEMS: ShopItemCategory[] = [
   ]),
   createShopItemCategory("blocks", "Blocks", [
     {
-      id: "block",
+      id: "wood",
       displayName: "Block",
       image: "block.svg",
       basePrice: 5,
     },
     {
-      id: "block-marble",
+      id: "marble",
       displayName: "Marble",
       image: "block-marble.svg",
       basePrice: 5,
